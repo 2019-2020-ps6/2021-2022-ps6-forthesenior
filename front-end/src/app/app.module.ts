@@ -20,6 +20,7 @@ import {ThemeListComponent} from './themes/theme-list/theme-list.component';
 import {ThemeComponent} from './themes/theme/theme.component';
 import {ThemeFormComponent} from './themes/theme-form/theme-form.component';
 import {EditThemeComponent} from './themes/edit-theme/edit-theme.component';
+import { QuizPlayComponent} from './quizzes/quiz-play/quiz-play.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import {EditThemeComponent} from './themes/edit-theme/edit-theme.component';
     UserComponent,
     UserFormComponent,
     UserListComponent,
+    QuizPlayComponent,
     ThemeListComponent,
     ThemeComponent,
     ThemeFormComponent,
