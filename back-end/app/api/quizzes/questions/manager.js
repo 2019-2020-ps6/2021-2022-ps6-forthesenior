@@ -19,7 +19,7 @@ const filterQuestionsFromQuizz = (quizId) => {
 
 /**
  * getQuestionFromQuiz.
- * This function retrieves a question from a quiz. It will throw a not found exception if the quizId in the question is different from the one provided in parameter.
+ * This function retrieves a question from a theme. It will throw a not found exception if the quizId in the question is different from the one provided in parameter.
  * @param quizId
  * @param questionId
  */

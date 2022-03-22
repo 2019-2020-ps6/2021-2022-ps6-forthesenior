@@ -16,6 +16,10 @@ import { QuestionComponent } from './questions/question/question.component';
 import { UserComponent } from './users/user/user.component';
 import { UserFormComponent } from './users/user-form/user-form.component';
 import { UserListComponent } from './users/user-list/user-list.component';
+import {ThemeListComponent} from './themes/theme-list/theme-list.component';
+import {ThemeComponent} from './themes/theme/theme.component';
+import {ThemeFormComponent} from './themes/theme-form/theme-form.component';
+import {EditThemeComponent} from './themes/edit-theme/edit-theme.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +35,10 @@ import { UserListComponent } from './users/user-list/user-list.component';
     UserComponent,
     UserFormComponent,
     UserListComponent,
+    ThemeListComponent,
+    ThemeComponent,
+    ThemeFormComponent,
+    EditThemeComponent
   ],
   imports: [
     BrowserModule,

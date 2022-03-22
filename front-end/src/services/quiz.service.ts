@@ -16,13 +16,13 @@ export class QuizService {
    */
 
   /*
-   The list of quiz.
+   The list of theme.
    The list is retrieved from the mock.
    */
   private quizzes: Quiz[] = QUIZ_LIST;
 
   /*
-   Observable which contains the list of the quiz.
+   Observable which contains the list of the theme.
    Naming convention: Add '$' at the end of the variable name to highlight it as an Observable.
    */
   public quizzes$: BehaviorSubject<Quiz[]>
@@ -74,24 +74,24 @@ export class QuizService {
 
   /*
   Note: The functions below don't interact with the server. It's an example of implementation for the exercice 10.
-  addQuestion(quiz: Quiz, question: Question) {
-    quiz.questions.push(question);
-    const index = this.quizzes.findIndex((q: Quiz) => q.id === quiz.id);
+  addQuestion(theme: Quiz, question: Question) {
+    theme.questions.push(question);
+    const index = this.quizzes.findIndex((q: Quiz) => q.id === theme.id);
     if (index) {
-      this.updateQuizzes(quiz, index);
+      this.updateQuizzes(theme, index);
     }
   }
 
-  deleteQuestion(quiz: Quiz, question: Question) {
-    const index = quiz.questions.findIndex((q) => q.label === question.label);
+  deleteQuestion(theme: Quiz, question: Question) {
+    const index = theme.questions.findIndex((q) => q.label === question.label);
     if (index !== -1) {
-      quiz.questions.splice(index, 1)
-      this.updateQuizzes(quiz, index);
+      theme.questions.splice(index, 1)
+      this.updateQuizzes(theme, index);
     }
   }
 
-  private updateQuizzes(quiz: Quiz, index: number) {
-    this.quizzes[index] = quiz;
+  private updateQuizzes(theme: Quiz, index: number) {
+    this.quizzes[index] = theme;
     this.quizzes$.next(this.quizzes);
   }
   */

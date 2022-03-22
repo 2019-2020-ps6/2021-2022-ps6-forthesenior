@@ -5,11 +5,11 @@ import { QuizService } from '../../../services/quiz.service';
 import { Quiz } from '../../../models/quiz.model';
 
 @Component({
-  selector: 'app-quiz-form',
-  templateUrl: './quiz-form.component.html',
-  styleUrls: ['./quiz-form.component.scss']
+  selector: 'app-theme-form',
+  templateUrl: './theme-form.component.html',
+  styleUrls: ['./theme-form.component.scss']
 })
-export class QuizFormComponent implements OnInit {
+export class ThemeFormComponent implements OnInit {
 
   // Note: We are using here ReactiveForms to create our form. Be careful when you look for some documentation to
   // avoid TemplateDrivenForm (another type of form)
