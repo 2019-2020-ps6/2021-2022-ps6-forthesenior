@@ -1,0 +1,12 @@
+{
+  "name": "ps6",
+  "version": "1.0.0",
+  "scripts": {
+    "client": "cd front-end && npm start",
+    "server": "cd back-end && npm start",
+    "start": "concurrently --kill-others \"npm run server\" \"npm run client\""
+  },
+  "devDependencies": {
+    "concurrently": "^7.0.0"
+  }
+}
