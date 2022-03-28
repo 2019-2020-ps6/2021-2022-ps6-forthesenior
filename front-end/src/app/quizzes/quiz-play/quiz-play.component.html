@@ -1,1 +1,6 @@
-<p>quiz-play works!</p>
+<button class="button-card" routerLink="/quiz-list">Back</button>
+<h2>{{quiz.name}}</h2>
+<app-quiz-question [question]="quiz.questions[index]" ></app-quiz-question>
+
+
+

@@ -21,6 +21,8 @@ import {ThemeComponent} from './themes/theme/theme.component';
 import {ThemeFormComponent} from './themes/theme-form/theme-form.component';
 import {EditThemeComponent} from './themes/edit-theme/edit-theme.component';
 import { QuizPlayComponent} from './quizzes/quiz-play/quiz-play.component';
+import {QuizQuestionComponent} from './quizzes/quiz-question/quiz-question.component';
+import {AnswerQuizComponent} from './quizzes/answer-quiz/answer-quiz.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +42,9 @@ import { QuizPlayComponent} from './quizzes/quiz-play/quiz-play.component';
     ThemeListComponent,
     ThemeComponent,
     ThemeFormComponent,
-    EditThemeComponent
+    EditThemeComponent,
+    QuizQuestionComponent,
+    AnswerQuizComponent,
   ],
   imports: [
     BrowserModule,
