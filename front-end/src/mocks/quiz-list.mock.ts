@@ -1,6 +1,6 @@
 import {Quiz} from '../models/quiz.model';
 import {Question} from '../models/question.model';
-import {Theme} from "../models/theme.model";
+import {Theme} from '../models/theme.model';
 
 export const QUESTION_ACTOR: Question = {
   id: '1',
@@ -20,7 +20,7 @@ export const QUESTION_ACTOR: Question = {
 export const QUIZ_LIST: Quiz[] = [
   {
     id: '1',
-    name: 'Les Acteurs', // What's happening if I change this value..?
+    name: 'Les Acteurs',
     theme: 'Actor',
     questions: [],
   },
@@ -36,5 +36,10 @@ export const THEME_LIST: Theme[] = [
     id: '1',
     name: 'Les animaux',
     quizzes: []
+  },
+  {
+    id: '2',
+    name: 'Les Voitures',
+    quizzes: []
   }
-]
+];

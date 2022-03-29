@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import {Component, Input, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
 import {Theme} from '../../../models/theme.model';
 import {ThemeService} from '../../../services/theme.service';
 
@@ -9,6 +9,9 @@ import {ThemeService} from '../../../services/theme.service';
   styleUrls: ['./theme-list.component.scss']
 })
 export class ThemeListComponent implements OnInit {
+
+  @Input()
+  public theme: Theme;
 
   public themeList: Theme[] = [];
 

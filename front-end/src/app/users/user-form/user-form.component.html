@@ -1,16 +1,16 @@
 <div class="card">
-    <h2>Create a new user</h2>
-    <form class="user-form" [formGroup]="userForm">
-      <label for="firstName">
-        First name <br>
-        <input class="input-custom" type="text" id="firstName" [formControlName]="'firstName'">
-      </label>
-      <br>
-      <label for="lastName">
-        Last name <br>
-        <input class="input-custom" type="text" id="lastName" [formControlName]="'lastName'">
-      </label>
-      <br>
-      <button type="submit" class="button-card" (click)="addUser()">Create</button>
-    </form>
-  </div>
+  <h2>Create a new User</h2>
+  <form [formGroup]="userForm" class="user-form">
+    <label for="firstName">
+      First name <br>
+      <input [formControlName]="'firstName'" class="input-custom" id="firstName" type="text">
+    </label>
+    <br>
+    <label for="lastName">
+      Last name <br>
+      <input [formControlName]="'lastName'" class="input-custom" id="lastName" type="text">
+    </label>
+    <br>
+    <button (click)="addUser()" class="button-card" type="submit">Create</button>
+  </form>
+</div>
