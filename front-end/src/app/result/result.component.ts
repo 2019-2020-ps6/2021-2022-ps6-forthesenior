@@ -10,10 +10,12 @@ import {QuizService} from "../../services/quiz.service";
 })
 export class ResultComponent implements OnInit {
 
-  Quiz: 4;
-  result: 0;
+  right: string;
+  total: string;
 
   constructor(private router: Router, private route: ActivatedRoute, private quizService: QuizService) {
+    this.right = this.route.snapshot.paramMap.get('right');
+    this.total = this.route.snapshot.paramMap.get('total');
   }
 
   ngOnInit(): void {
