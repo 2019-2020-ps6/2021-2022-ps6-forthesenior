@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnChanges, OnInit, Output} from '@angular/core';
 import {Answer} from '../../../models/question.model';
 import {ActivatedRoute, Router} from '@angular/router';
 
@@ -7,7 +7,7 @@ import {ActivatedRoute, Router} from '@angular/router';
   templateUrl: './answer-quiz.component.html',
   styleUrls: ['./answer-quiz.component.scss']
 })
-export class AnswerQuizComponent implements OnInit {
+export class AnswerQuizComponent implements OnInit, OnChanges {
   @Input()
   answer: Answer;
   @Input()
@@ -24,6 +24,12 @@ export class AnswerQuizComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+
+  ngOnChanges(): void {
+    if (this.answer.isCorrect && this.answered){
+      this.buttonColor = '#00ff00';
+    }
   }
 
   showAnswer(): void {
