@@ -1,0 +1,14 @@
+.answer{
+  margin-left: auto;
+  margin-right: auto;
+  place-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 600px;
+}
+.child {
+  flex: 1 1 150px;
+}

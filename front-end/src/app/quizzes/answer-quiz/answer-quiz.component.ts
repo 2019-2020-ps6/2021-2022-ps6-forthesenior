@@ -1,32 +1,41 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnChanges, OnInit, Output} from '@angular/core';
 import {Answer} from '../../../models/question.model';
-import {ActivatedRoute, Router} from "@angular/router";
-import {QuizService} from "../../../services/quiz.service";
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-answer-quiz',
   templateUrl: './answer-quiz.component.html',
   styleUrls: ['./answer-quiz.component.scss']
 })
-export class AnswerQuizComponent implements OnInit {
+export class AnswerQuizComponent implements OnInit, OnChanges {
   @Input()
   answer: Answer;
+  @Input()
+  answered: boolean;
 
-  buttonColor = '#E0DAD8'; // Default Color
+  @Output()
+  answeredQuestion: EventEmitter<boolean> = new EventEmitter<boolean>();
 
-  constructor(private router: Router, private route: ActivatedRoute) { }
+  buttonColor = 'rgba(224,216,216,0.5)'; // Default Color
+  vert = '#00ff00';
+  rouge = '#ff0000';
+
+  constructor(private router: Router, private route: ActivatedRoute) {
+  }
 
   ngOnInit(): void {
   }
 
+  ngOnChanges(): void {
+    if (this.answer.isCorrect && this.answered){
+      this.buttonColor = '#00ff00';
+    }
+  }
+
   showAnswer(): void {
-    if (this.answer.isCorrect){
-      this.buttonColor = '#04FF00';
+    if (!this.answered) {
+      this.buttonColor = (this.answer.isCorrect) ? this.vert : this.rouge;
+      this.answeredQuestion.emit(this.answer.isCorrect);
     }
-    else {
-      this.buttonColor = '#FF4000'; // desired Color
-    }
-    const id = this.route.snapshot.paramMap.get('id');
-    this.router.navigate(['/result/' + id]);
   }
 }
