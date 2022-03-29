@@ -27,7 +27,12 @@ export class QuizPlayComponent implements OnInit {
 
   nextQuestion(): void{
     this.index++;
-    this.router.navigate(['/quiz-play/' + this.quiz.id + '/question/' + this.index.toString()]);
+    if(this.index === this.quiz.questions.length){
+      this.router.navigate(['/result/' + this.quiz.id]);
+    }
+    else {
+      this.router.navigate(['/quiz-play/' + this.quiz.id + '/question/' + this.index.toString()]);
+    }
     this.next = false;
   }
 

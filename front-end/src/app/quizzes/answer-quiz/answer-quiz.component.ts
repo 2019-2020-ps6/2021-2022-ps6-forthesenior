@@ -1,9 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {Answer, Question} from '../../../models/question.model';
-import {Component, Input, OnInit} from '@angular/core';
 import {Answer} from '../../../models/question.model';
-import {ActivatedRoute, Router} from "@angular/router";
-import {QuizService} from "../../../services/quiz.service";
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-answer-quiz',
@@ -35,7 +32,5 @@ export class AnswerQuizComponent implements OnInit {
       }
       this.answeredQuestion.emit(true);
     }
-    const id = this.route.snapshot.paramMap.get('id');
-    this.router.navigate(['/result/' + id]);
   }
 }
