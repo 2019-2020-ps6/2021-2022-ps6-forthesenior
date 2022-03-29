@@ -4,9 +4,7 @@
     {{question.label}}
   </h2>
   <div class="answer" *ngFor="let answer of question.answers; let i=index">
-    <app-answer-quiz [answer]="answer"></app-answer-quiz>
+    <app-answer-quiz [answer]="answer" [answered]="answered" (answeredQuestion)="onAnswered($event)"></app-answer-quiz>
     <br>
   </div>
-
-
 </div>

@@ -1,5 +1,5 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {Answer} from '../../../models/question.model';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Answer, Question} from '../../../models/question.model';
 
 @Component({
   selector: 'app-answer-quiz',
@@ -9,8 +9,13 @@ import {Answer} from '../../../models/question.model';
 export class AnswerQuizComponent implements OnInit {
   @Input()
   answer: Answer;
+  @Input()
+  answered: boolean;
 
-  buttonColor = '#E0DAD8'; // Default Color
+  @Output()
+  answeredQuestion: EventEmitter<boolean> = new EventEmitter<boolean>();
+
+  buttonColor = 'rgba(224,216,216,0.5)'; // Default Color
 
   constructor() { }
 
@@ -18,11 +23,13 @@ export class AnswerQuizComponent implements OnInit {
   }
 
   showAnswer(): void {
-    if (this.answer.isCorrect){
-      this.buttonColor = '#04FF00';
-    }
-    else {
-      this.buttonColor = '#FF4000'; // desired Color
+    if (!this.answered) {
+      if (this.answer.isCorrect) {
+        this.buttonColor = '#00ff00';
+      } else {
+        this.buttonColor = '#ff0000'; // desired Color
+      }
+      this.answeredQuestion.emit(true);
     }
   }
 }
