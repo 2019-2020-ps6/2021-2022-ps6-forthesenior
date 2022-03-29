@@ -1,5 +1,9 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Answer, Question} from '../../../models/question.model';
+import {Component, Input, OnInit} from '@angular/core';
+import {Answer} from '../../../models/question.model';
+import {ActivatedRoute, Router} from "@angular/router";
+import {QuizService} from "../../../services/quiz.service";
 
 @Component({
   selector: 'app-answer-quiz',
@@ -17,7 +21,7 @@ export class AnswerQuizComponent implements OnInit {
 
   buttonColor = 'rgba(224,216,216,0.5)'; // Default Color
 
-  constructor() { }
+  constructor(private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
   }
@@ -31,5 +35,7 @@ export class AnswerQuizComponent implements OnInit {
       }
       this.answeredQuestion.emit(true);
     }
+    const id = this.route.snapshot.paramMap.get('id');
+    this.router.navigate(['/result/' + id]);
   }
 }
