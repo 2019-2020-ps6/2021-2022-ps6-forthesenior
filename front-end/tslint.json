@@ -4,6 +4,15 @@
     "codelyzer"
   ],
   "rules": {
+    "@angular-eslint/component-class-suffix": [
+      "error",
+      {
+        "suffixes": [
+          "Page",
+          "Component"
+        ]
+      }
+    ],
     "align": {
       "options": [
         "parameters",

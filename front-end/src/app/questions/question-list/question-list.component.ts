@@ -11,7 +11,7 @@ import { Question } from 'src/models/question.model';
 export class QuestionListComponent implements OnInit {
 
   @Input()
-  quiz: Quiz;
+  public quiz: Quiz;
 
   constructor(private quizService: QuizService) { }
 

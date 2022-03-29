@@ -1,8 +1,8 @@
-import { Component, OnInit, Input } from '@angular/core';
-import { FormGroup, FormBuilder, FormArray, Validators } from '@angular/forms';
-import { QuizService } from '../../../services/quiz.service';
-import { Quiz } from 'src/models/quiz.model';
-import { Question } from 'src/models/question.model';
+import {Component, Input, OnInit} from '@angular/core';
+import {FormArray, FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {QuizService} from '../../../services/quiz.service';
+import {Quiz} from 'src/models/quiz.model';
+import {Question} from 'src/models/question.model';
 
 @Component({
   selector: 'app-question-form',
@@ -12,7 +12,7 @@ import { Question } from 'src/models/question.model';
 export class QuestionFormComponent implements OnInit {
 
   @Input()
-  quiz: Quiz;
+  public quiz: Quiz;
 
   public questionForm: FormGroup;
 
@@ -21,25 +21,11 @@ export class QuestionFormComponent implements OnInit {
     this.initializeQuestionForm();
   }
 
-  private initializeQuestionForm(): void {
-    this.questionForm = this.formBuilder.group({
-      label: ['', Validators.required],
-      answers: this.formBuilder.array([])
-    });
-  }
-
-  ngOnInit(): void {
-  }
-
   get answers(): FormArray {
     return this.questionForm.get('answers') as FormArray;
   }
 
-  private createAnswer(): FormGroup {
-    return this.formBuilder.group({
-      value: '',
-      isCorrect: false,
-    });
+  ngOnInit(): void {
   }
 
   addAnswer(): void {
@@ -52,5 +38,19 @@ export class QuestionFormComponent implements OnInit {
       this.quizService.addQuestion(this.quiz, question);
       this.initializeQuestionForm();
     }
+  }
+
+  private initializeQuestionForm(): void {
+    this.questionForm = this.formBuilder.group({
+      label: ['', Validators.required],
+      answers: this.formBuilder.array([])
+    });
+  }
+
+  private createAnswer(): FormGroup {
+    return this.formBuilder.group({
+      value: '',
+      isCorrect: false,
+    });
   }
 }
