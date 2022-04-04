@@ -1,0 +1,16 @@
+.answer{
+  margin-left: auto;
+  margin-right: auto;
+  place-items: center;
+  display: grid;
+  grid-template-columns: repeat(2,200px);
+
+}
+
+.page{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+

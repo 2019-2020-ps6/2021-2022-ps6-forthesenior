@@ -1,6 +1,9 @@
-<button class="button-card" routerLink="/quiz-list">Back</button>
-<h2>{{quiz.name}}</h2>
-<app-quiz-question [question]="quiz.questions[index]" ></app-quiz-question>
 
+<button class="button-card" routerLink="/quiz-list">Back</button>
+<div class="page">
+  <h2>{{quiz.name}}</h2>
+  <app-quiz-question [question]="quiz.questions[index]" (next)="onAnswered($event)"></app-quiz-question>
+  <div *ngIf="next"><button class="button-next" (click)="nextQuestion()" >Next</button></div>
+</div>
 
 

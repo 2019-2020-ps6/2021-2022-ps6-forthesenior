@@ -1,12 +1,10 @@
-<div class="card">
+<div class="page">
   <h2>
-    <i class="fab fa-leanpub"></i>
     {{question.label}}
   </h2>
-  <div class="answer" *ngFor="let answer of question.answers; let i=index">
-    <app-answer-quiz [answer]="answer"></app-answer-quiz>
-    <br>
+  <div class="answer">
+    <div  *ngFor="let answer of question.answers; let i=index">
+      <app-answer-quiz [answer]="answer" [answered]="answered" (answeredQuestion)="onAnswered($event)"></app-answer-quiz>
+    </div>
   </div>
-
-
 </div>
