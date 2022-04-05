@@ -1,11 +1,17 @@
+@import "../answer-quiz/answer-quiz.component";
+@import "../../../styles";
 .answer{
   margin-left: auto;
   margin-right: auto;
   place-items: center;
   display: grid;
-  grid-template-columns: repeat(2,200px);
+  grid-template-columns: repeat(2,minmax($size-answer,auto));
+  column-gap: $gap-column;
+  row-gap: $gap-row;
 
 }
+
+
 
 .page{
   display: flex;

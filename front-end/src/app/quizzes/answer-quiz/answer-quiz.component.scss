@@ -1,5 +1,6 @@
+@import "../../../styles";
 .button-answer{
-  height: 200px;
-  width: 200px;
-  font-size: 100%;
+  width: $size-answer;
+  height: $size-answer;
+  font-size: $font-size;
 }
