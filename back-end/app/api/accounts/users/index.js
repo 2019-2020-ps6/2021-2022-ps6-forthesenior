@@ -1,12 +1,19 @@
 const {Router} = require('express')
-const {User} = require('../../../models')
-const manageAllErrors = require('../../../utils/routes/error-management')
+const manageAllErrors = require("../../../utils/routes/error-management");
+const {
+  CreateUserForAccount,
+  FilterUserFromAccount,
+  GetUserFromAccount,
+  UpdateUserFromAccount,
+  DeleteUserFromAccount
+} = require('./userManager')
 
-const router = new Router({ mergeParams: true })
+const router = new Router({mergeParams: true})
+
 
 router.get('/', (req, res) => {
   try {
-    res.status(200).json(User.get())
+    res.status(200).json(FilterUserFromAccount(req.params.accountId))
   } catch (err) {
     manageAllErrors(res, err)
   }
@@ -14,7 +21,7 @@ router.get('/', (req, res) => {
 
 router.get('/:userId', (req, res) => {
   try {
-    res.status(200).json(User.getById(req.params.userId))
+    res.status(200).json(GetUserFromAccount(req.params.accountId, req.params.userId))
   } catch (err) {
     manageAllErrors(res, err)
   }
@@ -22,8 +29,7 @@ router.get('/:userId', (req, res) => {
 
 router.post('/', (req, res) => {
   try {
-    const user = User.create({...req.body})
-    res.status(201).json(user)
+    res.status(201).json(CreateUserForAccount(req.params.accountId, req.body))
   } catch (err) {
     manageAllErrors(res, err)
   }
@@ -31,7 +37,7 @@ router.post('/', (req, res) => {
 
 router.put('/:userId', (req, res) => {
   try {
-    res.status(200).json(User.update(req.params.userId, req.body))
+    res.status(200).json(UpdateUserFromAccount(req.params.accountId, req.params.userId, req.body))
   } catch (err) {
     manageAllErrors(res, err)
   }
@@ -39,8 +45,7 @@ router.put('/:userId', (req, res) => {
 
 router.delete('/:userId', (req, res) => {
   try {
-    User.delete(req.params.userId)
-    res.status(204).end()
+    res.status(200).json(DeleteUserFromAccount(req.params.accountId, req.params.userId))
   } catch (err) {
     manageAllErrors(res, err)
   }
