@@ -3,7 +3,7 @@ const {Account} = require('../../models')
 const UserRouter = require('./users')
 const ThemeRouter = require('./quiz/themes')
 const manageAllErrors = require('../../utils/routes/error-management')
-const {GetAccounts, GetAccount, DeleteAccount} = require("./accountManager");
+const {GetAccount, DeleteAccount} = require("./accountManager");
 
 
 const router = new Router({mergeParams: true})
@@ -13,7 +13,7 @@ router.use('/:accountId/themes', ThemeRouter)
 
 router.get('/', (req, res) => {
   try {
-    res.status(200).json(GetAccounts())
+    res.status(200).json(Account.get())
   } catch (err) {
     manageAllErrors(res, err)
   }

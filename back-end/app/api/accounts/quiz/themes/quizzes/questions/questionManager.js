@@ -1,5 +1,6 @@
 const {Question} = require('../../../../../../models')
 const {StringToNumber} = require('../../../../../../utils/Funcions')
+const {FilterAnswerFromQuestion, DeleteAnswerFromQuestion} = require("./answers/answerManager");
 
 /**
  * Creates a Question for a Quiz
@@ -21,22 +22,24 @@ const CreateQuestionForQuiz = (quizId, body) => {
  */
 const FilterQuestionFromQuiz = (quizId) => {
   if (typeof quizId === 'string') quizId = StringToNumber(quizId)
-  return Question.get().filter((Question) => Question.quizId === quizId)
+  return Question.get().filter(question => question.quizId === quizId)
 }
 
 /**
  * Gets a Question from a Quiz
  *
  * @param quizId id of the Quiz
- * @param QuestionId id of the Question
+ * @param questionId id of the Question
  * @returns {*}
  * @constructor
  */
-const GetQuestionFromQuiz = (quizId, QuestionId) => {
-  if (typeof QuestionId === 'string') QuestionId = StringToNumber(QuestionId)
-  let question = FilterQuestionFromQuiz(quizId).find(Question => Question === Question.getById(QuestionId))
+const GetQuestionFromQuiz = (quizId, questionId) => {
+  if (typeof questionId === 'string') questionId = StringToNumber(questionId)
+  let question = FilterQuestionFromQuiz(quizId).find(question => question === Question.getById(questionId))
   if (question === undefined) {
     question = "Error Question Not Found: 404"
+  }else {
+    question.answers = FilterAnswerFromQuestion(questionId)
   }
   return question
 }
@@ -45,15 +48,15 @@ const GetQuestionFromQuiz = (quizId, QuestionId) => {
  * Updates a Question for a Quiz
  *
  * @param quizId id of the Quiz
- * @param QuestionId id of the Question
+ * @param questionId id of the Question
  * @param body Json of the updated Question
  * @returns {*}
  * @constructor
  */
-const UpdateQuestionFromQuiz = (quizId, QuestionId, body) => {
-  const question = GetQuestionFromQuiz(quizId, QuestionId)
+const UpdateQuestionFromQuiz = (quizId, questionId, body) => {
+  const question = GetQuestionFromQuiz(quizId, questionId)
   if (typeof question !== 'string') {
-    Question.update(QuestionId, body)
+    Question.update(questionId, body)
   }
   return question
 }
@@ -62,13 +65,14 @@ const UpdateQuestionFromQuiz = (quizId, QuestionId, body) => {
  * Deletes a Question from a Quiz
  *
  * @param quizId id of the Quiz
- * @param QuestionId id of the Question
+ * @param questionId id of the Question
  * @constructor
  */
-const DeleteQuestionFromQuiz = (quizId, QuestionId) => {
-  const question = GetQuestionFromQuiz(quizId, QuestionId)
+const DeleteQuestionFromQuiz = (quizId, questionId) => {
+  const question = GetQuestionFromQuiz(quizId, questionId)
   if (typeof question !== 'string') {
-    Question.delete(QuestionId)
+    FilterAnswerFromQuestion(questionId).forEach(answer => DeleteAnswerFromQuestion(questionId, answer.id))
+    Question.delete(questionId)
   }
   return question
 }

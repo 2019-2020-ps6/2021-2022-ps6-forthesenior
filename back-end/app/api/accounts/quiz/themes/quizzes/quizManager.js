@@ -1,5 +1,7 @@
 const {Quiz} = require('../../../../../models')
 const {StringToNumber} = require('../../../../../utils/Funcions')
+const {FilterQuestionFromQuiz, DeleteQuestionFromQuiz} = require("./questions/questionManager");
+const {FilterAnswerFromQuestion} = require("./questions/answers/answerManager");
 
 /**
  * Creates a Quiz for a Theme
@@ -21,22 +23,25 @@ const CreateQuizForTheme = (themeId, body) => {
  */
 const FilterQuizFromTheme = (themeId) => {
   if (typeof themeId === 'string') themeId = StringToNumber(themeId)
-  return Quiz.get().filter((Quiz) => Quiz.themeId === themeId)
+  return Quiz.get().filter(quiz => quiz.themeId === themeId)
 }
 
 /**
  * Gets a Quiz from a Theme
  *
  * @param themeId id of the Theme
- * @param QuizId id of the Quiz
+ * @param quizId id of the Quiz
  * @returns {*}
  * @constructor
  */
-const GetQuizFromTheme = (themeId, QuizId) => {
-  if (typeof QuizId === 'string') QuizId = StringToNumber(QuizId)
-  let quiz = FilterQuizFromTheme(themeId).find(Quiz => Quiz === Quiz.getById(QuizId))
+const GetQuizFromTheme = (themeId, quizId) => {
+  if (typeof quizId === 'string') quizId = StringToNumber(quizId)
+  let quiz = FilterQuizFromTheme(themeId).find(quiz => quiz === Quiz.getById(quizId))
   if (quiz === undefined) {
     quiz = "Error Quiz Not Found: 404"
+  } else {
+    quiz.questions = FilterQuestionFromQuiz(quizId)
+    quiz.questions.forEach(question => question.answers = FilterAnswerFromQuestion(question.id))
   }
   return quiz
 }
@@ -45,15 +50,15 @@ const GetQuizFromTheme = (themeId, QuizId) => {
  * Updates a Quiz for a Theme
  *
  * @param themeId id of the Theme
- * @param QuizId id of the Quiz
+ * @param quizId id of the Quiz
  * @param body Json of the updated Quiz
  * @returns {*}
  * @constructor
  */
-const UpdateQuizFromTheme = (themeId, QuizId, body) => {
-  const quiz = GetQuizFromTheme(themeId, QuizId)
+const UpdateQuizFromTheme = (themeId, quizId, body) => {
+  const quiz = GetQuizFromTheme(themeId, quizId)
   if (typeof quiz !== 'string') {
-    Quiz.update(QuizId, body)
+    Quiz.update(quizId, body)
   }
   return quiz
 }
@@ -62,13 +67,14 @@ const UpdateQuizFromTheme = (themeId, QuizId, body) => {
  * Deletes a Quiz from a Theme
  *
  * @param themeId id of the Theme
- * @param QuizId id of the Quiz
+ * @param quizId id of the Quiz
  * @constructor
  */
-const DeleteQuizFromTheme = (themeId, QuizId) => {
-  const quiz = GetQuizFromTheme(themeId, QuizId)
+const DeleteQuizFromTheme = (themeId, quizId) => {
+  const quiz = GetQuizFromTheme(themeId, quizId)
   if (typeof quiz !== 'string') {
-    Quiz.delete(QuizId)
+    FilterQuestionFromQuiz(quizId).forEach(question => DeleteQuestionFromQuiz(quizId, question.id))
+    Quiz.delete(quizId)
   }
   return quiz
 }
