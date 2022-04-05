@@ -1,17 +1,19 @@
 const {Router} = require('express')
 const {Account} = require('../../models')
 const UserRouter = require('./users')
+const ThemeRouter = require('./quiz/themes')
 const manageAllErrors = require('../../utils/routes/error-management')
-const {DeleteAccount} = require("./accountManager");
+const {GetAccounts, GetAccount, DeleteAccount} = require("./accountManager");
 
 
-const router = new Router()
+const router = new Router({mergeParams: true})
 
 router.use('/:accountId/users', UserRouter)
+router.use('/:accountId/themes', ThemeRouter)
 
 router.get('/', (req, res) => {
   try {
-    res.status(200).json(Account.get())
+    res.status(200).json(GetAccounts())
   } catch (err) {
     manageAllErrors(res, err)
   }
@@ -19,7 +21,7 @@ router.get('/', (req, res) => {
 
 router.get('/:accountId', (req, res) => {
   try {
-    res.status(200).json(Account.getById(req.params.accountId))
+    res.status(200).json(GetAccount(req.params.accountId))
   } catch (err) {
     manageAllErrors(res, err)
   }
