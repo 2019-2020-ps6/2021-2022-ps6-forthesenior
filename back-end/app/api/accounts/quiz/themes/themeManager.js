@@ -39,7 +39,7 @@ const GetThemeFromAccount = (accountId, themeId) => {
   if (theme === undefined) {
     theme = "Error Theme Not Found: 404"
   } else {
-    theme.quizzes = FilterQuizFromTheme(themeId)
+    theme = {...theme, quizzes: FilterQuizFromTheme(themeId)}
   }
   return theme
 }

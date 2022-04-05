@@ -38,8 +38,8 @@ const GetQuestionFromQuiz = (quizId, questionId) => {
   let question = FilterQuestionFromQuiz(quizId).find(question => question === Question.getById(questionId))
   if (question === undefined) {
     question = "Error Question Not Found: 404"
-  }else {
-    question.answers = FilterAnswerFromQuestion(questionId)
+  } else {
+    question = {...question, answers: FilterAnswerFromQuestion(questionId)}
   }
   return question
 }

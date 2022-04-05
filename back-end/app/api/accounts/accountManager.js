@@ -9,10 +9,11 @@ const {FilterThemeFromAccount, DeleteThemeFromAccount} = require("./quiz/themes/
  * @constructor
  */
 const GetAccount = (accountId) => {
-  const account = Account.getById(accountId)
-  account.users = FilterUserFromAccount(accountId)
-  account.themes = FilterThemeFromAccount(accountId)
-  return account
+  return {
+    ...Account.getById(accountId),
+    users: FilterUserFromAccount(accountId),
+    themes: FilterThemeFromAccount(accountId)
+  }
 }
 
 /**
