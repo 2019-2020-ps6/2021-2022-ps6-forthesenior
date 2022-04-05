@@ -1,12 +1,13 @@
 const {Router} = require('express')
 const {Account} = require('../../models')
-const {UsersRouter} = require('./users')
+const UserRouter = require('./users')
 const manageAllErrors = require('../../utils/routes/error-management')
+const {DeleteAccount} = require("./accountManager");
+
 
 const router = new Router()
 
-console.log(UsersRouter)
-// router.use('/:accountId/users', UsersRouter)
+router.use('/:accountId/users', UserRouter)
 
 router.get('/', (req, res) => {
   try {
@@ -26,6 +27,7 @@ router.get('/:accountId', (req, res) => {
 
 router.post('/', (req, res) => {
   try {
+    // TODO Separate Sub Json objects
     const user = Account.create({...req.body})
     res.status(201).json(user)
   } catch (err) {
@@ -43,8 +45,7 @@ router.put('/:accountId', (req, res) => {
 
 router.delete('/:accountId', (req, res) => {
   try {
-    Account.delete(req.params.accountId)
-    res.status(204).end()
+    res.status(204).json(DeleteAccount(req.params.accountId))
   } catch (err) {
     manageAllErrors(res, err)
   }
