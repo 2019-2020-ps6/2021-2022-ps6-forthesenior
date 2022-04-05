@@ -1,15 +1,17 @@
-const Answer = require('./answer.model.js')
-const Question = require('./question.model.js')
-const Quiz = require('./quiz.model.js')
+const Account = require('./account.model')
 const User = require('./user.model.js')
-const Theme = require('./theme.model.js')
-const Option = require('./options.model.js')
+const Theme = require('./theme.model')
+const Quiz = require('./quiz.model.js')
+const Question = require('./question.model.js')
+const Answer = require('./answer.model.js')
+const Options = require('./options.model.js')
 
 module.exports = {
-  Answer,
-  Question,
-  Quiz,
+  Account,
   User,
   Theme,
-  Option,
+  Quiz,
+  Question,
+  Answer,
+  Options,
 }
