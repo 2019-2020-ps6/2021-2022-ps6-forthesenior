@@ -1,9 +1,8 @@
-const { Router } = require('express')
+const {Router} = require('express')
+const {User} = require('../../../models')
+const manageAllErrors = require('../../../utils/routes/error-management')
 
-const { User } = require('../../models')
-const manageAllErrors = require('../../utils/routes/error-management')
-
-const router = new Router()
+const router = new Router({ mergeParams: true })
 
 router.get('/', (req, res) => {
   try {
@@ -23,7 +22,7 @@ router.get('/:userId', (req, res) => {
 
 router.post('/', (req, res) => {
   try {
-    const user = User.create({ ...req.body })
+    const user = User.create({...req.body})
     res.status(201).json(user)
   } catch (err) {
     manageAllErrors(res, err)
