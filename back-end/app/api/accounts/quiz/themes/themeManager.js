@@ -1,5 +1,6 @@
 const {Theme} = require('../../../../models')
 const {StringToNumber} = require('../../../../utils/Funcions')
+const {FilterQuizFromTheme, DeleteQuizFromTheme} = require("./quizzes/quizManager");
 
 /**
  * Creates a Theme for an Account
@@ -21,22 +22,24 @@ const CreateThemeForAccount = (accountId, body) => {
  */
 const FilterThemeFromAccount = (accountId) => {
   if (typeof accountId === 'string') accountId = StringToNumber(accountId)
-  return Theme.get().filter((Theme) => Theme.accountId === accountId)
+  return Theme.get().filter(theme => theme.accountId === accountId)
 }
 
 /**
  * Gets a Theme from an Account
  *
  * @param accountId id of the Account
- * @param ThemeId id of the Theme
+ * @param themeId id of the Theme
  * @returns {*}
  * @constructor
  */
-const GetThemeFromAccount = (accountId, ThemeId) => {
-  if (typeof ThemeId === 'string') ThemeId = StringToNumber(ThemeId)
-  let theme = FilterThemeFromAccount(accountId).find(Theme => Theme === Theme.getById(ThemeId))
+const GetThemeFromAccount = (accountId, themeId) => {
+  if (typeof themeId === 'string') themeId = StringToNumber(themeId)
+  let theme = FilterThemeFromAccount(accountId).find(theme => theme === Theme.getById(themeId))
   if (theme === undefined) {
     theme = "Error Theme Not Found: 404"
+  } else {
+    theme.quizzes = FilterQuizFromTheme(themeId)
   }
   return theme
 }
@@ -45,15 +48,15 @@ const GetThemeFromAccount = (accountId, ThemeId) => {
  * Updates a Theme for an Account
  *
  * @param accountId id of the Account
- * @param ThemeId id of the Theme
+ * @param themeId id of the Theme
  * @param body Json of the updated Theme
  * @returns {*}
  * @constructor
  */
-const UpdateThemeFromAccount = (accountId, ThemeId, body) => {
-  const theme = GetThemeFromAccount(accountId, ThemeId)
+const UpdateThemeFromAccount = (accountId, themeId, body) => {
+  const theme = GetThemeFromAccount(accountId, themeId)
   if (typeof theme !== 'string') {
-    Theme.update(ThemeId, body)
+    Theme.update(themeId, body)
   }
   return theme
 }
@@ -62,21 +65,18 @@ const UpdateThemeFromAccount = (accountId, ThemeId, body) => {
  * Deletes a Theme from an Account
  *
  * @param accountId id of the Account
- * @param ThemeId id of the Theme
+ * @param themeId id of the Theme
  * @constructor
  */
-const DeleteThemeFromAccount = (accountId, ThemeId) => {
-  const theme = GetThemeFromAccount(accountId, ThemeId)
+const DeleteThemeFromAccount = (accountId, themeId) => {
+  const theme = GetThemeFromAccount(accountId, themeId)
   if (typeof theme !== 'string') {
-    Theme.delete(ThemeId)
+    FilterQuizFromTheme(themeId).forEach(quiz => DeleteQuizFromTheme(themeId, quiz.id))
+    Theme.delete(themeId)
   }
   return theme
 }
 
 module.exports = {
-  CreateThemeForAccount,
-  FilterThemeFromAccount,
-  GetThemeFromAccount,
-  UpdateThemeFromAccount,
-  DeleteThemeFromAccount
+  CreateThemeForAccount, FilterThemeFromAccount, GetThemeFromAccount, UpdateThemeFromAccount, DeleteThemeFromAccount
 }

@@ -1,18 +1,6 @@
 const {Account} = require("../../models");
 const {FilterUserFromAccount, DeleteUserFromAccount} = require("./users/userManager");
-
-// TODO Rajouter les Quiz dans les Json
-
-/**
- * Gets the List of Accounts
- *
- * @constructor
- */
-const GetAccounts = () => {
-  const accounts = Account.get()
-  accounts.forEach(account => account.users = FilterUserFromAccount(account.id))
-  return accounts
-}
+const {FilterThemeFromAccount, DeleteThemeFromAccount} = require("./quiz/themes/themeManager");
 
 /**
  * Gets the Account
@@ -23,6 +11,7 @@ const GetAccounts = () => {
 const GetAccount = (accountId) => {
   const account = Account.getById(accountId)
   account.users = FilterUserFromAccount(accountId)
+  account.themes = FilterThemeFromAccount(accountId)
   return account
 }
 
@@ -36,12 +25,12 @@ const GetAccount = (accountId) => {
 const DeleteAccount = (accountId) => {
   const account = Account.getById(accountId)
   FilterUserFromAccount(accountId).forEach(user => DeleteUserFromAccount(accountId, user.id))
+  FilterThemeFromAccount(accountId).forEach(theme => DeleteThemeFromAccount(accountId, theme.id))
   Account.delete(accountId)
   return account
 }
 
 module.exports = {
-  GetAccounts,
   GetAccount,
   DeleteAccount,
 }

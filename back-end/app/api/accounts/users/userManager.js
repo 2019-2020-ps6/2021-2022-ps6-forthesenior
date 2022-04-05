@@ -21,7 +21,7 @@ const CreateUserForAccount = (accountId, body) => {
  */
 const FilterUserFromAccount = (accountId) => {
   if (typeof accountId === 'string') accountId = StringToNumber(accountId)
-  return User.get().filter((user) => user.accountId === accountId)
+  return User.get().filter(user => user.accountId === accountId)
 }
 
 /**

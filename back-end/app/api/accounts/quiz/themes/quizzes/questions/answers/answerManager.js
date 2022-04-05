@@ -21,20 +21,20 @@ const CreateAnswerForQuestion = (questionId, body) => {
  */
 const FilterAnswerFromQuestion = (questionId) => {
   if (typeof questionId === 'string') questionId = StringToNumber(questionId)
-  return Answer.get().filter((Answer) => Answer.questionId === questionId)
+  return Answer.get().filter(answer => answer.questionId === questionId)
 }
 
 /**
  * Gets an Answer from a Question
  *
  * @param questionId id of the Question
- * @param AnswerId id of the Answer
+ * @param answerId id of the Answer
  * @returns {*}
  * @constructor
  */
-const GetAnswerFromQuestion = (questionId, AnswerId) => {
-  if (typeof AnswerId === 'string') AnswerId = StringToNumber(AnswerId)
-  let answer = FilterAnswerFromQuestion(questionId).find(Answer => Answer === Answer.getById(AnswerId))
+const GetAnswerFromQuestion = (questionId, answerId) => {
+  if (typeof answerId === 'string') answerId = StringToNumber(answerId)
+  let answer = FilterAnswerFromQuestion(questionId).find(answer => answer === Answer.getById(answerId))
   if (answer === undefined) {
     answer = "Error Answer Not Found: 404"
   }
@@ -45,15 +45,15 @@ const GetAnswerFromQuestion = (questionId, AnswerId) => {
  * Updates an Answer for a Question
  *
  * @param questionId id of the Question
- * @param AnswerId id of the Answer
+ * @param answerId id of the Answer
  * @param body Json of the updated Answer
  * @returns {*}
  * @constructor
  */
-const UpdateAnswerFromQuestion = (questionId, AnswerId, body) => {
-  const answer = GetAnswerFromQuestion(questionId, AnswerId)
+const UpdateAnswerFromQuestion = (questionId, answerId, body) => {
+  const answer = GetAnswerFromQuestion(questionId, answerId)
   if (typeof answer !== 'string') {
-    Answer.update(AnswerId, body)
+    Answer.update(answerId, body)
   }
   return answer
 }
@@ -62,13 +62,13 @@ const UpdateAnswerFromQuestion = (questionId, AnswerId, body) => {
  * Deletes an Answer from a Question
  *
  * @param questionId id of the Question
- * @param AnswerId id of the Answer
+ * @param answerId id of the Answer
  * @constructor
  */
-const DeleteAnswerFromQuestion = (questionId, AnswerId) => {
-  const answer = GetAnswerFromQuestion(questionId, AnswerId)
+const DeleteAnswerFromQuestion = (questionId, answerId) => {
+  const answer = GetAnswerFromQuestion(questionId, answerId)
   if (typeof answer !== 'string') {
-    Answer.delete(AnswerId)
+    Answer.delete(answerId)
   }
   return answer
 }
