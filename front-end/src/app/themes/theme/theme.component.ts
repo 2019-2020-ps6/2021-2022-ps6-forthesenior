@@ -13,6 +13,8 @@ export class ThemeComponent implements OnInit {
 
   @Output()
   selectTheme: EventEmitter<boolean> = new EventEmitter<boolean>();
+  @Output()
+  deleteTheme: EventEmitter<Theme> = new EventEmitter<Theme>();
 
   constructor() {
   }
@@ -22,5 +24,9 @@ export class ThemeComponent implements OnInit {
 
   themeSelected(): void {
     this.selectTheme.emit(true);
+  }
+
+  delete(): void {
+    this.deleteTheme.emit(this.theme);
   }
 }
