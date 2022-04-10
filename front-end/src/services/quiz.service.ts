@@ -1,10 +1,12 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { BehaviorSubject, Subject } from 'rxjs';
+import {BehaviorSubject, ReplaySubject, Subject} from 'rxjs';
 import { Quiz } from '../models/quiz.model';
 import { QUIZ_LIST } from '../mocks/quiz-list.mock';
 import { Question } from '../models/question.model';
 import { serverUrl, httpOptionsBase } from '../configs/server.config';
+import {Theme} from '../models/theme.model';
+import {ThemeService} from './theme.service';
 
 @Injectable({
   providedIn: 'root'
@@ -21,6 +23,8 @@ export class QuizService {
    */
   private quizzes: Quiz[] = QUIZ_LIST;
 
+  private theme: Theme;
+
   /*
    Observable which contains the list of the theme.
    Naming convention: Add '$' at the end of the variable name to highlight it as an Observable.
@@ -28,14 +32,16 @@ export class QuizService {
   public quizzes$: BehaviorSubject<Quiz[]>
     = new BehaviorSubject(this.quizzes);
 
-  public quizSelected$: Subject<Quiz> = new Subject();
+  // @ts-ignore
+  public quizSelected$ = new  BehaviorSubject<Quiz>(1);
+  public themeSelected: Theme;
 
   private quizUrl = serverUrl + '/quizzes';
   private questionsPath = 'questions';
 
   private httpOptions = httpOptionsBase;
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private themeService: ThemeService) {
     this.retrieveQuizzes();
   }
 
@@ -71,6 +77,11 @@ export class QuizService {
     const questionUrl = this.quizUrl + '/' + quiz.id + '/' + this.questionsPath + '/' + question.id;
     this.http.delete<Question>(questionUrl, this.httpOptions).subscribe(() => this.setSelectedQuiz(quiz.id));
   }
+
+  getTheme(): Theme{
+    return this.themeSelected;
+  }
+
 
   /*
   Note: The functions below don't interact with the server. It's an example of implementation for the exercice 10.

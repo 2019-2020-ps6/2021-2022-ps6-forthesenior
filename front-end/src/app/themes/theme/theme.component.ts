@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 import {Theme} from '../../../models/theme.model';
+import {Quiz} from "../../../models/quiz.model";
 
 @Component({
   selector: 'app-theme',
@@ -12,8 +13,7 @@ export class ThemeComponent implements OnInit {
   theme: Theme;
 
   @Output()
-  selectTheme: EventEmitter<boolean> = new EventEmitter<boolean>();
-
+  selectedTheme: EventEmitter<Theme> = new EventEmitter<Theme>();
   constructor() {
   }
 
@@ -21,6 +21,6 @@ export class ThemeComponent implements OnInit {
   }
 
   themeSelected(): void {
-    this.selectTheme.emit(true);
+    this.selectedTheme.emit(this.theme);
   }
 }

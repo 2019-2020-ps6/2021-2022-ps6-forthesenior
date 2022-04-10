@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import {Theme} from '../../../models/theme.model';
 import {ThemeService} from '../../../services/theme.service';
+import {QuizService} from '../../../services/quiz.service';
 
 @Component({
   selector: 'app-theme-list',
@@ -21,7 +22,8 @@ export class ThemeListComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  themeSelected(selected: boolean): void {
-    console.log('event received from child:', selected);
+  themeSelected(theme: Theme): void {
+    this.themeService.setSelectedTheme(theme.id);
+    this.router.navigate(['/quiz-list']);
   }
 }

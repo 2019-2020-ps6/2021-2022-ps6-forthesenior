@@ -1,22 +1,19 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject} from 'rxjs';
-import {QUIZ_LIST, THEME_LIST} from '../mocks/quiz-list.mock';
+import {BehaviorSubject, ReplaySubject, Subject} from 'rxjs';
+import {THEME_LIST} from '../mocks/quiz-list.mock';
 import {Theme} from '../models/theme.model';
+import {HttpClient} from '@angular/common/http';
+import {httpOptionsBase, serverUrl} from '../configs/server.config';
+import {QuizService} from "./quiz.service";
 
 @Injectable({
   providedIn: 'root'
 })
 export class ThemeService {
-  /*
-   Services Documentation:
-   https://angular.io/docs/ts/latest/tutorial/toh-pt4.html
-   */
 
-  /*
-   The list of theme.
-   The list is retrieved from the mock.
-   */
   private themes: Theme[] = THEME_LIST;
+  private themeUrl = serverUrl + '/theme-list';
+  private httpOptions = httpOptionsBase;
 
   /*
    Observable which contains the list of the theme.
@@ -25,35 +22,30 @@ export class ThemeService {
   public themes$: BehaviorSubject<Theme[]>
     = new BehaviorSubject(this.themes);
 
-  constructor() {
+  public themeSelected$: BehaviorSubject<Theme>;
+
+  constructor(private http: HttpClient) {
+    // @ts-ignore
+    this.themeSelected$ = new BehaviorSubject<Theme>(0);
+
+    this.retrieveThemes();
+  }
+  retrieveThemes(): void {
+    this.http.get<Theme[]>(this.themeUrl).subscribe((themeList) => {
+      this.themes = themeList;
+      this.themes$.next(this.themes);
+    });
   }
 
-  addTheme(theme: Theme): void {}
-
-  deleteTheme(theme: Theme): void {
+  addTheme(theme: Theme): void {
+    this.http.post<Theme>(this.themeUrl, theme, this.httpOptions).subscribe(() => this.retrieveThemes());
   }
 
-  /*
-  Note: The functions below don't interact with the server. It's an example of implementation for the exercice 10.
-  addQuestion(theme: Quiz, question: Question) {
-    theme.questions.push(question);
-    const index = this.quizzes.findIndex((q: Quiz) => q.id === theme.id);
-    if (index) {
-      this.updateQuizzes(theme, index);
-    }
-  }
+  setSelectedTheme(themeId: string): void {
+    const urlWithId = this.themeUrl + '/' + themeId;
 
-  deleteQuestion(theme: Quiz, question: Question) {
-    const index = theme.questions.findIndex((q) => q.label === question.label);
-    if (index !== -1) {
-      theme.questions.splice(index, 1)
-      this.updateQuizzes(theme, index);
-    }
+    this.http.get<Theme>(urlWithId).subscribe((theme) => {
+      this.themeSelected$.next(theme);
+    });
   }
-
-  private updateQuizzes(theme: Quiz, index: number) {
-    this.quizzes[index] = theme;
-    this.quizzes$.next(this.quizzes);
-  }
-  */
 }

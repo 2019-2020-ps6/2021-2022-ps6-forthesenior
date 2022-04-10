@@ -23,9 +23,8 @@ export class ResultComponent implements OnInit {
 
   restartSelected(): void {
     const id = this.route.snapshot.paramMap.get('id');
-    console.log(id);
     this.quizService.setSelectedQuiz(id);
-    this.router.navigate(['/quiz-play/' + id + '/question/0']);
+    this.router.navigate(['/quiz-play/question/0']);
   }
 
   backSelected(): void {

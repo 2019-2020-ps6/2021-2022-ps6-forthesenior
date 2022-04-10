@@ -28,6 +28,7 @@ export const QUIZ_LIST: Quiz[] = [
     id: '2',
     name: 'Les technos WEB',
     questions: [],
+    theme: 'les acteurs',
   }
 ];
 
@@ -37,4 +38,4 @@ export const THEME_LIST: Theme[] = [
     name: 'Les animaux',
     quizzes: []
   }
-]
+];

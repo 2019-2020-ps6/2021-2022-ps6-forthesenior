@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import { QuizService } from '../../../services/quiz.service';
 import { Quiz } from '../../../models/quiz.model';
+import {Theme} from '../../../models/theme.model';
+import {ThemeService} from "../../../services/theme.service";
 
 @Component({
   selector: 'app-quiz-list',
@@ -19,16 +21,15 @@ export class QuizListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    const id = this.route.snapshot.paramMap.get('id');
-    this.quizService.setSelectedQuiz(id);
   }
 
   quizSelected(quiz: Quiz): void {
-    this.router.navigate(['/quiz-play/' + quiz.id + '/question/0']);
+    this.quizService.setSelectedQuiz(quiz.id);
+    this.router.navigate(['/quiz-play/0']);
   }
 
   editQuiz(quiz: Quiz): void {
-    this.router.navigate(['/edit-theme/' + quiz.name]);
+    this.quizService.setSelectedQuiz(quiz.id);
   }
 
   deleteQuiz(quiz: Quiz): void {

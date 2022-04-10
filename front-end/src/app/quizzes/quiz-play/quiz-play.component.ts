@@ -24,8 +24,6 @@ export class QuizPlayComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    const id = this.route.snapshot.paramMap.get('id');
-    this.quizService.setSelectedQuiz(id);
     this.index = Number(this.route.snapshot.paramMap.get('numero'));
   }
 
@@ -34,11 +32,10 @@ export class QuizPlayComponent implements OnInit {
     if (this.answer) {
       this.right++;
     }
-    console.log(this.right);
     if (this.index === this.quiz.questions.length) {
-      this.router.navigate(['/result/' + this.quiz.id + '/' + this.right + '/' + this.index]);
+      this.router.navigate(['/result/' + this.right + '/' + this.index]);
     } else {
-      this.router.navigate(['/quiz-play/' + this.quiz.id + '/question/' + this.index.toString()]);
+      this.router.navigate(['/quiz-play/question/' + this.index.toString()]);
     }
     this.next = false;
   }
@@ -46,6 +43,5 @@ export class QuizPlayComponent implements OnInit {
   onAnswered(answer: boolean): void {
     this.next = true;
     this.answer = answer;
-    console.log(this.answer);
   }
 }
