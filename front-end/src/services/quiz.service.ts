@@ -5,6 +5,8 @@ import { Quiz } from '../models/quiz.model';
 import { QUIZ_LIST } from '../mocks/quiz-list.mock';
 import { Question } from '../models/question.model';
 import { serverUrl, httpOptionsBase } from '../configs/server.config';
+import {Theme} from "../models/theme.model";
+import {ThemeService} from "./theme.service";
 
 @Injectable({
   providedIn: 'root'
@@ -34,13 +36,20 @@ export class QuizService {
   private questionsPath = 'questions';
 
   private httpOptions = httpOptionsBase;
+  private theme: Theme;
 
-  constructor(private http: HttpClient) {
-    this.retrieveQuizzes();
+  constructor(private http: HttpClient, public themeService: ThemeService) {
+    this.themeService.themeSelected$.subscribe((theme) =>{
+      this.theme=theme;
+      this.retrieveQuizzes();
+    })
+
   }
 
   retrieveQuizzes(): void {
-    this.http.get<Quiz[]>(this.quizUrl).subscribe((quizList) => {
+    console.log('lolllo '+ this.theme.id)
+    const urlWithThemeId = this.quizUrl + '/list/' + this.theme.id;
+    this.http.get<Quiz[]>(urlWithThemeId).subscribe((quizList) => {
       this.quizzes = quizList;
       this.quizzes$.next(this.quizzes);
     });

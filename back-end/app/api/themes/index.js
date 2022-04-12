@@ -39,7 +39,6 @@ router.put('/:themeId', (req, res) => {
 })
 
 router.delete('/:themeId', (req, res) => {
-  console.log('nice try')
   try {
     Theme.delete(req.params.themeId)
     res.status(204).end()

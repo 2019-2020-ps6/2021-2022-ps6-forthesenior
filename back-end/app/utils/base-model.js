@@ -71,4 +71,11 @@ module.exports = class BaseModel {
     this.items = this.items.filter((item) => item.id !== id)
     this.save()
   }
+
+  getByThemeId(id) {
+    if (typeof id === 'string') id = parseInt(id, 10)
+    const test = this.items.filter((i) => i.theme === id)
+
+    return test
+  }
 }
