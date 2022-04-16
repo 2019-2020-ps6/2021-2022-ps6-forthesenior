@@ -1,7 +1,8 @@
-<app-edit-theme></app-edit-theme>
 <div class="theme-list">
-  <div *ngFor="let theme of themeList" class="theme">
-    <app-theme (selectTheme)="themeSelected($event)" [theme]="theme"></app-theme>
+  <app-theme-form></app-theme-form>
+  <div class="theme" *ngFor="let theme of  themeList">
+    <!--Inputs & Output allow communication between parent & child components.-->
+    <!--More information: https://angular.io/guide/component-interaction-->
+    <app-theme [theme]="theme" (deleteTheme)="deleteTheme($event)"></app-theme>
   </div>
 </div>
-
