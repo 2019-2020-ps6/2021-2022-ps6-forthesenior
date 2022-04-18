@@ -24,5 +24,5 @@ export const THEME_LIST: Theme[] = [{
 }];
 
 export const USER_LIST: User[] = [{
-  id: '1', firstName: 'Matis', lastName: 'Herrmann'
+  id: '1', firstName: 'Matis', lastName: 'Herrmann', options: [10, 60]
 }];

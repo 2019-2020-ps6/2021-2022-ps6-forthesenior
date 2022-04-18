@@ -1,8 +1,9 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { BehaviorSubject, Subject } from 'rxjs';
-import { User } from '../models/user.model';
-import { serverUrl, httpOptionsBase } from '../configs/server.config';
+import {Injectable} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+import {BehaviorSubject, Subject} from 'rxjs';
+import {User} from '../models/user.model';
+import {serverUrl, httpOptionsBase} from '../configs/server.config';
+import {USER_LIST} from '../mocks/quiz-list.mock';
 
 @Injectable({
   providedIn: 'root'
@@ -50,5 +51,9 @@ export class UserService {
   deleteUser(user: User): void {
     const urlWithId = this.userUrl + '/' + user.id;
     this.http.delete<User>(urlWithId, this.httpOptions).subscribe(() => this.retrieveUsers());
+  }
+
+  selectedUser(user: User): void {
+    console.log(user.options);
   }
 }

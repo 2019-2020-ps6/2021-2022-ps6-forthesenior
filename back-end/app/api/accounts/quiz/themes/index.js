@@ -1,5 +1,6 @@
 const {Router} = require('express')
 const QuizRouter = require('./quizzes')
+const {Theme} = require('../../../../models')
 const manageAllErrors = require('../../../../utils/routes/error-management')
 const {
   CreateThemeForAccount,
@@ -15,7 +16,7 @@ router.use('/:themeId/quizzes', QuizRouter)
 
 router.get('/', (req, res) => {
   try {
-    res.status(200).json(FilterThemeFromAccount(req.params.accountId))
+    res.status(200).json(Theme.get())
   } catch (err) {
     manageAllErrors(res, err)
   }

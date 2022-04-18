@@ -1,5 +1,5 @@
 const {Router} = require('express')
-const {Account} = require('../../models')
+const {Account, Answer} = require('../../models')
 const UserRouter = require('./users')
 const ThemeRouter = require('./quiz/themes')
 const manageAllErrors = require('../../utils/routes/error-management')
@@ -12,6 +12,7 @@ router.use('/:accountId/users', UserRouter)
 router.use('/:accountId/themes', ThemeRouter)
 
 router.get('/', (req, res) => {
+  console.log(Account.items);
   try {
     res.status(200).json(Account.get())
   } catch (err) {
