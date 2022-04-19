@@ -10,11 +10,11 @@ import {ResultComponent} from './result/result.component';
 const routes: Routes = [
   {path: 'user-list', component: UserListComponent},
   {path: 'quiz-list/:themeId', component: QuizListComponent},
-  {path: 'theme-list', component: ThemeListComponent},
+  {path: 'user-list/:user/theme-list', component: ThemeListComponent},
   {path: 'edit-theme/:id', component: EditQuizComponent},
   {path: 'edit-list', component: EditQuizComponent},
   {path: ':id/quiz-list', component: EditQuizComponent},
-  {path: 'theme-list/:theme/quiz-list', component: QuizListComponent},
+  {path: ':user/theme-list/:theme/quiz-list', component: QuizListComponent},
   {path: '', redirectTo: '/theme-list', pathMatch: 'full'},
   {path: 'quiz-play/:id/question/:numero', component: QuizPlayComponent},
   {path: 'edit-quiz/:id', component: EditQuizComponent},

@@ -78,4 +78,11 @@ module.exports = class BaseModel {
 
     return test
   }
+
+  getOptionId(id){
+    if (typeof id === 'string') id = parseInt(id, 10)
+    const option = this.items.filter((i) => i.userId === id)
+
+    return option
+  }
 }
