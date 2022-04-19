@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "userId" : 1,
+    "fontSize": 10,
+    "dmlaOffset": 0,
+    "parkinsonOffset": 0,
+    "theme": false
+  },
+  {
+    "id": 2,
+    "userId" : 2,
+    "fontSize": 0,
+    "dmlaOffset": 10,
+    "parkinsonOffset": 0,
+    "theme": false
+  }
+]
