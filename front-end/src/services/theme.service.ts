@@ -4,8 +4,7 @@ import {THEME_LIST} from '../mocks/quiz-list.mock';
 import {Theme} from '../models/theme.model';
 import {HttpClient} from '@angular/common/http';
 import {httpOptionsBase, serverUrl} from '../configs/server.config';
-import {QuizService} from "./quiz.service";
-import {Quiz} from "../models/quiz.model";
+
 
 @Injectable({
   providedIn: 'root'
@@ -44,7 +43,6 @@ export class ThemeService {
 
   setSelectedTheme(themeId: string): void {
     const urlWithId = this.themeUrl + '/' + themeId;
-
     this.http.get<Theme>(urlWithId).subscribe((theme) => {
       this.themeSelected$.next(theme);
     });

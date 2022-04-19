@@ -5,6 +5,8 @@ import { Quiz } from '../models/quiz.model';
 import { QUIZ_LIST } from '../mocks/quiz-list.mock';
 import { Question } from '../models/question.model';
 import { serverUrl, httpOptionsBase } from '../configs/server.config';
+import {Theme} from "../models/theme.model";
+import {ThemeService} from "./theme.service";
 
 @Injectable({
   providedIn: 'root'
@@ -34,13 +36,19 @@ export class QuizService {
   private questionsPath = 'questions';
 
   private httpOptions = httpOptionsBase;
+  private theme: Theme;
 
-  constructor(private http: HttpClient) {
-    this.retrieveQuizzes();
+  constructor(private http: HttpClient, public themeService: ThemeService) {
+    this.themeService.themeSelected$.subscribe((theme) =>{
+      this.theme=theme;
+      this.retrieveQuizzes();
+    })
+
   }
 
   retrieveQuizzes(): void {
-    this.http.get<Quiz[]>(this.quizUrl).subscribe((quizList) => {
+    const urlWithThemeId = this.quizUrl + '/list/' + this.theme.id;
+    this.http.get<Quiz[]>(urlWithThemeId).subscribe((quizList) => {
       this.quizzes = quizList;
       this.quizzes$.next(this.quizzes);
     });
@@ -71,28 +79,4 @@ export class QuizService {
     const questionUrl = this.quizUrl + '/' + quiz.id + '/' + this.questionsPath + '/' + question.id;
     this.http.delete<Question>(questionUrl, this.httpOptions).subscribe(() => this.setSelectedQuiz(quiz.id));
   }
-
-  /*
-  Note: The functions below don't interact with the server. It's an example of implementation for the exercice 10.
-  addQuestion(theme: Quiz, question: Question) {
-    theme.questions.push(question);
-    const index = this.quizzes.findIndex((q: Quiz) => q.id === theme.id);
-    if (index) {
-      this.updateQuizzes(theme, index);
-    }
-  }
-
-  deleteQuestion(theme: Quiz, question: Question) {
-    const index = theme.questions.findIndex((q) => q.label === question.label);
-    if (index !== -1) {
-      theme.questions.splice(index, 1)
-      this.updateQuizzes(theme, index);
-    }
-  }
-
-  private updateQuizzes(theme: Quiz, index: number) {
-    this.quizzes[index] = theme;
-    this.quizzes$.next(this.quizzes);
-  }
-  */
 }

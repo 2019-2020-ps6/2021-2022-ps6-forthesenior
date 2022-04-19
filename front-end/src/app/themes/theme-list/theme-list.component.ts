@@ -17,7 +17,7 @@ export class ThemeListComponent implements OnInit {
 
   public themeList: Theme[] = [];
 
-  constructor(private router: Router, public themeService: ThemeService) {
+  constructor(private router: Router, public themeService: ThemeService, public quizService: QuizService) {
     this.themeService.themes$.subscribe((themes: Theme[]) => {
       this.themeList = themes;
     });
@@ -26,12 +26,12 @@ export class ThemeListComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  themeSelected(theme: Theme): void {
-    this.themeService.setSelectedTheme(theme.id);
-    this.router.navigate(['/quiz-list']);
-  }
-
   deleteTheme(theme: Theme): void {
     this.themeService.deleteTheme(theme);
+  }
+
+  setSelectedTheme(themeId: string): void {
+    this.themeService.setSelectedTheme(themeId);
+    this.router.navigate(['/quiz-list/'+themeId]);
   }
 }
