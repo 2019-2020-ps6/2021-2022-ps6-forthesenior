@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
-import { QuizService } from '../../../services/quiz.service';
-import { Quiz } from '../../../models/quiz.model';
+import {QuizService} from '../../../services/quiz.service';
+import {Quiz} from '../../../models/quiz.model';
 import {ThemeService} from "../../../services/theme.service";
 import {Theme} from "../../../models/theme.model";
 
@@ -16,8 +16,8 @@ export class QuizListComponent implements OnInit {
   public theme: Theme;
 
   constructor(private router: Router, public quizService: QuizService, public route: ActivatedRoute, public themeService: ThemeService) {
-    this.themeService.themeSelected$.subscribe((theme) =>{
-      this.theme=theme;
+    this.themeService.themeSelected$.subscribe((theme) => {
+      this.theme = theme;
     })
     this.quizService.quizzes$.subscribe((quizzes: Quiz[]) => {
       this.quizList = quizzes;
