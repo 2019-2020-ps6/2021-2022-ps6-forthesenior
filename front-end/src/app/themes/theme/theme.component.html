@@ -1,7 +1,7 @@
 <div class="card">
-  <h2>
-    <i aria-hidden="true" class="fa fa-{{theme.name}}"></i>
-    {{theme.name}}
-  </h2>
-  <button (click)="themeSelected()" class="button-card" routerLink="{{theme.id}}/quiz-list/">Select</button>
+    <h2>
+        {{theme.name}}
+    </h2>
+    <button class="button-card" (click)="themeSelected()">Sélectionner</button>
+  <button class="button-card" (click)="delete()">Supprimer</button>
 </div>

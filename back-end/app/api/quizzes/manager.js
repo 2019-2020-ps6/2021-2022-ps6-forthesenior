@@ -26,7 +26,13 @@ const buildQuizzes = () => {
   return quizzes.map((quiz) => buildQuizz(quiz.id))
 }
 
+const buildQuizzesByTheme = (themeId) => {
+  const quizzes = Quiz.getByThemeId(themeId)
+  return quizzes.map((quiz) => buildQuizz(quiz.id))
+}
+
 module.exports = {
   buildQuizz,
   buildQuizzes,
+  buildQuizzesByTheme,
 }
