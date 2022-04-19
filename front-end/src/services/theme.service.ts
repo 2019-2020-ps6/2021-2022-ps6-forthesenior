@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {BehaviorSubject, ReplaySubject, Subject} from 'rxjs';
 import {THEME_LIST} from '../mocks/quiz-list.mock';
 import {Theme} from '../models/theme.model';
@@ -31,8 +31,9 @@ export class ThemeService {
     // @ts-ignore
     this.themeSelected$ = new BehaviorSubject<Theme>(0);
     this.retrieveThemes();
-    this.setOption();
+    //this.setOption();
   }
+
   retrieveThemes(): void {
     this.http.get<Theme[]>(this.themeUrl).subscribe((themeList) => {
       this.themes = themeList;
@@ -40,14 +41,12 @@ export class ThemeService {
     });
   }
 
-  setOption(): void {
-    const userId = this.route.snapshot.paramMap.get('user');
-    const optionUrl = "/option/"+userId;
+  getOption(id: string): void {
+    const optionUrl = serverUrl + "/option/" + id;
     this.http.get<Option>(optionUrl).subscribe((option) => {
       this.option = option;
+      console.log(option)
     });
-
-    //console.log(this.option.fontSize);
   }
 
   addTheme(theme: Theme): void {

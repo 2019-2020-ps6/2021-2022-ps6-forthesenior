@@ -10,7 +10,7 @@ import {ResultComponent} from './result/result.component';
 const routes: Routes = [
   {path: 'user-list', component: UserListComponent},
   {path: 'quiz-list/:themeId', component: QuizListComponent},
-  {path: 'user-list/:user/theme-list', component: ThemeListComponent},
+  {path: 'user-list/:userId/theme-list', component: ThemeListComponent},
   {path: 'edit-theme/:id', component: EditQuizComponent},
   {path: 'edit-list', component: EditQuizComponent},
   {path: ':id/quiz-list', component: EditQuizComponent},
