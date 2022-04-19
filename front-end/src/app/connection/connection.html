@@ -1,3 +1,23 @@
-<div>
-  <header [routerLink]="['/user-list']">Page connection</header>
+<div class="button-card" style="text-align: right">
+  <button>Créer un Nouveau Compte</button>
+</div>
+
+<div class="card"
+     style="position: absolute;left: 50%;top: 50%;-webkit-transform: translate(-50%, -50%);transform: translate(-50%, -100%);">
+  <div style="text-align: center;">
+    <h1>Connexion</h1>
+    <form [formGroup]="signInForm" style="text-align: right">
+      <label>
+        Address Mail
+        <input [formControlName]="'email'" class="input-custom" id="email" type="text"><br>
+      </label>
+      <label>
+        Mot de Passe
+        <input [formControlName]="'password'" class="input-custom" id="password" type="password"><br>
+      </label>
+    </form>
+    <button (click)="signIn()" class="button-card" id="signInButton" style="margin-top: 20px" type="submit">Se
+      Connecter
+    </button>
+  </div>
 </div>

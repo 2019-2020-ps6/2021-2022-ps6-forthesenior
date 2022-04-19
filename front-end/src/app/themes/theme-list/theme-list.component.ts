@@ -3,7 +3,6 @@ import {Router} from '@angular/router';
 import {Theme} from '../../../models/theme.model';
 import {ThemeService} from '../../../services/theme.service';
 import {QuizService} from '../../../services/quiz.service';
-import {Quiz} from "../../../models/quiz.model";
 
 @Component({
   selector: 'app-theme-list',
@@ -32,6 +31,6 @@ export class ThemeListComponent implements OnInit {
 
   setSelectedTheme(themeId: string): void {
     this.themeService.setSelectedTheme(themeId);
-    this.router.navigate(['/quiz-list/'+themeId]);
+    this.router.navigate(['/quiz-list/' + themeId]);
   }
 }

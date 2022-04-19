@@ -10,6 +10,7 @@ import {ResultComponent} from './result/result.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/connection', pathMatch: 'full'},
+  {path: 'connection', component: Connection},
   {path: 'user-list', component: UserListComponent},
   {path: 'quiz-list/:themeId', component: QuizListComponent},
   {path: 'theme-list', component: ThemeListComponent},
