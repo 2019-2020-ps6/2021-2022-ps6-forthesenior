@@ -53,4 +53,13 @@ router.delete('/:accountId', (req, res) => {
   }
 })
 
+router.post('/login', (req, res) => {
+  try {
+    const account = Account.get().find(account => account.email === req.body.email && account.password === req.body.password);
+    account === undefined ? res.status(400).end() : res.status(200).json(account)
+  } catch (err) {
+    manageAllErrors(res, err)
+  }
+})
+
 module.exports = router

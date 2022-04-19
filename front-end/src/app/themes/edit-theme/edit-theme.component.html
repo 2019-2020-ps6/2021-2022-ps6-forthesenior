@@ -1,6 +1,6 @@
 <button class="button-card" routerLink="/quiz-list">Retour</button>
-<ng-container *ngIf="quiz">
-    <h2>{{quiz.name}}</h2>
-    <app-question-form [quiz]="quiz"></app-question-form>
-    <app-question-list [quiz]="quiz"></app-question-list>
+<ng-container *ngIf="theme">
+    <h2>{{theme.name}}</h2>
+    <app-question-form [theme]="theme"></app-question-form>
+    <app-question-list [theme]="theme"></app-question-list>
 </ng-container>

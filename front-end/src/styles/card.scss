@@ -13,12 +13,16 @@
 
 .button-card {
   background-color: $white;
-  border: solid 1px $blue;
+  border: solid 1px $black;
   color: $blue;
   font-weight: bold;
   padding: 0.5em 1em;
 }
 
 .button-card:hover {
+  cursor: pointer;
+}
+
+.hover {
   cursor: pointer;
 }
