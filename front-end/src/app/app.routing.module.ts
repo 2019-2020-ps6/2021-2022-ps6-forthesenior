@@ -9,7 +9,7 @@ import {ResultComponent} from './result/result.component';
 
 const routes: Routes = [
   {path: 'user-list', component: UserListComponent},
-  {path: 'quiz-list', component: QuizListComponent},
+  {path: 'quiz-list/:themeId', component: QuizListComponent},
   {path: 'theme-list', component: ThemeListComponent},
   {path: 'edit-theme/:id', component: EditQuizComponent},
   {path: 'edit-list', component: EditQuizComponent},

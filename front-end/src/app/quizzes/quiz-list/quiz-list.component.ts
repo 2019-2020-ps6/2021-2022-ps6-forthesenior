@@ -26,6 +26,8 @@ export class QuizListComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    const idTheme = this.route.snapshot.paramMap.get('themeId');
+    this.themeService.setSelectedTheme(idTheme);
   }
 
   quizSelected(quiz: Quiz): void {
