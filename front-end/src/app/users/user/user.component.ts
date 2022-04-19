@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 import { User } from '../../../models/user.model';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-user',
@@ -18,17 +19,18 @@ export class UserComponent implements OnInit {
   @Output()
   selectUser: EventEmitter<User> = new EventEmitter<User>();
 
-  constructor() { }
+  constructor(public router : Router) { }
 
   ngOnInit(): void {
   }
 
   select(){
     this.selectUser.emit(this.user);
+
+    this.router.navigate(["user-list/" + this.user.id + "/theme-list/"]);
   }
 
   delete() {
     this.deleteUser.emit(this.user);
   }
-
 }
