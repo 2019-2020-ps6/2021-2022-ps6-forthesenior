@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
 import {Quiz} from 'src/models/quiz.model';
 import {QuizService} from 'src/services/quiz.service';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-quiz-theme',
@@ -12,12 +12,14 @@ export class EditQuizComponent implements OnInit {
 
   public quiz: Quiz;
 
-  constructor(private route: ActivatedRoute, private quizService: QuizService) {
-    this.quizService.quizSelected$.subscribe((quiz) => this.quiz = quiz);
+  constructor(private quizService: QuizService, private router: Router) {
+    this.quizService.quizSelected$.asObservable().subscribe((quiz) => this.quiz = quiz);
   }
 
   ngOnInit(): void {
-    const id = this.route.snapshot.paramMap.get('id');
-    this.quizService.setSelectedQuiz(id);
+  }
+
+  validate() {
+    this.router.navigate([this.quizService.getQuizUrl()]);
   }
 }

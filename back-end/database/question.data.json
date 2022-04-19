@@ -1,14 +1,2 @@
 [
-  {
-    "id": 1,
-    "label": "Quel animal court le plus vite ?",
-    "quizId": 1,
-    "answers": [1,2]
-  },
-  {
-    "id": 2,
-    "label": "Quel animal fait cot-cot ?",
-    "quizId": 2,
-    "answers": [3,4]
-  }
 ]

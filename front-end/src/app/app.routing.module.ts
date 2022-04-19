@@ -6,6 +6,8 @@ import {ThemeListComponent} from './themes/theme-list/theme-list.component';
 import {QuizListComponent} from "./quizzes/quiz-list/quiz-list.component";
 import {QuizPlayComponent} from "./quizzes/quiz-play/quiz-play.component";
 import {ResultComponent} from "./result/result.component";
+import {EditQuizComponent} from "./quizzes/edit-quiz/edit-quiz.component";
+import {EditThemeComponent} from "./themes/edit-theme/edit-theme.component";
 
 const routes: Routes = [
   {
@@ -26,11 +28,19 @@ const routes: Routes = [
     component: ThemeListComponent
   },
   {
+    path: 'accounts/:accountId/users/:userId/themes/edit/:themeId',
+    component: EditThemeComponent
+  },
+  {
     path: 'accounts/:accountId/users/:userId/themes/:themeId/quizzes',
     component: QuizListComponent
   },
   {
-    path: 'accounts/:accountId/users/:userId/themes/:themeId/quizzes/quiz-play/:id/question/:numero',
+    path: 'accounts/:accountId/users/:userId/themes/:themeId/quizzes/edit/:quizId',
+    component: EditQuizComponent
+  },
+  {
+    path: 'accounts/:accountId/users/:userId/themes/:themeId/quizzes/play/:id/question/:numero',
     component: QuizPlayComponent
   },
   {
@@ -39,7 +49,6 @@ const routes: Routes = [
   },
 
 
-  // {path: 'edit-theme/:id', component: EditQuizComponent},
   // {path: 'edit-list', component: EditQuizComponent},
   // {path: ':id/quiz-list', component: EditQuizComponent},
   // {path: 'edit-quiz/:id', component: EditQuizComponent},

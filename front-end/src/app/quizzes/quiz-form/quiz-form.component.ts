@@ -3,8 +3,6 @@ import {FormBuilder, FormGroup} from '@angular/forms';
 
 import {QuizService} from '../../../services/quiz.service';
 import {Quiz} from '../../../models/quiz.model';
-import {ThemeService} from "../../../services/theme.service";
-import {Theme} from "../../../models/theme.model";
 
 @Component({
   selector: 'app-quiz-form',
@@ -14,12 +12,8 @@ import {Theme} from "../../../models/theme.model";
 export class QuizFormComponent implements OnInit {
 
   public quizForm: FormGroup;
-  public theme: Theme;
 
-  constructor(public formBuilder: FormBuilder, public quizService: QuizService, public themeService: ThemeService) {
-    this.themeService.themeSelected$.subscribe((theme) => {
-      this.theme = theme;
-    })
+  constructor(public formBuilder: FormBuilder, public quizService: QuizService) {
     this.quizForm = this.formBuilder.group({
       quizLabel: [''],
     });
@@ -32,5 +26,4 @@ export class QuizFormComponent implements OnInit {
     const quizToCreate: Quiz = this.quizForm.getRawValue() as Quiz;
     this.quizService.addQuiz(quizToCreate);
   }
-
 }

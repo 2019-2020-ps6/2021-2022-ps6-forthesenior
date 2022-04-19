@@ -1,26 +1,2 @@
 [
-  {
-    "answerId": 1,
-    "answerLabel": "Le lion",
-    "isCorrect": false,
-    "questionId": 1
-  },
-  {
-    "answerId": 2,
-    "answerLabel": "Le guépard",
-    "isCorrect": true,
-    "questionId": 1
-  },
-  {
-    "answerId": 3,
-    "answerLabel": "La poule",
-    "isCorrect": true,
-    "questionId": 2
-  },
-  {
-    "answerId": 4,
-    "answerLabel": "La girafe",
-    "isCorrect": true,
-    "questionId": 2
-  }
 ]

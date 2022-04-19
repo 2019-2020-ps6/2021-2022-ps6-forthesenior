@@ -17,7 +17,6 @@ export class QuestionFormComponent implements OnInit {
   public questionForm: FormGroup;
 
   constructor(public formBuilder: FormBuilder, private quizService: QuizService) {
-    // Form creation
     this.initializeQuestionForm();
   }
 
@@ -42,7 +41,7 @@ export class QuestionFormComponent implements OnInit {
 
   private initializeQuestionForm(): void {
     this.questionForm = this.formBuilder.group({
-      label: ['', Validators.required],
+      questionLabel: ['', Validators.required],
       answers: this.formBuilder.array([])
     });
   }

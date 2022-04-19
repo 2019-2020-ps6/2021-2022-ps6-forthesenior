@@ -43,11 +43,11 @@ export class QuizService {
   }
 
   addQuestion(quiz: Quiz, question: Question): void {
-    // this.http.post<Question>(this.getQuizUrl() + '/' + quiz.id + '/' + this.questionsPath, question, this.httpOptions).subscribe(() => this.setSelectedQuiz(quiz.id));
+    this.http.post<Question>(this.getQuizUrl() + '/' + quiz.id + '/questions', question, this.httpOptions).subscribe(() => this.setSelectedQuiz(quiz.id));
   }
 
   deleteQuestion(quiz: Quiz, question: Question): void {
-    // this.http.delete<Question>(this.getQuizUrl() + '/' + quiz.id + '/' + this.questionsPath + '/' + question.id, this.httpOptions).subscribe(() => this.setSelectedQuiz(quiz.id));
+    this.http.delete<Question>(this.getQuizUrl() + '/' + quiz.id + '/questions/' + question.id, this.httpOptions).subscribe(() => this.setSelectedQuiz(quiz.id));
   }
 
   getQuizUrl(): string {
@@ -55,6 +55,6 @@ export class QuizService {
   }
 
   getThemeIdFromUrl(): string {
-    return this.router.url.split('/')[4];
+    return this.router.url.split('/')[6];
   }
 }
