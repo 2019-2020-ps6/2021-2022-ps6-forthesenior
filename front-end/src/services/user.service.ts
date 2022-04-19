@@ -2,57 +2,51 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {BehaviorSubject, Subject} from 'rxjs';
 import {User} from '../models/user.model';
-import {serverUrl, httpOptionsBase} from '../configs/server.config';
+import {httpOptionsBase, serverUrl} from '../configs/server.config';
+import {Router} from "@angular/router";
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
-  /*
-   The list of user.
-   */
-  private users: User[] = [];
-
-  /*
-   Observable which contains the list of the user.
-   */
-  public users$: BehaviorSubject<User[]>
-    = new BehaviorSubject([]);
 
   public userSelected$: Subject<User> = new Subject();
-
-  private userUrl = serverUrl + '/users';
-
+  public users$: BehaviorSubject<User[]> = new BehaviorSubject([]);
+  private users: User[] = [];
   private httpOptions = httpOptionsBase;
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private router: Router) {
     this.retrieveUsers();
   }
 
   retrieveUsers(): void {
-    this.http.get<User[]>(this.userUrl).subscribe((userList) => {
-      this.users = userList;
-      this.users$.next(this.users);
-    });
+    if (!this.getUserUrl().includes('undefined')) {
+      this.http.get<User[]>(this.getUserUrl()).subscribe((userList) => {
+        this.users = userList;
+        this.users$.next(this.users);
+      });
+    }
   }
 
   addUser(user: User): void {
-    this.http.post<User>(this.userUrl, user, this.httpOptions).subscribe(() => this.retrieveUsers());
+    this.http.post<User>(this.getUserUrl(), user, this.httpOptions).subscribe(() => this.retrieveUsers());
   }
 
-  setSelectedUser(user: User): void {
-    const urlWithId = this.userUrl + '/' + user.id;
-    this.http.get<User>(urlWithId).subscribe((userList) => {
+  setSelectedUser(userId: string): void {
+    this.http.get<User>(this.getUserUrl() + '/' + userId).subscribe((userList) => {
       this.userSelected$.next(userList);
     });
   }
 
   deleteUser(user: User): void {
-    const urlWithId = this.userUrl + '/' + user.id;
-    this.http.delete<User>(urlWithId, this.httpOptions).subscribe(() => this.retrieveUsers());
+    this.http.delete<User>(this.getUserUrl() + '/' + user.id, this.httpOptions).subscribe(() => this.retrieveUsers());
   }
 
-  getOption(): void {
+  getUserUrl(): string {
+    return serverUrl + '/accounts/' + this.getAccountIdFromUrl() + '/users';
+  }
 
+  getAccountIdFromUrl(): string {
+    return this.router.url.split('/')[2];
   }
 }

@@ -12,7 +12,7 @@ export class ThemeComponent implements OnInit {
   theme: Theme;
 
   @Output()
-  selectTheme: EventEmitter<string> = new EventEmitter<string>();
+  selectTheme: EventEmitter<Theme> = new EventEmitter<Theme>();
   @Output()
   deleteTheme: EventEmitter<Theme> = new EventEmitter<Theme>();
 
@@ -22,8 +22,8 @@ export class ThemeComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  themeSelected(): void {
-    this.selectTheme.emit(this.theme.id);
+  select(): void {
+    this.selectTheme.emit(this.theme);
   }
 
   delete(): void {

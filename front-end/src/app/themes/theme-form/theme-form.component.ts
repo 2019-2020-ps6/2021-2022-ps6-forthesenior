@@ -13,18 +13,11 @@ import {ThemeService} from '../../../services/theme.service';
 })
 export class ThemeFormComponent implements OnInit {
 
-  // Note: We are using here ReactiveForms to create our form. Be careful when you look for some documentation to
-  // avoid TemplateDrivenForm (another type of form)
-
-  /**
-   * QuizForm: Object which manages the form in our component.
-   * More information about Reactive Forms: https://angular.io/guide/reactive-forms#step-1-creating-a-formgroup-instance
-   */
   public themeForm: FormGroup;
 
   constructor(public formBuilder: FormBuilder, public themeService: ThemeService) {
     this.themeForm = this.formBuilder.group({
-      name: [''],
+      themeLabel: [''],
     });
   }
 
@@ -32,7 +25,6 @@ export class ThemeFormComponent implements OnInit {
   }
 
   addTheme(): void {
-    // We retrieve here the theme object from the quizForm and we cast the type "as Quiz".
     const themeToCreate: Theme = this.themeForm.getRawValue() as Theme;
     this.themeService.addTheme(themeToCreate);
   }

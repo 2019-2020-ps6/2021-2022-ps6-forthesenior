@@ -1,16 +1,19 @@
 <div class="card">
-    <h2>Créer un nouvel utilisateur</h2>
-    <form class="user-form" [formGroup]="userForm">
-      <label for="firstName">
-        Nom <br>
-        <input class="input-custom" type="text" id="firstName" [formControlName]="'firstName'">
-      </label>
-      <br>
-      <label for="lastName">
-        Prénom <br>
-        <input class="input-custom" type="text" id="lastName" [formControlName]="'lastName'">
-      </label>
-      <br>
-      <button type="submit" class="button-card" (click)="addUser()">Créer</button>
-    </form>
-  </div>
+  <h2>Créer un nouvel utilisateur</h2>
+  <form [formGroup]="userForm" class="user-form" style="text-align: right">
+    <label>Prénom
+      <input [formControlName]="'firstname'" class="input-custom" id="firstname"
+             style="margin-left: 10px"
+             type="text">
+    </label>
+    <br>
+    <label>Nom
+      <input [formControlName]="'lastname'" class="input-custom" id="lastname"
+             style="margin-left: 10px"
+             type="text">
+    </label>
+    <div style="text-align: center; margin-top: 20px">
+      <button (click)="addUser()" class="button-card" type="submit">Créer</button>
+    </div>
+  </form>
+</div>

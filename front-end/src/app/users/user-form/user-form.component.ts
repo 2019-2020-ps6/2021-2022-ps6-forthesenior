@@ -15,8 +15,8 @@ export class UserFormComponent implements OnInit {
 
   constructor(public formBuilder: FormBuilder, public userService: UserService) {
     this.userForm = this.formBuilder.group({
-      firstName: [''],
-      lastName: ['']
+      firstname: [''],
+      lastname: ['']
     });
   }
 
@@ -24,7 +24,7 @@ export class UserFormComponent implements OnInit {
   }
 
   addUser(): void {
-    // We retrieve here the user object from the userForm and we cast the type "as User".
+    // We retrieve here the user object from the userForm, and we cast the type "as User".
     const userToCreate: User = this.userForm.getRawValue() as User;
     this.userService.addUser(userToCreate);
   }

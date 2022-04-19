@@ -8,16 +8,10 @@ import {httpOptionsBase, serverUrl} from '../configs/server.config';
   providedIn: 'root'
 })
 export class AccountService {
-  /*
-   Observable which contains the list of the account.
-   */
-  public accounts$: BehaviorSubject<Account[]>
-    = new BehaviorSubject([]);
+
   public accountSelected$: Subject<Account> = new Subject();
+  public accounts$: BehaviorSubject<Account[]> = new BehaviorSubject([]);
   public accountUrl = serverUrl + '/accounts';
-  /*
-   The list of account.
-   */
   private accounts: Account[] = [];
   private httpOptions = httpOptionsBase;
 

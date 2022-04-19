@@ -1,12 +1,12 @@
 [
   {
-    "id": 1,
-    "name": "Les animaux",
-    "quizzes": [1,2]
+    "themeLabel": "Test",
+    "accountId": 1650360943146,
+    "id": 1650392072714
   },
   {
-    "id": 2,
-    "name": "Pays",
-    "quizzes": [1,2]
+    "themeLabel": "Présidents",
+    "accountId": 1650360937231,
+    "id": 1650392398071
   }
 ]

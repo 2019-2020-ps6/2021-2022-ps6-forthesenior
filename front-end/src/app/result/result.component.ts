@@ -29,6 +29,6 @@ export class ResultComponent implements OnInit {
   }
 
   backSelected(): void {
-    this.router.navigate(['/theme-list/']);
+    this.router.navigate(['/themes/']);
   }
 }

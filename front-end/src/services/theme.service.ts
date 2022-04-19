@@ -1,9 +1,9 @@
 import {Injectable} from '@angular/core';
-import {BehaviorSubject} from 'rxjs';
-import {THEME_LIST} from '../mocks/quiz-list.mock';
+import {BehaviorSubject, Subject} from 'rxjs';
 import {Theme} from '../models/theme.model';
 import {HttpClient} from '@angular/common/http';
 import {httpOptionsBase, serverUrl} from '../configs/server.config';
+import {Router} from "@angular/router";
 
 
 @Injectable({
@@ -11,44 +11,43 @@ import {httpOptionsBase, serverUrl} from '../configs/server.config';
 })
 export class ThemeService {
 
-  public themeSelected$: BehaviorSubject<Theme>;
-  private themes: Theme[] = THEME_LIST;
-  /*
-   Observable which contains the list of the theme.
-   Naming convention: Add '$' at the end of the variable name to highlight it as an Observable.
-   */
-  public themes$: BehaviorSubject<Theme[]>
-    = new BehaviorSubject(this.themes);
-  private themeUrl = serverUrl + '/theme-list';
+  public themeSelected$: Subject<Theme> = new Subject();
+  public themes$: BehaviorSubject<Theme[]> = new BehaviorSubject([]);
+  private themes: Theme[] = [];
   private httpOptions = httpOptionsBase;
 
-  constructor(private http: HttpClient) {
-    // @ts-ignore
-    this.themeSelected$ = new BehaviorSubject<Theme>(0);
-
+  constructor(private http: HttpClient, private router: Router) {
     this.retrieveThemes();
   }
 
   retrieveThemes(): void {
-    this.http.get<Theme[]>(this.themeUrl).subscribe((themeList) => {
-      this.themes = themeList;
-      this.themes$.next(this.themes);
-    });
+    if (!this.getThemeUrl().includes('undefined')) {
+      this.http.get<Theme[]>(this.getThemeUrl()).subscribe((themeList) => {
+        this.themes = themeList;
+        this.themes$.next(this.themes);
+      });
+    }
   }
 
   addTheme(theme: Theme): void {
-    this.http.post<Theme>(this.themeUrl, theme, this.httpOptions).subscribe(() => this.retrieveThemes());
+    this.http.post<Theme>(this.getThemeUrl(), theme, this.httpOptions).subscribe(() => this.retrieveThemes());
   }
 
   setSelectedTheme(themeId: string): void {
-    const urlWithId = this.themeUrl + '/' + themeId;
-    this.http.get<Theme>(urlWithId).subscribe((theme) => {
+    this.http.get<Theme>(this.getThemeUrl() + '/' + themeId).subscribe((theme) => {
       this.themeSelected$.next(theme);
     });
   }
 
   deleteTheme(theme: Theme): void {
-    const urlWithId = this.themeUrl + '/' + theme.id;
-    this.http.delete<Theme>(urlWithId, this.httpOptions).subscribe(() => this.retrieveThemes());
+    this.http.delete<Theme>(this.getThemeUrl() + '/' + theme.id, this.httpOptions).subscribe(() => this.retrieveThemes());
+  }
+
+  getThemeUrl(): string {
+    return serverUrl + '/accounts/' + this.getAccountIdFromUrl() + '/themes';
+  }
+
+  getAccountIdFromUrl(): string {
+    return this.router.url.split('/')[2];
   }
 }

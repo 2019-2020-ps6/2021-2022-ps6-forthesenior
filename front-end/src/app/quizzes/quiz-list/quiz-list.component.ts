@@ -3,7 +3,6 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {QuizService} from '../../../services/quiz.service';
 import {Quiz} from '../../../models/quiz.model';
 import {ThemeService} from "../../../services/theme.service";
-import {Theme} from "../../../models/theme.model";
 
 @Component({
   selector: 'app-quiz-list',
@@ -13,29 +12,24 @@ import {Theme} from "../../../models/theme.model";
 export class QuizListComponent implements OnInit {
 
   public quizList: Quiz[] = [];
-  public theme: Theme;
+  public quiz: Quiz;
 
   constructor(private router: Router, public quizService: QuizService, public route: ActivatedRoute, public themeService: ThemeService) {
-    this.themeService.themeSelected$.subscribe((theme) => {
-      this.theme = theme;
-    })
     this.quizService.quizzes$.subscribe((quizzes: Quiz[]) => {
       this.quizList = quizzes;
     });
-    this.quizService.retrieveQuizzes();
   }
 
   ngOnInit(): void {
-    const idTheme = this.route.snapshot.paramMap.get('themeId');
-    this.themeService.setSelectedTheme(idTheme);
+    this.quizService.retrieveQuizzes();
   }
 
-  quizSelected(quiz: Quiz): void {
-    this.router.navigate(['/quiz-play/' + quiz.id + '/question/0']);
+  selectQuiz(quiz: Quiz): void {
+    this.router.navigate([this.router.url + '/quiz-play/' + quiz.id + '/question/0']);
   }
 
   editQuiz(quiz: Quiz): void {
-    this.router.navigate(['/edit-theme/' + quiz.name]);
+    this.router.navigate([this.router.url + '/edit-theme/' + quiz.quizLabel]);
   }
 
   deleteQuiz(quiz: Quiz): void {

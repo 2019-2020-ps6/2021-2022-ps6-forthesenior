@@ -1,7 +1,12 @@
 [
   {
-    "email": "admin@gmail.com",
-    "password": "admin",
-    "admin": true
+    "email": "matis@gmail.com",
+    "password": "matis",
+    "id": 1650360937231
+  },
+  {
+    "email": "test@gmail.com",
+    "password": "test",
+    "id": 1650360943146
   }
 ]

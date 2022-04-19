@@ -12,7 +12,7 @@ export class QuizComponent implements OnInit {
   quiz: Quiz;
 
   @Output()
-  quizSelected: EventEmitter<Quiz> = new EventEmitter<Quiz>();
+  selectQuiz: EventEmitter<Quiz> = new EventEmitter<Quiz>();
 
   @Output()
   editQuiz: EventEmitter<Quiz> = new EventEmitter<Quiz>();
@@ -26,8 +26,8 @@ export class QuizComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  selectQuiz(): void {
-    this.quizSelected.emit(this.quiz);
+  select(): void {
+    this.selectQuiz.emit(this.quiz);
   }
 
   edit(): void {

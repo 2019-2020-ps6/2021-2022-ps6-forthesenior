@@ -1,11 +1,11 @@
 <div class="header" style="display: flex">
-  <a [routerLink]="['/theme-list']" class="navigation"><i aria-hidden="true" class="fa fa-home"
+  <a [routerLink]="[goToHome()]" class="navigation"><i aria-hidden="true" class="fa fa-home"
                                                           style="padding-right: 2px;vertical-align: text-top"></i>Home</a>
-  <a [routerLink]="['/user-list']" class="navigation"><i aria-hidden="true" class="fa fa-user"
+  <a [routerLink]="[goToUsers()]" class="navigation"><i aria-hidden="true" class="fa fa-user"
                                                          style="padding-right: 2px;vertical-align: text-top"></i>Users</a>
-  <ng-container *ngIf="username">
+  <ng-container *ngIf="this.nameShown">
     <div class="name">
-      {{username}}
+      {{this.nameShown}}
     </div>
   </ng-container>
 </div>

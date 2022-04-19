@@ -171,7 +171,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"firstName\": \"John\",\n\t\"lastName\": \"Doe\"\n}",
+							"raw": "{\n\t\"firstname\": \"John\",\n\t\"lastname\": \"Doe\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -206,7 +206,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"firstName\": \"Paul\",\n\t\"lastName\": \"Doe\"\n}",
+							"raw": "{\n\t\"firstname\": \"Paul\",\n\t\"lastname\": \"Doe\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"

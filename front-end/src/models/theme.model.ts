@@ -1,7 +1,5 @@
-import { Question } from './question.model';
-
 export interface Theme {
-    id: string;
-    name: string;
-    quizzes: Theme[];
+  id: string;
+  themeLabel: string;
+  quizzes: Theme[];
 }
