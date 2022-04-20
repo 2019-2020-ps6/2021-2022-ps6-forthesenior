@@ -2,6 +2,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 import { User } from '../../../models/user.model';
 import {Router} from "@angular/router";
+import {element} from "protractor";
 
 @Component({
   selector: 'app-user',
@@ -26,10 +27,18 @@ export class UserComponent implements OnInit {
 
   select(){
     this.selectUser.emit(this.user);
+    this.setStyle();
     this.router.navigate(["user-list/" + this.user.id + "/theme-list/"]);
   }
 
   delete() {
     this.deleteUser.emit(this.user);
+  }
+  setStyle() : void {
+    document.documentElement.style.setProperty("--font-size","20px");
+    document.documentElement.style.setProperty("--gap-row","50px");
+    document.documentElement.style.setProperty("--gap-column","150px");
+
+
   }
 }
