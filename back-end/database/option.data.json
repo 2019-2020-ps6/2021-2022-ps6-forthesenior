@@ -10,7 +10,7 @@
   {
     "id": 2,
     "userId" : 2,
-    "fontSize": 0,
+    "fontSize": 50,
     "dmlaOffset": 10,
     "parkinsonOffset": 0,
     "theme": false

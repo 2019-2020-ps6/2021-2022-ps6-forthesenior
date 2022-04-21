@@ -12,10 +12,12 @@ export class ResultComponent implements OnInit {
 
   right: string;
   total: string;
+  userId: string;
 
   constructor(private router: Router, private route: ActivatedRoute, private quizService: QuizService) {
     this.right = this.route.snapshot.paramMap.get('right');
     this.total = this.route.snapshot.paramMap.get('total');
+    this.userId = this.route.snapshot.paramMap.get('userId');
   }
 
   ngOnInit(): void {
@@ -25,10 +27,10 @@ export class ResultComponent implements OnInit {
     const id = this.route.snapshot.paramMap.get('id');
     console.log(id);
     this.quizService.setSelectedQuiz(id);
-    this.router.navigate(['/quiz-play/' + id + '/question/0']);
+    this.router.navigate([this.userId + '/quiz-play/' + id + '/question/0']);
   }
 
   backSelected(): void {
-    this.router.navigate(['/theme-list/']);
+    this.router.navigate(['user-list/' + this.userId +'/theme-list/']);
   }
 }

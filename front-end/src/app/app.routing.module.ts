@@ -11,14 +11,12 @@ const routes: Routes = [
   {path: 'user-list', component: UserListComponent},
   {path: 'quiz-list/:themeId', component: QuizListComponent},
   {path: 'user-list/:userId/theme-list', component: ThemeListComponent},
-  {path: 'edit-theme/:id', component: EditQuizComponent},
   {path: 'edit-list', component: EditQuizComponent},
-  {path: ':id/quiz-list', component: EditQuizComponent},
-  {path: ':user/theme-list/:theme/quiz-list', component: QuizListComponent},
+  {path: ':userId/theme-list/:theme/quiz-list', component: QuizListComponent},
   {path: '', redirectTo: '/user-list', pathMatch: 'full'},
-  {path: 'quiz-play/:id/question/:numero', component: QuizPlayComponent},
-  {path: 'edit-quiz/:id', component: EditQuizComponent},
-  {path: 'result/:id/:right/:total', component: ResultComponent},
+  {path: ':userId/edit-quiz/:id', component: EditQuizComponent},
+  {path: ':userId/result/:id/:right/:total', component: ResultComponent},
+  {path: ':userId/quiz-play/:id/question/:numero', component: QuizPlayComponent},
 ];
 
 @NgModule({

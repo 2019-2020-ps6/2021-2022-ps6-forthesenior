@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Quiz} from '../../../models/quiz.model';
 import {ActivatedRoute, Router} from '@angular/router';
 import {QuizService} from '../../../services/quiz.service';
+import {OptionService} from "../../../services/option.service";
 
 @Component({
   selector: 'app-quiz-play',
@@ -15,12 +16,17 @@ export class QuizPlayComponent implements OnInit {
   public next: boolean;
   right: number;
   answer: boolean;
+  userId: string;
 
 
-  constructor(private router: Router, private route: ActivatedRoute, private quizService: QuizService) {
-    this.quizService.quizSelected$.subscribe((quiz) => this.quiz = quiz);
+  constructor(private router: Router, private route: ActivatedRoute, private quizService: QuizService, public optionService : OptionService) {
+    this.quizService.quizSelected$.subscribe((quiz) => {
+      this.quiz = quiz;
+    });
     this.next = false;
     this.right = 0;
+    this.userId = this.route.snapshot.paramMap.get('userId');
+    this.optionService.setOption(this.userId);
   }
 
   ngOnInit(): void {
@@ -34,18 +40,18 @@ export class QuizPlayComponent implements OnInit {
     if (this.answer) {
       this.right++;
     }
-    console.log(this.right);
+    console.log(this.userId);
     if (this.index === this.quiz.questions.length) {
-      this.router.navigate(['/result/' + this.quiz.id + '/' + this.right + '/' + this.index]);
+      this.router.navigate([this.userId + '/result/' + this.quiz.id + '/' + this.right + '/' + this.index]);
     } else {
-      this.router.navigate(['/quiz-play/' + this.quiz.id + '/question/' + this.index.toString()]);
+      this.router.navigate([this.userId +'/quiz-play/' + this.quiz.id + '/question/' + this.index.toString()]);
     }
     this.next = false;
+
   }
 
   onAnswered(answer: boolean): void {
     this.next = true;
     this.answer = answer;
-    console.log(this.answer);
   }
 }

@@ -41,13 +41,7 @@ export class ThemeService {
     });
   }
 
-  getOption(id: string): void {
-    const optionUrl = serverUrl + "/option/" + id;
-    this.http.get<Option>(optionUrl).subscribe((option) => {
-      this.option = option;
-      console.log(option)
-    });
-  }
+
 
   addTheme(theme: Theme): void {
     this.http.post<Theme>(this.themeUrl, theme, this.httpOptions).subscribe(() => this.retrieveThemes());

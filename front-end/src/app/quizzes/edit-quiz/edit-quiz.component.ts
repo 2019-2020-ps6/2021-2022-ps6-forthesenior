@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Quiz } from 'src/models/quiz.model';
 import { QuizService } from 'src/services/quiz.service';
+import {OptionService} from "../../../services/option.service";
 
 @Component({
   selector: 'app-quiz-theme',
@@ -11,9 +12,12 @@ import { QuizService } from 'src/services/quiz.service';
 export class EditQuizComponent implements OnInit {
 
   public quiz: Quiz;
+  public userId : string;
 
-  constructor(private route: ActivatedRoute, private quizService: QuizService) {
+  constructor(private route: ActivatedRoute, private quizService: QuizService, public optionService : OptionService) {
     this.quizService.quizSelected$.subscribe((quiz) => this.quiz = quiz);
+    this.userId= this.route.snapshot.paramMap.get('userId');
+    this.optionService.setOption(this.userId);
   }
 
   ngOnInit(): void {

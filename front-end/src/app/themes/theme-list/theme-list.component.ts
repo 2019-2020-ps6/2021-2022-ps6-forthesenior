@@ -5,6 +5,7 @@ import {ThemeService} from '../../../services/theme.service';
 import {QuizService} from '../../../services/quiz.service';
 import {Quiz} from "../../../models/quiz.model";
 import {Option} from "../../../models/option.model";
+import {OptionService} from "../../../services/option.service";
 
 @Component({
   selector: 'app-theme-list',
@@ -14,13 +15,15 @@ import {Option} from "../../../models/option.model";
 export class ThemeListComponent implements OnInit {
 
   public themeList: Theme[] = [];
+  public userId:string;
 
   constructor(private router: Router, public themeService: ThemeService, public quizService: QuizService,
-              private route: ActivatedRoute) {
+              private route: ActivatedRoute, public optionService : OptionService) {
     this.themeService.themes$.subscribe((themes: Theme[]) => {
       this.themeList = themes;
     });
-    this.getUserId();
+    this.userId = this.route.snapshot.paramMap.get('userId');
+    this.optionService.setOption(this.userId);
   }
 
   ngOnInit(): void {
@@ -32,15 +35,6 @@ export class ThemeListComponent implements OnInit {
 
   setSelectedTheme(themeId: string): void {
     this.themeService.setSelectedTheme(themeId);
-    this.router.navigate(['/quiz-list/' + themeId]);
-  }
-
-  getUserId(): void {
-    const userId = this.route.snapshot.paramMap.get('userId');
-    this.themeService.getOption(userId);
-    /*const optionUrl = "/option/" + userId;
-    this.http.get<Option>(optionUrl).subscribe((option) => {
-      this.option = option;
-    }*/
+    this.router.navigate([this.userId + '/theme-list/'+themeId+'/quiz-list']);
   }
 }

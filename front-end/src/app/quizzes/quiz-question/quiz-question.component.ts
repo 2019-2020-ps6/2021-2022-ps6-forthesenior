@@ -18,7 +18,6 @@ export class QuizQuestionComponent implements OnInit, OnChanges {
 
   constructor() {
     this.answered = false;
-    console.log('hello ' + this.answered);
   }
 
   ngOnInit(): void {

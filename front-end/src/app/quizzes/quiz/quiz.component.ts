@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 import { Quiz } from '../../../models/quiz.model';
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-quiz',
@@ -20,7 +21,10 @@ export class QuizComponent implements OnInit {
   @Output()
   deleteQuiz: EventEmitter<Quiz> = new EventEmitter<Quiz>();
 
-  constructor() {
+  public userId:string;
+
+  constructor(public route: ActivatedRoute) {
+    this.userId= this.route.snapshot.paramMap.get('userId');
   }
 
   ngOnInit(): void {
