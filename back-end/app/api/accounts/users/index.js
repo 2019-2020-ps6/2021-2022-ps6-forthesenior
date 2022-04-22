@@ -10,7 +10,6 @@ const {
 
 const router = new Router({mergeParams: true})
 
-
 router.get('/', (req, res) => {
   try {
     res.status(200).json(FilterUserFromAccount(req.params.accountId))

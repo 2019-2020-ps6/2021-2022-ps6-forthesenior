@@ -20,25 +20,55 @@
   {
     "answerId": 4,
     "answerLabel": "La girafe",
-    "isCorrect": true,
+    "isCorrect": false,
     "questionId": 2
   },
   {
-    "value": "zfzf",
+    "answerId": 5,
+    "answerLabel": "Francois Hollande",
     "isCorrect": false,
-    "questionId": 1650471174870,
-    "id": 1650471174872
+    "questionId": 3
   },
   {
-    "value": "f",
-    "isCorrect": false,
-    "questionId": 1650471637520,
-    "id": 1650471637523
-  },
-  {
-    "value": "fzf",
+    "answerId": 6,
+    "answerLabel": "Emmanuel Macron",
     "isCorrect": true,
-    "questionId": 1650471637520,
-    "id": 1650471637524
+    "questionId": 3
+  },
+  {
+    "answerId": 7,
+    "answerLabel": "Nicolas Sarkozy",
+    "isCorrect": false,
+    "questionId": 3
+  },
+  {
+    "answerId": 8,
+    "answerLabel": "Jsp",
+    "isCorrect": false,
+    "questionId": 4
+  },
+  {
+    "answerId": 9,
+    "answerLabel": "Jsp 2",
+    "isCorrect": true,
+    "questionId": 4
+  },
+  {
+    "answerId": 10,
+    "answerLabel": "Mitterand",
+    "isCorrect": false,
+    "questionId": 5
+  },
+  {
+    "answerId": 11,
+    "answerLabel": "De gaulle",
+    "isCorrect": true,
+    "questionId": 5
+  },
+  {
+    "answerId": 12,
+    "answerLabel": "Jospin",
+    "isCorrect": false,
+    "questionId": 5
   }
 ]

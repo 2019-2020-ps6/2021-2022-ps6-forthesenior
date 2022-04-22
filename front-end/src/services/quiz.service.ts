@@ -2,11 +2,11 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject, Subject } from 'rxjs';
 import { Quiz } from '../models/quiz.model';
-import { QUIZ_LIST } from '../mocks/quiz-list.mock';
 import { Question } from '../models/question.model';
 import { serverUrl, httpOptionsBase } from '../configs/server.config';
 import {Theme} from "../models/theme.model";
 import {ThemeService} from "./theme.service";
+import {QUIZ_LIST} from "../mocks/quiz-list.mock";
 
 @Injectable({
   providedIn: 'root'
@@ -21,7 +21,7 @@ export class QuizService {
    The list of theme.
    The list is retrieved from the mock.
    */
-  private quizzes: Quiz[] = QUIZ_LIST;
+  private quizzes: Quiz[] = [];
 
   /*
    Observable which contains the list of the theme.
@@ -32,25 +32,39 @@ export class QuizService {
 
   public quizSelected$: Subject<Quiz> = new Subject();
 
-  private quizUrl = serverUrl + '/quizzes';
+  private quizUrl = serverUrl + '/theme/';
   private questionsPath = 'questions';
 
   private httpOptions = httpOptionsBase;
   private theme: Theme;
+  private theme$: Theme;
+  private idTheme: string;
 
   constructor(private http: HttpClient, public themeService: ThemeService) {
-    this.themeService.themeSelected$.subscribe((theme) =>{
+    /*this.themeService.themeSelected$.subscribe((theme) =>{
       this.theme=theme;
-      this.retrieveQuizzes();
-    })
+      //this.retrieveQuizzes();
+    })*/
 
   }
 
+  setIdTheme(idTheme : string){
+    this.idTheme = idTheme;
+  }
+
   retrieveQuizzes(): void {
-    const urlWithThemeId = this.quizUrl + '/list/' + this.theme.id;
+    const urlWithThemeId = this.quizUrl + this.idTheme + '/quizzes';
     this.http.get<Quiz[]>(urlWithThemeId).subscribe((quizList) => {
       this.quizzes = quizList;
       this.quizzes$.next(this.quizzes);
+    });
+  }
+
+  retrieveTheme(): void {
+    const urlWithThemeId = this.quizUrl + this.idTheme;
+    this.http.get<Theme>(urlWithThemeId).subscribe((theme) =>{
+      this.theme=theme;
+      this.theme$ = this.theme;
     });
   }
 
@@ -59,9 +73,10 @@ export class QuizService {
   }
 
   setSelectedQuiz(quizId: string): void {
-    const urlWithId = this.quizUrl + '/' + quizId;
+    const urlWithId = this.quizUrl + this.idTheme + '/quizzes/'+quizId;
     this.http.get<Quiz>(urlWithId).subscribe((quiz) => {
       this.quizSelected$.next(quiz);
+      console.log(quiz);
     });
   }
 

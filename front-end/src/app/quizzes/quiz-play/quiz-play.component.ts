@@ -2,7 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import {Quiz} from '../../../models/quiz.model';
 import {ActivatedRoute, Router} from '@angular/router';
 import {QuizService} from '../../../services/quiz.service';
-import {OptionService} from "../../../services/option.service";
 
 @Component({
   selector: 'app-quiz-play',
@@ -19,14 +18,14 @@ export class QuizPlayComponent implements OnInit {
   userId: string;
 
 
-  constructor(private router: Router, private route: ActivatedRoute, private quizService: QuizService, public optionService : OptionService) {
+  constructor(private router: Router, private route: ActivatedRoute, private quizService: QuizService) {
     this.quizService.quizSelected$.subscribe((quiz) => {
       this.quiz = quiz;
     });
     this.next = false;
     this.right = 0;
     this.userId = this.route.snapshot.paramMap.get('userId');
-    this.optionService.setOption(this.userId);
+    //this.optionService.setOption(this.userId);
   }
 
   ngOnInit(): void {

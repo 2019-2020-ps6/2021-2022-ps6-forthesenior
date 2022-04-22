@@ -1,6 +1,5 @@
 import {Injectable} from '@angular/core';
 import {BehaviorSubject, ReplaySubject, Subject} from 'rxjs';
-import {THEME_LIST} from '../mocks/quiz-list.mock';
 import {Theme} from '../models/theme.model';
 import {HttpClient} from '@angular/common/http';
 import {httpOptionsBase, serverUrl} from '../configs/server.config';
@@ -13,25 +12,25 @@ import {Option} from "../models/option.model";
 })
 export class ThemeService {
 
-  private themes: Theme[] = THEME_LIST;
-  private themeUrl = serverUrl + '/theme-list';
+  private themes: Theme[] = [];
+  private themeUrl = serverUrl + '/theme';
   private httpOptions = httpOptionsBase;
   private option: Option;
-
-  /*
-   Observable which contains the list of the theme.
-   Naming convention: Add '$' at the end of the variable name to highlight it as an Observable.
-   */
-  public themes$: BehaviorSubject<Theme[]>
-    = new BehaviorSubject(this.themes);
-
+  public themes$: BehaviorSubject<Theme[]> = new BehaviorSubject(this.themes);
   public themeSelected$: BehaviorSubject<Theme>;
+  private idUser: string;
+  private idAccount : string;
 
   constructor(private http: HttpClient, private route: ActivatedRoute) {
     // @ts-ignore
     this.themeSelected$ = new BehaviorSubject<Theme>(0);
-    this.retrieveThemes();
+    //this.retrieveThemes();
     //this.setOption();
+  }
+
+  setIds(idAccount : string, idUser : string){
+    this.idAccount = idAccount;
+    this.idUser = idUser;
   }
 
   retrieveThemes(): void {
@@ -40,8 +39,6 @@ export class ThemeService {
       this.themes$.next(this.themes);
     });
   }
-
-
 
   addTheme(theme: Theme): void {
     this.http.post<Theme>(this.themeUrl, theme, this.httpOptions).subscribe(() => this.retrieveThemes());

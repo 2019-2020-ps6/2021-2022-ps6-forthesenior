@@ -3,6 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {BehaviorSubject, Subject} from 'rxjs';
 import {User} from '../models/user.model';
 import {serverUrl, httpOptionsBase} from '../configs/server.config';
+import {ActivatedRoute} from "@angular/router";
 
 @Injectable({
   providedIn: 'root'
@@ -21,16 +22,23 @@ export class UserService {
 
   public userSelected$: Subject<User> = new Subject();
 
-  private userUrl = serverUrl + '/users';
+  private userUrl = serverUrl + '/accounts/';
+  private idAccount : string;
 
   private httpOptions = httpOptionsBase;
 
-  constructor(private http: HttpClient) {
-    this.retrieveUsers();
+  constructor(private http: HttpClient, private route: ActivatedRoute) {
+    //console.log("service : " + this.route.snapshot.paramMap.get("idAccount"));
+    //this.retrieveUsers();
+  }
+
+  setAccount(idAccount : string): void {
+    this.idAccount = idAccount;
   }
 
   retrieveUsers(): void {
-    this.http.get<User[]>(this.userUrl).subscribe((userList) => {
+    let url = this.userUrl + this.idAccount + "/users"
+    this.http.get<User[]>(url).subscribe((userList) => {
       this.users = userList;
       this.users$.next(this.users);
     });
@@ -41,10 +49,11 @@ export class UserService {
   }
 
   setSelectedUser(user: User): void {
-    const urlWithId = this.userUrl + '/' + user.id;
+    //this.userSelected$.next(user);
+    /*const urlWithId = this.userUrl + '/' + user.id;
     this.http.get<User>(urlWithId).subscribe((userList) => {
       this.userSelected$.next(userList);
-    });
+    });*/
   }
 
   deleteUser(user: User): void {

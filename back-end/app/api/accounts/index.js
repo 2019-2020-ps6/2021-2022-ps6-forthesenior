@@ -1,7 +1,7 @@
 const {Router} = require('express')
 const {Account} = require('../../models')
 const UserRouter = require('./users')
-const ThemeRouter = require('./quiz/themes')
+const ThemeRouter = require('../quiz/themes')
 const manageAllErrors = require('../../utils/routes/error-management')
 const {GetAccount, DeleteAccount} = require("./accountManager");
 

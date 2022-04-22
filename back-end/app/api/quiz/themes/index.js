@@ -1,9 +1,12 @@
 const { Router } = require('express')
 
-const { Theme } = require('../../models')
-const manageAllErrors = require('../../utils/routes/error-management')
+const { Theme } = require('../../../models')
+const manageAllErrors = require('../../../utils/routes/error-management')
+const QuizRouter = require("./quizzes");
 
 const router = new Router()
+
+router.use('/:themeId/quizzes', QuizRouter)
 
 router.get('/', (req, res) => {
   try {

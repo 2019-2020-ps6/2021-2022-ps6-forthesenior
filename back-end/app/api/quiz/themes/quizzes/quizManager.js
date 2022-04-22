@@ -1,5 +1,5 @@
-const {Quiz} = require('../../../../../models')
-const {StringToNumber} = require('../../../../../utils/Funcions')
+const {Quiz} = require('../../../../models')
+const {StringToNumber} = require('../../../../utils/Funcions')
 const {FilterQuestionFromQuiz, DeleteQuestionFromQuiz} = require("./questions/questionManager");
 const {FilterAnswerFromQuestion} = require("./questions/answers/answerManager");
 
@@ -23,6 +23,7 @@ const CreateQuizForTheme = (themeId, body) => {
  */
 const FilterQuizFromTheme = (themeId) => {
   if (typeof themeId === 'string') themeId = StringToNumber(themeId)
+  console.log(themeId);
   return Quiz.get().filter(quiz => quiz.themeId === themeId)
 }
 
@@ -41,7 +42,7 @@ const GetQuizFromTheme = (themeId, quizId) => {
     quiz = "Error Quiz Not Found: 404"
   } else {
     const questionsList = FilterQuestionFromQuiz(quizId)
-    questionsList.forEach(question => question.answers = FilterAnswerFromQuestion(question.id))
+    questionsList.forEach(question => question.quizId = quiz.id)
     quiz = {...quiz, questions: questionsList}
   }
   return quiz

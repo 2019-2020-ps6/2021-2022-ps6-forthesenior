@@ -1,6 +1,6 @@
 const {Account} = require("../../models");
 const {FilterUserFromAccount, DeleteUserFromAccount} = require("./users/userManager");
-const {FilterThemeFromAccount, DeleteThemeFromAccount} = require("./quiz/themes/themeManager");
+const {FilterThemeFromAccount, DeleteThemeFromAccount} = require("../quiz/themes/themeManager");
 
 /**
  * Gets the Account

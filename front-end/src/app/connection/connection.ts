@@ -29,8 +29,8 @@ export class Connection implements OnInit {
       email: this.signInForm.getRawValue().email,
       password: this.signInForm.getRawValue().password
     }).subscribe((accountList) => {
-      this.accountService.setSelectedAccount(accountList.id);
-      if (this.router.url === '/connection') this.router.navigate(['/theme-list']);
+      //this.accountService.setSelectedAccount(accountList.id);
+      if (this.router.url === '/connection') this.router.navigate([accountList.id + '/user-list']);
     }, () => this.errorConnection());
   }
 

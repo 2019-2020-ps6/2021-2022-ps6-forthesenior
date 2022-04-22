@@ -1,5 +1,4 @@
 
-<button class="button-card" routerLink="/quiz-list/{{quiz.theme}}">Retour</button>
 <div class="page">
   <h2>{{quiz.name}}</h2>
   <app-quiz-question [question]="quiz.questions[index]" (next)="onAnswered($event)"></app-quiz-question>

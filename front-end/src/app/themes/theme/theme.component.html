@@ -2,6 +2,6 @@
     <h2>
         {{theme.name}}
     </h2>
-    <button class="button-card" (click)="themeSelected()">Sélectionner</button>
+    <button class="button-card" (click)="themeSelected()" routerLink="{{theme.id}}/quiz-list">Sélectionner</button>
   <button class="button-card" (click)="delete()">Supprimer</button>
 </div>

@@ -27,7 +27,6 @@ export class UserComponent implements OnInit {
 
   select(){
     this.selectUser.emit(this.user);
-    this.router.navigate(["user-list/" + this.user.id + "/theme-list/"]);
   }
 
   delete() {

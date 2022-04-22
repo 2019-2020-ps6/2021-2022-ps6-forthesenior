@@ -1,5 +1,5 @@
 <h1>{{theme.name}}</h1>
-<app-quiz-form></app-quiz-form>
+<app-quiz-form *ngIf="userId === '0'"></app-quiz-form>
 <div class="quiz-list">
     <div class="quiz" *ngFor="let quiz of quizList">
         <!--Inputs & Output allow communication between parent & child components.-->

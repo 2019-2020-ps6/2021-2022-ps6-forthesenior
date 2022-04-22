@@ -1,5 +1,5 @@
-const {Question} = require('../../../../../../models')
-const {StringToNumber} = require('../../../../../../utils/Funcions')
+const {Question} = require('../../../../../models')
+const {StringToNumber} = require('../../../../../utils/Funcions')
 const {FilterAnswerFromQuestion, DeleteAnswerFromQuestion} = require("./answers/answerManager");
 
 /**

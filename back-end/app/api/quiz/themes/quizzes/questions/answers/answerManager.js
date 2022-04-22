@@ -1,5 +1,5 @@
-const {Answer} = require('../../../../../../../models')
-const {StringToNumber} = require('../../../../../../../utils/Funcions')
+const {Answer} = require('../../../../../../models')
+const {StringToNumber} = require('../../../../../../utils/Funcions')
 
 /**
  * Creates an Answer for a Question

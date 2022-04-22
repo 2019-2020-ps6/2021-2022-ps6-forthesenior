@@ -1,5 +1,5 @@
-const {Theme} = require('../../../../models')
-const {StringToNumber} = require('../../../../utils/Funcions')
+const {Theme} = require('../../../models')
+const {StringToNumber} = require('../../../utils/Funcions')
 const {FilterQuizFromTheme, DeleteQuizFromTheme} = require("./quizzes/quizManager");
 
 /**

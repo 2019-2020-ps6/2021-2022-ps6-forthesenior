@@ -1,6 +1,6 @@
 const {Router} = require('express')
 const AnswerRouter = require('./answers')
-const manageAllErrors = require("../../../../../../utils/routes/error-management");
+const manageAllErrors = require("../../../../../utils/routes/error-management");
 const {
   CreateQuestionForQuiz,
   FilterQuestionFromQuiz,

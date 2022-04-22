@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
-import { User } from '../../../models/user.model';
-import { UserService } from '../../../services/user.service';
+import {User} from '../../../models/user.model';
+import {UserService} from '../../../services/user.service';
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-user-list',
@@ -11,8 +12,12 @@ import { UserService } from '../../../services/user.service';
 export class UserListComponent implements OnInit {
 
   public userList: User[] = [];
+  public selectedUser: User;
 
-  constructor(private userService: UserService) {
+  constructor(private userService: UserService, private route: ActivatedRoute) {
+    let idAccount = this.route.snapshot.paramMap.get("idAccount");
+    this.userService.setAccount(idAccount);
+    this.userService.retrieveUsers();
     this.userService.users$.subscribe((users: User[]) => {
       this.userList = users;
     });
@@ -22,7 +27,7 @@ export class UserListComponent implements OnInit {
   }
 
   selectUser(user: User): void {
-    //this.userService.selectUser(user);
+    this.userService.setSelectedUser(user);
   }
 
   deleteUser(user: User): void {

@@ -1,32 +1,20 @@
 [
   {
+    "id" : 1,
     "name": "Les présidents",
-    "theme": "Politique",
-    "id": 1649609320997
+    "themeId": 1649609147742,
+    "questions" : [3,4]
   },
   {
-    "name": "rgzg",
-    "theme": "Politique",
-    "id": 1649759400347
-  },
-  {
-    "name": "Nicolas",
-    "theme": 1649758928241,
-    "id": 1649769766963
-  },
-  {
-    "name": "Les présidents",
-    "theme": 1649609147742,
-    "id": 1650349170719
-  },
-  {
+    "id" : 2,
     "name": "Les ministres",
-    "theme": 1649609147742,
-    "id": 1650350157468
+    "themeId": 1649609147742,
+    "questions" : [3,4]
   },
   {
-    "name": "Nicolas",
-    "theme": 1649609147742,
-    "id": 1650355239270
+    "id" : 3,
+    "name": "La savane",
+    "themeId": 1650355222917,
+    "questions" : [1,2]
   }
 ]

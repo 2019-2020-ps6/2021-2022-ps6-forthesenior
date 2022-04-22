@@ -41,7 +41,7 @@ export class QuizFormComponent implements OnInit {
   addQuiz(): void {
     // We retrieve here the theme object from the quizForm and we cast the type "as Quiz".
     const quizToCreate: Quiz = this.quizForm.getRawValue() as Quiz;
-    quizToCreate.theme = this.theme.id;
+    quizToCreate.themeId = this.theme.id;
     this.quizService.addQuiz(quizToCreate);
   }
 
