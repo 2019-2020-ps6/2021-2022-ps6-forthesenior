@@ -13,7 +13,7 @@ export class HeaderComponent implements OnInit {
     if (this.username === 'Moi') {
       this.router.navigate(['/connection']);
     }*/
-    */
+
   }
 
   ngOnInit(): void {
