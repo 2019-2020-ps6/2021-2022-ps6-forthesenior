@@ -24,9 +24,6 @@ export class QuizPlayComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    const id = this.route.snapshot.paramMap.get('id');
-    this.quizService.setSelectedQuiz(id);
-    this.index = Number(this.route.snapshot.paramMap.get('numero'));
   }
 
   nextQuestion(): void {

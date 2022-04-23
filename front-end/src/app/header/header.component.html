@@ -1,11 +1,19 @@
 <div class="header" style="display: flex">
-  <a [routerLink]="[goToHome()]" class="navigation"><i aria-hidden="true" class="fa fa-home"
-                                                          style="padding-right: 2px;vertical-align: text-top"></i>Home</a>
-  <a [routerLink]="[goToUsers()]" class="navigation"><i aria-hidden="true" class="fa fa-user"
-                                                         style="padding-right: 2px;vertical-align: text-top"></i>Users</a>
-  <ng-container *ngIf="this.nameShown">
-    <div class="name">
-      {{this.nameShown}}
-    </div>
-  </ng-container>
+  <span>
+    <a [routerLink]="[goToHome()]" class="navigation"><i aria-hidden="true" class="fa fa-home"
+                                                         style="padding-right: 2px;vertical-align: text-top"></i>Home</a>
+    <a [routerLink]="[goToUsers()]" class="navigation"><i aria-hidden="true" class="fa fa-user"
+                                                          style="padding-right: 2px;vertical-align: text-top"></i>Users</a>
+  </span>
+
+    <ng-container *ngIf="this.nameShown">
+      <div class="name">
+        {{this.nameShown}}
+      </div>
+    </ng-container>
+
+  <span style="float: right">
+    <a [routerLink]="[goToConnection()]" class="navigation"><i aria-hidden="true" class="fa fa-car"
+                                                          style="padding-right: 2px;vertical-align: text-top;"></i>Quitter</a> <!-- Exit sign-->
+  </span>
 </div>

@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {Quiz} from 'src/models/quiz.model';
 import {QuizService} from 'src/services/quiz.service';
 import {Router} from "@angular/router";
@@ -10,10 +10,9 @@ import {Router} from "@angular/router";
 })
 export class EditQuizComponent implements OnInit {
 
-  public quiz: Quiz;
+  @Input() public quiz: Quiz;
 
   constructor(private quizService: QuizService, private router: Router) {
-    this.quizService.quizSelected$.asObservable().subscribe((quiz) => this.quiz = quiz);
   }
 
   ngOnInit(): void {

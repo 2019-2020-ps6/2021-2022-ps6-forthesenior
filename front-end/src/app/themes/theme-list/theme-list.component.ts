@@ -10,9 +10,7 @@ import {ThemeService} from '../../../services/theme.service';
 })
 export class ThemeListComponent implements OnInit {
 
-  @Input()
-  public theme: Theme;
-
+  @Input() public theme: Theme;
   public themeList: Theme[] = [];
 
   constructor(private router: Router, private themeService: ThemeService) {

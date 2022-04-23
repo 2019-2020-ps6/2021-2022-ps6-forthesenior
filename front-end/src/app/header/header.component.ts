@@ -23,7 +23,7 @@ export class HeaderComponent implements OnInit {
     });
     this.userService.userSelected$.asObservable().subscribe((user) => {
       this.selectedUser = user
-      if (user !== undefined) this.nameShown = this.selectedUser.firstname + " " + this.selectedUser.lastname;
+      this.nameShown = this.selectedUser.firstname + " " + this.selectedUser.lastname;
     });
     this.reConnection();
   }
@@ -39,6 +39,10 @@ export class HeaderComponent implements OnInit {
   goToUsers(): string {
     if (this.selectedAccount !== undefined) return '/accounts/' + this.selectedAccount.id + '/users'
     return this.router.url;
+  }
+
+  goToConnection() {
+    return 'connection';
   }
 
   connectedToAccount(): boolean {
@@ -71,7 +75,7 @@ export class HeaderComponent implements OnInit {
         this.goToUsers();
       }
     } else {
-      this.router.navigate(['/connection']);
+      this.router.navigate([this.goToConnection()]);
     }
   }
 }

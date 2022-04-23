@@ -3,6 +3,7 @@ import {FormArray, FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {QuizService} from '../../../services/quiz.service';
 import {Quiz} from 'src/models/quiz.model';
 import {Question} from 'src/models/question.model';
+import {QuestionService} from "../../../services/question.service";
 
 @Component({
   selector: 'app-question-form',
@@ -16,7 +17,7 @@ export class QuestionFormComponent implements OnInit {
 
   public questionForm: FormGroup;
 
-  constructor(public formBuilder: FormBuilder, private quizService: QuizService) {
+  constructor(public formBuilder: FormBuilder, private quizService: QuizService, private questionService: QuestionService) {
     this.initializeQuestionForm();
   }
 
@@ -34,7 +35,7 @@ export class QuestionFormComponent implements OnInit {
   addQuestion(): void {
     if (this.questionForm.valid) {
       const question = this.questionForm.getRawValue() as Question;
-      // this.quizService.addQuestion(this.quiz, question);
+      this.questionService.addQuestion(question);
       this.initializeQuestionForm();
     }
   }

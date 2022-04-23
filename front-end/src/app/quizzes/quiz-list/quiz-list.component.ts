@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {QuizService} from '../../../services/quiz.service';
 import {Quiz} from '../../../models/quiz.model';
@@ -10,8 +10,8 @@ import {Quiz} from '../../../models/quiz.model';
 })
 export class QuizListComponent implements OnInit {
 
+  @Input() public quiz: Quiz;
   public quizList: Quiz[] = [];
-  public quiz: Quiz;
 
   constructor(private router: Router, public quizService: QuizService) {
     this.quizService.quizzes$.subscribe((quizzes: Quiz[]) => {
@@ -24,10 +24,12 @@ export class QuizListComponent implements OnInit {
   }
 
   playQuiz(quiz: Quiz): void {
+    this.quizService.setSelectedQuiz(quiz.id);
     this.router.navigate([this.router.url + '/play/' + quiz.id + '/question/0']);
   }
 
   editQuiz(quiz: Quiz): void {
+    this.quizService.setSelectedQuiz(quiz.id);
     this.router.navigate([this.router.url + '/edit/' + quiz.id]);
   }
 

@@ -1,10 +1,11 @@
 <div class="page">
   <h2>
-    {{question.label}}
+    {{question.questionLabel}}
   </h2>
   <div class="answer">
-    <div  *ngFor="let answer of question.answers; let i=index">
-      <app-answer-quiz [answer]="answer" [answered]="answered" (answeredQuestion)="onAnswered($event)"></app-answer-quiz>
+    <div *ngFor="let answer of question.answers; let i=index">
+      <app-answer-quiz (answeredQuestion)="onAnswered($event)" [answer]="answer"
+                       [answered]="answered"></app-answer-quiz>
     </div>
   </div>
 </div>
