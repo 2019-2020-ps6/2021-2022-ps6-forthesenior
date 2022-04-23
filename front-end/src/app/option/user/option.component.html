@@ -1,0 +1,11 @@
+<div class="card">
+  <h2>Option</h2>
+  <form [formGroup]="optionForm" onsubmit="addOption();return false" >
+    <label for="fontSize">
+      taille du texte <br>
+      <input class="input-custom" type="number" id="fontSize" formControlName="fontSize">
+    </label>
+
+    <button type = "button "class="button-card">Créer</button>
+  </form>
+</div>

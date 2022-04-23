@@ -1,30 +1,14 @@
 [
   {
-    "id" : 1,
+    "id": 1,
     "firstName": "Matis",
     "lastName": "Herrmann",
-    "accountId": 1,
-    "options": 1
+    "accountId": 1
   },
   {
-    "id" : 2,
+    "id": 2,
     "firstName": "Jean",
     "lastName": "Robert",
-    "accountId": 1,
-    "options": 2
-  },
-  {
-    "id" : 3,
-    "firstName": "Pierre",
-    "lastName": "Martinus",
-    "accountId": 1,
-    "options": 2
-  },
-  {
-    "id" : 4,
-    "firstName": "Gerard",
-    "lastName": "LeGrand",
-    "accountId": 2,
-    "options": 2
+    "accountId": 1
   }
 ]

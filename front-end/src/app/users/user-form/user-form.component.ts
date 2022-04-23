@@ -12,12 +12,14 @@ import { User } from '../../../models/user.model';
 export class UserFormComponent implements OnInit {
 
   public userForm: FormGroup;
+  public accountUser: string;
 
   constructor(public formBuilder: FormBuilder, public userService: UserService) {
     this.userForm = this.formBuilder.group({
       firstName: [''],
       lastName: ['']
     });
+
   }
 
   ngOnInit(): void {

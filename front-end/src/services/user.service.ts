@@ -45,11 +45,12 @@ export class UserService {
   }
 
   addUser(user: User): void {
-    this.http.post<User>(this.userUrl, user, this.httpOptions).subscribe(() => this.retrieveUsers());
+    const urlWithId = this.userUrl +this.idAccount + '/users/' ;
+    this.http.post<User>(urlWithId, user, this.httpOptions).subscribe(() => this.retrieveUsers());
   }
 
   setSelectedUser(user: User): void {
-    //this.userSelected$.next(user);
+    this.userSelected$.next(user);
     /*const urlWithId = this.userUrl + '/' + user.id;
     this.http.get<User>(urlWithId).subscribe((userList) => {
       this.userSelected$.next(userList);
@@ -57,7 +58,7 @@ export class UserService {
   }
 
   deleteUser(user: User): void {
-    const urlWithId = this.userUrl + '/' + user.id;
+    const urlWithId = this.userUrl + this.idAccount + '/users/'+ user.id;
     this.http.delete<User>(urlWithId, this.httpOptions).subscribe(() => this.retrieveUsers());
   }
 

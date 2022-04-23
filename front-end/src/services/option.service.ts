@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {Option} from "../models/option.model";
 import {ActivatedRoute} from "@angular/router";
-import {serverUrl} from "../configs/server.config";
+import {httpOptionsBase, serverUrl} from "../configs/server.config";
 import {HttpClient} from "@angular/common/http";
 
 @Injectable({
@@ -10,6 +10,7 @@ import {HttpClient} from "@angular/common/http";
 export class OptionService {
   option : Option;
   userId : string;
+  private httpOptions = httpOptionsBase;
 
   constructor(private http: HttpClient, public route : ActivatedRoute) {
   }
@@ -51,6 +52,12 @@ export class OptionService {
     document.documentElement.style.setProperty("--white","white");
     document.documentElement.style.setProperty("--text-color","blue");
     document.documentElement.style.setProperty("--titre-color","black");
+  }
+
+  addOption(option: Option,userId: string):void{
+    const optionUrl = serverUrl + "/option/" + userId;
+    this.http.post<Option>(optionUrl,option,this.httpOptions).subscribe(() => this.setOption(userId))
+
   }
 
 }

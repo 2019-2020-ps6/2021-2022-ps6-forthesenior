@@ -1,6 +1,5 @@
 [
   {
-    "id": 1,
     "userId" : 1,
     "fontSize": 10,
     "dmlaOffset": 0,
@@ -8,7 +7,6 @@
     "theme": false
   },
   {
-    "id": 2,
     "userId" : 2,
     "fontSize": 30,
     "dmlaOffset": 10,
