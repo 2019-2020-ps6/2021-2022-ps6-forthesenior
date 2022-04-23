@@ -17,16 +17,13 @@ export class ResultComponent implements OnInit {
   constructor(private router: Router, private route: ActivatedRoute, private quizService: QuizService) {
     this.right = this.route.snapshot.paramMap.get('right');
     this.total = this.route.snapshot.paramMap.get('total');
-    this.userId = this.route.snapshot.paramMap.get('userId');
+    this.userId = this.route.snapshot.paramMap.get('idUser');
   }
 
   ngOnInit(): void {
   }
 
   restartSelected(): void {
-    const idQuiz = this.route.snapshot.paramMap.get('idQuiz');
-    //console.log(id);
-    //this.quizService.setSelectedQuiz(id);
     let idAccount = this.route.snapshot.paramMap.get("idAccount");
     let idTheme = this.route.snapshot.paramMap.get("idTheme");
     let url = idAccount + "/user-list/" + this.userId + "/theme-list/" + idTheme + "/quiz-list";

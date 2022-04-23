@@ -21,7 +21,6 @@ export class QuizQuestionComponent implements OnInit, OnChanges {
   }
 
   ngOnInit(): void {
-    console.log("question "+this.question.label)
   }
 
   ngOnChanges(): void{
@@ -32,9 +31,4 @@ export class QuizQuestionComponent implements OnInit, OnChanges {
     this.answered = true;
     this.next.emit(questionAnswered);
   }
-
-
-
-
-
 }

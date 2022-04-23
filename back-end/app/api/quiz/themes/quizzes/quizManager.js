@@ -23,7 +23,6 @@ const CreateQuizForTheme = (themeId, body) => {
  */
 const FilterQuizFromTheme = (themeId) => {
   if (typeof themeId === 'string') themeId = StringToNumber(themeId)
-  console.log(themeId);
   return Quiz.get().filter(quiz => quiz.themeId === themeId)
 }
 

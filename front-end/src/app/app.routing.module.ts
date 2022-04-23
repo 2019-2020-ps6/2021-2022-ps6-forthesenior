@@ -14,17 +14,8 @@ const routes: Routes = [
   {path: ':idAccount/user-list', component: UserListComponent},
   {path: ':idAccount/user-list/:idUser/theme-list', component: ThemeListComponent},
   {path: ':idAccount/user-list/:idUser/theme-list/:idTheme/quiz-list', component: QuizListComponent},
-  {path: ':idAccount/user-list/:idUser/quiz-play/:idQuiz/question/:numero', component: QuizPlayComponent},
-  {path: ':idAccount/user-list/:idUser/result/:idQuiz/:right/:total', component: ResultComponent},
-  {path: 'quiz-list/:themeId', component: QuizListComponent},
-  {path: 'theme-list', component: ThemeListComponent},
-  {path: 'edit-theme/:id', component: EditQuizComponent},
-  {path: 'edit-list', component: EditQuizComponent},
-  {path: ':id/quiz-list', component: EditQuizComponent},
-  {path: 'theme-list/:theme/quiz-list', component: QuizListComponent},
-  {path: 'quiz-play/:id/question/:numero', component: QuizPlayComponent},
-  {path: 'edit-quiz/:id', component: EditQuizComponent},
-  {path: 'result/:id/:right/:total', component: ResultComponent},
+  {path: ':idAccount/user-list/:idUser/:idTheme/quiz-play/:idQuiz/question/:numero', component: QuizPlayComponent},
+  {path: ':idAccount/user-list/:idUser/:idTheme/result/:idQuiz/:right/:total', component: ResultComponent},
 ];
 
 @NgModule({

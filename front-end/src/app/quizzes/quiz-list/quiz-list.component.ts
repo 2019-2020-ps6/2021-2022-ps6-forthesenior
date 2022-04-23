@@ -22,10 +22,8 @@ export class QuizListComponent implements OnInit {
               public themeService: ThemeService, private optionService: OptionService) {
     this.userId = this.route.snapshot.paramMap.get('idUser');
     this.themeId = this.route.snapshot.paramMap.get('idTheme');
+
     this.quizService.setIdTheme(this.themeId);
-    this.themeService.themeSelected$.subscribe((theme) => {
-      this.theme = theme;
-    });
     this.quizService.retrieveQuizzes();
     this.quizService.quizzes$.subscribe((quizzes: Quiz[]) => {
       this.quizList = quizzes;
@@ -34,19 +32,16 @@ export class QuizListComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    const idTheme = this.route.snapshot.paramMap.get('idTheme');
-    this.themeService.setSelectedTheme(idTheme);
-    //console.log(this.quizService.quizzes$);
+    this.themeService.setSelectedTheme(this.themeId);
+    this.themeService.themeSelected$.subscribe((theme) => {
+      this.theme = theme;
+    });
   }
 
   quizSelected(quiz: Quiz): void {
-    //console.log("quiz list : "+quiz.name);
-    //this.quizService.setSelectedQuiz(quiz.id);
     let idAccount = this.route.snapshot.paramMap.get("idAccount");
-    let url = idAccount + "/user-list/" + this.userId + "/quiz-play/" + quiz.id + "/question/0";
+    let url = idAccount + "/user-list/" + this.userId + "/" + this.themeId + "/quiz-play/" + quiz.id + "/question/0";
     this.router.navigate([url]);
-    //this.quizService.setSelectedQuiz(quiz);
-    //this.router.navigate([this.userId + '/quiz-play/' + quiz.id + '/question/0']);
   }
 
   editQuiz(quiz: Quiz): void {

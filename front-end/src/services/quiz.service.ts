@@ -75,7 +75,6 @@ export class QuizService {
     const urlWithId = this.quizUrl + this.idTheme + '/quizzes/'+id;
     this.http.get<Quiz>(urlWithId).subscribe((quiz) => {
       this.quizSelected$.next(quiz);
-      console.log("quiz question : "+quiz.questions[0].label);
     });
   }
 
