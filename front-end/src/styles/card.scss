@@ -11,6 +11,13 @@
   font-size: $font-size;
 }
 
+.grid {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .button-card {
   background-color: $white;
   border: solid 1px $black;

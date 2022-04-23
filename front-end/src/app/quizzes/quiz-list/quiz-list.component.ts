@@ -16,7 +16,7 @@ export class QuizListComponent implements OnInit {
   public quizList: Quiz[] = [];
   public theme: Theme;
   public userId: string;
-  private themeId: string;
+  private readonly themeId: string;
 
   constructor(private router: Router, public quizService: QuizService, public route: ActivatedRoute,
               public themeService: ThemeService, private optionService: OptionService) {
