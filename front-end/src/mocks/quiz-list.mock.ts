@@ -39,9 +39,3 @@ export const THEME_LIST: Theme[] = [
     quizzes: []
   }
 ]*/
-export const QUIZ_LIST: Quiz[] = [
-  {
-    id: '1',
-    name: 'Les Acteurs', // What's happening if I change this value..?
-  }
-];

@@ -6,7 +6,6 @@ import { Question } from '../models/question.model';
 import { serverUrl, httpOptionsBase } from '../configs/server.config';
 import {Theme} from "../models/theme.model";
 import {ThemeService} from "./theme.service";
-import {QUIZ_LIST} from "../mocks/quiz-list.mock";
 
 @Injectable({
   providedIn: 'root'
@@ -30,7 +29,8 @@ export class QuizService {
   public quizzes$: BehaviorSubject<Quiz[]>
     = new BehaviorSubject(this.quizzes);
 
-  public quizSelected$: Subject<Quiz> = new Subject();
+  // @ts-ignore
+  public quizSelected$: BehaviorSubject<Quiz> = new BehaviorSubject<Quiz>(0);
 
   private quizUrl = serverUrl + '/theme/';
   private questionsPath = 'questions';
@@ -45,7 +45,6 @@ export class QuizService {
       this.theme=theme;
       //this.retrieveQuizzes();
     })*/
-
   }
 
   setIdTheme(idTheme : string){
@@ -72,11 +71,11 @@ export class QuizService {
     this.http.post<Quiz>(this.quizUrl, quiz, this.httpOptions).subscribe(() => this.retrieveQuizzes());
   }
 
-  setSelectedQuiz(quizId: string): void {
-    const urlWithId = this.quizUrl + this.idTheme + '/quizzes/'+quizId;
+  setSelectedQuiz(id : string): void {
+    const urlWithId = this.quizUrl + this.idTheme + '/quizzes/'+id;
     this.http.get<Quiz>(urlWithId).subscribe((quiz) => {
       this.quizSelected$.next(quiz);
-      console.log(quiz);
+      console.log("quiz question : "+quiz.questions[0].label);
     });
   }
 

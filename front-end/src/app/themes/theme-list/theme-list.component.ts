@@ -43,16 +43,16 @@ export class ThemeListComponent implements OnInit {
   }
 
   setSelectedTheme(themeId: string): void {
-    this.themeService.setSelectedTheme(themeId);
+    //this.themeService.setSelectedTheme(themeId);
     //this.router.navigate(['/quiz-list/' + themeId]);
   }
 
-  getUserId(): void {
+  /*getUserId(): void {
     const userId = this.route.snapshot.paramMap.get('userId');
     //this.themeService.getOption(userId);
     /*const optionUrl = "/option/" + userId;
     this.http.get<Option>(optionUrl).subscribe((option) => {
       this.option = option;
-    }*/
-  }
+    }
+  }*/
 }

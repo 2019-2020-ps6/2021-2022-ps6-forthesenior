@@ -1,73 +1,73 @@
 [
   {
-    "answerId": 1,
-    "answerLabel": "Le lion",
+    "id": 1,
+    "label": "Le lion",
     "isCorrect": false,
     "questionId": 1
   },
   {
-    "answerId": 2,
-    "answerLabel": "Le guépard",
+    "id": 2,
+    "label": "Le guépard",
     "isCorrect": true,
     "questionId": 1
   },
   {
-    "answerId": 3,
-    "answerLabel": "La poule",
+    "id": 3,
+    "label": "La poule",
     "isCorrect": true,
     "questionId": 2
   },
   {
-    "answerId": 4,
-    "answerLabel": "La girafe",
+    "id": 4,
+    "label": "La girafe",
     "isCorrect": false,
     "questionId": 2
   },
   {
-    "answerId": 5,
-    "answerLabel": "Francois Hollande",
+    "id": 5,
+    "label": "Francois Hollande",
     "isCorrect": false,
     "questionId": 3
   },
   {
-    "answerId": 6,
-    "answerLabel": "Emmanuel Macron",
+    "id": 6,
+    "label": "Emmanuel Macron",
     "isCorrect": true,
     "questionId": 3
   },
   {
-    "answerId": 7,
-    "answerLabel": "Nicolas Sarkozy",
+    "id": 7,
+    "label": "Nicolas Sarkozy",
     "isCorrect": false,
     "questionId": 3
   },
   {
-    "answerId": 8,
-    "answerLabel": "Jsp",
+    "id": 8,
+    "label": "Jsp",
     "isCorrect": false,
     "questionId": 4
   },
   {
-    "answerId": 9,
-    "answerLabel": "Jsp 2",
+    "id": 9,
+    "label": "Jsp 2",
     "isCorrect": true,
     "questionId": 4
   },
   {
-    "answerId": 10,
-    "answerLabel": "Mitterand",
+    "id": 10,
+    "label": "Mitterand",
     "isCorrect": false,
     "questionId": 5
   },
   {
-    "answerId": 11,
-    "answerLabel": "De gaulle",
+    "id": 11,
+    "label": "De gaulle",
     "isCorrect": true,
     "questionId": 5
   },
   {
-    "answerId": 12,
-    "answerLabel": "Jospin",
+    "id": 12,
+    "label": "Jospin",
     "isCorrect": false,
     "questionId": 5
   }

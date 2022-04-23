@@ -20,7 +20,7 @@ router.get('/', (req, res) => {
 
 router.get('/:answerId', (req, res) => {
   try {
-    res.status(200).json(GetAnswerFromQuestion(req.params.questionId, req.params.answerId))
+    res.status(200).json(GetAnswerFromQuestion(req.params.questionId, req.params.id))
   } catch (err) {
     manageAllErrors(res, err)
   }

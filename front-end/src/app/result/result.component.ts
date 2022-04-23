@@ -24,13 +24,18 @@ export class ResultComponent implements OnInit {
   }
 
   restartSelected(): void {
-    const id = this.route.snapshot.paramMap.get('id');
-    console.log(id);
-    this.quizService.setSelectedQuiz(id);
-    this.router.navigate([this.userId + '/quiz-play/' + id + '/question/0']);
+    const idQuiz = this.route.snapshot.paramMap.get('idQuiz');
+    //console.log(id);
+    //this.quizService.setSelectedQuiz(id);
+    let idAccount = this.route.snapshot.paramMap.get("idAccount");
+    let idTheme = this.route.snapshot.paramMap.get("idTheme");
+    let url = idAccount + "/user-list/" + this.userId + "/theme-list/" + idTheme + "/quiz-list";
+    this.router.navigate([url]);
   }
 
   backSelected(): void {
-    this.router.navigate(['user-list/' + this.userId +'/theme-list/']);
+    let idAccount = this.route.snapshot.paramMap.get("idAccount");
+    let url = idAccount + "/user-list/" + this.userId + "/theme-list";
+    this.router.navigate([url]);
   }
 }

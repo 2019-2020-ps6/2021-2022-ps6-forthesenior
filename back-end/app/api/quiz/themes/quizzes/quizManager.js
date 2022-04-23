@@ -42,7 +42,7 @@ const GetQuizFromTheme = (themeId, quizId) => {
     quiz = "Error Quiz Not Found: 404"
   } else {
     const questionsList = FilterQuestionFromQuiz(quizId)
-    questionsList.forEach(question => question.quizId = quiz.id)
+    questionsList.forEach(question => question.answers = FilterAnswerFromQuestion(question.id))
     quiz = {...quiz, questions: questionsList}
   }
   return quiz

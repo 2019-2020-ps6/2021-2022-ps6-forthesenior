@@ -19,18 +19,21 @@ export class QuizPlayComponent implements OnInit {
 
 
   constructor(private router: Router, private route: ActivatedRoute, private quizService: QuizService) {
-    this.quizService.quizSelected$.subscribe((quiz) => {
+    /*this.quizService.quizSelected$.subscribe((quiz) => {
       this.quiz = quiz;
-    });
+    });*/
     this.next = false;
     this.right = 0;
-    this.userId = this.route.snapshot.paramMap.get('userId');
+    this.userId = this.route.snapshot.paramMap.get('idUser');
     //this.optionService.setOption(this.userId);
   }
 
   ngOnInit(): void {
-    const id = this.route.snapshot.paramMap.get('id');
+    const id = this.route.snapshot.paramMap.get('idQuiz');
     this.quizService.setSelectedQuiz(id);
+    this.quizService.quizSelected$.subscribe((quiz) => {
+      this.quiz = quiz;
+    });
     this.index = Number(this.route.snapshot.paramMap.get('numero'));
   }
 
@@ -40,13 +43,15 @@ export class QuizPlayComponent implements OnInit {
       this.right++;
     }
     console.log(this.userId);
+    let idAccount = this.route.snapshot.paramMap.get("idAccount");
     if (this.index === this.quiz.questions.length) {
-      this.router.navigate([this.userId + '/result/' + this.quiz.id + '/' + this.right + '/' + this.index]);
+      let url = idAccount + "/user-list/" + this.userId + "/result/" + this.quiz.id + "/"+this.right+"/"+this.quiz.questions.length;
+      this.router.navigate([url]);
     } else {
-      this.router.navigate([this.userId +'/quiz-play/' + this.quiz.id + '/question/' + this.index.toString()]);
+      let url = idAccount + "/user-list/" + this.userId + "/quiz-play/" + this.quiz.id + "/question/"+this.index;
+      this.router.navigate([url]);
     }
     this.next = false;
-
   }
 
   onAnswered(answer: boolean): void {
