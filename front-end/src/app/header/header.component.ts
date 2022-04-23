@@ -9,10 +9,10 @@ export class HeaderComponent implements OnInit {
   @Input() public username = 'Moi';
 
   constructor(private accountServices: AccountService, private router: Router) {/*
-    this.accountServices.accountSelected$.asObservable().subscribe((account) => this.username = account.email);
+    /*this.accountServices.accountSelected$.asObservable().subscribe((account) => this.username = account.email);
     if (this.username === 'Moi') {
       this.router.navigate(['/connection']);
-    }
+    }*/
     */
   }
 
