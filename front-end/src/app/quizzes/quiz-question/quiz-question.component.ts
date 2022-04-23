@@ -1,5 +1,6 @@
 import {Component, EventEmitter, Input, OnChanges, OnInit, Output} from '@angular/core';
 import {Question} from '../../../models/question.model';
+import {QuestionService} from "../../../services/question.service";
 
 @Component({
   selector: 'app-quiz-question',
@@ -16,25 +17,23 @@ export class QuizQuestionComponent implements OnInit, OnChanges {
 
   answered: boolean;
 
-  constructor() {
+  constructor(private questionService: QuestionService) {
+    this.questionService.questionSelected$.asObservable().subscribe((question) => {
+      this.question = question;
+    })
     this.answered = false;
-    console.log('hello ' + this.answered);
   }
 
   ngOnInit(): void {
+    this.questionService.retrieveQuestions();
   }
 
-  ngOnChanges(): void{
+  ngOnChanges(): void {
     this.answered = false;
   }
 
-  onAnswered(questionAnswered: boolean): void{
+  onAnswered(questionAnswered: boolean): void {
     this.answered = true;
     this.next.emit(questionAnswered);
   }
-
-
-
-
-
 }

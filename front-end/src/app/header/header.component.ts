@@ -49,7 +49,7 @@ export class HeaderComponent implements OnInit {
     const url = document.URL;
     if (url.includes("accounts/")) {
       const urlRoutes = url.split('/').reverse();
-      while (urlRoutes.pop() !== 'accounts') {
+      while (urlRoutes.length > 0 && urlRoutes.pop() !== 'accounts') {
       }
       this.accountServices.setSelectedAccount(urlRoutes.pop());
       return true;
@@ -61,7 +61,7 @@ export class HeaderComponent implements OnInit {
     const url = document.URL;
     if (url.includes("users/")) {
       const urlRoutes = url.split('/').reverse();
-      while (urlRoutes.pop() !== 'users') {
+      while (urlRoutes.length > 0 && urlRoutes.pop() !== 'users') {
       }
       this.userService.setSelectedUser(urlRoutes.pop());
       return true;
