@@ -21,6 +21,10 @@ export class OptionService {
       document.documentElement.style.setProperty("--font-size",this.option.fontSize +"px");
       document.documentElement.style.setProperty("--gap-row","150px");
       document.documentElement.style.setProperty("--gap-column","150px");
+      if(this.option.theme)
+        this.setBlackTheme();
+      else
+        this.setWhiteTheme();
 
     });
   }
@@ -29,6 +33,23 @@ export class OptionService {
     document.documentElement.style.setProperty("--font-size","20px");
     document.documentElement.style.setProperty("--gap-row","15px");
     document.documentElement.style.setProperty("--gap-column","15px");
+    this.setWhiteTheme()
+  }
+
+  setBlackTheme():void{
+    document.documentElement.style.setProperty("--background-color","#485068");
+    document.documentElement.style.setProperty("--header-color","#606060");
+    document.documentElement.style.setProperty("--white","#606060");
+    document.documentElement.style.setProperty("--text-color","#DFDFDF");
+    document.documentElement.style.setProperty("--titre-color","#DFDFDF");
+  }
+
+  setWhiteTheme():void{
+    document.documentElement.style.setProperty("--background-color","#f2f2f2");
+    document.documentElement.style.setProperty("--header-color","blue");
+    document.documentElement.style.setProperty("--white","white");
+    document.documentElement.style.setProperty("--text-color","blue");
+    document.documentElement.style.setProperty("--titre-color","black");
   }
 
 }

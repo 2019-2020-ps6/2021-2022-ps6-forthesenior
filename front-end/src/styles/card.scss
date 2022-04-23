@@ -2,6 +2,7 @@
 
 .card {
   background: $white;
+  color:$titre;
   border-radius: 10px;
   display: inline-block;
   margin: 1rem;
@@ -11,10 +12,14 @@
   font-size: $font-size;
 }
 
+.card h1{
+  color:deeppink;
+}
+
 .button-card {
   background-color: $white;
   border: solid 1px $black;
-  color: $blue;
+  color: $text;
   font-weight: bold;
   padding: 0.5em 1em;
 }

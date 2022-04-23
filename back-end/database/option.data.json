@@ -10,9 +10,9 @@
   {
     "id": 2,
     "userId" : 2,
-    "fontSize": 50,
+    "fontSize": 30,
     "dmlaOffset": 10,
     "parkinsonOffset": 0,
-    "theme": false
+    "theme": true
   }
 ]

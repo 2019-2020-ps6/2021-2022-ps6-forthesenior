@@ -1,8 +1,12 @@
-$app-background-color: #f2f2f2;
-$blue: #3f51b5;
-$white: white;
 $black: #000000;
 $size-answer: 10em;
 $gap-column:var(--gap-column);
 $gap-row:var(--gap-row);
 $font-size:var(--font-size);
+$app-background-color: var(--background-color);
+$header: var(--header-color);
+$white: var(--white);
+$text: var(--text-color);
+$titre: var(--titre-color);
+
+
