@@ -9,11 +9,13 @@
     <form [formGroup]="signInForm" style="text-align: right">
       <label>
         Address Mail
-        <input [formControlName]="'email'" class="input-custom" id="email" type="text"><br>
+        <input (keydown)="EnterSubmit($event)" [formControlName]="'email'" class="input-custom" id="email"
+               type="text"><br>
       </label>
       <label>
         Mot de Passe
-        <input [formControlName]="'password'" class="input-custom" id="password" type="password"><br>
+        <input (keydown)="EnterSubmit($event)" [formControlName]="'password'" class="input-custom" id="password"
+               type="password"><br>
       </label>
     </form>
     <button (click)="signIn()" class="button-card" id="signInButton" style="margin-top: 20px" type="submit">Se

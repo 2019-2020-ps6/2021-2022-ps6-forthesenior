@@ -23,7 +23,7 @@ export class QuizListComponent implements OnInit {
     this.quizService.retrieveQuizzes();
   }
 
-  selectQuiz(quiz: Quiz): void {
+  playQuiz(quiz: Quiz): void {
     this.router.navigate([this.router.url + '/play/' + quiz.id + '/question/0']);
   }
 

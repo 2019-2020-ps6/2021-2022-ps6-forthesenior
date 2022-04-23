@@ -3,6 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {BehaviorSubject, Subject} from 'rxjs';
 import {Account} from '../models/account.model';
 import {httpOptionsBase, serverUrl} from '../configs/server.config';
+import {Router} from "@angular/router";
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +16,7 @@ export class AccountService {
   private accounts: Account[] = [];
   private httpOptions = httpOptionsBase;
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private router: Router) {
     this.retrieveAccounts();
   }
 
@@ -38,5 +39,18 @@ export class AccountService {
 
   deleteAccount(account: Account): void {
     this.http.delete<Account>(this.accountUrl + '/' + account.id, this.httpOptions).subscribe(() => this.retrieveAccounts());
+  }
+
+  logIn(email: string, password: string, onErrorFunction: () => void) {
+    this.http.post<any>(this.accountUrl + '/login', {
+      email: email,
+      password: password
+    }).subscribe((account) => {
+      this.setSelectedAccount(account.id);
+      this.router.navigate(['accounts/' + account.id + '/users']);
+    }, (error) => {
+      if (onErrorFunction !== undefined) onErrorFunction();
+      throw error.message + "Invalide Username or Password";
+    });
   }
 }

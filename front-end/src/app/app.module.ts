@@ -25,11 +25,13 @@ import {QuizQuestionComponent} from './quizzes/quiz-question/quiz-question.compo
 import {AnswerQuizComponent} from './quizzes/answer-quiz/answer-quiz.component';
 import {ResultComponent} from './result/result.component';
 import {Connection} from './connection/connection';
+import {ErrorPath} from './error/error.path'
 
 @NgModule({
   declarations: [
     AppComponent,
     Connection,
+    ErrorPath,
     QuizListComponent,
     QuizComponent,
     HeaderComponent,

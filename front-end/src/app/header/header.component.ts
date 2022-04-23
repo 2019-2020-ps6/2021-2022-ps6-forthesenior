@@ -10,24 +10,22 @@ import {UserService} from "../../services/user.service";
 })
 export class HeaderComponent implements OnInit {
   @Input() public nameShown = 'Pas Connecté';
-  private selectedAccount: Account;
-  private selectedUser: User;
+  private selectedAccount: Account = undefined;
+  private selectedUser: User = undefined;
 
   constructor(private accountServices: AccountService, private userService: UserService, private router: Router) {
     this.accountServices.accountSelected$.asObservable().subscribe((account) => {
       this.selectedAccount = account
-      if (this.nameShown === 'Pas Connecté') {
+      if (account !== undefined && this.nameShown === 'Pas Connecté') {
         this.nameShown = 'Admin: ' + account.email;
         this.selectedUser = undefined;
       }
     });
     this.userService.userSelected$.asObservable().subscribe((user) => {
       this.selectedUser = user
-      this.nameShown = this.selectedUser.firstname + " " + this.selectedUser.lastname;
+      if (user !== undefined) this.nameShown = this.selectedUser.firstname + " " + this.selectedUser.lastname;
     });
-    if (this.nameShown === 'Pas Connecté') {
-      this.router.navigate(['/connection']);
-    }
+    this.reConnection();
   }
 
   ngOnInit(): void {
@@ -41,5 +39,39 @@ export class HeaderComponent implements OnInit {
   goToUsers(): string {
     if (this.selectedAccount !== undefined) return '/accounts/' + this.selectedAccount.id + '/users'
     return this.router.url;
+  }
+
+  connectedToAccount(): boolean {
+    const url = document.URL;
+    if (url.includes("accounts/")) {
+      const urlRoutes = url.split('/').reverse();
+      while (urlRoutes.pop() !== 'accounts') {
+      }
+      this.accountServices.setSelectedAccount(urlRoutes.pop());
+      return true;
+    }
+    return false;
+  }
+
+  connectedToUser(): boolean {
+    const url = document.URL;
+    if (url.includes("users/")) {
+      const urlRoutes = url.split('/').reverse();
+      while (urlRoutes.pop() !== 'users') {
+      }
+      this.userService.setSelectedUser(urlRoutes.pop());
+      return true;
+    }
+    return false;
+  }
+
+  private reConnection() {
+    if (this.connectedToAccount()) {
+      if (!this.connectedToUser()) {
+        this.goToUsers();
+      }
+    } else {
+      this.router.navigate(['/connection']);
+    }
   }
 }

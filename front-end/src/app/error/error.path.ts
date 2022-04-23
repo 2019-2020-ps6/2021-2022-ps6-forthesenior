@@ -6,11 +6,11 @@ import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-connection',
-  templateUrl: './connection.html',
-  styleUrls: ['./connection.scss']
+  templateUrl: './error.path.html',
+  styleUrls: ['./error.path.scss']
 })
 // tslint:disable-next-line:component-class-suffix
-export class Connection implements OnInit {
+export class ErrorPath implements OnInit {
 
   public signInForm: FormGroup;
 

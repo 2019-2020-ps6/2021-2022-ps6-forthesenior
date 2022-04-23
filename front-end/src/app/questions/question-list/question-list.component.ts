@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Quiz} from 'src/models/quiz.model';
-import {QuizService} from 'src/services/quiz.service';
 import {Question} from 'src/models/question.model';
+import {QuestionService} from 'src/services/question.service';
+import {Quiz} from "../../../models/quiz.model";
 
 @Component({
   selector: 'app-question-list',
@@ -10,17 +10,20 @@ import {Question} from 'src/models/question.model';
 })
 export class QuestionListComponent implements OnInit {
 
-  @Input()
-  public quiz: Quiz;
+  @Input() public quiz: Quiz;
+  public question: Question;
+  public questionList: Question[] = [];
 
-  constructor(private quizService: QuizService) {
+  constructor(private questionService: QuestionService) {
+    this.questionService.questions$.subscribe((questions: Question[]) => {
+      this.questionList = questions;
+    });
   }
 
   ngOnInit(): void {
   }
 
   deleteQuestion(question: Question): void {
-    this.quizService.deleteQuestion(this.quiz, question);
+    this.questionService.deleteQuestion(question);
   }
-
 }

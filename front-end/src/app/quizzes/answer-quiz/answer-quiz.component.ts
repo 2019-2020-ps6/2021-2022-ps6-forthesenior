@@ -1,6 +1,6 @@
 import {Component, EventEmitter, Input, OnChanges, OnInit, Output} from '@angular/core';
-import {Answer} from '../../../models/question.model';
 import {ActivatedRoute, Router} from '@angular/router';
+import {Answer} from "../../../models/answer.model";
 
 @Component({
   selector: 'app-answer-quiz',
@@ -8,10 +8,8 @@ import {ActivatedRoute, Router} from '@angular/router';
   styleUrls: ['./answer-quiz.component.scss']
 })
 export class AnswerQuizComponent implements OnInit, OnChanges {
-  @Input()
-  answer: Answer;
-  @Input()
-  answered: boolean;
+  @Input() answer: Answer;
+  @Input() answered: boolean;
 
   @Output()
   answeredQuestion: EventEmitter<boolean> = new EventEmitter<boolean>();
@@ -27,7 +25,7 @@ export class AnswerQuizComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges(): void {
-    if (this.answer.isCorrect && this.answered){
+    if (this.answer.isCorrect && this.answered) {
       this.buttonColor = '#00ff00';
     }
   }

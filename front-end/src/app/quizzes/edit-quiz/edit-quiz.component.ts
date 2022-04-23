@@ -20,6 +20,9 @@ export class EditQuizComponent implements OnInit {
   }
 
   validate() {
-    this.router.navigate([this.quizService.getQuizUrl()]);
+    let urlRoutes = this.router.url.split('/');
+    urlRoutes.pop();
+    urlRoutes.pop();
+    this.router.navigate([urlRoutes.join('/')]);
   }
 }

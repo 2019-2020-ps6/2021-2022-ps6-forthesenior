@@ -1,7 +1,7 @@
 <app-quiz-form></app-quiz-form>
 <div class="quiz-list">
   <div *ngFor="let quiz of quizList" class="quiz">
-    <app-quiz (deleteQuiz)="deleteQuiz($event)" (editQuiz)="editQuiz($event)" (selectQuiz)="selectQuiz($event)"
+    <app-quiz (deleteQuiz)="deleteQuiz($event)" (editQuiz)="editQuiz($event)" (playQuiz)="playQuiz($event)"
               [quiz]="quiz"></app-quiz>
   </div>
 </div>

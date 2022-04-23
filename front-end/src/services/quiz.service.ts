@@ -1,11 +1,11 @@
 import {Injectable} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
 import {BehaviorSubject, Subject} from 'rxjs';
 import {Quiz} from '../models/quiz.model';
-import {Question} from '../models/question.model';
+import {HttpClient} from '@angular/common/http';
 import {httpOptionsBase} from '../configs/server.config';
 import {Router} from "@angular/router";
 import {ThemeService} from "./theme.service";
+
 
 @Injectable({
   providedIn: 'root'
@@ -22,10 +22,12 @@ export class QuizService {
   }
 
   retrieveQuizzes(): void {
-    this.http.get<Quiz[]>(this.getQuizUrl()).subscribe((quizList) => {
-      this.quizzes = quizList;
-      this.quizzes$.next(this.quizzes);
-    });
+    if (!this.getQuizUrl().includes('undefined')) {
+      this.http.get<Quiz[]>(this.getQuizUrl()).subscribe((quizList) => {
+        this.quizzes = quizList;
+        this.quizzes$.next(this.quizzes);
+      });
+    }
   }
 
   addQuiz(quiz: Quiz): void {
@@ -40,14 +42,6 @@ export class QuizService {
 
   deleteQuiz(quiz: Quiz): void {
     this.http.delete<Quiz>(this.getQuizUrl() + '/' + quiz.id, this.httpOptions).subscribe(() => this.retrieveQuizzes());
-  }
-
-  addQuestion(quiz: Quiz, question: Question): void {
-    this.http.post<Question>(this.getQuizUrl() + '/' + quiz.id + '/questions', question, this.httpOptions).subscribe(() => this.setSelectedQuiz(quiz.id));
-  }
-
-  deleteQuestion(quiz: Quiz, question: Question): void {
-    this.http.delete<Question>(this.getQuizUrl() + '/' + quiz.id + '/questions/' + question.id, this.httpOptions).subscribe(() => this.setSelectedQuiz(quiz.id));
   }
 
   getQuizUrl(): string {

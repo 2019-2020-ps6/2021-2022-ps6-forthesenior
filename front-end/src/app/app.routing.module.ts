@@ -1,6 +1,7 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {Connection} from './connection/connection';
+import {ErrorPath} from './error/error.path';
 import {UserListComponent} from './users/user-list/user-list.component';
 import {ThemeListComponent} from './themes/theme-list/theme-list.component';
 import {QuizListComponent} from "./quizzes/quiz-list/quiz-list.component";
@@ -12,8 +13,9 @@ import {EditThemeComponent} from "./themes/edit-theme/edit-theme.component";
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/connection',
-    pathMatch: 'full'
+    redirectTo: '',
+    pathMatch: 'full',
+    component: ErrorPath
   },
   {
     path: 'connection',
@@ -47,11 +49,6 @@ const routes: Routes = [
     path: 'accounts/:accountId/users/:userId/themes/:themeId/quizzes/result/:id/:right/:total',
     component: ResultComponent
   },
-
-
-  // {path: 'edit-list', component: EditQuizComponent},
-  // {path: ':id/quiz-list', component: EditQuizComponent},
-  // {path: 'edit-quiz/:id', component: EditQuizComponent},
 ];
 
 @NgModule({
