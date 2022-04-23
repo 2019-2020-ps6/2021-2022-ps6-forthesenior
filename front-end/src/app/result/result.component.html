@@ -1,10 +1,14 @@
-<div class="card">
-  <h2>
-    Resultats
-  </h2>
-  <p>{{right}}/{{total}}</p>
-  <div>
-    <button class="button-card" (click)="restartSelected()">Retour Quiz</button>
-    <button class="button-card" (click)="backSelected()">Retour Thèmes</button>
+<h1 class="user titre">Resultats</h1>
+<h2 class="user titre">Votre score est de : {{right}}/{{total}}</h2>
+<div class="user grid">
+  <div class="user case">
+    <div class="user card" (click)="restartSelected()">
+      <h2>Retour Quiz</h2>
+    </div>
+  </div>
+  <div class="user case">
+    <div class="user card" (click)="backSelected()">
+      <h2>Retour Thèmes</h2>
+    </div>
   </div>
 </div>
