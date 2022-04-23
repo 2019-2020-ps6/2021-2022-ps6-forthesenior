@@ -1,10 +1,7 @@
-<div class="page">
-  <h2>
-    {{question.label}}
-  </h2>
-  <div class="answer">
-    <div  *ngFor="let answer of question.answers; let i=index">
-      <app-answer-quiz [answer]="answer" [answered]="answered" (answeredQuestion)="onAnswered($event)"></app-answer-quiz>
-    </div>
+<h2 class="user titre">{{question.label}}</h2>
+<div class="user grid">
+  <div class="quiz user case" *ngFor="let answer of question.answers; let i=index">
+    <app-answer-quiz [answer]="answer" [answered]="answered"
+                     (answeredQuestion)="onAnswered($event)"></app-answer-quiz>
   </div>
 </div>

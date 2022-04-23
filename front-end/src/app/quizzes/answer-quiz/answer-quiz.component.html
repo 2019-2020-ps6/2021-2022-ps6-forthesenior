@@ -1,1 +1,3 @@
-<button class="button-answer" (click)="showAnswer()" [ngStyle]="{'background-color': buttonColor}">{{answer.label}}</button>
+<div class="card user" [ngStyle]="{'background-color': buttonColor}" (click)="showAnswer()">
+  <h2>{{answer.label}}</h2>
+</div>

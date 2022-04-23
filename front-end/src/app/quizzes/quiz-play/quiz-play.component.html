@@ -1,8 +1,5 @@
-
-<div class="page">
-  <h2>{{quiz.name}}</h2>
-  <app-quiz-question [question]="quiz.questions[index]" (next)="onAnswered($event)"></app-quiz-question>
-  <div *ngIf="next"><button class="button-next" (click)="nextQuestion()" >Suivant</button></div>
-</div>
+<h1 class="user titre">{{quiz.name}}</h1>
+<app-quiz-question [question]="quiz.questions[index]" (next)="onAnswered($event)"></app-quiz-question>
+<button class="button-next" *ngIf="next" (click)="nextQuestion()">Suivant</button>
 
 

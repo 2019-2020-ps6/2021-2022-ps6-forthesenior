@@ -1,8 +1,10 @@
-<div class="theme-list">
-  <app-theme-form *ngIf="userId == '0'"></app-theme-form>
-  <div class="theme" *ngFor="let theme of  themeList">
+<h1 class="user titre">Choisissez un thème :</h1>
+<div class="user grid">
+  <div class="theme user case" *ngFor="let theme of  themeList">
+
     <!--Inputs & Output allow communication between parent & child components.-->
     <!--More information: https://angular.io/guide/component-interaction-->
     <app-theme [theme]="theme" (deleteTheme)="deleteTheme($event)" (selectTheme)="setSelectedTheme($event)"></app-theme>
   </div>
+  <app-theme-form *ngIf="userId == '0'"></app-theme-form>
 </div>

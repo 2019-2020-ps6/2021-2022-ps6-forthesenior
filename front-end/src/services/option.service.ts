@@ -19,8 +19,9 @@ export class OptionService {
     this.http.get<Option>(optionUrl).subscribe((option) => {
       this.option = option[0];
       document.documentElement.style.setProperty("--font-size",this.option.fontSize +"px");
-      document.documentElement.style.setProperty("--gap-row","150px");
-      document.documentElement.style.setProperty("--gap-column","150px");
+      document.documentElement.style.setProperty("--gap-row","50px");
+      document.documentElement.style.setProperty("--gap-column","50px");
+      document.documentElement.style.setProperty("--size-answer","15em");
       if(this.option.theme)
         this.setBlackTheme();
       else

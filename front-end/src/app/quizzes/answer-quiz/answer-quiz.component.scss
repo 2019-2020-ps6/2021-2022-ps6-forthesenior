@@ -1,7 +1,2 @@
 @import "../../../styles";
-.button-answer{
-  width: $size-answer;
-  height: $size-answer;
-  font-size: $font-size;
-  color:$black;
-}
+@import '../../../styles/card.scss';

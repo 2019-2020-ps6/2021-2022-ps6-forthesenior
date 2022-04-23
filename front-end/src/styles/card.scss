@@ -2,7 +2,7 @@
 
 .card {
   background: $white;
-  color:$titre;
+  color: $titre;
   border-radius: 10px;
   display: inline-block;
   margin: 1rem;
@@ -12,11 +12,41 @@
   font-size: $font-size;
 }
 
-.grid {
-  display: flex;
+.user.titre{
+  text-align: center;
+  margin-bottom: 2%;
+  color:$titre;
+}
+
+.user.card {
+  width: $size-answer;
+  height: $size-answer;
+  min-width: min-content;
+  min-height: min-content;
+  font-size: $font-size;
+  color: $black;
+  display:flex;
+  flex-direction: column;
+  margin: 0;
+  padding : 0;
+  align-items: center;
+  justify-content: center;
+}
+
+.user.case{
+  place-items: center;
+  text-align: center;
+}
+
+.user.grid {
+  display: grid;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  grid-template-columns: repeat(2, min-content);
+  column-gap: $gap-column;
+  row-gap: $gap-row;
+  margin : 30px;
 }
 
 .button-card {
