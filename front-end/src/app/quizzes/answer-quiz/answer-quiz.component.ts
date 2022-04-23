@@ -16,7 +16,7 @@ export class AnswerQuizComponent implements OnInit, OnChanges {
   @Output()
   answeredQuestion: EventEmitter<boolean> = new EventEmitter<boolean>();
 
-  buttonColor = 'rgba(224,216,216,0.5)'; // Default Color
+  buttonColor = 'rgba(224,216,216,0.0)'; // Default Color
   vert = '#00ff00';
   rouge = '#ff0000';
 
