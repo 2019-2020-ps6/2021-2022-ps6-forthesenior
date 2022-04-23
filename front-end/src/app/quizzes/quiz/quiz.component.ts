@@ -21,10 +21,10 @@ export class QuizComponent implements OnInit {
   @Output()
   deleteQuiz: EventEmitter<Quiz> = new EventEmitter<Quiz>();
 
-  public userId:string;
+  @Input()
+  userId:string;
 
-  constructor(public route: ActivatedRoute) {
-    this.userId= this.route.snapshot.paramMap.get('userId');
+  constructor() {
   }
 
   ngOnInit(): void {

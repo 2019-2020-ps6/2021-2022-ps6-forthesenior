@@ -4,8 +4,18 @@
     "label": "Quel animal court le plus vite ?",
     "quizId": 3,
     "answers": [
-      1,
-      2
+      {
+        "id": 1,
+        "label": "Le lion",
+        "isCorrect": false,
+        "questionId": 1
+      },
+      {
+        "id": 2,
+        "label": "Le guépard",
+        "isCorrect": true,
+        "questionId": 1
+      }
     ]
   },
   {
@@ -13,8 +23,18 @@
     "label": "Quel animal fait cot-cot ?",
     "quizId": 3,
     "answers": [
-      3,
-      4
+      {
+        "id": 3,
+        "label": "La poule",
+        "isCorrect": true,
+        "questionId": 2
+      },
+      {
+        "id": 4,
+        "label": "La girafe",
+        "isCorrect": false,
+        "questionId": 2
+      }
     ]
   },
   {
@@ -22,9 +42,24 @@
     "label": "Quelle a été le dernier président de la république ?",
     "quizId": 1,
     "answers": [
-      5,
-      6,
-      7
+      {
+        "id": 5,
+        "label": "Francois Hollande",
+        "isCorrect": false,
+        "questionId": 3
+      },
+      {
+        "id": 6,
+        "label": "Emmanuel Macron",
+        "isCorrect": true,
+        "questionId": 3
+      },
+      {
+        "id": 7,
+        "label": "Nicolas Sarkozy",
+        "isCorrect": false,
+        "questionId": 3
+      }
     ]
   },
   {
@@ -41,8 +76,30 @@
     "label": "Premier président de la République ?",
     "quizId": 1,
     "answers": [
-      3,
-      4
+      {
+        "id": 10,
+        "label": "Mitterand",
+        "isCorrect": false,
+        "questionId": 5
+      },
+      {
+        "id": 11,
+        "label": "De gaulle",
+        "isCorrect": true,
+        "questionId": 5
+      },
+      {
+        "id": 12,
+        "label": "Jospin",
+        "isCorrect": false,
+        "questionId": 5
+      },
+      {
+        "id": 13,
+        "label": "Coluche",
+        "isCorrect": false,
+        "questionId": 5
+      }
     ]
   }
 ]

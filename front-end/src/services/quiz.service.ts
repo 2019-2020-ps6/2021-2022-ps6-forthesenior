@@ -33,7 +33,7 @@ export class QuizService {
   public quizSelected$: BehaviorSubject<Quiz> = new BehaviorSubject<Quiz>(0);
 
   private quizUrl = serverUrl + '/theme/';
-  private questionsPath = 'questions';
+  private questionsPath = '/questions';
 
   private httpOptions = httpOptionsBase;
   private theme: Theme;
@@ -75,6 +75,7 @@ export class QuizService {
     const urlWithId = this.quizUrl + this.idTheme + '/quizzes/'+id;
     this.http.get<Quiz>(urlWithId).subscribe((quiz) => {
       this.quizSelected$.next(quiz);
+      console.log("quiz question : "+quiz.questions[0].label);
     });
   }
 

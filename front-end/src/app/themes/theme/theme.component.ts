@@ -1,5 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Theme} from '../../../models/theme.model';
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-theme',
@@ -16,7 +17,10 @@ export class ThemeComponent implements OnInit {
   @Output()
   deleteTheme: EventEmitter<Theme> = new EventEmitter<Theme>();
 
-  constructor() {
+  public userId:string;
+
+  constructor(public route : ActivatedRoute) {
+    this.userId = this.route.snapshot.paramMap.get('idUser');
   }
 
   ngOnInit(): void {

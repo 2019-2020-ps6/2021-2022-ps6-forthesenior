@@ -19,10 +19,16 @@ export class OptionService {
     this.http.get<Option>(optionUrl).subscribe((option) => {
       this.option = option[0];
       document.documentElement.style.setProperty("--font-size",this.option.fontSize +"px");
-      document.documentElement.style.setProperty("--gap-row","50px");
+      document.documentElement.style.setProperty("--gap-row","150px");
       document.documentElement.style.setProperty("--gap-column","150px");
 
     });
+  }
+
+  setAdminOption(): void{
+    document.documentElement.style.setProperty("--font-size","20px");
+    document.documentElement.style.setProperty("--gap-row","15px");
+    document.documentElement.style.setProperty("--gap-column","15px");
   }
 
 }

@@ -9,7 +9,7 @@ import {QuizPlayComponent} from './quizzes/quiz-play/quiz-play.component';
 import {ResultComponent} from './result/result.component';
 
 const routes: Routes = [
-  {path: '', redirectTo: '/connection', pathMatch: 'full'},
+  {path: '', redirectTo: '/1/user-list', pathMatch: 'full'},
   {path: 'connection', component: Connection},
   {path: ':idAccount/user-list', component: UserListComponent},
   {path: ':idAccount/user-list/:idUser/theme-list', component: ThemeListComponent},

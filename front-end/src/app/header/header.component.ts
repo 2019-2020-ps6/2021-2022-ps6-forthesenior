@@ -8,11 +8,12 @@ import {Router} from "@angular/router";
 export class HeaderComponent implements OnInit {
   @Input() public username = 'Moi';
 
-  constructor(private accountServices: AccountService, private router: Router) {
+  constructor(private accountServices: AccountService, private router: Router) {/*
     this.accountServices.accountSelected$.asObservable().subscribe((account) => this.username = account.email);
     if (this.username === 'Moi') {
       this.router.navigate(['/connection']);
     }
+    */
   }
 
   ngOnInit(): void {

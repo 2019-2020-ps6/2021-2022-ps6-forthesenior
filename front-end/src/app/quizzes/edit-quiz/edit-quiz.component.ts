@@ -17,7 +17,7 @@ export class EditQuizComponent implements OnInit {
   constructor(private route: ActivatedRoute, private quizService: QuizService, public optionService : OptionService) {
     this.quizService.quizSelected$.subscribe((quiz) => this.quiz = quiz);
     this.userId= this.route.snapshot.paramMap.get('userId');
-    this.optionService.setOption(this.userId);
+    //this.optionService.setOption(this.userId);
   }
 
   ngOnInit(): void {
