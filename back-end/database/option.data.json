@@ -2,7 +2,7 @@
   {
     "id": 1,
     "userId" : 1,
-    "fontSize": 10,
+    "fontSize": 20,
     "dmlaOffset": 0,
     "parkinsonOffset": 0,
     "theme": false
@@ -14,5 +14,13 @@
     "dmlaOffset": 10,
     "parkinsonOffset": 0,
     "theme": true
+  },
+  {
+    "id": 3,
+    "userId" : 3,
+    "fontSize": 30,
+    "dmlaOffset": 10,
+    "parkinsonOffset": 0,
+    "theme": false
   }
 ]

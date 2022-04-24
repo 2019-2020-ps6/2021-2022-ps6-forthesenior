@@ -1,6 +1,7 @@
 import {Component, EventEmitter, Input, OnChanges, OnInit, Output} from '@angular/core';
 import {Answer} from '../../../models/question.model';
 import {ActivatedRoute, Router} from '@angular/router';
+import {OptionService} from "../../../services/option.service";
 
 @Component({
   selector: 'app-answer-quiz',
@@ -16,11 +17,24 @@ export class AnswerQuizComponent implements OnInit, OnChanges {
   @Output()
   answeredQuestion: EventEmitter<boolean> = new EventEmitter<boolean>();
 
-  buttonColor = 'rgba(224,216,216,0.0)'; // Default Color
-  vert = '#00ff00';
-  rouge = '#ff0000';
+  /*buttonColor = '#faf8f3'; // Default Color
+  vert = '#77AD71';
+  rouge = '#A9362F';*/
 
-  constructor(private router: Router, private route: ActivatedRoute) {
+  buttonColor : string;
+  vert : string;
+  rouge : string;
+
+  constructor(private optionService : OptionService) {
+    if (this.optionService.theme){
+      this.buttonColor = '#6b7070'; // Default Color
+      this.vert = '#53794f';
+      this.rouge = '#762520';
+    } else {
+      this.buttonColor = '#faf8f3'; // Default Color
+      this.vert = '#77AD71';
+      this.rouge = '#A9362F';
+    }
   }
 
   ngOnInit(): void {
@@ -28,7 +42,7 @@ export class AnswerQuizComponent implements OnInit, OnChanges {
 
   ngOnChanges(): void {
     if (this.answer.isCorrect && this.answered){
-      this.buttonColor = '#00ff00';
+      this.buttonColor = this.vert;
     }
   }
 
