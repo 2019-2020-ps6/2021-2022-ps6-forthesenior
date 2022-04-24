@@ -18,10 +18,10 @@ export class ThemeListComponent implements OnInit {
   public theme: Theme;
 
   public themeList: Theme[] = [];
-  public userId:string;
+  public userId: string;
 
   constructor(private router: Router, public themeService: ThemeService, public quizService: QuizService,
-              private route: ActivatedRoute, public optionService : OptionService) {
+              private route: ActivatedRoute, public optionService: OptionService) {
     this.userId = this.route.snapshot.paramMap.get('idUser');
     this.themeService.setIds(
       this.route.snapshot.paramMap.get('idAccount'),
@@ -32,10 +32,17 @@ export class ThemeListComponent implements OnInit {
       this.themeList = themes;
     });
 
-    this.optionService.setOption(this.userId);
+
   }
 
   ngOnInit(): void {
+    this.userId = this.route.snapshot.paramMap.get('idUser');
+    this.optionService.setOption(this.userId);
+    console.log(this.userId);
+    if (this.userId === '0') {
+      let grid = document.getElementsByTagName('div');
+      for (let i = 0; i < grid.length; i++) grid[i].classList.add("admin");
+    }
   }
 
   deleteTheme(theme: Theme): void {

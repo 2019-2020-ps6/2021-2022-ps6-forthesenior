@@ -1,6 +1,7 @@
-<app-user-form></app-user-form>
-<div class="user-list">
-    <div class="user" *ngFor="let user of userList">
-        <app-user [user]="user" (deleteUser)="deleteUser($event)" (selectUser)="selectUser($event)"></app-user>
-    </div>
+<h1 class="user titre">Qui êtes-vous ?</h1>
+<div class="user grid admin">
+  <div class="user" *ngFor="let user of userList">
+    <app-user [user]="user" (deleteUser)="deleteUser($event)" (selectUser)="selectUser($event)"></app-user>
   </div>
+  <app-user-form></app-user-form>
+</div>

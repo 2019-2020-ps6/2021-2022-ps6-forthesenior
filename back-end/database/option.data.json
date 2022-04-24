@@ -2,7 +2,7 @@
   {
     "id": 1,
     "userId" : 1,
-    "fontSize": 20,
+    "fontSize": 300,
     "dmlaOffset": 0,
     "parkinsonOffset": 0,
     "theme": false
@@ -10,16 +10,16 @@
   {
     "id": 2,
     "userId" : 2,
-    "fontSize": 30,
-    "dmlaOffset": 10,
+    "fontSize": 400,
+    "dmlaOffset": 25,
     "parkinsonOffset": 0,
     "theme": true
   },
   {
     "id": 3,
     "userId" : 3,
-    "fontSize": 30,
-    "dmlaOffset": 10,
+    "fontSize": 200,
+    "dmlaOffset": 50,
     "parkinsonOffset": 0,
     "theme": false
   }

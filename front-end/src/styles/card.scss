@@ -12,40 +12,51 @@
   font-size: $font-size;
 }
 
-.user.titre{
+.user.titre {
   text-align: center;
-  margin-bottom: 2%;
-  color:$titre;
+  margin-bottom: 100px;
+  color: $titre;
 }
 
 .user.card {
-  width: $size-answer;
-  height: $size-answer;
   min-width: min-content;
   min-height: min-content;
   font-size: $font-size;
-  display:flex;
   flex-direction: column;
-  margin: 0;
-  padding : 0;
+  margin: 5px;
+
+  &:not(.admin) {
+    display: flex;
+    width: $size-answer;
+    height: $size-answer;
+    line-height: normal;
+  }
+
   align-items: center;
   justify-content: center;
 }
 
-.user.case{
+.user.case {
   place-items: center;
   text-align: center;
 }
 
-.user.grid {
+.grid {
   display: grid;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  grid-template-columns: repeat(2, min-content);
   column-gap: $gap-column;
   row-gap: $gap-row;
-  margin : 30px;
+  margin: 30px;
+  flex-direction: column;
+
+  &.user {
+    grid-template-columns: repeat(2, auto);
+  }
+
+  &.admin {
+    grid-auto-flow: column;
+  }
 }
 
 .button-card {

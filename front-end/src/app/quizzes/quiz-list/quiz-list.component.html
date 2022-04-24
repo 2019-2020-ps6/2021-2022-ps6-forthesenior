@@ -1,8 +1,8 @@
 <h1 class="user titre">{{theme.name}}</h1>
-<app-quiz-form *ngIf="userId === '0'"></app-quiz-form>
 <div class="quiz-list user grid">
   <div class="quiz user case" *ngFor="let quiz of quizList">
     <app-quiz [quiz]="quiz" [userId]="userId" (quizSelected)="quizSelected($event)" (deleteQuiz)="deleteQuiz($event)"
               (editQuiz)="editQuiz($event)"></app-quiz>
   </div>
+  <app-quiz-form *ngIf="userId === '0'"></app-quiz-form>
 </div>

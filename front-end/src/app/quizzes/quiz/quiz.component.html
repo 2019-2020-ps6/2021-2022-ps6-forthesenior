@@ -1,4 +1,4 @@
-<div class="card user" (click)="selectQuiz()">
+<div class="card user" (click)="userId != '0' ? selectQuiz() : null">
   <h2>{{quiz.name}}</h2>
   <button class="button-card" *ngIf="userId === '0'" (click)="selectQuiz()">Jouer</button>
   <button class="button-card" *ngIf="userId === '0'" (click)="delete()">Supprimer</button>

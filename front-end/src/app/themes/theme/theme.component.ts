@@ -24,6 +24,10 @@ export class ThemeComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    if (this.userId === '0') {
+      let grid = document.getElementsByTagName('div');
+      for (let i = 0; i < grid.length; i++) grid[i].classList.add("admin");
+    }
   }
 
   themeSelected(): void {
