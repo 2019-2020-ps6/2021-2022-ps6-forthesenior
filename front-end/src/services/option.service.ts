@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {Option} from "../models/option.model";
 import {ActivatedRoute} from "@angular/router";
-import {serverUrl} from "../configs/server.config";
+import {httpOptionsBase, serverUrl} from "../configs/server.config";
 import {HttpClient} from "@angular/common/http";
 
 @Injectable({
@@ -11,6 +11,8 @@ export class OptionService {
   option: Option;
   userId: string;
   theme: boolean;
+  optionPath = serverUrl + "/option/";
+  httpOptions = httpOptionsBase;
 
   constructor(private http: HttpClient, public route: ActivatedRoute) {
   }
@@ -66,6 +68,12 @@ export class OptionService {
     document.documentElement.style.setProperty("--text-color", "#2666CF");
     document.documentElement.style.setProperty("--titre-color", "#2C3333");
     document.documentElement.style.setProperty("--header-text", "#faf8f3");
+  }
+  addOption(options : Option, id : string): void {
+    const optionUrl = this.optionPath+ id;
+    console.log(optionUrl)
+    this.http.post<Option>(optionUrl,options,this.httpOptions).subscribe(()=> console.log('enregister'));
+
   }
 
 }

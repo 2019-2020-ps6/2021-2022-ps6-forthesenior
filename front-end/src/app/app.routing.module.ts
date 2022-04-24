@@ -7,6 +7,7 @@ import {UserListComponent} from './users/user-list/user-list.component';
 import {ThemeListComponent} from './themes/theme-list/theme-list.component';
 import {QuizPlayComponent} from './quizzes/quiz-play/quiz-play.component';
 import {ResultComponent} from './result/result.component';
+import {OptionComponent} from "./option/option/option.component";
 
 const routes: Routes = [
   {path: '', redirectTo: '/1/user-list', pathMatch: 'full'},
@@ -16,6 +17,8 @@ const routes: Routes = [
   {path: ':idAccount/user-list/:idUser/theme-list/:idTheme/quiz-list', component: QuizListComponent},
   {path: ':idAccount/user-list/:idUser/:idTheme/quiz-play/:idQuiz/question/:numero', component: QuizPlayComponent},
   {path: ':idAccount/user-list/:idUser/:idTheme/result/:idQuiz/:right/:total', component: ResultComponent},
+  {path: ':idAccount/user-list/:idUser/option', component: OptionComponent},
+  {path: ':idAccount/user-list/:idUser/theme-list/:idTheme/quiz-list', component: EditQuizComponent},
 ];
 
 @NgModule({

@@ -25,6 +25,7 @@ import {QuizQuestionComponent} from './quizzes/quiz-question/quiz-question.compo
 import {AnswerQuizComponent} from './quizzes/answer-quiz/answer-quiz.component';
 import {ResultComponent} from './result/result.component';
 import {Connection} from './connection/connection';
+import {OptionComponent} from "./option/option/option.component";
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import {Connection} from './connection/connection';
     EditThemeComponent,
     QuizQuestionComponent,
     AnswerQuizComponent,
-    ResultComponent
+    ResultComponent,
+    OptionComponent,
   ],
   imports: [
     BrowserModule,

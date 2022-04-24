@@ -10,12 +10,12 @@ import {ActivatedRoute} from "@angular/router";
 })
 export class UserService {
   /*
-   The list of user.
+   The list of option.
    */
   private users: User[] = [];
 
   /*
-   Observable which contains the list of the user.
+   Observable which contains the list of the option.
    */
   public users$: BehaviorSubject<User[]>
     = new BehaviorSubject([]);
@@ -45,23 +45,20 @@ export class UserService {
   }
 
   addUser(user: User): void {
-    this.http.post<User>(this.userUrl, user, this.httpOptions).subscribe(() => this.retrieveUsers());
+    let url = this.userUrl + this.idAccount + "/users"
+    this.http.post<User>(url, user, this.httpOptions).subscribe(() => this.retrieveUsers());
   }
 
   setSelectedUser(user: User): void {
-    //this.userSelected$.next(user);
-    /*const urlWithId = this.userUrl + '/' + user.id;
+    //this.userSelected$.next(option);
+    /*const urlWithId = this.userUrl + '/' + option.id;
     this.http.get<User>(urlWithId).subscribe((userList) => {
       this.userSelected$.next(userList);
     });*/
   }
 
   deleteUser(user: User): void {
-    const urlWithId = this.userUrl + '/' + user.id;
-    this.http.delete<User>(urlWithId, this.httpOptions).subscribe(() => this.retrieveUsers());
-  }
-
-  getOption(): void {
-
+    let url = this.userUrl + this.idAccount + "/users/" + user.id;
+    this.http.delete<User>(url, this.httpOptions).subscribe(() => this.retrieveUsers());
   }
 }

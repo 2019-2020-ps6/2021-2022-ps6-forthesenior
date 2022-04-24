@@ -20,6 +20,9 @@ export class UserComponent implements OnInit {
   @Output()
   selectUser: EventEmitter<User> = new EventEmitter<User>();
 
+  @Output()
+  optionUser: EventEmitter<User> = new EventEmitter<User>();
+
   constructor(public router : Router) { }
 
   ngOnInit(): void {
@@ -31,5 +34,9 @@ export class UserComponent implements OnInit {
 
   delete() {
     this.deleteUser.emit(this.user);
+  }
+
+  option(){
+    this.optionUser.emit(this.user);
   }
 }

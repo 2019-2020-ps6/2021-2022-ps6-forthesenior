@@ -1,0 +1,27 @@
+<div class="card">
+  <h2>Options</h2>
+  <form class="user-form" [formGroup]="optionForm">
+    Taille du texte <br>
+      <input class="input-custom" type="radio"  value=20 [formControlName]="'fontSize'"> normal
+      <input class="input-custom" type="radio"  value=30 [formControlName]="'fontSize'"> grand
+      <input class="input-custom" type="radio"  value=40 [formControlName]="'fontSize'"> tres grand
+    <br>
+    Ecartement <br>
+    <input class="input-custom" type="radio"  value=10 [formControlName]="'dmlaOffset'"> faible
+    <input class="input-custom" type="radio"  value=20 [formControlName]="'dmlaOffset'"> normal
+    <input class="input-custom" type="radio"  value=30 [formControlName]="'dmlaOffset'"> grand
+    <br>
+
+    Taille des carres <br>
+    <input class="input-custom" type="radio"  value=15 [formControlName]="'parkinsonOffset'"> normal
+    <input class="input-custom" type="radio"  value=25 [formControlName]="'parkinsonOffset'"> grand
+    <input class="input-custom" type="radio"  value=35 [formControlName]="'parkinsonOffset'"> très grand
+    <br>
+    Theme sombre<br>
+    <input class="input-custom" type="radio"  value=true [formControlName]="'theme'"> sombre
+    <input class="input-custom" type="radio"  value=false [formControlName]="'theme'"> clair
+
+    <br>
+    <button type="submit" class="button-card" (click)="onSubmit()">Créer</button>
+  </form>
+</div>
