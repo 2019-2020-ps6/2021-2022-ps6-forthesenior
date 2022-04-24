@@ -1,4 +1,4 @@
-<h1 class="user titre">Choisissez un thème :</h1>
+<h1 class="user titre">Choisissez un thème</h1>
 <div class="user grid">
   <div class="theme user case" *ngFor="let theme of  themeList">
     <app-theme [theme]="theme" (deleteTheme)="deleteTheme($event)" (selectTheme)="setSelectedTheme($event)"></app-theme>

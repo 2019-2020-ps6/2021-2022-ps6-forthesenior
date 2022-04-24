@@ -25,11 +25,20 @@ export class AnswerQuizComponent implements OnInit, OnChanges {
   vert : string;
   rouge : string;
 
+  pathRight ="assets/right.png";
+  altRight = "Right";
+
+  pathWrong = "assets/wrong.png";
+  altWrong = "Wrong";
+
+  path : string;
+  alt : string;
+
   constructor(private optionService : OptionService) {
     if (this.optionService.theme){
       this.buttonColor = '#6b7070'; // Default Color
-      this.vert = '#53794f';
-      this.rouge = '#762520';
+      /*this.vert = '#53794f';
+      this.rouge = '#762520';*/
     } else {
       this.buttonColor = '#faf8f3'; // Default Color
       this.vert = '#77AD71';
@@ -38,17 +47,36 @@ export class AnswerQuizComponent implements OnInit, OnChanges {
   }
 
   ngOnInit(): void {
+    if (this.optionService.theme){
+      this.buttonColor = '#6b7070'; // Default Color
+      /*this.vert = '#53794f';
+      this.rouge = '#762520';*/
+    } else {
+      this.buttonColor = '#faf8f3'; // Default Color
+      this.vert = '#77AD71';
+      this.rouge = '#A9362F';
+    }
   }
 
   ngOnChanges(): void {
     if (this.answer.isCorrect && this.answered){
-      this.buttonColor = this.vert;
+      if(this.optionService.theme){
+        this.path = this.pathRight;
+        this.alt = this.altRight;
+      } else {
+        this.buttonColor = this.vert;
+      }
     }
   }
 
   showAnswer(): void {
     if (!this.answered) {
-      this.buttonColor = (this.answer.isCorrect) ? this.vert : this.rouge;
+      if(this.optionService.theme){
+        this.path = this.pathWrong;
+        this.alt = this.altWrong;
+      } else {
+        this.buttonColor = (this.answer.isCorrect) ? this.vert : this.rouge;
+      }
       this.answeredQuestion.emit(this.answer.isCorrect);
     }
   }

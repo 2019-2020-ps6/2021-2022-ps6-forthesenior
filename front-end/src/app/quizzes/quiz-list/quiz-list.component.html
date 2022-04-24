@@ -1,4 +1,4 @@
-<h1 class="user titre">{{theme.name}}</h1>
+<h1 class="user titre">Vous avez choisi le thème : {{theme.name}}</h1>
 <div class="quiz-list user grid">
   <div class="quiz user case" *ngFor="let quiz of quizList">
     <app-quiz [quiz]="quiz" [userId]="userId" (quizSelected)="quizSelected($event)" (deleteQuiz)="deleteQuiz($event)"

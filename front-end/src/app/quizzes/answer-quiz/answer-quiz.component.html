@@ -1,3 +1,4 @@
 <div class="card user" [ngStyle]="{'background-color': buttonColor}" (click)="showAnswer()">
   <h2>{{answer.label}}</h2>
+  <img *ngIf="path != null" src="{{path}}" alt="{{alt}}">
 </div>
