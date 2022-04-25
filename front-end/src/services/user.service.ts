@@ -4,6 +4,7 @@ import {BehaviorSubject, Subject} from 'rxjs';
 import {User} from '../models/user.model';
 import {serverUrl, httpOptionsBase} from '../configs/server.config';
 import {ActivatedRoute} from "@angular/router";
+import {Option} from "../models/option.model";
 
 @Injectable({
   providedIn: 'root'
@@ -59,6 +60,9 @@ export class UserService {
 
   deleteUser(user: User): void {
     let url = this.userUrl + this.idAccount + "/users/" + user.id;
+    //let optionURL=serverUrl + "/option/"+user.id;
     this.http.delete<User>(url, this.httpOptions).subscribe(() => this.retrieveUsers());
+    //this.http.delete<Option>(optionURL,this.httpOptions).subscribe();
+
   }
 }

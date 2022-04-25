@@ -3,6 +3,7 @@ import {Option} from "../models/option.model";
 import {ActivatedRoute} from "@angular/router";
 import {httpOptionsBase, serverUrl} from "../configs/server.config";
 import {HttpClient} from "@angular/common/http";
+import {BehaviorSubject, Subject} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -11,6 +12,8 @@ export class OptionService {
   option: Option;
   userId: string;
   theme: boolean;
+  // @ts-ignore
+  option$ = new  BehaviorSubject<Option>();
   optionPath = serverUrl + "/option/";
   httpOptions = httpOptionsBase;
 
@@ -73,6 +76,20 @@ export class OptionService {
     const optionUrl = this.optionPath+ id;
     console.log(optionUrl)
     this.http.post<Option>(optionUrl,options,this.httpOptions).subscribe(()=> console.log('enregister'));
+
+  }
+  modifyOption(options : Option, id : string): void {
+    const optionUrl = this.optionPath+ id;
+    console.log(optionUrl)
+    this.http.put<Option>(optionUrl,options,this.httpOptions).subscribe(()=> console.log('enregister'));
+
+  }
+
+  getOption( id: string): any {
+    const optionUrl = serverUrl + "/option/" + id;
+    this.http.get<Option>(optionUrl).subscribe((option) => {
+      this.option$.next(option);
+    })
 
   }
 

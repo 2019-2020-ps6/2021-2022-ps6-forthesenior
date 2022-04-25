@@ -1,4 +1,4 @@
-const {User} = require('../../../models')
+const {User, Options} = require('../../../models')
 const {StringToNumber} = require('../../../utils/Funcions')
 
 /**
@@ -69,6 +69,7 @@ const DeleteUserFromAccount = (accountId, userId) => {
   const user = GetUserFromAccount(accountId, userId)
   if (typeof user !== 'string') {
     User.delete(userId)
+    Options.deleteByUserId(userId)
   }
   return user
 }

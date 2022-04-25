@@ -3,6 +3,5 @@ export interface Option {
   userId: 1;
   fontSize: number;
   dmlaOffset: number;
-  parkinsonOffset: number;
   theme: boolean;
 }

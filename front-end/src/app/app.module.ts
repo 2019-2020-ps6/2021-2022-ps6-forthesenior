@@ -14,7 +14,6 @@ import {QuestionListComponent} from './questions/question-list/question-list.com
 import {QuestionFormComponent} from './questions/question-form/question-form.component';
 import {QuestionComponent} from './questions/question/question.component';
 import {UserComponent} from './users/user/user.component';
-import {UserFormComponent} from './users/user-form/user-form.component';
 import {UserListComponent} from './users/user-list/user-list.component';
 import {ThemeListComponent} from './themes/theme-list/theme-list.component';
 import {ThemeComponent} from './themes/theme/theme.component';
@@ -26,6 +25,7 @@ import {AnswerQuizComponent} from './quizzes/answer-quiz/answer-quiz.component';
 import {ResultComponent} from './result/result.component';
 import {Connection} from './connection/connection';
 import {OptionComponent} from "./option/option/option.component";
+import {UserFormComponent} from "./users/user-form/user-form.component";
 
 @NgModule({
   declarations: [

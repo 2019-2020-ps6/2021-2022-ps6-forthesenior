@@ -6,6 +6,16 @@ const createOptions = (userId,body)=> {
     return Options.create({...body, userId: userId})
 }
 
+
+const UpdateOption=(userId, body) => {
+
+    const option = Options.get().filter(option =>option.userId ===userId)
+    if (typeof option !== 'string') {
+        Options.updateOption(userId, body)
+    }
+}
+
 module.exports = {
-    createOptions
+    createOptions,
+    UpdateOption
 }

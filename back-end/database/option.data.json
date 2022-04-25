@@ -12,47 +12,13 @@
     "userId": 2,
     "fontSize": 300,
     "dmlaOffset": 10,
-    "parkinsonOffset": 0,
     "theme": true
   },
   {
     "fontSize": 300,
     "dmlaOffset": 40,
-    "parkinsonOffset": 20,
     "theme": true,
     "userId": 3,
     "id": 1650818914810
-  },
-  {
-    "fontSize": "40",
-    "dmlaOffset": "20",
-    "parkinsonOffset": "15",
-    "theme": "false",
-    "userId": 1650822123345,
-    "id": 1650822172223
-  },
-  {
-    "fontSize": "40",
-    "dmlaOffset": "20",
-    "parkinsonOffset": "15",
-    "theme": "false",
-    "userId": 1650822232106,
-    "id": 1650822307158
-  },
-  {
-    "fontSize": "30",
-    "dmlaOffset": "20",
-    "parkinsonOffset": "25",
-    "theme": "false",
-    "userId": 3,
-    "id": 1650822553909
-  },
-  {
-    "fontSize": "30",
-    "dmlaOffset": "20",
-    "parkinsonOffset": "15",
-    "theme": "true",
-    "userId": 1650822589636,
-    "id": 1650822597925
   }
 ]

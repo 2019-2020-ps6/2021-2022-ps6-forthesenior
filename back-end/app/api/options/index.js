@@ -2,7 +2,8 @@ const { Router } = require('express')
 
 const { Options } = require('../../models')
 const manageAllErrors = require('../../utils/routes/error-management')
-const {createOptions} = require("./optionManager");
+const {createOptions, UpdateOption} = require("./optionManager");
+const {DeleteUserFromAccount} = require("../accounts/users/userManager");
 
 const router = new Router()
 
@@ -30,4 +31,13 @@ router.post('/:userId',(req, res) => {
     }
 })
 
+router.put('/:userId', (req, res) => {
+    try {
+        console.log('la requete est passé')
+        res.status(200).json(UpdateOption(req.params.userId, req.body))
+    } catch (err) {
+        console.log('la requete n est pas passé')
+        manageAllErrors(res, err)
+    }
+})
 module.exports = router
