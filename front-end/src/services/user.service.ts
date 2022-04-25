@@ -52,6 +52,6 @@ export class UserService {
     if (id === undefined) {
       id = urlPopUntill(document.URL, 'user').split('/').pop();
     }
-    return id;
+    return id === '' ? undefined : id;
   }
 }
