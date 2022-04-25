@@ -13,6 +13,12 @@
   },
   {
     "id": 3,
+    "label": "Le gorille",
+    "isCorrect": false,
+    "questionId": 1
+  },
+  {
+    "id": 3,
     "label": "La poule",
     "isCorrect": true,
     "questionId": 2
@@ -70,5 +76,17 @@
     "label": "Jospin",
     "isCorrect": false,
     "questionId": 5
+  },
+  {
+    "id": 12,
+    "label": "Jospin",
+    "isCorrect": false,
+    "questionId": 6
+  },
+  {
+    "id": 12,
+    "label": "Mitterand",
+    "isCorrect": true,
+    "questionId": 6
   }
 ]

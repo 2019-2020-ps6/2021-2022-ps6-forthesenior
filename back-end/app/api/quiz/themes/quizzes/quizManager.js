@@ -1,7 +1,7 @@
-const {Quiz} = require('../../../../models')
+const {Quiz, Question} = require('../../../../models')
 const {StringToNumber} = require('../../../../utils/Funcions')
 const {FilterQuestionFromQuiz, DeleteQuestionFromQuiz} = require("./questions/questionManager");
-const {FilterAnswerFromQuestion} = require("./questions/answers/answerManager");
+const {FilterAnswerFromQuestion, CreateAnswerForQuestion} = require("./questions/answers/answerManager");
 
 /**
  * Creates a Quiz for a Theme

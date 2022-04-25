@@ -31,7 +31,8 @@ export class ThemeListComponent implements OnInit {
     this.themeService.themes$.subscribe((themes: Theme[]) => {
       this.themeList = themes;
     });
-
+    this.optionService.setColumns(this.themeList.length);
+    this.optionService.setOption(this.userId);
 
   }
 

@@ -13,7 +13,7 @@ const CreateUserForAccount = (accountId, body) => {
   if (typeof accountId === 'string') accountId = StringToNumber(accountId)
   let id = Date.now()
   Options.createOption(id)
-  return User.createBis({...body, accountId: accountId}, id)
+  return User.createBis({...body, accountId: accountId, stat:[]}, id)
 
 }
 

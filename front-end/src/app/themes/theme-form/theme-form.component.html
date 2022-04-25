@@ -3,7 +3,7 @@
   <form class="quiz-form" [formGroup]="themeForm">
     <label for="name">
       Nom <br>
-      <input class="input-custom" type="text" id="name" [formControlName]="'name'">
+      <input class="input-custom" type="text" id="name" [formControlName]="'name'" [maxLength]="20">
     </label>
     <br>
     <button type="submit" class="button-card" (click)="addTheme()">Créer</button>

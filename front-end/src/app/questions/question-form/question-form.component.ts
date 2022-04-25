@@ -49,7 +49,8 @@ export class QuestionFormComponent implements OnInit {
 
   private createAnswer(): FormGroup {
     return this.formBuilder.group({
-      value: '',
+      id: Date.now(),
+      label: '',
       isCorrect: false,
     });
   }

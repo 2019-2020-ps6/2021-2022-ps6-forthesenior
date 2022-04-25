@@ -1,4 +1,4 @@
-const {Question} = require('../../../../../models')
+const {Question, Answer} = require('../../../../../models')
 const {StringToNumber} = require('../../../../../utils/Funcions')
 const {FilterAnswerFromQuestion, DeleteAnswerFromQuestion} = require("./answers/answerManager");
 
@@ -11,8 +11,10 @@ const {FilterAnswerFromQuestion, DeleteAnswerFromQuestion} = require("./answers/
  * @constructor
  */
 const CreateQuestionForQuiz = (quizId, body) => {
-  if (typeof quizId === 'string') quizId = StringToNumber(quizId)
-  return Question.create({...body, quizId: quizId})
+    if (typeof quizId === 'string') quizId = StringToNumber(quizId)
+    console.log({...body.answers, questionId: body.id});
+    Answer.create({...body.answers, questionId: body.id});
+    return Question.create({...body, quizId: quizId})
 }
 
 /**
@@ -21,8 +23,8 @@ const CreateQuestionForQuiz = (quizId, body) => {
  * @constructor
  */
 const FilterQuestionFromQuiz = (quizId) => {
-  if (typeof quizId === 'string') quizId = StringToNumber(quizId)
-  return Question.get().filter(question => question.quizId === quizId)
+    if (typeof quizId === 'string') quizId = StringToNumber(quizId)
+    return Question.get().filter(question => question.quizId === quizId)
 }
 
 /**
@@ -34,14 +36,14 @@ const FilterQuestionFromQuiz = (quizId) => {
  * @constructor
  */
 const GetQuestionFromQuiz = (quizId, questionId) => {
-  if (typeof questionId === 'string') questionId = StringToNumber(questionId)
-  let question = FilterQuestionFromQuiz(quizId).find(question => question === Question.getById(questionId))
-  if (question === undefined) {
-    question = "Error Question Not Found: 404"
-  } else {
-    question = {...question, answers: FilterAnswerFromQuestion(questionId)}
-  }
-  return question
+    if (typeof questionId === 'string') questionId = StringToNumber(questionId)
+    let question = FilterQuestionFromQuiz(quizId).find(question => question === Question.getById(questionId))
+    if (question === undefined) {
+        question = "Error Question Not Found: 404"
+    } else {
+        question = {...question, answers: FilterAnswerFromQuestion(questionId)}
+    }
+    return question
 }
 
 /**
@@ -54,11 +56,11 @@ const GetQuestionFromQuiz = (quizId, questionId) => {
  * @constructor
  */
 const UpdateQuestionFromQuiz = (quizId, questionId, body) => {
-  const question = GetQuestionFromQuiz(quizId, questionId)
-  if (typeof question !== 'string') {
-    Question.update(questionId, body)
-  }
-  return question
+    const question = GetQuestionFromQuiz(quizId, questionId)
+    if (typeof question !== 'string') {
+        Question.update(questionId, body)
+    }
+    return question
 }
 
 /**
@@ -69,18 +71,18 @@ const UpdateQuestionFromQuiz = (quizId, questionId, body) => {
  * @constructor
  */
 const DeleteQuestionFromQuiz = (quizId, questionId) => {
-  const question = GetQuestionFromQuiz(quizId, questionId)
-  if (typeof question !== 'string') {
-    FilterAnswerFromQuestion(questionId).forEach(answer => DeleteAnswerFromQuestion(questionId, answer.id))
-    Question.delete(questionId)
-  }
-  return question
+    const question = GetQuestionFromQuiz(quizId, questionId)
+    if (typeof question !== 'string') {
+        FilterAnswerFromQuestion(questionId).forEach(answer => DeleteAnswerFromQuestion(questionId, answer.id))
+        Question.delete(questionId)
+    }
+    return question
 }
 
 module.exports = {
-  CreateQuestionForQuiz,
-  FilterQuestionFromQuiz,
-  GetQuestionFromQuiz,
-  UpdateQuestionFromQuiz,
-  DeleteQuestionFromQuiz
+    CreateQuestionForQuiz,
+    FilterQuestionFromQuiz,
+    GetQuestionFromQuiz,
+    UpdateQuestionFromQuiz,
+    DeleteQuestionFromQuiz
 }

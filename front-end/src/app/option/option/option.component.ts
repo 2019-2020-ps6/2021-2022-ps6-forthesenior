@@ -16,8 +16,6 @@ export class OptionComponent implements OnInit{
   public option: Option;
 
   constructor(private router: Router,public formBuilder: FormBuilder, public route: ActivatedRoute, public optionService: OptionService) {
-
-
     this.userId = this.route.snapshot.paramMap.get('idUser');
     this.optionService.getOption(this.userId);
     this.optionService.option$.subscribe((myOption) => {

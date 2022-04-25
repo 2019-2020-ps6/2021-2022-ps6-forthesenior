@@ -3,6 +3,7 @@ import {FormBuilder, FormGroup} from '@angular/forms';
 import {HttpClient} from '@angular/common/http';
 import {AccountService} from '../../services/account.service';
 import {Router} from '@angular/router';
+import {OptionService} from "../../services/option.service";
 
 @Component({
   selector: 'app-connection',
@@ -14,11 +15,12 @@ export class Connection implements OnInit {
 
   public signInForm: FormGroup;
 
-  constructor(public formBuilder: FormBuilder, private http: HttpClient, private accountService: AccountService, private router: Router) {
+  constructor(public formBuilder: FormBuilder, private http: HttpClient, private accountService: AccountService, private router: Router, private optionService: OptionService) {
     this.signInForm = this.formBuilder.group({
       email: [''],
       password: ['']
     });
+    this.optionService.setAdminOption();
   }
 
   ngOnInit(): void {

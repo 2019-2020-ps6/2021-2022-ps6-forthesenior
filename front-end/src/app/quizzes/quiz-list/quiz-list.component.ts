@@ -28,6 +28,7 @@ export class QuizListComponent implements OnInit {
     this.quizService.quizzes$.subscribe((quizzes: Quiz[]) => {
       this.quizList = quizzes;
     });
+    this.optionService.setColumns(this.quizList.length);
     this.optionService.setOption(this.userId);
   }
 

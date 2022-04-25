@@ -10,22 +10,15 @@
   {
     "id": 2,
     "userId": 2,
-    "fontSize": 300,
+    "fontSize": 400,
     "dmlaOffset": 10,
-    "theme": true
+    "theme": false
   },
   {
     "fontSize": 300,
-    "dmlaOffset": 40,
+    "dmlaOffset": 45,
     "theme": true,
     "userId": 3,
     "id": 1650818914810
-  },
-  {
-    "fontSize": 300,
-    "dmlaOffset": 20,
-    "theme": false,
-    "userId": 1650920163003,
-    "id": 1650920163003
   }
 ]

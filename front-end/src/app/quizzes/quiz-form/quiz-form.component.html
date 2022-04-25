@@ -1,9 +1,9 @@
-<div class="card">
+<div class="card case admin">
   <h2>Créer un nouveau Quiz</h2>
   <form class="quiz-form" [formGroup]="quizForm">
     <label for="name">
       Nom <br>
-      <input class="input-custom" type="text" id="name" [formControlName]="'name'">
+      <input class="input-custom" type="text" id="name" [formControlName]="'name'" [maxLength]="40">
     </label>
     <br>
     <button type="submit" class="button-card" (click)="addQuiz()">Créer</button>

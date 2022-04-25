@@ -3,5 +3,5 @@
   <div class="theme user case" *ngFor="let theme of  themeList">
     <app-theme [theme]="theme" (deleteTheme)="deleteTheme($event)" (selectTheme)="setSelectedTheme($event)"></app-theme>
   </div>
-  <app-theme-form *ngIf="userId == '0'"></app-theme-form>
+  <app-theme-form class="case" *ngIf="userId == '0'"></app-theme-form>
 </div>

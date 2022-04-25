@@ -15,6 +15,12 @@
         "label": "Le guépard",
         "isCorrect": true,
         "questionId": 1
+      },
+      {
+        "id": 3,
+        "label": "Le gorille",
+        "isCorrect": false,
+        "questionId": 1
       }
     ]
   },
@@ -39,7 +45,7 @@
   },
   {
     "id": 3,
-    "label": "Quelle a été le dernier président de la république ?",
+    "label": "Qui a été le dernier président de la république ?",
     "quizId": 1,
     "answers": [
       {
@@ -73,7 +79,7 @@
   },
   {
     "id": 5,
-    "label": "Premier président de la République ?",
+    "label": "Qui a été le premier président de la Vème République ?",
     "quizId": 1,
     "answers": [
       {
@@ -103,14 +109,9 @@
     ]
   },
   {
-    "label": "vre",
-    "answers": [
-      {
-        "value": "fdd df g",
-        "isCorrect": false
-      }
-    ],
-    "quizId": 1650878103542,
-    "id": 1650880842417
+    "id": 5,
+    "label": "Qui a été élu Président en 1981 ?",
+    "quizId": 1,
+    "answers": []
   }
 ]

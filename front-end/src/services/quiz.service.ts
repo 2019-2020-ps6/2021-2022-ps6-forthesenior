@@ -6,6 +6,7 @@ import {Question} from '../models/question.model';
 import {serverUrl, httpOptionsBase} from '../configs/server.config';
 import {Theme} from "../models/theme.model";
 import {ThemeService} from "./theme.service";
+import {OptionService} from "./option.service";
 
 @Injectable({
   providedIn: 'root'
@@ -40,7 +41,7 @@ export class QuizService {
   private theme$: Theme;
   private idTheme: string;
 
-  constructor(private http: HttpClient, public themeService: ThemeService) {
+  constructor(private http: HttpClient, public themeService: ThemeService, private optionService: OptionService) {
     /*this.themeService.themeSelected$.subscribe((theme) =>{
       this.theme=theme;
       //this.retrieveQuizzes();
@@ -90,7 +91,7 @@ export class QuizService {
   }
 
   deleteQuestion(quiz: Quiz, question: Question): void {
-    const questionUrl = this.quizUrl + this.idTheme + '/quizzes/' + quiz.id + '/questions/'+ question.id;
+    const questionUrl = this.quizUrl + this.idTheme + '/quizzes/' + quiz.id + '/questions/' + question.id;
     this.http.delete<Question>(questionUrl, this.httpOptions).subscribe(() => this.setSelectedQuiz(quiz.id));
   }
 }

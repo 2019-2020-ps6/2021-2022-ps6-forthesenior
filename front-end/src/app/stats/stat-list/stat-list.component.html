@@ -1,0 +1,13 @@
+<h1 class="user titre">Statistiques des utilisateurs</h1>
+<div class="user grid admin">
+  <div class="user" *ngFor="let user of userList">
+    <app-stat [user]="user"></app-stat>
+  </div>
+  <div class="user card admin">
+    <h2>
+      <a title="Download JSON" [href]="downloadJsonHref" download="download.json">
+        <i class="fas fa-download"></i>
+      </a>
+    </h2>
+  </div>
+</div>

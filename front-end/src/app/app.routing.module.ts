@@ -8,11 +8,13 @@ import {ThemeListComponent} from './themes/theme-list/theme-list.component';
 import {QuizPlayComponent} from './quizzes/quiz-play/quiz-play.component';
 import {ResultComponent} from './result/result.component';
 import {OptionComponent} from "./option/option/option.component";
+import {StatListComponent} from "./stats/stat-list/stat-list.component";
 
 const routes: Routes = [
-  {path: '', redirectTo: '/1/user-list', pathMatch: 'full'},
+  {path: '', redirectTo: '/connection', pathMatch: 'full'},
   {path: 'connection', component: Connection},
   {path: ':idAccount/user-list', component: UserListComponent},
+  {path: ':idAccount/user-list/stat', component: StatListComponent},
   {path: ':idAccount/user-list/:idUser/theme-list', component: ThemeListComponent},
   {path: ':idAccount/user-list/:idUser/theme-list/:idTheme/quiz-list', component: QuizListComponent},
   {path: ':idAccount/user-list/:idUser/theme-list/:idTheme/quiz-list/:idQuiz', component: EditQuizComponent},

@@ -33,9 +33,6 @@ export class ResultComponent implements OnInit {
   }
 
   restartSelected(): void {
-    const idQuiz = this.route.snapshot.paramMap.get('idQuiz');
-    //console.log(id);
-    //this.quizService.setSelectedQuiz(id);
     let idAccount = this.route.snapshot.paramMap.get("idAccount");
     let idTheme = this.route.snapshot.paramMap.get("idTheme");
     let url = idAccount + "/user-list/" + this.userId + "/theme-list/" + idTheme + "/quiz-list";

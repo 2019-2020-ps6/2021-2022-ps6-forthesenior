@@ -26,6 +26,8 @@ import {ResultComponent} from './result/result.component';
 import {Connection} from './connection/connection';
 import {OptionComponent} from "./option/option/option.component";
 import {UserFormComponent} from "./users/user-form/user-form.component";
+import {StatListComponent} from "./stats/stat-list/stat-list.component";
+import {StatComponent} from "./stats/stat/stat.component";
 
 @NgModule({
   declarations: [
@@ -51,6 +53,8 @@ import {UserFormComponent} from "./users/user-form/user-form.component";
     AnswerQuizComponent,
     ResultComponent,
     OptionComponent,
+    StatListComponent,
+    StatComponent,
   ],
   imports: [
     BrowserModule,

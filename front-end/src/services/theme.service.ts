@@ -5,6 +5,7 @@ import {HttpClient} from '@angular/common/http';
 import {httpOptionsBase, serverUrl} from '../configs/server.config';
 import {ActivatedRoute, Router} from "@angular/router";
 import {Option} from "../models/option.model";
+import {OptionService} from "./option.service";
 
 
 @Injectable({
@@ -21,7 +22,7 @@ export class ThemeService {
   private idUser: string;
   private idAccount : string;
 
-  constructor(private http: HttpClient, private route: ActivatedRoute) {
+  constructor(private http: HttpClient, private optionService: OptionService) {
     // @ts-ignore
     this.themeSelected$ = new BehaviorSubject<Theme>(0);
     //this.retrieveThemes();

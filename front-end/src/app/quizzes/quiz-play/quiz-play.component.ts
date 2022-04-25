@@ -3,6 +3,7 @@ import {Quiz} from '../../../models/quiz.model';
 import {ActivatedRoute, Router} from '@angular/router';
 import {QuizService} from '../../../services/quiz.service';
 import {OptionService} from "../../../services/option.service";
+import {UserService} from "../../../services/user.service";
 
 @Component({
   selector: 'app-quiz-play',
@@ -19,7 +20,7 @@ export class QuizPlayComponent implements OnInit {
   userId: string;
 
 
-  constructor(private router: Router, private route: ActivatedRoute, private quizService: QuizService, private optionService: OptionService) {
+  constructor(private router: Router, private route: ActivatedRoute, private quizService: QuizService, private userService: UserService, private optionService: OptionService) {
     this.next = false;
     this.right = 0;
     this.userId = this.route.snapshot.paramMap.get('idUser');
@@ -34,8 +35,9 @@ export class QuizPlayComponent implements OnInit {
       this.quiz = quiz;
       console.log("quiz : " + this.quiz);
     });
-    this.index = Number(this.route.snapshot.paramMap.get('numero'));
+    this.optionService.setColumns(this.quiz.questions.length);
     this.optionService.setOption(this.userId);
+    this.index = Number(this.route.snapshot.paramMap.get('numero'));
   }
 
   nextQuestion(): void {
@@ -46,7 +48,8 @@ export class QuizPlayComponent implements OnInit {
     let idAccount = this.route.snapshot.paramMap.get("idAccount");
     let idTheme = this.route.snapshot.paramMap.get("idTheme");
     if (this.index === this.quiz.questions.length) {
-      let url = idAccount + "/user-list/" + this.userId + "/" + idTheme + "/result/" + this.quiz.id + "/" + this.right + "/" + this.quiz.questions.length;
+      this.userService.addStat(this.userId, this.right / this.index);
+      let url = idAccount + "/user-list/" + this.userId + "/" + idTheme + "/result/" + this.quiz.id + "/" + this.right + "/" + this.index;
       this.router.navigate([url]);
     } else {
       let url = idAccount + "/user-list/" + this.userId + "/" + idTheme + "/quiz-play/" + this.quiz.id + "/question/" + this.index;

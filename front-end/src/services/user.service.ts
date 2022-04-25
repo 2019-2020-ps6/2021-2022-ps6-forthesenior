@@ -23,7 +23,7 @@ export class UserService {
 
 
   private userUrl = serverUrl + '/accounts/';
-  private idAccount : string;
+  private idAccount: string;
 
   private httpOptions = httpOptionsBase;
 
@@ -32,8 +32,16 @@ export class UserService {
     //this.retrieveUsers();
   }
 
-  setAccount(idAccount : string): void {
+  setAccount(idAccount: string): void {
     this.idAccount = idAccount;
+  }
+
+  addStat(userId: string, stat: number) {
+    let url = this.userUrl + this.idAccount + "/users/" + userId;
+    this.http.get<User>(url).subscribe((user) => {
+      user.stat.push(stat);
+      this.updateUser(user);
+    });
   }
 
   retrieveUsers(): void {
@@ -46,13 +54,6 @@ export class UserService {
     });
   }
 
-  addUser(user: User): void {
-    let url = this.userUrl + this.idAccount + "/users"
-    this.http.post<User>(url, user, this.httpOptions).subscribe(() => {
-      this.retrieveUsers();
-    });
-  }
-
   setSelectedUser(user: User): void {
     //this.userSelected$.next(option);
     /*const urlWithId = this.userUrl + '/' + option.id;
@@ -61,9 +62,19 @@ export class UserService {
     });*/
   }
 
+  addUser(user: User): void {
+    let url = this.userUrl + this.idAccount + "/users";
+    this.http.post<User>(url, user, this.httpOptions).subscribe(() => this.retrieveUsers());
+  }
+
   deleteUser(user: User): void {
     let url = this.userUrl + this.idAccount + "/users/" + user.id;
     this.http.delete<User>(url, this.httpOptions).subscribe(() => this.retrieveUsers());
+  }
 
+  updateUser(user: User): void {
+    console.log(user.stat);
+    let url = this.userUrl + this.idAccount + "/users/" + user.id;
+    this.http.put<User>(url, user, this.httpOptions).subscribe(() => this.retrieveUsers());
   }
 }

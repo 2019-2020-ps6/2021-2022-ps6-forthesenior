@@ -3,12 +3,12 @@
     <form class="user-form" [formGroup]="userForm">
       <label for="firstName">
         Nom <br>
-        <input class="input-custom" type="text" id="firstName" [formControlName]="'firstName'">
+        <input class="input-custom" type="text" id="firstName" [formControlName]="'firstName'" [maxLength]="10">
       </label>
       <br>
       <label for="lastName">
         Prénom <br>
-        <input class="input-custom" type="text" id="lastName" [formControlName]="'lastName'">
+        <input class="input-custom" type="text" id="lastName" [formControlName]="'lastName'" [maxLength]="10">
       </label>
       <br>
       <button type="submit" class="button-card" (click)="addUser()">Créer</button>
