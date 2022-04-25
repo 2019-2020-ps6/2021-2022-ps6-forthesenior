@@ -15,10 +15,10 @@ const routes: Routes = [
   {path: ':idAccount/user-list', component: UserListComponent},
   {path: ':idAccount/user-list/:idUser/theme-list', component: ThemeListComponent},
   {path: ':idAccount/user-list/:idUser/theme-list/:idTheme/quiz-list', component: QuizListComponent},
+  {path: ':idAccount/user-list/:idUser/theme-list/:idTheme/quiz-list/:idQuiz', component: EditQuizComponent},
   {path: ':idAccount/user-list/:idUser/:idTheme/quiz-play/:idQuiz/question/:numero', component: QuizPlayComponent},
   {path: ':idAccount/user-list/:idUser/:idTheme/result/:idQuiz/:right/:total', component: ResultComponent},
   {path: ':idAccount/user-list/:idUser/option', component: OptionComponent},
-  {path: ':idAccount/user-list/:idUser/theme-list/:idTheme/quiz-list', component: EditQuizComponent},
 ];
 
 @NgModule({

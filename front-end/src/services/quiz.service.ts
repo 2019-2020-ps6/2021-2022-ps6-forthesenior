@@ -1,9 +1,9 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { BehaviorSubject, Subject } from 'rxjs';
-import { Quiz } from '../models/quiz.model';
-import { Question } from '../models/question.model';
-import { serverUrl, httpOptionsBase } from '../configs/server.config';
+import {Injectable} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+import {BehaviorSubject, Subject} from 'rxjs';
+import {Quiz} from '../models/quiz.model';
+import {Question} from '../models/question.model';
+import {serverUrl, httpOptionsBase} from '../configs/server.config';
 import {Theme} from "../models/theme.model";
 import {ThemeService} from "./theme.service";
 
@@ -47,7 +47,7 @@ export class QuizService {
     })*/
   }
 
-  setIdTheme(idTheme : string){
+  setIdTheme(idTheme: string) {
     this.idTheme = idTheme;
   }
 
@@ -61,36 +61,36 @@ export class QuizService {
 
   retrieveTheme(): void {
     const urlWithThemeId = this.quizUrl + this.idTheme;
-    this.http.get<Theme>(urlWithThemeId).subscribe((theme) =>{
-      this.theme=theme;
+    this.http.get<Theme>(urlWithThemeId).subscribe((theme) => {
+      this.theme = theme;
       this.theme$ = this.theme;
     });
   }
 
   addQuiz(quiz: Quiz): void {
-    this.http.post<Quiz>(this.quizUrl, quiz, this.httpOptions).subscribe(() => this.retrieveQuizzes());
+    this.http.post<Quiz>(this.quizUrl + this.idTheme + '/quizzes', quiz, this.httpOptions).subscribe(() => this.retrieveQuizzes());
   }
 
-  setSelectedQuiz(id : string): void {
-    const urlWithId = this.quizUrl + this.idTheme + '/quizzes/'+id;
+  setSelectedQuiz(id: string): void {
+    const urlWithId = this.quizUrl + this.idTheme + '/quizzes/' + id;
     this.http.get<Quiz>(urlWithId).subscribe((quiz) => {
       this.quizSelected$.next(quiz);
-      console.log("quiz question : "+quiz.questions[0].label);
+      console.log("quiz question : " + quiz.questions[0].label);
     });
   }
 
   deleteQuiz(quiz: Quiz): void {
-    const urlWithId = this.quizUrl + '/' + quiz.id;
+    const urlWithId = this.quizUrl + this.idTheme + '/quizzes/' + quiz.id;
     this.http.delete<Quiz>(urlWithId, this.httpOptions).subscribe(() => this.retrieveQuizzes());
   }
 
   addQuestion(quiz: Quiz, question: Question): void {
-    const questionUrl = this.quizUrl + '/' + quiz.id + '/' + this.questionsPath;
+    const questionUrl = this.quizUrl + this.idTheme + '/quizzes/' + quiz.id + '/questions';
     this.http.post<Question>(questionUrl, question, this.httpOptions).subscribe(() => this.setSelectedQuiz(quiz.id));
   }
 
   deleteQuestion(quiz: Quiz, question: Question): void {
-    const questionUrl = this.quizUrl + '/' + quiz.id + '/' + this.questionsPath + '/' + question.id;
+    const questionUrl = this.quizUrl + this.idTheme + '/quizzes/' + quiz.id + '/questions/'+ question.id;
     this.http.delete<Question>(questionUrl, this.httpOptions).subscribe(() => this.setSelectedQuiz(quiz.id));
   }
 }

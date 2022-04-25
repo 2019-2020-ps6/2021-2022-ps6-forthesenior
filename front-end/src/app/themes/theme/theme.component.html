@@ -1,5 +1,5 @@
-<div class="card user" (click)="userId != '0' ? themeSelected() : null" routerLink="{{theme.id}}/quiz-list">
+<div class="card user" (click)="userId !== '0' ? themeSelected() : null">
   <h2>{{theme.name}}</h2>
-  <button class="button-card" *ngIf="userId == '0'" (click)="themeSelected()" routerLink="{{theme.id}}/quiz-list">Sélectionner</button>
+  <button class="button-card" *ngIf="userId == '0'" (click)="themeSelected()">Sélectionner</button>
   <button class="button-card" *ngIf="userId == '0'" (click)="delete()">Supprimer</button>
 </div>
