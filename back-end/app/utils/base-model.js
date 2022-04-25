@@ -53,6 +53,30 @@ module.exports = class BaseModel {
     return item
   }
 
+  createBis(obj ={}, id){
+    const item = {...obj, id: id}
+    const {error} = Joi.validate(item, this.schema)
+    if (error) throw new ValidationError(`Create Error : Object ${JSON.stringify(obj)} does not match schema of model ${this.name}`, error)
+    this.items.push(item)
+    this.save()
+    return item
+  }
+
+  createOption(id){
+    const item = {
+      fontSize : 300,
+      dmlaOffset : 20,
+      theme : false,
+      userId : id,
+      id: id,
+    }
+    const {error} = Joi.validate(item, this.schema)
+    if (error) throw new ValidationError(`Create Error : Object ${JSON.stringify(obj)} does not match schema of model ${this.name}`, error)
+    this.items.push(item)
+    this.save()
+    return item
+  }
+
   update(id, obj) {
     if (typeof id === 'string') id = StringToNumber(id)
     const prevObjIndex = this.items.findIndex((item) => item.id === id)

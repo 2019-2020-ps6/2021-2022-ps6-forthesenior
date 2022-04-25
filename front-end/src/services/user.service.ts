@@ -21,7 +21,6 @@ export class UserService {
   public users$: BehaviorSubject<User[]>
     = new BehaviorSubject([]);
 
-  public userSelected$: Subject<User> = new Subject();
 
   private userUrl = serverUrl + '/accounts/';
   private idAccount : string;
@@ -42,12 +41,16 @@ export class UserService {
     this.http.get<User[]>(url).subscribe((userList) => {
       this.users = userList;
       this.users$.next(this.users);
+
+
     });
   }
 
   addUser(user: User): void {
     let url = this.userUrl + this.idAccount + "/users"
-    this.http.post<User>(url, user, this.httpOptions).subscribe(() => this.retrieveUsers());
+    this.http.post<User>(url, user, this.httpOptions).subscribe(() => {
+      this.retrieveUsers();
+    });
   }
 
   setSelectedUser(user: User): void {
@@ -60,9 +63,7 @@ export class UserService {
 
   deleteUser(user: User): void {
     let url = this.userUrl + this.idAccount + "/users/" + user.id;
-    //let optionURL=serverUrl + "/option/"+user.id;
     this.http.delete<User>(url, this.httpOptions).subscribe(() => this.retrieveUsers());
-    //this.http.delete<Option>(optionURL,this.httpOptions).subscribe();
 
   }
 }

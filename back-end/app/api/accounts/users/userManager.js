@@ -11,7 +11,10 @@ const {StringToNumber} = require('../../../utils/Funcions')
  */
 const CreateUserForAccount = (accountId, body) => {
   if (typeof accountId === 'string') accountId = StringToNumber(accountId)
-  return User.create({...body, accountId: accountId})
+  let id = Date.now()
+  Options.createOption(id)
+  return User.createBis({...body, accountId: accountId}, id)
+
 }
 
 /**
