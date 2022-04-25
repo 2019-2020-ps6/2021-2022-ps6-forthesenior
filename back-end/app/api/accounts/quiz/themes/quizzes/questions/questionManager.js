@@ -1,4 +1,4 @@
-const {Question} = require('../../../../../../models')
+const {Question, Answer} = require('../../../../../../models')
 const {StringToNumber} = require('../../../../../../utils/Funcions')
 const {FilterAnswerFromQuestion, DeleteAnswerFromQuestion} = require("./answers/answerManager");
 
@@ -12,7 +12,18 @@ const {FilterAnswerFromQuestion, DeleteAnswerFromQuestion} = require("./answers/
  */
 const CreateQuestionForQuiz = (quizId, body) => {
   if (typeof quizId === 'string') quizId = StringToNumber(quizId)
-  return Question.create({...body, quizId: quizId})
+  let answerList = undefined;
+  if (body.hasOwnProperty('answers')) {
+    answerList = body.answers;
+    delete body.answers;
+  }
+  const question = Question.create({...body, quizId: quizId});
+  if (answerList !== undefined && question.hasOwnProperty('id')) {
+    for (let answer of answerList) {
+      Answer.create({...answer, questionId: question.id});
+    }
+  }
+  return question;
 }
 
 /**
@@ -39,7 +50,7 @@ const GetQuestionFromQuiz = (quizId, questionId) => {
   if (question === undefined) {
     question = "Error Question Not Found: 404"
   } else {
-    question = {...question, answers: FilterAnswerFromQuestion(questionId)}
+    question = {...question, answers: FilterAnswerFromQuestion(questionId)};
   }
   return question
 }
@@ -78,9 +89,5 @@ const DeleteQuestionFromQuiz = (quizId, questionId) => {
 }
 
 module.exports = {
-  CreateQuestionForQuiz,
-  FilterQuestionFromQuiz,
-  GetQuestionFromQuiz,
-  UpdateQuestionFromQuiz,
-  DeleteQuestionFromQuiz
+  CreateQuestionForQuiz, FilterQuestionFromQuiz, GetQuestionFromQuiz, UpdateQuestionFromQuiz, DeleteQuestionFromQuiz
 }

@@ -4,6 +4,7 @@ import {BehaviorSubject, Subject} from 'rxjs';
 import {User} from '../models/user.model';
 import {httpOptionsBase, serverUrl} from '../configs/server.config';
 import {Router} from "@angular/router";
+import {urlPopUntill} from "../app/utils/functions";
 
 @Injectable({
   providedIn: 'root'
@@ -47,6 +48,10 @@ export class UserService {
   }
 
   getAccountIdFromUrl(): string {
-    return this.router.url.split('/')[2];
+    let id = this.router.url.split('/')[2];
+    if (id === undefined) {
+      id = urlPopUntill(document.URL, 'user').split('/').pop();
+    }
+    return id;
   }
 }

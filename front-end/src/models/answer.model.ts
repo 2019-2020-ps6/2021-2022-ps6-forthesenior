@@ -1,6 +1,6 @@
 export interface Answer {
   id: string;
-  type?: string;
-  value: string;
+  answerLabel: string;
   isCorrect: boolean;
+  type?: string;
 }

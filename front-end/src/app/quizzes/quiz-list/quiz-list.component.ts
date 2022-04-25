@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {QuizService} from '../../../services/quiz.service';
 import {Quiz} from '../../../models/quiz.model';
@@ -9,8 +9,6 @@ import {Quiz} from '../../../models/quiz.model';
   styleUrls: ['./quiz-list.component.scss']
 })
 export class QuizListComponent implements OnInit {
-
-  @Input() public quiz: Quiz;
   public quizList: Quiz[] = [];
 
   constructor(private router: Router, public quizService: QuizService) {
@@ -25,7 +23,7 @@ export class QuizListComponent implements OnInit {
 
   playQuiz(quiz: Quiz): void {
     this.quizService.setSelectedQuiz(quiz.id);
-    this.router.navigate([this.router.url + '/play/' + quiz.id + '/question/0']);
+    this.router.navigate([this.router.url + '/play/' + quiz.id]);
   }
 
   editQuiz(quiz: Quiz): void {

@@ -4,6 +4,7 @@ import {Router} from "@angular/router";
 import {Account} from "../../models/account.model";
 import {User} from "../../models/user.model";
 import {UserService} from "../../services/user.service";
+import {urlPopUntill} from "../utils/functions";
 
 @Component({
   selector: 'app-header', templateUrl: './header.component.html', styleUrls: ['./header.component.scss']
@@ -47,11 +48,9 @@ export class HeaderComponent implements OnInit {
 
   connectedToAccount(): boolean {
     const url = document.URL;
-    if (url.includes("accounts/")) {
-      const urlRoutes = url.split('/').reverse();
-      while (urlRoutes.length > 0 && urlRoutes.pop() !== 'accounts') {
-      }
-      this.accountServices.setSelectedAccount(urlRoutes.pop());
+    if (url.includes("account/")) {
+      const urlRoutes = urlPopUntill(url.split('/').reverse().join('/'), 'account')
+      this.accountServices.setSelectedAccount(urlRoutes.split('/').pop());
       return true;
     }
     return false;
@@ -59,11 +58,9 @@ export class HeaderComponent implements OnInit {
 
   connectedToUser(): boolean {
     const url = document.URL;
-    if (url.includes("users/")) {
-      const urlRoutes = url.split('/').reverse();
-      while (urlRoutes.length > 0 && urlRoutes.pop() !== 'users') {
-      }
-      this.userService.setSelectedUser(urlRoutes.pop());
+    if (url.includes("user/")) {
+      const urlRoutes = urlPopUntill(url.split('/').reverse().join('/'), 'user')
+      this.userService.setSelectedUser(urlRoutes.split('/').pop());
       return true;
     }
     return false;

@@ -42,11 +42,11 @@ const routes: Routes = [
     component: EditQuizComponent
   },
   {
-    path: 'account/:accountId/user/:userId/theme/:themeId/quiz/play/:id/question/:numero',
+    path: 'account/:accountId/user/:userId/theme/:themeId/quiz/play/:quizId',
     component: QuizPlayComponent
   },
   {
-    path: 'account/:accountId/user/:userId/theme/:themeId/quiz/result/:id/:right/:total',
+    path: 'account/:accountId/user/:userId/theme/:themeId/quiz/result/:quizId',
     component: ResultComponent
   },
 ];

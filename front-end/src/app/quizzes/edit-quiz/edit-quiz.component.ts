@@ -13,6 +13,9 @@ export class EditQuizComponent implements OnInit {
   @Input() public quiz: Quiz;
 
   constructor(private quizService: QuizService, private router: Router) {
+    this.quizService.quizSelected$.asObservable().subscribe((quiz) => {
+      this.quiz = quiz;
+    })
   }
 
   ngOnInit(): void {

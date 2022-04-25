@@ -2,6 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {Quiz} from '../../../models/quiz.model';
 import {Router} from '@angular/router';
 import {QuizService} from '../../../services/quiz.service';
+import {PlayService} from '../../../services/play.service'
 
 @Component({
   selector: 'app-quiz-play',
@@ -11,18 +12,16 @@ import {QuizService} from '../../../services/quiz.service';
 export class QuizPlayComponent implements OnInit {
 
   @Input() public quiz: Quiz;
-  public index: number;
-  public next: boolean;
-  right: number;
-  answer: boolean;
+  public index = 0;
+  public next = false;
+  private right = 0;
+  private answer: boolean;
 
 
-  constructor(private router: Router, private quizService: QuizService) {
+  constructor(private router: Router, private quizService: QuizService, private playService: PlayService) {
     this.quizService.quizSelected$.asObservable().subscribe((quiz) => {
       this.quiz = quiz;
     })
-    this.next = false;
-    this.right = 0;
   }
 
   ngOnInit(): void {
@@ -35,9 +34,12 @@ export class QuizPlayComponent implements OnInit {
       this.right++;
     }
     if (this.index === this.quiz.questions.length) {
-      this.router.navigate([this.quizService.getQuizUrl() + '/result/' + this.quiz.id + '/' + this.right + '/' + this.index]);
-    } else {
-      this.router.navigate([this.quizService.getQuizUrl() + '/play/' + this.quiz.id + '/question/' + this.index.toString()]);
+      const urlPath = this.router.url.split('/');
+      urlPath.pop();
+      urlPath.pop();
+      this.playService.right = this.right;
+      this.playService.total = this.index;
+      this.router.navigate([urlPath.join('/') + '/result/' + this.quiz.id]);
     }
     this.next = false;
   }

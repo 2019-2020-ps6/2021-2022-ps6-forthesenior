@@ -4,7 +4,7 @@
     {{question.questionLabel}}
   </h2>
   <div *ngFor="let answer of question.answers; let i=index" class="answer">
-    {{i+1}} -  {{answer.value}}
+    {{i + 1}} -  {{answer.answerLabel}}
     <ng-container *ngIf="answer.isCorrect"><i class="far fa-check-square"></i></ng-container>
     <br>
   </div>

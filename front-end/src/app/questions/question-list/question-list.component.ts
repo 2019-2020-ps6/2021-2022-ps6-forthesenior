@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Question} from 'src/models/question.model';
 import {QuestionService} from 'src/services/question.service';
 
@@ -9,7 +9,6 @@ import {QuestionService} from 'src/services/question.service';
 })
 export class QuestionListComponent implements OnInit {
 
-  @Input() public question: Question;
   public questionList: Question[] = [];
 
   constructor(private questionService: QuestionService) {

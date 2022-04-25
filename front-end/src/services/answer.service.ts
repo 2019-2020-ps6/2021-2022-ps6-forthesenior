@@ -45,6 +45,7 @@ export class AnswerService {
   }
 
   getAnswerUrl(): string {
+    console.log("Server Url: " + this.questionService.getQuestionUrl() + '/' + this.getQuestionIdFromUrl() + '/answers')
     return this.questionService.getQuestionUrl() + '/' + this.getQuestionIdFromUrl() + '/answers';
   }
 

@@ -6,13 +6,13 @@
       <input [formControlName]="'questionLabel'" class="input-custom" id="questionLabel" type="text">
     </label>
     <br>
-    <button (click)="addAnswer()" class="button-card">Ajouter une question</button>
+    <button (click)="addAnswer()" class="button-card">Ajouter une Réponse</button>
     <div class="answer" formArrayName="answers">
       <div *ngFor="let address of answers.controls; let i=index">
         <div [formGroupName]="i" class="answer-form">
           <label>
             Réponse
-            <input [formControlName]="'value'" type="text">
+            <input [formControlName]="'answerLabel'" type="text">
             <br>
             Correcte
             <input [formControlName]="'isCorrect'" type="checkbox">
