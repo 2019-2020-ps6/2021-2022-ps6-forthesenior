@@ -25,7 +25,7 @@ export class ThemeListComponent implements OnInit {
 
   selectTheme(theme: Theme): void {
     this.themeService.setSelectedTheme(theme.id);
-    this.router.navigate([this.router.url + '/' + theme.id + '/quizzes']);
+    this.router.navigate([this.router.url + '/' + theme.id + '/quiz']);
   }
 
   deleteTheme(theme: Theme): void {

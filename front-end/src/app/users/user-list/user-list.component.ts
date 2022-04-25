@@ -28,7 +28,7 @@ export class UserListComponent implements OnInit {
 
   selectUser(user: User): void {
     this.userService.setSelectedUser(user.id);
-    this.router.navigate([this.router.url + '/' + user.id + '/themes']);
+    this.router.navigate([this.router.url + '/' + user.id + '/theme']);
   }
 
   deleteUser(user: User): void {

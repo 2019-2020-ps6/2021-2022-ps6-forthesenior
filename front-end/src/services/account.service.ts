@@ -47,7 +47,7 @@ export class AccountService {
       password: password
     }).subscribe((account) => {
       this.setSelectedAccount(account.id);
-      this.router.navigate(['accounts/' + account.id + '/users']);
+      this.router.navigate(['account/' + account.id + '/user']);
     }, (error) => {
       if (onErrorFunction !== undefined) onErrorFunction();
       throw error.message + "Invalide Username or Password";

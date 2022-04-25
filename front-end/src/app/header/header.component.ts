@@ -32,12 +32,12 @@ export class HeaderComponent implements OnInit {
   }
 
   goToHome(): string {
-    if (this.selectedUser !== undefined) return '/accounts/' + this.selectedAccount.id + '/users/' + this.selectedUser.id + '/themes'
+    if (this.selectedUser !== undefined) return '/account/' + this.selectedAccount.id + '/user/' + this.selectedUser.id + '/theme'
     return this.router.url;
   }
 
   goToUsers(): string {
-    if (this.selectedAccount !== undefined) return '/accounts/' + this.selectedAccount.id + '/users'
+    if (this.selectedAccount !== undefined) return '/account/' + this.selectedAccount.id + '/user'
     return this.router.url;
   }
 

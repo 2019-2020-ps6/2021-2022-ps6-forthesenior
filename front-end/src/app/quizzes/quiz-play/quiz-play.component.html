@@ -1,12 +1,7 @@
-<button (click)="goToQuizzes()" class="button-card">Retour</button>
-<ng-container *ngIf="quiz!==undefined">
-  <div class="page">
-    <h2>
-      {{quiz.quizLabel}}
-    </h2>
-    <app-quiz-question (next)="onAnswered($event)" [question]="quiz.questions[index]"></app-quiz-question>
-    <div *ngIf="next">
-      <button (click)="nextQuestion()" class="button-next">Suivant</button>
-    </div>
-  </div>
-</ng-container>
+<h1 class="user titre">Vous êtes sur le quiz : {{quiz.quizLabel}}</h1>
+<app-quiz-question (next)="onAnswered($event)" [question]="quiz.questions[index]"></app-quiz-question>
+<div (click)="nextQuestion()" *ngIf="next" class="card user next">
+  <h2>Suivant</h2>
+</div>
+
+

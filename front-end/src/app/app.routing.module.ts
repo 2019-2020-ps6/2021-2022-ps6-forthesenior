@@ -22,31 +22,31 @@ const routes: Routes = [
     component: Connection
   },
   {
-    path: 'accounts/:accountId/users',
+    path: 'account/:accountId/user',
     component: UserListComponent
   },
   {
-    path: 'accounts/:accountId/users/:userId/themes',
+    path: 'account/:accountId/user/:userId/theme',
     component: ThemeListComponent
   },
   {
-    path: 'accounts/:accountId/users/:userId/themes/edit/:themeId',
+    path: 'account/:accountId/user/:userId/theme/edit/:themeId',
     component: EditThemeComponent
   },
   {
-    path: 'accounts/:accountId/users/:userId/themes/:themeId/quizzes',
+    path: 'account/:accountId/user/:userId/theme/:themeId/quiz',
     component: QuizListComponent
   },
   {
-    path: 'accounts/:accountId/users/:userId/themes/:themeId/quizzes/edit/:quizId',
+    path: 'account/:accountId/user/:userId/theme/:themeId/quiz/edit/:quizId',
     component: EditQuizComponent
   },
   {
-    path: 'accounts/:accountId/users/:userId/themes/:themeId/quizzes/play/:id/question/:numero',
+    path: 'account/:accountId/user/:userId/theme/:themeId/quiz/play/:id/question/:numero',
     component: QuizPlayComponent
   },
   {
-    path: 'accounts/:accountId/users/:userId/themes/:themeId/quizzes/result/:id/:right/:total',
+    path: 'account/:accountId/user/:userId/theme/:themeId/quiz/result/:id/:right/:total',
     component: ResultComponent
   },
 ];

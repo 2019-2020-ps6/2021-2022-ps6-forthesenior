@@ -2,8 +2,9 @@ import {Injectable} from '@angular/core';
 import {BehaviorSubject, Subject} from 'rxjs';
 import {Answer} from '../models/answer.model';
 import {HttpClient} from '@angular/common/http';
-import {httpOptionsBase, serverUrl} from '../configs/server.config';
+import {httpOptionsBase} from '../configs/server.config';
 import {Router} from "@angular/router";
+import {QuestionService} from "./question.service";
 
 
 @Injectable({
@@ -16,7 +17,7 @@ export class AnswerService {
   private answers: Answer[] = [];
   private httpOptions = httpOptionsBase;
 
-  constructor(private http: HttpClient, private router: Router) {
+  constructor(private http: HttpClient, private router: Router, private questionService: QuestionService) {
     this.retrieveAnswers();
   }
 
@@ -44,10 +45,10 @@ export class AnswerService {
   }
 
   getAnswerUrl(): string {
-    return serverUrl + '/accounts/' + this.getAccountIdFromUrl() + '/answers';
+    return this.questionService.getQuestionUrl() + '/' + this.getQuestionIdFromUrl() + '/answers';
   }
 
-  getAccountIdFromUrl(): string {
-    return this.router.url.split('/')[2];
+  getQuestionIdFromUrl(): string {
+    return this.router.url.split('/')[11];
   }
 }
