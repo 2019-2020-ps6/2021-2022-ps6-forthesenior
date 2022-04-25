@@ -3,6 +3,7 @@ import {Quiz} from '../../../models/quiz.model';
 import {Router} from '@angular/router';
 import {QuizService} from '../../../services/quiz.service';
 import {PlayService} from '../../../services/play.service'
+import {urlPopN} from "../../utils/functions";
 
 @Component({
   selector: 'app-quiz-play',
@@ -34,12 +35,9 @@ export class QuizPlayComponent implements OnInit {
       this.right++;
     }
     if (this.index === this.quiz.questions.length) {
-      const urlPath = this.router.url.split('/');
-      urlPath.pop();
-      urlPath.pop();
       this.playService.right = this.right;
       this.playService.total = this.index;
-      this.router.navigate([urlPath.join('/') + '/result/' + this.quiz.id]);
+      this.router.navigate([urlPopN(this.router.url, 2) + '/result/' + this.quiz.id]);
     }
     this.next = false;
   }
@@ -47,17 +45,5 @@ export class QuizPlayComponent implements OnInit {
   onAnswered(answer: boolean): void {
     this.next = true;
     this.answer = answer;
-  }
-
-  goToQuizzes() {
-    let url = this.router.url;
-    if (url.includes('quizzes')) {
-      const urlRoutes = url.split('/');
-      while (urlRoutes.length > 0 && urlRoutes.pop() !== 'quizzes') {
-      }
-      urlRoutes.push('quizzes');
-      url = urlRoutes.join('/');
-    }
-    this.router.navigate([url]);
   }
 }

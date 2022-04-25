@@ -5,6 +5,7 @@ import {HttpClient} from '@angular/common/http';
 import {httpOptionsBase} from '../configs/server.config';
 import {Router} from "@angular/router";
 import {ThemeService} from "./theme.service";
+import {urlPopUntill} from "../app/utils/functions";
 
 
 @Injectable({
@@ -49,6 +50,10 @@ export class QuizService {
   }
 
   getThemeIdFromUrl(): string {
-    return this.router.url.split('/')[6];
+    let id = this.router.url.split('/')[6];
+    if (id === undefined) {
+      id = urlPopUntill(document.URL, 'quiz').split('/').pop();
+    }
+    return id;
   }
 }

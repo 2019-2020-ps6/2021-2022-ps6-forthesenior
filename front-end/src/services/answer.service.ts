@@ -16,6 +16,7 @@ export class AnswerService {
   public answers$: BehaviorSubject<Answer[]> = new BehaviorSubject([]);
   private answers: Answer[] = [];
   private httpOptions = httpOptionsBase;
+  private questionId;
 
   constructor(private http: HttpClient, private router: Router, private questionService: QuestionService) {
     this.retrieveAnswers();
@@ -49,7 +50,8 @@ export class AnswerService {
     return this.questionService.getQuestionUrl() + '/' + this.getQuestionIdFromUrl() + '/answers';
   }
 
-  getQuestionIdFromUrl(): string {
-    return this.router.url.split('/')[11];
+  getQuestionIdFromUrl(): string { // TODO Ne marche pas
+    this.questionService.questionSelected$.asObservable().subscribe((question) => this.questionId = question.id);
+    return this.questionId;
   }
 }
