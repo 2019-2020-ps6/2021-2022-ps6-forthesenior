@@ -9,10 +9,16 @@
   },
   {
     "id": 2,
-    "userId" : 2,
-    "fontSize": 0,
-    "dmlaOffset": 10,
-    "parkinsonOffset": 0,
+    "userId": 2,
+    "fontSize": "200",
+    "dmlaOffset": "20",
     "theme": false
+  },
+  {
+    "fontSize": "300",
+    "dmlaOffset": "0",
+    "theme": true,
+    "userId": 3,
+    "id": 1650818914810
   }
 ]

@@ -27,6 +27,9 @@ export class QuizPlayComponent implements OnInit {
 
   ngOnInit(): void {
     this.quizService.retrieveQuizzes();
+    if (this.quiz === undefined) {
+      this.quizService.setSelectedQuiz(document.URL.split('/').pop())
+    }
   }
 
   nextQuestion(): void {
