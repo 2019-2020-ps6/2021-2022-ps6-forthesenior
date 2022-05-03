@@ -25,6 +25,7 @@ export class StatComponent implements OnInit {
 
   getStat() {
     this.average = 0;
+    if (this.user.stat === undefined) this.user.stat = []
     if (this.user.stat.length == 0) {
       this.min = 0;
       this.max = 0;
@@ -40,6 +41,5 @@ export class StatComponent implements OnInit {
       this.average = this.average / this.user.stat.length;
       this.average = Math.round(this.average * 100);
     }
-
   }
 }

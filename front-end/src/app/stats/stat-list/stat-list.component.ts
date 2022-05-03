@@ -2,8 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {User} from "../../../models/user.model";
 import {UserService} from "../../../services/user.service";
-import {DomSanitizer} from "@angular/platform-browser";
-import {AccountService} from "../../../services/account.service";
 import {download} from "../../utils/functions";
 
 @Component({
@@ -15,7 +13,7 @@ export class StatListComponent implements OnInit {
 
   public userList: User[] = [];
 
-  constructor(private route: ActivatedRoute, private userService: UserService, private accountService: AccountService, private sanitizer: DomSanitizer) {
+  constructor(private route: ActivatedRoute, private userService: UserService) {
     this.userService.users$.asObservable().subscribe(users => this.userList = users);
   }
 

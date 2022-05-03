@@ -3,7 +3,7 @@ import {Router} from '@angular/router';
 import {Theme} from '../../../models/theme.model';
 import {ThemeService} from '../../../services/theme.service';
 import {addAdminClasses, isAdmin} from "../../utils/functions";
-import {OptionService} from "../../../services/option.service";
+import {OptionsService} from "../../../services/options.service";
 import {UserService} from "../../../services/user.service";
 
 @Component({
