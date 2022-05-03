@@ -16,23 +16,22 @@ export class QuizListComponent implements OnInit {
   public quizList: Quiz[] = [];
   public theme: Theme;
   public userId: string;
-  private readonly themeId: string;
+  private themeId: string;
 
   constructor(private router: Router, public quizService: QuizService, public route: ActivatedRoute,
               public themeService: ThemeService, private optionService: OptionService) {
-    this.userId = this.route.snapshot.paramMap.get('idUser');
-    this.themeId = this.route.snapshot.paramMap.get('idTheme');
-
-    this.quizService.setIdTheme(this.themeId);
-    this.quizService.retrieveQuizzes();
-    this.quizService.quizzes$.subscribe((quizzes: Quiz[]) => {
-      this.quizList = quizzes;
-    });
-    this.optionService.setColumns(this.quizList.length);
-    this.optionService.setOption(this.userId);
   }
 
   ngOnInit(): void {
+    this.userId = this.route.snapshot.paramMap.get('idUser');
+    this.themeId = this.route.snapshot.paramMap.get('idTheme');
+    this.quizService.setIdTheme(this.themeId);
+    this.quizService.retrieveQuizzes();
+    this.optionService.setOption(this.userId);
+    this.quizService.quizzes$.subscribe((quizzes: Quiz[]) => {
+      this.quizList = quizzes;
+      this.optionService.setColumns(this.quizList.length);
+    });
     this.themeService.setSelectedTheme(this.themeId);
     this.themeService.themeSelected$.subscribe((theme) => {
       this.theme = theme;

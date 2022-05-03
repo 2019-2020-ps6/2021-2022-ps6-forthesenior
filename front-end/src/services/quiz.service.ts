@@ -31,7 +31,7 @@ export class QuizService {
     = new BehaviorSubject(this.quizzes);
 
   // @ts-ignore
-  public quizSelected$: BehaviorSubject<Quiz> = new BehaviorSubject<Quiz>(0);
+  public quizSelected$: BehaviorSubject<Quiz> = new BehaviorSubject<Quiz>(null);
 
   private quizUrl = serverUrl + '/theme/';
   private questionsPath = '/questions';
@@ -76,7 +76,6 @@ export class QuizService {
     const urlWithId = this.quizUrl + this.idTheme + '/quizzes/' + id;
     this.http.get<Quiz>(urlWithId).subscribe((quiz) => {
       this.quizSelected$.next(quiz);
-      console.log("quiz question : " + quiz.questions[0].label);
     });
   }
 

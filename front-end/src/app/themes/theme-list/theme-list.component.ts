@@ -22,24 +22,16 @@ export class ThemeListComponent implements OnInit {
 
   constructor(private router: Router, public themeService: ThemeService, public quizService: QuizService,
               private route: ActivatedRoute, public optionService: OptionService) {
-    this.userId = this.route.snapshot.paramMap.get('idUser');
-    this.themeService.setIds(
-      this.route.snapshot.paramMap.get('idAccount'),
-      this.userId
-    )
-    this.themeService.retrieveThemes();
-    this.themeService.themes$.subscribe((themes: Theme[]) => {
-      this.themeList = themes;
-    });
-    this.optionService.setColumns(this.themeList.length);
-    this.optionService.setOption(this.userId);
-
   }
 
   ngOnInit(): void {
     this.userId = this.route.snapshot.paramMap.get('idUser');
+    this.themeService.retrieveThemes();
+    this.themeService.themes$.subscribe((themes: Theme[]) => {
+      this.themeList = themes;
+      this.optionService.setColumns(this.themeList.length);
+    });
     this.optionService.setOption(this.userId);
-    console.log(this.userId);
     if (this.userId === '0') {
       let grid = document.getElementsByTagName('div');
       for (let i = 0; i < grid.length; i++) grid[i].classList.add("admin");

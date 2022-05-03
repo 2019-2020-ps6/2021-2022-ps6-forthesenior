@@ -21,22 +21,24 @@ export class QuizPlayComponent implements OnInit {
 
 
   constructor(private router: Router, private route: ActivatedRoute, private quizService: QuizService, private userService: UserService, private optionService: OptionService) {
-    this.next = false;
-    this.right = 0;
-    this.userId = this.route.snapshot.paramMap.get('idUser');
+
   }
 
   ngOnInit(): void {
+    this.next = false;
+    this.right = 0;
+    this.userId = this.route.snapshot.paramMap.get('idUser');
     const id = this.route.snapshot.paramMap.get('idQuiz');
     const themeId = this.route.snapshot.paramMap.get('idTheme');
     this.quizService.setIdTheme(themeId);
     this.quizService.setSelectedQuiz(id);
-    this.quizService.quizSelected$.subscribe((quiz) => {
-      this.quiz = quiz;
-      console.log("quiz : " + this.quiz);
-    });
-    this.optionService.setColumns(this.quiz.questions.length);
     this.optionService.setOption(this.userId);
+    this.quizService.quizSelected$.subscribe((quiz) => {
+      if (quiz !== null) {
+        this.quiz = quiz;
+        this.optionService.setColumns(this.quiz.questions.length);
+      }
+    });
     this.index = Number(this.route.snapshot.paramMap.get('numero'));
   }
 
