@@ -2,15 +2,15 @@
   <h2>Créer un nouvel utilisateur</h2>
   <form [formGroup]="userForm" class="user-form" style="text-align: right">
     <label>Prénom
-      <input [formControlName]="'firstname'" class="input-custom" id="firstname"
-             style="margin-left: 10px"
-             type="text">
+      <input [formControlName]="'firstname'" [maxLength]="50" class="input-custom"
+             id="firstname"
+             style="margin-left: 10px" type="text">
     </label>
     <br>
     <label>Nom
-      <input [formControlName]="'lastname'" class="input-custom" id="lastname"
-             style="margin-left: 10px"
-             type="text">
+      <input [formControlName]="'lastname'" [maxLength]="50" class="input-custom"
+             id="lastname"
+             style="margin-left: 10px" type="text">
     </label>
     <div style="text-align: center; margin-top: 20px">
       <button (click)="addUser()" class="button-card" type="submit">Créer</button>

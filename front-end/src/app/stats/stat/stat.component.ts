@@ -1,4 +1,4 @@
-import {Component, OnInit, Input} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 import {User} from '../../../models/user.model';
 
@@ -12,11 +12,9 @@ export class StatComponent implements OnInit {
   @Input()
   user: User;
 
-  public min: number;
-  public average: number;
-  public max: number;
-
-  public test: string
+  public min: number = 0;
+  public average: number = 0;
+  public max: number = 0;
 
   constructor() {
   }

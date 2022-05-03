@@ -1,7 +1,7 @@
-<div class="card">
+<div (click)="!isAdmin()?select():null" class="card">
   <h2>
     {{theme.themeLabel}}
   </h2>
-  <button (click)="select()" class="button-card">Sélectionner</button>
-  <button (click)="delete()" class="button-card">Supprimer</button>
+  <button (click)="select()" *ngIf="isAdmin()" class="button-card">Sélectionner</button>
+  <button (click)="delete()" *ngIf="isAdmin()" class="button-card">Supprimer</button>
 </div>

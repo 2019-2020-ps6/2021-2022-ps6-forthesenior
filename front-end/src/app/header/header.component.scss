@@ -8,27 +8,21 @@
 }
 
 .user.titre {
+  color: $header-text;
+  padding-right: 1em;
   text-align: left;
   margin: 0 0 0 10px;
-  color: $header-text;
+  text-decoration: none;
 }
 
 :host {
   color: $white;
 }
 
-.navigation {
-  font-size: 0.7em;
-  padding-left: 1em;
-  padding-right: 1em;
-  color: white;
-  text-decoration: none;
-}
-
 .name {
   position: absolute;
   left: 50%;
   transform: translate(-50%, 0px);
-  color: white;
+  color: $header-text;
   font-size: 1.5em;
 }

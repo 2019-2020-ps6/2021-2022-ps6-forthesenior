@@ -10,7 +10,7 @@
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.08), 0 0 6px rgba(0, 0, 0, 0.05);
   padding: 0 1em 1em 1em;
   font-size: $font-size;
-  width : 250px;
+  //width : 250px;
 }
 
 .user.titre {
@@ -47,7 +47,7 @@
   justify-content: center;
   align-items: center;
   column-gap: $gap-column;
-  margin-top:20px;
+  margin-top: 20px;
   flex-direction: column;
 
   &.user {

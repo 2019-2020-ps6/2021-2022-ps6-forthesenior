@@ -61,20 +61,18 @@ export class OptionService {
   }
 
   setAdminOption(): void {
-    document.documentElement.style.setProperty("--font-size", "20px");
+    document.documentElement.style.setProperty("--white", "#FFFFFF");
+    document.documentElement.style.setProperty("--black", "#000000");
+    document.documentElement.style.setProperty("--blue", "#3f51b5");
     document.documentElement.style.setProperty("--size-answer", "200px");
-    //document.documentElement.style.setProperty("--gap-row", "15px");
-    document.documentElement.style.setProperty("--gap-column", "20px");
+    document.documentElement.style.setProperty("--gap-column", "10px");
+    document.documentElement.style.setProperty("--gap-row", "10px");
+    document.documentElement.style.setProperty("--font-size", "20px");
+    document.documentElement.style.setProperty("--number-column", "5");
     this.setWhiteTheme()
   }
 
   setBlackTheme(): void {
-    /*document.documentElement.style.setProperty("--background-color","#485068");
-    document.documentElement.style.setProperty("--header-color","#606060");
-    document.documentElement.style.setProperty("--white","#606060");
-    document.documentElement.style.setProperty("--text-color","#DFDFDF");
-    document.documentElement.style.setProperty("--titre-color","#DFDFDF");*/
-
     document.documentElement.style.setProperty("--background-color", "#2C3333");
     document.documentElement.style.setProperty("--header-color", "#395B64");
     document.documentElement.style.setProperty("--white", "#6b7070");

@@ -1,5 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Theme} from '../../../models/theme.model';
+import {addAdminClasses, isAdmin} from "../../utils/functions";
 
 @Component({
   selector: 'app-theme',
@@ -20,6 +21,7 @@ export class ThemeComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    addAdminClasses();
   }
 
   select(): void {
@@ -28,5 +30,9 @@ export class ThemeComponent implements OnInit {
 
   delete(): void {
     this.deleteTheme.emit(this.theme);
+  }
+
+  isAdmin(): boolean {
+    return isAdmin();
   }
 }

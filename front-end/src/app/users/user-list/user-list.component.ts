@@ -3,6 +3,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {User} from '../../../models/user.model';
 import {UserService} from '../../../services/user.service';
 import {Router} from "@angular/router";
+import {OptionService} from "../../../services/option.service";
 
 @Component({
   selector: 'app-user-list',
@@ -16,7 +17,8 @@ export class UserListComponent implements OnInit {
 
   public userList: User[] = [];
 
-  constructor(private userService: UserService, private router: Router) {
+  constructor(private userService: UserService, private optionService: OptionService, private router: Router) {
+    this.optionService.setAdminOption();
     this.userService.users$.subscribe((users: User[]) => {
       this.userList = users;
     });
@@ -29,6 +31,11 @@ export class UserListComponent implements OnInit {
   selectUser(user: User): void {
     this.userService.setSelectedUser(user.id);
     this.router.navigate([this.router.url + '/' + user.id + '/theme']);
+  }
+
+  editUser(user: User): void {
+    this.userService.setSelectedUser(user.id);
+    this.router.navigate([this.router.url + '/admin/theme']);
   }
 
   deleteUser(user: User): void {

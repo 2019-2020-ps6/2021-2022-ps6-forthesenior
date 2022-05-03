@@ -1,6 +1,7 @@
 @import "../../../styles";
-.button-answer{
-  width: $size-answer;
-  height: $size-answer;
-  font-size: $font-size;
+@import '../../../styles/card.scss';
+
+img {
+  width: 3em;
+  height: 3em;
 }

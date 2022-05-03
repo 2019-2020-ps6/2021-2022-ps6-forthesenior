@@ -2,6 +2,9 @@ import {Component, Input, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {Theme} from '../../../models/theme.model';
 import {ThemeService} from '../../../services/theme.service';
+import {addAdminClasses, isAdmin} from "../../utils/functions";
+import {OptionService} from "../../../services/option.service";
+import {UserService} from "../../../services/user.service";
 
 @Component({
   selector: 'app-theme-list',
@@ -17,10 +20,14 @@ export class ThemeListComponent implements OnInit {
     this.themeService.themes$.subscribe((themes: Theme[]) => {
       this.themeList = themes;
     });
+    // TODO Update Options
+    // this.optionService.setColumns(this.themeList.length);
+    // this.optionService.setOption(this.userId);
   }
 
   ngOnInit(): void {
     this.themeService.retrieveThemes();
+    addAdminClasses();
   }
 
   selectTheme(theme: Theme): void {
@@ -30,5 +37,9 @@ export class ThemeListComponent implements OnInit {
 
   deleteTheme(theme: Theme): void {
     this.themeService.deleteTheme(theme);
+  }
+
+  isAdmin(): boolean {
+    return isAdmin();
   }
 }

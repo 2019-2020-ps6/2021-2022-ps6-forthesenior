@@ -1,11 +1,11 @@
 <div class="card">
   <h2>Créer un nouveau thème</h2>
-  <form class="quiz-form" [formGroup]="themeForm">
+  <form [formGroup]="themeForm" class="quiz-form">
     <label>
       Nom du Thème <br>
-      <input class="input-custom" type="text" id="themeLabel" [formControlName]="'themeLabel'">
+      <input [formControlName]="'themeLabel'" [maxLength]="100" class="input-custom" id="themeLabel" type="text">
     </label>
     <br>
-    <button type="submit" class="button-card" (click)="addTheme()">Créer</button>
+    <button (click)="addTheme()" class="button-card" type="submit">Créer</button>
   </form>
 </div>
