@@ -6,4 +6,5 @@ module.exports = new BaseModel('User', {
   lastname: Joi.string().required(),
   accountId: Joi.number(),
   options: Joi.array(),
+  stat : Joi.array(),
 })

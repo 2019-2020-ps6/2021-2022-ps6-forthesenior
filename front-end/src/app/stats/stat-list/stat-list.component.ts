@@ -4,6 +4,7 @@ import {User} from "../../../models/user.model";
 import {UserService} from "../../../services/user.service";
 import {DomSanitizer} from "@angular/platform-browser";
 import {AccountService} from "../../../services/account.service";
+import {download} from "../../utils/functions";
 
 @Component({
   selector: 'app-stats',
@@ -13,29 +14,25 @@ import {AccountService} from "../../../services/account.service";
 export class StatListComponent implements OnInit {
 
   public userList: User[] = [];
-  public downloadJsonHref;
 
   constructor(private route: ActivatedRoute, private userService: UserService, private accountService: AccountService, private sanitizer: DomSanitizer) {
-    let idAccount = this.route.snapshot.paramMap.get("idAccount");
-    this.accountService.setSelectedAccount(idAccount);
-    this.userService.retrieveUsers();
-    this.userService.users$.subscribe((users: User[]) => {
-      this.userList = users;
-    });
-
-    let json = [];
-    for (let i = 0; i < this.userList.length; i++) {
-      json.push({
-        firstName: this.userList[i].firstname,
-        lastName: this.userList[i].lastname,
-        stat: this.userList[i].stat
-      })
-
-    }
-    let theJSON = JSON.stringify(json);
-    this.downloadJsonHref = this.sanitizer.bypassSecurityTrustUrl("data:text/json;charset=UTF-8," + encodeURIComponent(theJSON));
+    this.userService.users$.asObservable().subscribe(users => this.userList = users);
   }
 
   ngOnInit(): void {
+    this.userService.retrieveUsers();
+  }
+
+  download() {
+    console.log("Downloading Statistics")
+    let json = [];
+    for (let i = 0; i < this.userList.length; i++) {
+      json.push({
+        firsname: this.userList[i].firstname,
+        lastname: this.userList[i].lastname,
+        stat: this.userList[i].stat
+      })
+    }
+    download("Statistics.json", JSON.stringify(json));
   }
 }

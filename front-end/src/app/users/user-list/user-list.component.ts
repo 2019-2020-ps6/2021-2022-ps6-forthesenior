@@ -12,8 +12,7 @@ import {OptionService} from "../../../services/option.service";
 })
 export class UserListComponent implements OnInit {
 
-  @Input()
-  public user: User;
+  @Input() public user: User;
 
   public userList: User[] = [];
 
@@ -40,5 +39,9 @@ export class UserListComponent implements OnInit {
 
   deleteUser(user: User): void {
     this.userService.deleteUser(user);
+  }
+
+  stats(): void {
+    this.router.navigate([this.router.url + '/stat'])
   }
 }

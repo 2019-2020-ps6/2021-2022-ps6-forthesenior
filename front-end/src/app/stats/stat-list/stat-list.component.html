@@ -5,9 +5,7 @@
   </div>
   <div class="user card admin">
     <h2>
-      <a [href]="downloadJsonHref" download="download.json" title="Download JSON">
-        <i class="fas fa-download"></i>
-      </a>
+      <i (click)="download()" class="fas fa-download" style="cursor: pointer"></i>
     </h2>
   </div>
 </div>
