@@ -5,7 +5,7 @@ import {HttpClient} from '@angular/common/http';
 import {httpOptionsBase} from '../configs/server.config';
 import {Router} from "@angular/router";
 import {QuizService} from "./quiz.service";
-import {urlPopUntill} from "../app/utils/functions";
+import {urlPopUntil} from "../app/utils/functions";
 
 
 @Injectable({
@@ -52,7 +52,7 @@ export class QuestionService {
   getQuizIdFromUrl(): string {
     let id = this.router.url.split('/')[9];
     if (id === undefined) {
-      id = urlPopUntill(document.URL, 'question').split('/').pop();
+      id = urlPopUntil(document.URL, 'question').split('/').pop();
     }
     return id;
   }

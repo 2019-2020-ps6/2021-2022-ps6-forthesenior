@@ -1,7 +1,7 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {Connection} from './connection/connection';
-import {ErrorPath} from './error/error.path';
+import {ErrorPath} from './utils/error/error.path';
 import {UserListComponent} from './users/user-list/user-list.component';
 import {ThemeListComponent} from './themes/theme-list/theme-list.component';
 import {QuizListComponent} from "./quizzes/quiz-list/quiz-list.component";
@@ -56,7 +56,7 @@ const routes: Routes = [
     component: ResultComponent
   },
   {
-    path: ':idAccount/user-list/:idUser/option',
+    path: 'account/:accountId/user/:userId/option',
     component: OptionComponent
   },
 ];
@@ -65,5 +65,4 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)], exports: [RouterModule]
 })
 export class AppRoutingModule {
-
 }

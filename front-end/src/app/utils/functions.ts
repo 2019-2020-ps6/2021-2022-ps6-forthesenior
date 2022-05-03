@@ -6,7 +6,7 @@ export function urlPopN(url: String, number: number): string {
   return urlPath.join('/');
 }
 
-export function urlPopUntill(url: String, word: string): string {
+export function urlPopUntil(url: String, word: string): string {
   const urlPath = url.split('/');
   while (urlPath.length > 0 && word !== urlPath.pop()) {
   }

@@ -25,7 +25,7 @@ import {QuizQuestionComponent} from './quizzes/quiz-question/quiz-question.compo
 import {AnswerQuizComponent} from './quizzes/answer-quiz/answer-quiz.component';
 import {ResultComponent} from './result/result.component';
 import {Connection} from './connection/connection';
-import {ErrorPath} from './error/error.path'
+import {ErrorPath} from './utils/error/error.path'
 import {StatListComponent} from "./stats/stat-list/stat-list.component";
 import {StatComponent} from "./stats/stat/stat.component";
 import {OptionComponent} from "./users/options/option.component";

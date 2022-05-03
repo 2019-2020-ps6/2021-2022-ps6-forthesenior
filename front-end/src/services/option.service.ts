@@ -96,12 +96,14 @@ export class OptionService {
     const optionUrl = this.optionPath + id;
     console.log(optionUrl)
     this.http.post<Option>(optionUrl, options, this.httpOptions).subscribe(() => console.log('enregister'));
+
   }
 
   modifyOption(options: Option, id: string): void {
     const optionUrl = this.optionPath + id;
     console.log(optionUrl)
     this.http.put<Option>(optionUrl, options, this.httpOptions).subscribe(() => console.log('enregister'));
+
   }
 
   getOption(id: string): any {
@@ -109,5 +111,6 @@ export class OptionService {
     this.http.get<Option>(optionUrl).subscribe((option) => {
       this.option$.next(option);
     })
+
   }
 }

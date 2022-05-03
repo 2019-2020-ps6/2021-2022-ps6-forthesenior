@@ -1,8 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup} from '@angular/forms';
-import {HttpClient} from '@angular/common/http';
-import {AccountService} from '../../services/account.service';
-import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-connection',
@@ -13,9 +9,9 @@ import {Router} from "@angular/router";
 export class ErrorPath implements OnInit {
 
   constructor() {
-
   }
 
   ngOnInit(): void {
+    console.log("Error 404: Page Not Found")
   }
 }

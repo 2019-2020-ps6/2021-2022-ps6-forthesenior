@@ -4,7 +4,7 @@ import {Theme} from '../models/theme.model';
 import {HttpClient} from '@angular/common/http';
 import {httpOptionsBase, serverUrl} from '../configs/server.config';
 import {Router} from "@angular/router";
-import {urlPopUntill} from "../app/utils/functions";
+import {urlPopUntil} from "../app/utils/functions";
 
 
 @Injectable({
@@ -51,7 +51,7 @@ export class ThemeService {
   getAccountIdFromUrl(): string {
     let id = this.router.url.split('/')[2];
     if (id === undefined) {
-      id = urlPopUntill(document.URL, 'theme').split('/').pop();
+      id = urlPopUntil(document.URL, 'theme').split('/').pop();
     }
     return id;
   }

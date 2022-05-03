@@ -4,7 +4,7 @@ import {Router} from "@angular/router";
 import {Account} from "../../models/account.model";
 import {User} from "../../models/user.model";
 import {UserService} from "../../services/user.service";
-import {urlPopUntill} from "../utils/functions";
+import {urlPopUntil} from "../utils/functions";
 
 @Component({
   selector: 'app-header', templateUrl: './header.component.html', styleUrls: ['./header.component.scss']
@@ -49,7 +49,7 @@ export class HeaderComponent implements OnInit {
   connectedToAccount(): boolean {
     const url = document.URL;
     if (url.includes("account/")) {
-      const urlRoutes = urlPopUntill(url.split('/').reverse().join('/'), 'account')
+      const urlRoutes = urlPopUntil(url.split('/').reverse().join('/'), 'account')
       this.accountServices.setSelectedAccount(urlRoutes.split('/').pop());
       return true;
     }
@@ -59,7 +59,7 @@ export class HeaderComponent implements OnInit {
   connectedToUser(): boolean {
     const url = document.URL;
     if (url.includes("user/")) {
-      const urlRoutes = urlPopUntill(url.split('/').reverse().join('/'), 'user')
+      const urlRoutes = urlPopUntil(url.split('/').reverse().join('/'), 'user')
       this.userService.setSelectedUser(urlRoutes.split('/').pop());
       return true;
     }

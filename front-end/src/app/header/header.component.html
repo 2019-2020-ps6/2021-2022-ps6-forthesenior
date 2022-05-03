@@ -6,14 +6,14 @@
                                                           style="padding-right: 2px;vertical-align: text-top"></i>Users</a>
   </span>
 
-    <ng-container *ngIf="this.nameShown">
-      <div class="name">
-        {{this.nameShown}}
-      </div>
-    </ng-container>
+  <ng-container *ngIf="this.nameShown">
+    <div class="name">
+      {{this.nameShown}}
+    </div>
+  </ng-container>
 
   <span style="float: right">
     <a [routerLink]="[goToConnection()]" class="navigation"><i aria-hidden="true" class="fa fa-car"
-                                                          style="padding-right: 2px;vertical-align: text-top;"></i>Quitter</a> <!-- Exit sign-->
+                                                               style="padding-right: 2px;vertical-align: text-top;"></i>Quitter</a>
   </span>
 </div>
