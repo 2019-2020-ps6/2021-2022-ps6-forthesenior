@@ -9,6 +9,8 @@ import {QuizPlayComponent} from "./quizzes/quiz-play/quiz-play.component";
 import {ResultComponent} from "./result/result.component";
 import {EditQuizComponent} from "./quizzes/edit-quiz/edit-quiz.component";
 import {EditThemeComponent} from "./themes/edit-theme/edit-theme.component";
+import {OptionComponent} from "./users/options/option.component";
+import {StatListComponent} from "./stats/stat-list/stat-list.component";
 
 const routes: Routes = [
   {
@@ -24,6 +26,10 @@ const routes: Routes = [
   {
     path: 'account/:accountId/user',
     component: UserListComponent
+  },
+  {
+    path: 'account/:accountId/user/stat',
+    component: StatListComponent
   },
   {
     path: 'account/:accountId/user/:userId/theme',
@@ -48,6 +54,10 @@ const routes: Routes = [
   {
     path: 'account/:accountId/user/:userId/theme/:themeId/quiz/result/:quizId',
     component: ResultComponent
+  },
+  {
+    path: ':idAccount/user-list/:idUser/option',
+    component: OptionComponent
   },
 ];
 

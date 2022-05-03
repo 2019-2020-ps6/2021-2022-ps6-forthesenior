@@ -26,6 +26,9 @@ import {AnswerQuizComponent} from './quizzes/answer-quiz/answer-quiz.component';
 import {ResultComponent} from './result/result.component';
 import {Connection} from './connection/connection';
 import {ErrorPath} from './error/error.path'
+import {StatListComponent} from "./stats/stat-list/stat-list.component";
+import {StatComponent} from "./stats/stat/stat.component";
+import {OptionComponent} from "./users/options/option.component";
 
 @NgModule({
   declarations: [
@@ -50,7 +53,10 @@ import {ErrorPath} from './error/error.path'
     EditThemeComponent,
     QuizQuestionComponent,
     AnswerQuizComponent,
-    ResultComponent
+    ResultComponent,
+    StatComponent,
+    StatListComponent,
+    OptionComponent
   ],
   imports: [
     BrowserModule,
