@@ -28,11 +28,13 @@ export class QuizListComponent implements OnInit {
     this.quizService.setIdTheme(this.themeId);
     this.quizService.retrieveQuizzes();
     this.optionService.setOption(this.userId);
-    this.quizService.quizzes$.subscribe((quizzes: Quiz[]) => {
-      this.quizList = quizzes;
-      this.optionService.setColumns(this.quizList.length);
-    });
     this.themeService.setSelectedTheme(this.themeId);
+    this.quizService.quizzes$.subscribe((quizzes: Quiz[]) => {
+      if (quizzes !== null) {
+        this.quizList = quizzes;
+        this.optionService.setColumns(this.quizList.length);
+      }
+    });
     this.themeService.themeSelected$.subscribe((theme) => {
       this.theme = theme;
     });

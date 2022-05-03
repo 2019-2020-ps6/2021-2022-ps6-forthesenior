@@ -17,14 +17,14 @@ export class ThemeService {
   private themeUrl = serverUrl + '/theme';
   private httpOptions = httpOptionsBase;
   private option: Option;
-  public themes$: BehaviorSubject<Theme[]> = new BehaviorSubject(this.themes);
-  public themeSelected$: BehaviorSubject<Theme>;
+  public themes$: BehaviorSubject<Theme[]> = new BehaviorSubject(null);
+  public themeSelected$ = new BehaviorSubject<Theme>(null);
+
   private idUser: string;
   private idAccount : string;
 
   constructor(private http: HttpClient, private optionService: OptionService) {
     // @ts-ignore
-    this.themeSelected$ = new BehaviorSubject<Theme>(0);
     //this.retrieveThemes();
     //this.setOption();
   }

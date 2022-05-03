@@ -28,8 +28,10 @@ export class ThemeListComponent implements OnInit {
     this.userId = this.route.snapshot.paramMap.get('idUser');
     this.themeService.retrieveThemes();
     this.themeService.themes$.subscribe((themes: Theme[]) => {
-      this.themeList = themes;
-      this.optionService.setColumns(this.themeList.length);
+      if (themes != null) {
+        this.themeList = themes;
+        this.optionService.setColumns(this.themeList.length);
+      }
     });
     this.optionService.setOption(this.userId);
     if (this.userId === '0') {

@@ -28,7 +28,7 @@ export class QuizService {
    Naming convention: Add '$' at the end of the variable name to highlight it as an Observable.
    */
   public quizzes$: BehaviorSubject<Quiz[]>
-    = new BehaviorSubject(this.quizzes);
+    = new BehaviorSubject(null);
 
   // @ts-ignore
   public quizSelected$: BehaviorSubject<Quiz> = new BehaviorSubject<Quiz>(null);
