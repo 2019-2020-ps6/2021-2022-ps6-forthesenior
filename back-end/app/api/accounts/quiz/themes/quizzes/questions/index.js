@@ -11,7 +11,7 @@ const {
 
 const router = new Router({mergeParams: true})
 
-router.use('/:questionId/answer', AnswerRouter)
+router.use('/:questionId/answers', AnswerRouter)
 
 router.get('/', (req, res) => {
   try {
