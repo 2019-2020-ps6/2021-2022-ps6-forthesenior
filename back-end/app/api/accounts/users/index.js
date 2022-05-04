@@ -1,15 +1,14 @@
 const {Router} = require('express')
 const manageAllErrors = require("../../../utils/routes/error-management");
+const OptionRouter = require("./options");
 const {
-  CreateUserForAccount,
-  FilterUserFromAccount,
-  GetUserFromAccount,
-  UpdateUserFromAccount,
-  DeleteUserFromAccount
+  CreateUserForAccount, FilterUserFromAccount, GetUserFromAccount, UpdateUserFromAccount, DeleteUserFromAccount
 } = require('./userManager')
-
 const router = new Router({mergeParams: true})
 
+// TODO Get and Delete Recursively
+
+router.use('/:userId/options', OptionRouter)
 
 router.get('/', (req, res) => {
   try {

@@ -39,6 +39,12 @@ export class UserService {
     });
   }
 
+  updateStats(user: User, score: number): void {
+    if (user.stat === undefined) user.stat = [];
+    user.stat.push(score);
+    this.http.put(this.getUserUrl() + '/' + user.id, user).subscribe(() => this.retrieveUsers());
+  }
+
   deleteUser(user: User): void {
     this.http.delete<User>(this.getUserUrl() + '/' + user.id, this.httpOptions).subscribe(() => this.retrieveUsers());
   }

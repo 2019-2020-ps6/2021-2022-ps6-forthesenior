@@ -3,19 +3,35 @@
     "firstname": "Matis",
     "lastname": "Herrmann",
     "accountId": 1650360937231,
-    "id": 1650370924091
+    "id": 1650370924091,
+    "stat": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
   },
   {
     "firstname": "Lennon",
     "lastname": "Herrmann",
     "accountId": 1650360937231,
-    "id": 1650370937694
+    "id": 1650370937694,
+    "stat": [
+      1,
+      1,
+      0
+    ]
   },
   {
     "firstname": "Eden",
     "lastname": "Herrmann",
     "accountId": 1650360937231,
-    "id": 1650383774309
+    "id": 1650383774309,
+    "stat": [
+      1
+    ]
   },
   {
     "firstname": "testPrenom",
@@ -27,6 +43,10 @@
     "firstname": "Gene",
     "lastname": "René",
     "accountId": 1650360937231,
-    "id": 1651579144986
+    "id": 1651579144986,
+    "stat": [
+      1,
+      0
+    ]
   }
 ]

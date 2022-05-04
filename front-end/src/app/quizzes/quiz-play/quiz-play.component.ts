@@ -3,7 +3,8 @@ import {Quiz} from '../../../models/quiz.model';
 import {Router} from '@angular/router';
 import {QuizService} from '../../../services/quiz.service';
 import {PlayService} from '../../../services/play.service'
-import {urlPopN} from "../../utils/functions";
+import {urlPopN, urlPopUntil} from "../../utils/functions";
+import {UserService} from "../../../services/user.service";
 
 @Component({
   selector: 'app-quiz-play',
@@ -19,17 +20,17 @@ export class QuizPlayComponent implements OnInit {
   private answer: boolean;
 
 
-  constructor(private router: Router, private quizService: QuizService, private playService: PlayService) {
+  constructor(private router: Router, private quizService: QuizService, private userService: UserService, private playService: PlayService) {
     this.quizService.quizSelected$.asObservable().subscribe((quiz) => {
       this.quiz = quiz;
     })
   }
 
   ngOnInit(): void {
+    this.userService.retrieveUsers();
     this.quizService.retrieveQuizzes();
-    if (this.quiz === undefined) {
-      this.quizService.setSelectedQuiz(document.URL.split('/').pop())
-    }
+    if (this.playService.user === undefined) this.userService.setSelectedUser(urlPopUntil(this.router.url.split('/').reverse().join('/'), 'user').split('/').pop())
+    if (this.playService.quiz === undefined || this.quiz === undefined) this.quizService.setSelectedQuiz(this.router.url.split('/').pop())
   }
 
   nextQuestion(): void {

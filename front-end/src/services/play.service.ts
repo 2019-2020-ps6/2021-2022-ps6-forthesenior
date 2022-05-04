@@ -1,5 +1,8 @@
 import {Injectable} from '@angular/core';
 import {QuizService} from "./quiz.service";
+import {UserService} from "./user.service";
+import {User} from "../models/user.model";
+import {Quiz} from "../models/quiz.model";
 
 
 @Injectable({
@@ -9,10 +12,11 @@ export class PlayService {
 
   public right = 0;
   public total = 0;
-  public quizId;
+  public user: User;
+  public quiz: Quiz;
 
-  constructor(private quizService: QuizService) {
-    this.quizService.quizSelected$.asObservable().subscribe((quiz) => this.quizId = quiz.id);
+  constructor(private userService: UserService, private quizService: QuizService) {
+    this.userService.userSelected$.asObservable().subscribe((user) => this.user = user);
+    this.quizService.quizSelected$.asObservable().subscribe((quiz) => this.quiz = quiz);
   }
-
 }
