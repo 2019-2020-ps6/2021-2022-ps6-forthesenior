@@ -1,21 +1,31 @@
 <div class="card">
-  <h2>Options</h2>
+  <h2 style="text-align: center">Options</h2>
   <form [formGroup]="optionForm" class="user-form">
-    Taille du texte<br>
-    <input [formControlName]="'fontSize'" class="input-custom" type="radio" value=200> normal
-    <input [formControlName]="'fontSize'" class="input-custom" type="radio" value=300> grand
-    <input [formControlName]="'fontSize'" class="input-custom" type="radio" value=400> tres grand
-    <br>
-    Écartement<br>
-    <input [formControlName]="'dmlaOffset'" class="input-custom" type="radio" value=0> faible
-    <input [formControlName]="'dmlaOffset'" class="input-custom" type="radio" value=20> normal
-    <input [formControlName]="'dmlaOffset'" class="input-custom" type="radio" value=45> grand
-    <br>
-    Theme sombre<br>
-    <input [formControlName]="'theme'" [value]=true class="input-custom" type="radio"> sombre
-    <input [formControlName]="'theme'" [value]=false class="input-custom" type="radio"> clair
-
-    <br>
-    <button (click)="onSubmit()" class="button-card" type="submit">Créer</button>
+    <div class="option">
+      Taille du texte<br>
+      <input [formControlName]="'fontSize'" class="input-custom" type="radio" value=200> Normal
+      <input [formControlName]="'fontSize'" class="input-custom" type="radio" value=300> Grand
+      <input [formControlName]="'fontSize'" class="input-custom" type="radio" value=400> Très Grand
+    </div>
+    <div class="option">
+      Écartement du Centre de l'écran<br>
+      <input [formControlName]="'dmlaOffset'" class="input-custom" type="radio" value=0> Faible
+      <input [formControlName]="'dmlaOffset'" class="input-custom" type="radio" value=20> Normal
+      <input [formControlName]="'dmlaOffset'" class="input-custom" type="radio" value=45> Important
+    </div>
+    <div class="option">
+      Écartement Parkinson<br>
+      <input [formControlName]="'parkinsonOffset'" class="input-custom" type="radio" value=0> Faible
+      <input [formControlName]="'parkinsonOffset'" class="input-custom" type="radio" value=20> Normal
+      <input [formControlName]="'parkinsonOffset'" class="input-custom" type="radio" value=45> Important
+    </div>
+    <div class="option">
+      Theme sombre<br>
+      <input [formControlName]="'theme'" [value]=false class="input-custom" type="radio"> Clair
+      <input [formControlName]="'theme'" [value]=true class="input-custom" type="radio"> Sombre
+    </div>
+    <div style="text-align: center">
+      <button (click)="applyOptions()" class="button-card" type="submit">Appliquer</button>
+    </div>
   </form>
 </div>

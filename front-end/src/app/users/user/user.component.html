@@ -3,8 +3,8 @@
     <i class="fas fa-user"></i>
     {{user.firstname}} {{user.lastname}}
   </h2>
-  <button class="button-card" (click)="select()" routerLink="{{user.id}}/theme-list">Choisir</button>
-  <button class="button-card" (click)="edit()">Modifier</button>
-  <button class="button-card" (click)="delete()">Supprimer</button>
-  <button class="button-card" (click)="option()" routerLink="{{user.id}}/option">Option</button>
+  <button (click)="select()" class="button-card">Choisir</button>
+  <button (click)="edit()" class="button-card">Modifier</button>
+  <button (click)="option()" class="button-card">Option</button>
+  <button (click)="delete()" class="button-card">Supprimer</button>
 </div>

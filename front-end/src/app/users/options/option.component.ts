@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute, Router} from "@angular/router";
 import {OptionService} from "../../../services/option.service";
 import {FormBuilder, FormGroup} from "@angular/forms";
+import {setAdminOption} from "../../utils/options.functions";
 import {Option} from "../../../models/option.model";
 
 @Component({
@@ -10,40 +10,42 @@ import {Option} from "../../../models/option.model";
   styleUrls: ['./option.component.scss']
 })
 export class OptionComponent implements OnInit {
-  userId: string;
+
   public optionForm: FormGroup;
-  public crete: boolean;
-  public option: Option;
 
-  constructor(private router: Router, public formBuilder: FormBuilder, public route: ActivatedRoute, public optionService: OptionService) {
-    // this.userId = this.route.snapshot.paramMap.get('idUser');
-    // this.optionService.getOption(this.userId);
-    // this.optionService.option$.subscribe((myOption) => {
-    //   this.option = myOption;
-    // })
-    // this.optionForm = this.formBuilder.group({
-    //   fontSize: ['300'],
-    //   dmlaOffset: ['20'],
-    //   theme: [false]
-    // })
-    // setAdminOption();
+  constructor(private formBuilder: FormBuilder, private optionService: OptionService) {
+    this.optionService.options$.subscribe(() => this.setPreviousValues());
+    this.setPreviousValues();
+    setAdminOption();
   }
-
 
   ngOnInit(): void {
     this.optionService.retrieveOptions();
+    this.setPreviousValues();
   }
 
-  public onSubmit() {
-    //alert(JSON.stringify(this.optionForm.value))
-    // console.log(this.option);
-    // const options = this.optionForm.getRawValue() as Option;
-    // if (this.option[0] === undefined) {
-    //   this.optionService.addOption(options, this.userId);
-    // } else {
-    //   this.optionService.modifyOption(options, this.userId);
-    // }
-    // let account = this.route.snapshot.paramMap.get('idAccount');
-    // this.router.navigate(['/' + account + '/user-list']);
+  setFirstDefaultValues() {
+    this.optionForm = this.formBuilder.group({
+      fontSize: ['200'],
+      dmlaOffset: ['0'],
+      parkinsonOffset: ['0'],
+      theme: [false]
+    })
+  }
+
+  setPreviousValues() {
+    if (this.optionForm === undefined) this.setFirstDefaultValues();
+    if (this.optionService.options$.getValue().length > 0) {
+      const option: Option = this.optionService.options$.getValue()[0];
+      this.optionForm.get('fontSize').setValue(option.fontSize);
+      this.optionForm.get('dmlaOffset').setValue(option.dmlaOffset);
+      this.optionForm.get('parkinsonOffset').setValue(option.parkinsonOffset);
+      this.optionForm.get('theme').setValue(option.theme);
+    }
+  }
+
+  applyOptions() {
+    const option: Option = this.optionForm.getRawValue() as Option
+    this.optionService.applyOption(option)
   }
 }

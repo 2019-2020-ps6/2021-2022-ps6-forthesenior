@@ -37,6 +37,11 @@ export class UserListComponent implements OnInit {
     this.router.navigate([this.router.url + '/admin/theme']);
   }
 
+  optionUser(user: User) {
+    this.userService.setSelectedUser(user.id);
+    this.router.navigate([this.router.url + '/' + user.id + '/option']);
+  }
+
   deleteUser(user: User): void {
     this.userService.deleteUser(user);
   }
@@ -44,4 +49,5 @@ export class UserListComponent implements OnInit {
   stats(): void {
     this.router.navigate([this.router.url + '/stat'])
   }
+
 }

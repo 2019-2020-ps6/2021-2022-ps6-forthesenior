@@ -41,6 +41,20 @@ export class OptionService {
     });
   }
 
+  updateOption(option: Option): void {
+    this.http.put(this.getOptionUrl() + '/' + option.id, option).subscribe(() => this.retrieveOptions());
+  }
+
+  applyOption(option: Option) {
+    if (this.options.length > 0) {
+      option.id = this.options[0].id;
+      this.updateOption(option);
+    } else {
+      this.addOption(option);
+    }
+    if (this.options.length > 0) this.setSelectedOption(this.options[0].id.toString());
+  }
+
   deleteOption(option: Option): void {
     this.http.delete<Option>(this.getOptionUrl() + '/' + option.id, this.httpOptions).subscribe(() => this.retrieveOptions());
   }
@@ -50,7 +64,7 @@ export class OptionService {
   }
 
   getUserIdFromUrl(): string {
-    let id = this.router.url.split('/')[2];
+    let id = this.router.url.split('/')[4];
     if (id === undefined) {
       id = urlPopUntil(document.URL, 'option').split('/').pop();
     }
