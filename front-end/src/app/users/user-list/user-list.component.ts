@@ -16,7 +16,7 @@ export class UserListComponent implements OnInit {
 
   public userList: User[] = [];
 
-  constructor(private userService: UserService, private router: Router) {
+  constructor(private router: Router, private userService: UserService) {
     this.userService.users$.subscribe((users: User[]) => {
       this.userList = users;
     });

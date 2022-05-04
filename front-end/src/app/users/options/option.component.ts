@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {OptionService} from "../../../services/option.service";
 import {FormBuilder, FormGroup} from "@angular/forms";
-import {setAdminOption} from "../../utils/options.functions";
 import {Option} from "../../../models/option.model";
 
 @Component({
@@ -16,7 +15,6 @@ export class OptionComponent implements OnInit {
   constructor(private formBuilder: FormBuilder, private optionService: OptionService) {
     this.optionService.options$.subscribe(() => this.setPreviousValues());
     this.setPreviousValues();
-    setAdminOption();
   }
 
   ngOnInit(): void {
@@ -36,6 +34,7 @@ export class OptionComponent implements OnInit {
   setPreviousValues() {
     if (this.optionForm === undefined) this.setFirstDefaultValues();
     if (this.optionService.options$.getValue().length > 0) {
+      this.optionService.update();
       const option: Option = this.optionService.options$.getValue()[0];
       this.optionForm.get('fontSize').setValue(option.fontSize);
       this.optionForm.get('dmlaOffset').setValue(option.dmlaOffset);

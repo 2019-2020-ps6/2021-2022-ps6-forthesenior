@@ -6,6 +6,7 @@ import {httpOptionsBase} from '../configs/server.config';
 import {Router} from "@angular/router";
 import {UserService} from "./user.service";
 import {urlPopUntil} from "../app/utils/functions";
+import {setDarkTheme, setLightTheme} from "../app/utils/options.functions";
 
 
 @Injectable({
@@ -19,6 +20,7 @@ export class OptionService {
   private httpOptions = httpOptionsBase;
 
   constructor(private http: HttpClient, private router: Router, private userService: UserService) {
+    this.optionSelected$.asObservable().subscribe((option) => this.applyVisualOption(option))
     this.retrieveOptions();
   }
 
@@ -45,7 +47,7 @@ export class OptionService {
     this.http.put(this.getOptionUrl() + '/' + option.id, option).subscribe(() => this.retrieveOptions());
   }
 
-  applyOption(option: Option) {
+  applyOption(option: Option): void {
     if (this.options.length > 0) {
       option.id = this.options[0].id;
       this.updateOption(option);
@@ -53,6 +55,19 @@ export class OptionService {
       this.addOption(option);
     }
     if (this.options.length > 0) this.setSelectedOption(this.options[0].id.toString());
+  }
+
+  update(): void {
+    this.setSelectedOption(this.options[0].id.toString());
+  }
+
+  applyVisualOption(option: Option) {
+    // Apply Theme
+    if (option.theme) {
+      setDarkTheme();
+    } else {
+      setLightTheme();
+    }
   }
 
   deleteOption(option: Option): void {
@@ -70,4 +85,5 @@ export class OptionService {
     }
     return id;
   }
+
 }

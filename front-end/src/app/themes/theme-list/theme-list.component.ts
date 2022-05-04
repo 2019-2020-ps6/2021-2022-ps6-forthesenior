@@ -3,6 +3,7 @@ import {Router} from '@angular/router';
 import {Theme} from '../../../models/theme.model';
 import {ThemeService} from '../../../services/theme.service';
 import {addAdminClasses, isAdmin} from "../../utils/functions";
+import {OptionService} from "../../../services/option.service";
 
 @Component({
   selector: 'app-theme-list',
@@ -14,13 +15,10 @@ export class ThemeListComponent implements OnInit {
   @Input() public theme: Theme;
   public themeList: Theme[] = [];
 
-  constructor(private router: Router, private themeService: ThemeService) {
+  constructor(private router: Router, private themeService: ThemeService, private optionService: OptionService) {
     this.themeService.themes$.subscribe((themes: Theme[]) => {
       this.themeList = themes;
     });
-    // TODO Update Options
-    // this.optionService.setColumns(this.themeList.length);
-    // this.optionService.setOption(this.userId);
   }
 
   ngOnInit(): void {
