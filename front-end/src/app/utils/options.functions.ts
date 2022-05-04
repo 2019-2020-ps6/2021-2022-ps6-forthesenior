@@ -7,7 +7,11 @@ export function setAdminOption(): void {
   document.documentElement.style.setProperty("--gap-row", "10px");
   document.documentElement.style.setProperty("--font-size", "20px");
   document.documentElement.style.setProperty("--number-column", "5");
-  setLightTheme()
+  document.documentElement.style.setProperty("--background-color", "#f2f2f2");
+  document.documentElement.style.setProperty("--header-color", "#838383");
+  document.documentElement.style.setProperty("--text-color", "#171717");
+  document.documentElement.style.setProperty("--titre-color", "#171717");
+  document.documentElement.style.setProperty("--header-text", "#FFFFFF");
 }
 
 export function setDarkTheme(): void {

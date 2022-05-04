@@ -34,9 +34,11 @@ export class UserService {
   }
 
   setSelectedUser(userId: string): void {
-    this.http.get<User>(this.getUserUrl() + '/' + userId).subscribe((userList) => {
-      this.userSelected$.next(userList);
-    });
+    if (userId !== 'admin') {
+      this.http.get<User>(this.getUserUrl() + '/' + userId).subscribe((userList) => {
+        this.userSelected$.next(userList);
+      });
+    }
   }
 
   updateStats(user: User, score: number): void {

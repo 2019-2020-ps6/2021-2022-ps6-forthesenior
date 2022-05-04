@@ -20,6 +20,7 @@ export class OptionService {
   private httpOptions = httpOptionsBase;
 
   constructor(private http: HttpClient, private router: Router, private userService: UserService) {
+    this.userService.userSelected$.asObservable().subscribe(() => this.retrieveOptions())
     this.optionSelected$.asObservable().subscribe((option) => this.applyVisualOption(option))
     this.retrieveOptions();
   }
@@ -61,8 +62,8 @@ export class OptionService {
     this.setSelectedOption(this.options[0].id.toString());
   }
 
+  // TODO Add all other visuals and fix bug when going to quizzes without passing by options.
   applyVisualOption(option: Option) {
-    // Apply Theme
     if (option.theme) {
       setDarkTheme();
     } else {
@@ -85,5 +86,4 @@ export class OptionService {
     }
     return id;
   }
-
 }

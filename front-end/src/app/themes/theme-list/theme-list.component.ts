@@ -24,6 +24,7 @@ export class ThemeListComponent implements OnInit {
   ngOnInit(): void {
     this.themeService.retrieveThemes();
     addAdminClasses();
+    this.optionService.update();
   }
 
   selectTheme(theme: Theme): void {
