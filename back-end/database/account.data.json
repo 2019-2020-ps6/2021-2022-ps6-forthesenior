@@ -1,17 +1,12 @@
 [
   {
-    "email": "matis@gmail.com",
-    "password": "matis",
-    "id": 1650360937231
+    "email": "admin@gmail.com",
+    "password": "admin",
+    "id": 1651668259723
   },
   {
     "email": "test@gmail.com",
     "password": "test",
-    "id": 1650360943146
-  },
-  {
-    "email": "test@gmail.com",
-    "password": "test",
-    "id": 1651654882777
+    "id": 1651669488646
   }
 ]
