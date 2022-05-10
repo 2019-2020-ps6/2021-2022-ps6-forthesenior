@@ -19,6 +19,7 @@ export class OptionService {
   dmla;
   size;
   private columns: number;
+  public timeLeft : number;
 
   constructor(private http: HttpClient, public route: ActivatedRoute) {
   }
@@ -49,6 +50,12 @@ export class OptionService {
           value = 3;
         } else {
           value = 4;
+        }
+
+        if (this.dmla === 0){
+          this.timeLeft = 7;
+        } else {
+          this.timeLeft = 2;
         }
         document.documentElement.style.setProperty("--number-column", String(value));
       });

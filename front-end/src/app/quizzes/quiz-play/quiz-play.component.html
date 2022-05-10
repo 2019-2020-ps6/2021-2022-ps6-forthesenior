@@ -1,7 +1,5 @@
 <h1 class="user titre">Vous êtes sur le quiz : {{quiz.name}}</h1>
+<h2 *ngIf="timeLeft >= 3" class="timeLeft">{{timeLeft}}</h2>
 <app-quiz-question [question]="quiz.questions[index]" (next)="onAnswered($event)"></app-quiz-question>
-<div class="card user next" *ngIf="next" (click)="nextQuestion()">
-  <h2>Suivant</h2>
-</div>
 
 

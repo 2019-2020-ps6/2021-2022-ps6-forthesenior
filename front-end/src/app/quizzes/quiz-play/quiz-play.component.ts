@@ -1,9 +1,10 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Quiz} from '../../../models/quiz.model';
 import {ActivatedRoute, Router} from '@angular/router';
 import {QuizService} from '../../../services/quiz.service';
 import {OptionService} from "../../../services/option.service";
 import {UserService} from "../../../services/user.service";
+import {BehaviorSubject} from "rxjs";
 
 @Component({
   selector: 'app-quiz-play',
@@ -12,20 +13,29 @@ import {UserService} from "../../../services/user.service";
 })
 export class QuizPlayComponent implements OnInit {
 
+  @Output() showReponse: EventEmitter<Boolean> = new EventEmitter<Boolean>();
+
   public quiz: Quiz;
   public index: number;
   public next: boolean;
   right: number;
   answer: boolean;
   userId: string;
+  timeLeft: number;
+  timer: boolean;
+  secondChance: boolean;
+  interval;
+  public answerList$: BehaviorSubject<Boolean> = new BehaviorSubject<Boolean>(false);
 
 
   constructor(private router: Router, private route: ActivatedRoute, private quizService: QuizService, private userService: UserService, private optionService: OptionService) {
-
+    this.timeLeft = 7;
   }
 
   ngOnInit(): void {
     this.next = false;
+    this.timer = false;
+    this.secondChance = false;
     this.right = 0;
     this.userId = this.route.snapshot.paramMap.get('idUser');
     const id = this.route.snapshot.paramMap.get('idQuiz');
@@ -40,13 +50,18 @@ export class QuizPlayComponent implements OnInit {
       }
     });
     this.index = Number(this.route.snapshot.paramMap.get('numero'));
+    this.timeLeft = this.optionService.timeLeft;
   }
 
   nextQuestion(): void {
+    clearInterval(this.interval);
+    this.timeLeft = this.optionService.timeLeft;
     this.index++;
+    this.timer = false;
     if (this.answer) {
       this.right++;
     }
+
     let idAccount = this.route.snapshot.paramMap.get("idAccount");
     let idTheme = this.route.snapshot.paramMap.get("idTheme");
     if (this.index === this.quiz.questions.length) {
@@ -60,8 +75,27 @@ export class QuizPlayComponent implements OnInit {
     this.next = false;
   }
 
+  startTimer(): void {
+    if (this.timeLeft > 3) {
+      this.timeLeft--;
+    } else if (this.timeLeft > 1) {
+      this.answerList$.next(true);
+      this.timeLeft--;
+    } else {
+      this.nextQuestion();
+      this.answerList$.next(false);
+    }
+    console.log("time " + this.timeLeft);
+  }
+
   onAnswered(answer: boolean): void {
-    this.next = true;
+    if (!this.timer) {
+      this.startTimer();
+      this.interval = setInterval(() => {
+        this.startTimer()
+      }, 1000);
+      this.timer = true;
+    }
     this.answer = answer;
   }
 }
