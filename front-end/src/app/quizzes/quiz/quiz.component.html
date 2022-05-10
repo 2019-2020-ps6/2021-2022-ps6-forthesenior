@@ -1,9 +1,9 @@
-<div class="card">
+<div (click)="!isAdmin()?play():null" class="card taillebis">
   <h2>
     <i class="fab fa-leanpub"></i>
     {{quiz.quizLabel}}
   </h2>
-  <button (click)="play()" class="button-card">Jouer</button>
-  <button (click)="edit()" class="button-card">Modifier</button>
-  <button (click)="delete()" class="button-card">Supprimer</button>
+  <button (click)="play()" *ngIf="isAdmin()" class="button-card">Jouer</button>
+  <button (click)="edit()" *ngIf="isAdmin()" class="button-card">Modifier</button>
+  <button (click)="delete()" *ngIf="isAdmin()" class="button-card">Supprimer</button>
 </div>

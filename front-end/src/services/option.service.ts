@@ -18,6 +18,8 @@ export class OptionService {
   public options$: BehaviorSubject<Option[]> = new BehaviorSubject([]);
   private options: Option[] = [];
   private httpOptions = httpOptionsBase;
+  dmla;
+  size;
 
   constructor(private http: HttpClient, private router: Router, private userService: UserService) {
     this.userService.userSelected$.asObservable().subscribe(() => this.retrieveOptions())
@@ -64,6 +66,12 @@ export class OptionService {
 
   // TODO Add all other visuals and fix bug when going to quizzes without passing by options.
   applyVisualOption(option: Option) {
+      this.dmla = option.dmlaOffset;
+      this.size = option.fontSize;
+      document.documentElement.style.setProperty("--font-size", (option.fontSize / 10) + "px");
+      document.documentElement.style.setProperty("--gap-column", option.dmlaOffset + "%");
+      //document.documentElement.style.setProperty("--gap-column", "50px");
+      document.documentElement.style.setProperty("--size-answer", option.fontSize + "px");
     if (option.theme) {
       setDarkTheme();
     } else {

@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {QuizService} from '../../../services/quiz.service';
 import {Quiz} from '../../../models/quiz.model';
+import { isAdmin } from 'src/app/utils/functions';
 
 @Component({
   selector: 'app-quiz-list',
@@ -33,5 +34,9 @@ export class QuizListComponent implements OnInit {
 
   deleteQuiz(quiz: Quiz): void {
     this.quizService.deleteQuiz(quiz);
+  }
+
+  isAdmin(): boolean {
+    return isAdmin();
   }
 }

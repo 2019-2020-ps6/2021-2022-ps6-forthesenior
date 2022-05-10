@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
+import { isAdmin } from 'src/app/utils/functions';
 import { Quiz } from '../../../models/quiz.model';
 
 @Component({
@@ -36,5 +37,9 @@ export class QuizComponent implements OnInit {
 
   delete(): void {
     this.deleteQuiz.emit(this.quiz);
+  }
+
+  isAdmin(): boolean {
+    return isAdmin();
   }
 }
