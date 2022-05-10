@@ -1,9 +1,9 @@
 <div class="header" style="display: flex">
   <span>
     <a [routerLink]="[goToHome()]" class="user titre"><i aria-hidden="true" class="fa fa-home"
-                                                         style="padding-right: 2px;vertical-align: text-top"></i>Home</a>
+                                                         style="padding-right: 5px;vertical-align: text-top"></i>Home</a>
     <a [routerLink]="[goToUsers()]" class="user titre"><i aria-hidden="true" class="fa fa-user"
-                                                          style="padding-right: 2px;vertical-align: text-top"></i>Users</a>
+                                                          style="padding-right: 5px;vertical-align: text-top"></i>Users</a>
   </span>
 
   <ng-container *ngIf="this.nameShown">
@@ -13,7 +13,7 @@
   </ng-container>
 
   <span style="float: right">
-    <a [routerLink]="[goToConnection()]" class="user titre"><i aria-hidden="true" class="fa fa-car"
-                                                               style="padding-right: 2px;vertical-align: text-top;"></i>Quitter</a>
+    <a [routerLink]="[goToConnection()]" class="user titre"><i aria-hidden="true" class="fa fa-door-open"
+                                                               style="padding-right: 5px;vertical-align: text-top;"></i>Quitter</a>
   </span>
 </div>
