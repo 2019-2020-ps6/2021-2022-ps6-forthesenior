@@ -5,6 +5,7 @@ import {QuizService} from '../../../services/quiz.service';
 import {PlayService} from '../../../services/play.service'
 import {urlPopN, urlPopUntil} from "../../utils/functions";
 import {UserService} from "../../../services/user.service";
+import {OptionService} from "../../../services/option.service";
 
 @Component({
   selector: 'app-quiz-play',
@@ -20,10 +21,11 @@ export class QuizPlayComponent implements OnInit {
   private answer: boolean;
 
 
-  constructor(private router: Router, private quizService: QuizService, private userService: UserService, private playService: PlayService) {
+  constructor(private router: Router, private quizService: QuizService, private userService: UserService, private optionService: OptionService, private playService: PlayService) {
     this.quizService.quizSelected$.asObservable().subscribe((quiz) => {
       this.quiz = quiz;
     })
+    this.optionService.options$.subscribe(() => this.optionService.update())
   }
 
   ngOnInit(): void {
