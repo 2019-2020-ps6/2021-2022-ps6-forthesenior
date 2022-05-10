@@ -31,6 +31,8 @@
     width: $size-answer;
     height: $size-answer;
     line-height: normal;
+    min-width: 30ch;
+    min-height: min-content;
   }
 
   align-items: center;
