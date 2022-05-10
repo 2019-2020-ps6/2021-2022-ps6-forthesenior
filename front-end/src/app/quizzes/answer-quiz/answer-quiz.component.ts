@@ -14,7 +14,7 @@ export class AnswerQuizComponent implements OnInit, OnChanges {
   answeredQuestion: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   buttonColor = undefined
-  vert = '#89ff89';
+  vert = '#66a966';
   rouge = '#f26465';
 
   constructor() {
