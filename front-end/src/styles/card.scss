@@ -4,7 +4,7 @@
   background: $white;
   color: $titre;
   border-radius: 10px;
-  display: inline-block;
+  display: flex;
   margin: 5px;
   position: relative;
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.08), 0 0 6px rgba(0, 0, 0, 0.05);
@@ -28,7 +28,7 @@
   &:not(.admin) {
     display: flex;
     width: $size-answer;
-    height: $size-answer;
+    height: 10ch;
     line-height: normal;
     min-width: 30ch;
     min-height: min-content;
@@ -52,11 +52,11 @@
   flex-direction: column;
 
   &.user {
-    grid-template-columns: repeat($number-column, auto);
+    grid-template-columns: repeat($number-column, 40ch);
   }
 
   &.admin {
-    grid-template-columns: repeat(auto-fill, 320px);
+    grid-template-columns: repeat(auto-fill, 40ch);
   }
 
   &.play {
@@ -86,13 +86,3 @@ input[type="radio"] {
   accent-color: $text;
 }
 
-.taille {
-  width: 75%;
-  height: 100px;
-}
-
-
-.taillebis {
-  width: 25%;
-  height: 100px;
-}

@@ -70,7 +70,11 @@ export class OptionService {
     this.size = option.fontSize;
     document.documentElement.style.setProperty("--font-size", (option.fontSize / 10) + "px");
     document.documentElement.style.setProperty("--gap-column", option.dmlaOffset + "%");
-    //document.documentElement.style.setProperty("--gap-column", "50px");
+    if(option.dmlaOffset ==45)
+      document.documentElement.style.setProperty("--number-column","2")
+    else {
+      document.documentElement.style.setProperty("--number-column", "auto-fit")
+    }
     document.documentElement.style.setProperty("--size-answer", option.fontSize + "px");
     if (option.theme) {
       setDarkTheme();
