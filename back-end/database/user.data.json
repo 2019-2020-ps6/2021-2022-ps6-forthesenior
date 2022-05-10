@@ -18,13 +18,19 @@
     "id": 1651668587026
   },
   {
-    "firstname": "Nicolas",
-    "lastname": "Nicolas",
+    "firstname": "Python",
+    "lastname": "Automatique",
     "accountId": 1651669488646,
-    "id": 1652168760601,
+    "id": 1651676293234,
     "stat": [
+      0.42857142857142855,
       1,
-      0.64
+      0.8,
+      0.7777777777777778,
+      1,
+      1,
+      0,
+      0
     ]
   }
 ]
