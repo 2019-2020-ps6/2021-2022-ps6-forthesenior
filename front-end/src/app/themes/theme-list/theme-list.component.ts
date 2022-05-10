@@ -19,12 +19,12 @@ export class ThemeListComponent implements OnInit {
     this.themeService.themes$.subscribe((themes: Theme[]) => {
       this.themeList = themes;
     });
+    this.optionService.options$.subscribe(() => this.optionService.update())
   }
 
   ngOnInit(): void {
     this.themeService.retrieveThemes();
     addAdminClasses();
-    this.optionService.update();
   }
 
   selectTheme(theme: Theme): void {
