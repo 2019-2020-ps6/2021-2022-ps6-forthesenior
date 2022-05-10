@@ -1,35 +1,31 @@
 [
   {
-    "firstname": "René",
-    "lastname": "Ménard",
-    "accountId": 1651668259723,
-    "id": 1651668488521
-  },
-  {
-    "firstname": "Christian",
-    "lastname": "Lajoie",
-    "accountId": 1651668259723,
-    "id": 1651668519819
-  },
-  {
-    "firstname": "Michelle",
-    "lastname": "Moïse",
-    "accountId": 1651668259723,
-    "id": 1651668587026
-  },
-  {
-    "firstname": "Python",
-    "lastname": "Automatique",
-    "accountId": 1651669488646,
-    "id": 1651676293234,
+    "id": 1,
+    "firstName": "Michelle",
+    "lastName": "LeGrand",
+    "accountId": 1,
+    "options": 1,
     "stat": [
-      0.42857142857142855,
-      1,
-      0.8,
-      0.7777777777777778,
-      1,
-      1,
       0,
+      0.5,
+      0
+    ]
+  },
+  {
+    "id": 2,
+    "firstName": "René",
+    "lastName": "Gabin",
+    "accountId": 1,
+    "options": 2,
+    "stat": []
+  },
+  {
+    "id": 3,
+    "firstName": "Christian",
+    "lastName": "Dupuis",
+    "accountId": 1,
+    "options": 3,
+    "stat": [
       0
     ]
   }
