@@ -2,8 +2,8 @@
   <h2>
     {{question.questionLabel}}
   </h2>
-  <div class="usr grid ">
-    <div class="quiz user case " *ngFor="let answer of question.answers; let i=index">
+  <div class="play grid ">
+    <div *ngFor="let answer of question.answers; let i=index">
       <app-answer-quiz (answeredQuestion)="onAnswered($event)" [answer]="answer"
                        [answered]="answered"></app-answer-quiz>
     </div>
