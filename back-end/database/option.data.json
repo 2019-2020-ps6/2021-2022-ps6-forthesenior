@@ -33,7 +33,7 @@
   },
   {
     "fontSize": "250",
-    "dmlaOffset": "45",
+    "dmlaOffset": "0",
     "parkinsonOffset": "0",
     "theme": false,
     "userId": 1651676293234,
@@ -46,5 +46,13 @@
     "theme": false,
     "userId": 1652168760601,
     "id": 1652168949733
+  },
+  {
+    "fontSize": "150",
+    "dmlaOffset": "0",
+    "parkinsonOffset": "0",
+    "theme": false,
+    "userId": 1652779459789,
+    "id": 1652779466465
   }
 ]

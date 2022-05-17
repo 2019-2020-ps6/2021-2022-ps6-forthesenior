@@ -26,14 +26,21 @@ export class QuizQuestionComponent implements OnInit, OnChanges {
 
   ngOnInit(): void {
     this.questionService.retrieveQuestions();
+    this.shuffleAnswers();
   }
 
   ngOnChanges(): void {
     this.answered = false;
+    this.shuffleAnswers();
   }
 
   onAnswered(questionAnswered: boolean): void {
     this.answered = true;
     this.next.emit(questionAnswered);
+  }
+
+  shuffleAnswers(): void {
+    let answers = this.question.answers;
+    answers.sort(() => Math.random() - 0.5);
   }
 }
