@@ -4,11 +4,12 @@
   background: $white;
   color: $titre;
   border-radius: 10px;
-  display: flex;
+  display: inline-block;
   margin: 5px;
   position: relative;
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.08), 0 0 6px rgba(0, 0, 0, 0.05);
   padding: 0 1em 1em 1em;
+  cursor: pointer;
   font-size: $font-size;
 }
 
@@ -86,3 +87,10 @@ input[type="radio"] {
   accent-color: $text;
 }
 
+* {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Chrome, Edge, Opera and Firefox */
+}
