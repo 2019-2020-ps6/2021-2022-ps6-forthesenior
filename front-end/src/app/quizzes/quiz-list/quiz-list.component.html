@@ -1,6 +1,7 @@
 <app-quiz-form *ngIf="isAdmin()"></app-quiz-form>
+<h1 class="user titre">Vous avez choisi le thème : {{theme.themeLabel}}</h1>
 <div class="user grid">
-  <div *ngFor="let quiz of quizList" class="quiz">
+  <div *ngFor="let quiz of quizList" class="quiz user case">
     <app-quiz (deleteQuiz)="deleteQuiz($event)" (editQuiz)="editQuiz($event)" (playQuiz)="playQuiz($event)"
               [quiz]="quiz" class="case"></app-quiz>
   </div>

@@ -2,8 +2,10 @@ import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {QuizService} from '../../../services/quiz.service';
 import {Quiz} from '../../../models/quiz.model';
+import {Theme} from "../../../models/theme.model";
 import {isAdmin} from 'src/app/utils/functions';
 import {OptionService} from "../../../services/option.service";
+import {ThemeService} from "../../../services/theme.service";
 
 @Component({
   selector: 'app-quiz-list',
@@ -12,10 +14,15 @@ import {OptionService} from "../../../services/option.service";
 })
 export class QuizListComponent implements OnInit {
   public quizList: Quiz[] = [];
+  public theme: Theme;
 
-  constructor(private router: Router, public quizService: QuizService, private optionService: OptionService) {
+  constructor(private router: Router, public quizService: QuizService, private optionService: OptionService,
+              private themeService: ThemeService) {
     this.quizService.quizzes$.subscribe((quizzes: Quiz[]) => {
       this.quizList = quizzes;
+    });
+    this.themeService.themeSelected$.subscribe((theme: Theme) => {
+      this.theme = theme;
     });
     this.optionService.options$.subscribe(() => this.optionService.update())
   }
