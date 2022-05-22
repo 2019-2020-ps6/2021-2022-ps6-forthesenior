@@ -20,6 +20,7 @@ export class OptionService {
   size;
   private options: Option[] = [];
   private httpOptions = httpOptionsBase;
+  public timeLeft;
 
   constructor(private http: HttpClient, private router: Router, private userService: UserService) {
     this.userService.userSelected$.asObservable().subscribe(() => this.retrieveOptions())
@@ -68,14 +69,26 @@ export class OptionService {
   applyVisualOption(option: Option) {
     this.dmla = option.dmlaOffset;
     this.size = option.fontSize;
+    let height;
+    switch (this.size) {
+      case "400":
+        height = 25;
+        break;
+      case "300":
+        height = 19;
+        break;
+      case "200":
+        height = 10;
+        break;
+    }
     document.documentElement.style.setProperty("--font-size", (option.fontSize / 10) + "px");
     document.documentElement.style.setProperty("--gap-column", option.dmlaOffset + "%");
     if(option.dmlaOffset ==45)
       document.documentElement.style.setProperty("--number-column","2")
     else {
-      document.documentElement.style.setProperty("--number-column", "auto-fit")
+      document.documentElement.style.setProperty("--number-column", "3")
     }
-    document.documentElement.style.setProperty("--size-answer", option.fontSize + "px");
+    document.documentElement.style.setProperty("--size-answer", height + "vh");
     if (option.theme) {
       setDarkTheme();
     } else {

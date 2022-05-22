@@ -27,14 +27,14 @@ export class QuizPlayComponent implements OnInit {
   interval;
   public answerList$: BehaviorSubject<Boolean> = new BehaviorSubject<Boolean>(false);
 
-  @Input() public quiz: Quiz;
-  public index = 0;
-  public next = false;
-  private right = 0;
-  private answer: boolean;
+  //@Input() quiz: Quiz;
 
   constructor(private router: Router, private route: ActivatedRoute, private quizService: QuizService, private userService: UserService, private optionService: OptionService) {
     this.timeLeft = 7;
+    this.quizService.quizSelected$.subscribe((quiz: Quiz) => {
+      this.quiz = quiz;
+    });
+    this.optionService.options$.subscribe(() => this.optionService.update())
   }
 
   ngOnInit(): void {
@@ -45,13 +45,13 @@ export class QuizPlayComponent implements OnInit {
     this.userId = this.route.snapshot.paramMap.get('idUser');
     const id = this.route.snapshot.paramMap.get('idQuiz');
     const themeId = this.route.snapshot.paramMap.get('idTheme');
-    this.quizService.setIdTheme(themeId);
+    //this.quizService.setIdTheme(themeId);
     this.quizService.setSelectedQuiz(id);
-    this.optionService.setOption(this.userId);
+    //this.optionService.setOption(this.userId);
     this.quizService.quizSelected$.subscribe((quiz) => {
       if (quiz !== null) {
         this.quiz = quiz;
-        this.optionService.setColumns(this.quiz.questions.length);
+        //this.optionService.setColumns(this.quiz.questions.length);
       }
     });
     this.index = Number(this.route.snapshot.paramMap.get('numero'));
@@ -69,7 +69,7 @@ export class QuizPlayComponent implements OnInit {
     let idAccount = this.route.snapshot.paramMap.get("idAccount");
     let idTheme = this.route.snapshot.paramMap.get("idTheme");
     if (this.index === this.quiz.questions.length) {
-      this.userService.addStat(this.userId, this.right / this.index);
+      //this.userService.updateStats(User, this.right / this.index);
       let url = idAccount + "/user-list/" + this.userId + "/" + idTheme + "/result/" + this.quiz.id + "/" + this.right + "/" + this.index;
       this.router.navigate([url]);
       /*this.playService.right = this.right;

@@ -17,7 +17,7 @@ export class ThemeListComponent implements OnInit {
 
   constructor(private router: Router, private themeService: ThemeService, private optionService: OptionService) {
     this.themeService.themes$.subscribe((themes: Theme[]) => {
-      this.themeList = themes;
+      this.themeList = themes.slice(0,6);
     });
     this.optionService.options$.subscribe(() => this.optionService.update())
   }

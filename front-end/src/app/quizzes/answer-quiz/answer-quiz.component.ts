@@ -1,7 +1,10 @@
 import {Component, EventEmitter, Input, OnChanges, OnInit, Output} from '@angular/core';
-import {Answer} from '../../../models/question.model';
 import {ActivatedRoute, Router} from '@angular/router';
 import {OptionService} from "../../../services/option.service";
+import {ThemeService} from "../../../services/theme.service";
+import {Option} from "../../../models/option.model";
+import {QuizPlayComponent} from "../quiz-play/quiz-play.component";
+import {Answer} from "../../../models/answer.model";
 
 @Component({
   selector: 'app-answer-quiz',
@@ -32,7 +35,10 @@ export class AnswerQuizComponent implements OnInit, OnChanges {
   path: string;
   alt: string;
 
-  constructor(private optionService: OptionService, private quizPlay: QuizPlayComponent) {
+  option : Option;
+
+  constructor(private optionService: OptionService, private quizPlay: QuizPlayComponent,
+              private themeService : ThemeService) {
     /*if (this.optionService.theme){
       this.buttonColor = '#6b7070'; // Default Color
       /*this.vert = '#53794f';
@@ -45,7 +51,10 @@ export class AnswerQuizComponent implements OnInit, OnChanges {
   }
 
   ngOnInit(): void {
-    if (this.optionService.theme) {
+    this.optionService.options$.subscribe((option : Option[]) =>
+      this.option = option[0]
+    );
+    if (this.themeService.themeSelected$) {
       this.buttonColor = '#6b7070'; // Default Color
       /*this.vert = '#53794f';
       this.rouge = '#762520';*/
@@ -57,7 +66,7 @@ export class AnswerQuizComponent implements OnInit, OnChanges {
     this.quizPlay.answerList$.subscribe(next => {
       console.log("observer " + next);
       if (next) {
-        if (this.optionService.theme) {
+        if (this.option.theme) {
           this.path = this.pathWrong;
           this.alt = this.altWrong;
         } else {
@@ -70,7 +79,7 @@ export class AnswerQuizComponent implements OnInit, OnChanges {
 
   ngOnChanges(): void {
     if (this.answer.isCorrect && this.answered){
-      if(this.optionService.theme){
+      if(this.option.theme){
         this.path = this.pathRight;
         this.alt = this.altRight;
       } else {
