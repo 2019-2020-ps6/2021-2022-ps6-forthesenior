@@ -81,7 +81,7 @@ export class OptionService {
         height = 10;
         break;
     }
-    document.documentElement.style.setProperty("--font-size", (option.fontSize / 10) + "px");
+    document.documentElement.style.setProperty("--font-size", (option.fontSize / 300) + "em");
     document.documentElement.style.setProperty("--gap-column", option.dmlaOffset + "%");
     if(option.dmlaOffset ==45)
       document.documentElement.style.setProperty("--number-column","2")

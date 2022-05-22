@@ -27,10 +27,11 @@
   margin: 5px;
 
   &:not(.admin) {
-    display: flex;
+    display: inline-flex;
     width: $size-answer;
     height: $size-answer;
     line-height: normal;
+    padding : 0.7em;
   }
 
   align-items: center;
@@ -51,7 +52,7 @@
   flex-direction: column;
 
   &.user {
-    grid-template-columns: repeat($number-column, auto);
+    grid-template-columns: repeat($number-column, 1fr);
   }
 
   &.admin {

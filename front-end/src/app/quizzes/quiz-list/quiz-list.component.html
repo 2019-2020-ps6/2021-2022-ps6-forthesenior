@@ -2,6 +2,6 @@
 <div class="user grid">
   <div *ngFor="let quiz of quizList" class="quiz">
     <app-quiz (deleteQuiz)="deleteQuiz($event)" (editQuiz)="editQuiz($event)" (playQuiz)="playQuiz($event)"
-              [quiz]="quiz"></app-quiz>
+              [quiz]="quiz" class="case"></app-quiz>
   </div>
 </div>
