@@ -50,7 +50,7 @@ export class AnswerService {
     return this.questionService.getQuestionUrl() + '/' + this.getQuestionIdFromUrl() + '/answers';
   }
 
-  getQuestionIdFromUrl(): string { // TODO Ne marche pas
+  getQuestionIdFromUrl(): string {
     this.questionService.questionSelected$.asObservable().subscribe((question) => this.questionId = question.id);
     return this.questionId;
   }

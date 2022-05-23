@@ -64,7 +64,6 @@ export class OptionService {
     if (this.options.length > 0) this.setSelectedOption(this.options[0].id.toString());
   }
 
-  // TODO Add all other visuals and fix bug when going to quizzes without passing by options.
   applyVisualOption(option: Option) {
     this.dmla = option.dmlaOffset;
     this.size = option.fontSize;
