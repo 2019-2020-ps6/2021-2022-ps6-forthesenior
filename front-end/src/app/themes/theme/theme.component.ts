@@ -1,6 +1,7 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Theme} from '../../../models/theme.model';
-import {addAdminClasses, isAdmin} from "../../utils/functions";
+import {addAdminClasses} from "../../utils/functions";
+import {UserService} from "../../../services/user.service";
 
 @Component({
   selector: 'app-theme',
@@ -17,11 +18,11 @@ export class ThemeComponent implements OnInit {
   @Output()
   deleteTheme: EventEmitter<Theme> = new EventEmitter<Theme>();
 
-  constructor() {
+  constructor(private userService: UserService) {
   }
 
   ngOnInit(): void {
-    addAdminClasses();
+    if (this.isAdmin()) addAdminClasses();
   }
 
   select(): void {
@@ -33,6 +34,6 @@ export class ThemeComponent implements OnInit {
   }
 
   isAdmin(): boolean {
-    return isAdmin();
+    return this.userService.isAdmin();
   }
 }

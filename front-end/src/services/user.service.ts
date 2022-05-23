@@ -5,6 +5,7 @@ import {User} from '../models/user.model';
 import {httpOptionsBase, serverUrl} from '../configs/server.config';
 import {Router} from "@angular/router";
 import {urlPopUntil} from "../app/utils/functions";
+import {setAdminOption} from "../app/utils/options.functions";
 
 @Injectable({
   providedIn: 'root'
@@ -15,6 +16,7 @@ export class UserService {
   public users$: BehaviorSubject<User[]> = new BehaviorSubject([]);
   private users: User[] = [];
   private httpOptions = httpOptionsBase;
+  private admin: boolean = false;
 
   constructor(private http: HttpClient, private router: Router) {
     this.retrieveUsers();
@@ -61,5 +63,17 @@ export class UserService {
       id = urlPopUntil(document.URL, 'user').split('/').pop();
     }
     return id === '' ? undefined : id;
+  }
+
+  setAdmin(admin: boolean): void {
+    this.admin = admin;
+  }
+
+  isAdmin(): boolean {
+    if (this.admin) {
+      setAdminOption();
+      return true;
+    }
+    return false;
   }
 }

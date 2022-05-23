@@ -1,6 +1,6 @@
-import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
-import { isAdmin } from 'src/app/utils/functions';
-import { Quiz } from '../../../models/quiz.model';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {Quiz} from '../../../models/quiz.model';
+import {UserService} from "../../../services/user.service";
 
 @Component({
   selector: 'app-quiz',
@@ -21,7 +21,7 @@ export class QuizComponent implements OnInit {
   @Output()
   deleteQuiz: EventEmitter<Quiz> = new EventEmitter<Quiz>();
 
-  constructor() {
+  constructor(private userService: UserService) {
   }
 
   ngOnInit(): void {
@@ -40,6 +40,6 @@ export class QuizComponent implements OnInit {
   }
 
   isAdmin(): boolean {
-    return isAdmin();
+    return this.userService.isAdmin();
   }
 }

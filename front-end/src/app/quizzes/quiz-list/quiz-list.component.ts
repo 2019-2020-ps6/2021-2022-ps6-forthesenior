@@ -2,8 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {QuizService} from '../../../services/quiz.service';
 import {Quiz} from '../../../models/quiz.model';
-import {isAdmin} from 'src/app/utils/functions';
 import {OptionService} from "../../../services/option.service";
+import {UserService} from "../../../services/user.service";
 
 @Component({
   selector: 'app-quiz-list',
@@ -13,7 +13,7 @@ import {OptionService} from "../../../services/option.service";
 export class QuizListComponent implements OnInit {
   public quizList: Quiz[] = [];
 
-  constructor(private router: Router, public quizService: QuizService, private optionService: OptionService) {
+  constructor(private router: Router, public quizService: QuizService, private userService: UserService, private optionService: OptionService) {
     this.quizService.quizzes$.subscribe((quizzes: Quiz[]) => {
       this.quizList = quizzes;
     });
@@ -39,6 +39,6 @@ export class QuizListComponent implements OnInit {
   }
 
   isAdmin(): boolean {
-    return isAdmin();
+    return this.userService.isAdmin();
   }
 }

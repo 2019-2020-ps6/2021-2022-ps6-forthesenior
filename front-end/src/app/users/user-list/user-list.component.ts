@@ -20,6 +20,7 @@ export class UserListComponent implements OnInit {
     this.userService.users$.subscribe((users: User[]) => {
       this.userList = users;
     });
+    this.userService.setAdmin(true);
     setAdminOption();
   }
 
@@ -29,16 +30,20 @@ export class UserListComponent implements OnInit {
 
   selectUser(user: User): void {
     this.userService.setSelectedUser(user.id);
+    this.userService.setAdmin(false);
     this.router.navigate([this.router.url + '/' + user.id + '/theme']);
   }
 
   editUser(user: User): void {
     this.userService.setSelectedUser(user.id);
-    this.router.navigate([this.router.url + '/admin/theme']);
+    this.userService.setAdmin(true);
+    this.router.navigate([this.router.url + '/' + user.id + '/theme']);
+    // this.router.navigate([this.router.url + '/admin/theme']);
   }
 
   optionUser(user: User) {
     this.userService.setSelectedUser(user.id);
+    this.userService.setAdmin(false);
     this.router.navigate([this.router.url + '/' + user.id + '/option']);
   }
 
@@ -49,5 +54,4 @@ export class UserListComponent implements OnInit {
   stats(): void {
     this.router.navigate([this.router.url + '/stat'])
   }
-
 }

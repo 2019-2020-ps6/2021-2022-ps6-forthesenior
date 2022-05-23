@@ -1,44 +1,49 @@
-<div class="card">
-  <h2 style="text-align: center">Options</h2>
-  <form [formGroup]="optionForm" class="user-form">
-
-    <div class="option">
-      <label style="font-size: 1.2em">Taille du texte</label><br>
-      <input [formControlName]="'fontSize'" class="input-custom" id="font_1" type="radio" value=150>
-      <label for="font_1" style="margin-left: 5px;margin-right: 10px">Petit</label>
-      <input [formControlName]="'fontSize'" class="input-custom" id="font_2" type="radio" value=200>
-      <label for="font_2" style="margin-left: 5px;margin-right: 10px">Moyen</label>
-      <input [formControlName]="'fontSize'" class="input-custom" id="font_3" type="radio" value=250>
-      <label for="font_3" style="margin-left: 5px;margin-right: 10px">Grand</label>
-    </div>
-
-    <div class="option">
-      <label style="font-size: 1.2em">Écartement du Centre</label><br>
-      <input [formControlName]="'dmlaOffset'" class="input-custom" id="dmla_1" type="radio" value=0>
-      <label for="dmla_1" style="margin-left: 5px;margin-right: 10px">Faible</label>
-      <input [formControlName]="'dmlaOffset'" class="input-custom" id="dmla_2" type="radio" value=20>
-      <label for="dmla_2" style="margin-left: 5px;margin-right: 10px">Normal</label>
-      <input [formControlName]="'dmlaOffset'" class="input-custom" id="dmla_3" type="radio" value=45>
-      <label for="dmla_3" style="margin-left: 5px;margin-right: 10px">Important</label>
-    </div>
-    <div class="option">
-      <label style="font-size: 1.2em">Écartement Parkinson</label><br>
-      <input [formControlName]="'parkinsonOffset'" class="input-custom" id="park_1" type="radio" value=0>
-      <label for="park_1" style="margin-left: 5px;margin-right: 10px">Faible</label>
-      <input [formControlName]="'parkinsonOffset'" class="input-custom" id="park_2" type="radio" value=20>
-      <label for="park_2" style="margin-left: 5px;margin-right: 10px">Normal</label>
-      <input [formControlName]="'parkinsonOffset'" class="input-custom" id="park_3" type="radio" value=45>
-      <label for="park_3" style="margin-left: 5px;margin-right: 10px">Important</label>
-    </div>
-    <div class="option">
-      <label style="font-size: 1.2em">Choix de Thème</label><br>
-      <input [formControlName]="'theme'" [value]=false class="input-custom" id="light" type="radio">
-      <label for="light" style="margin-left: 5px;margin-right: 10px">Clair</label>
-      <input [formControlName]="'theme'" [value]=true class="input-custom" id="dark" type="radio">
-      <label for="dark" style="margin-left: 5px;margin-right: 10px">Sombre</label>
-    </div>
-    <div style="text-align: center">
-      <button (click)="applyOptions()" class="button-card">Appliquer</button>
-    </div>
-  </form>
+<br>
+<h1 class="textColor" style="text-align: center;">
+  Prévisualisation
+</h1>
+<div
+  style="position: absolute;left: 50%;top: 60%;-webkit-transform: translate(-50%, -50%);transform: translate(-50%, -100%);">
+  <div class="card">
+    <h2 style="text-align: center">Options</h2>
+    <form [formGroup]="optionForm" class="user-form">
+      <div class="option">
+        <label style="font-size: 1.2em">Taille du texte</label><br>
+        <input [formControlName]="'fontSize'" class="input-custom" id="font_1" type="radio" value=150>
+        <label for="font_1" style="margin-left: 5px;margin-right: 10px">Petit</label>
+        <input [formControlName]="'fontSize'" class="input-custom" id="font_2" type="radio" value=200>
+        <label for="font_2" style="margin-left: 5px;margin-right: 10px">Moyen</label>
+        <input [formControlName]="'fontSize'" class="input-custom" id="font_3" type="radio" value=250>
+        <label for="font_3" style="margin-left: 5px;margin-right: 10px">Grand</label>
+      </div>
+      <div class="option">
+        <label style="font-size: 1.2em">Écartement du Centre</label><br>
+        <input [formControlName]="'dmlaOffset'" class="input-custom" id="dmla_1" type="radio" value=0>
+        <label for="dmla_1" style="margin-left: 5px;margin-right: 10px">Faible</label>
+        <input [formControlName]="'dmlaOffset'" class="input-custom" id="dmla_2" type="radio" value=20>
+        <label for="dmla_2" style="margin-left: 5px;margin-right: 10px">Normal</label>
+        <input [formControlName]="'dmlaOffset'" class="input-custom" id="dmla_3" type="radio" value=45>
+        <label for="dmla_3" style="margin-left: 5px;margin-right: 10px">Important</label>
+      </div>
+      <div class="option">
+        <label style="font-size: 1.2em">Écartement Parkinson</label><br>
+        <input [formControlName]="'parkinsonOffset'" class="input-custom" id="park_1" type="radio" value=0>
+        <label for="park_1" style="margin-left: 5px;margin-right: 10px">Faible</label>
+        <input [formControlName]="'parkinsonOffset'" class="input-custom" id="park_2" type="radio" value=20>
+        <label for="park_2" style="margin-left: 5px;margin-right: 10px">Normal</label>
+        <input [formControlName]="'parkinsonOffset'" class="input-custom" id="park_3" type="radio" value=45>
+        <label for="park_3" style="margin-left: 5px;margin-right: 10px">Important</label>
+      </div>
+      <div class="option">
+        <label style="font-size: 1.2em">Choix de Thème</label><br>
+        <input [formControlName]="'theme'" [value]=false class="input-custom" id="light" type="radio">
+        <label for="light" style="margin-left: 5px;margin-right: 10px">Clair</label>
+        <input [formControlName]="'theme'" [value]=true class="input-custom" id="dark" type="radio">
+        <label for="dark" style="margin-left: 5px;margin-right: 10px">Sombre</label>
+      </div>
+      <div style="text-align: center">
+        <button (click)="applyOptions()" class="button-card">Appliquer</button>
+      </div>
+    </form>
+  </div>
 </div>
