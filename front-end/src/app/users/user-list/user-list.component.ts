@@ -32,8 +32,8 @@ export class UserListComponent implements OnInit {
     this.router.navigate([this.router.url + '/' + user.id + '/theme']);
   }
 
-  editUser(user: User): void {
-    this.userService.setSelectedUser(user.id);
+  editUser(): void {
+    //this.userService.setSelectedUser(user.id);
     this.router.navigate([this.router.url + '/admin/theme']);
   }
 

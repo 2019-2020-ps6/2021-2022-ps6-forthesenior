@@ -58,7 +58,7 @@ export class OptionService {
     } else {
       this.addOption(option);
     }
-    this.update();
+    //this.update();
   }
 
   update(): void {
