@@ -1,9 +1,11 @@
 import {Component, Input, OnInit} from '@angular/core';
 
 import {User} from '../../../models/user.model';
+import {Account} from '../../../models/account.model';
 import {UserService} from '../../../services/user.service';
 import {Router} from "@angular/router";
 import {setAdminOption} from "../../utils/options.functions";
+import {AccountService} from "../../../services/account.service";
 
 @Component({
   selector: 'app-user-list',
@@ -16,10 +18,13 @@ export class UserListComponent implements OnInit {
 
   public userList: User[] = [];
 
-  constructor(private router: Router, private userService: UserService) {
+  private account: Account;
+
+  constructor(private router: Router, private accountService: AccountService, private userService: UserService) {
     this.userService.users$.subscribe((users: User[]) => {
       this.userList = users;
     });
+    this.accountService.accountSelected$.asObservable().subscribe((account) => this.account = account);
     this.userService.setAdmin(true);
     setAdminOption();
   }
@@ -53,5 +58,10 @@ export class UserListComponent implements OnInit {
 
   stats(): void {
     this.router.navigate([this.router.url + '/stat'])
+  }
+
+  deleteAccount() {
+    this.accountService.deleteAccount(this.account);
+    this.router.navigate(['/connection'])
   }
 }

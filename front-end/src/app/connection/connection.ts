@@ -2,7 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup} from '@angular/forms';
 import {HttpClient} from '@angular/common/http';
 import {AccountService} from '../../services/account.service';
-import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-connection',
@@ -14,7 +13,7 @@ export class Connection implements OnInit {
 
   public signInForm: FormGroup;
 
-  constructor(public formBuilder: FormBuilder, private http: HttpClient, private accountService: AccountService, private router: Router) {
+  constructor(public formBuilder: FormBuilder, private http: HttpClient, private accountService: AccountService) {
     this.signInForm = this.formBuilder.group({
       email: [''],
       password: ['']
@@ -25,17 +24,21 @@ export class Connection implements OnInit {
   }
 
   signIn(): void {
-    this.accountService.logIn(this.signInForm.getRawValue().email, this.signInForm.getRawValue().password, this.errorConnection)
+    this.accountService.logIn(this.signInForm.getRawValue().email, this.signInForm.getRawValue().password, this.errorConnection);
   }
 
-  errorConnection(): void {
-    const defaultBackgroundColor = document.getElementById('signInButton').style.backgroundColor;
-    const defaultColor = document.getElementById('signInButton').style.color;
-    document.getElementById('signInButton').style.backgroundColor = "#f85d5b";
-    document.getElementById('signInButton').style.color = "White";
+  signUp() {
+    this.accountService.signUp(this.signInForm.getRawValue().email, this.signInForm.getRawValue().password, this.errorConnection);
+  }
+
+  errorConnection(id: string): void {
+    const defaultBackgroundColor = document.getElementById(id).style.backgroundColor;
+    const defaultColor = document.getElementById(id).style.color;
+    document.getElementById(id).style.backgroundColor = "#f85d5b";
+    document.getElementById(id).style.color = "White";
     setTimeout(() => {
-      document.getElementById('signInButton').style.backgroundColor = defaultBackgroundColor;
-      document.getElementById('signInButton').style.color = defaultColor;
+      document.getElementById(id).style.backgroundColor = defaultBackgroundColor;
+      document.getElementById(id).style.color = defaultColor;
     }, 500);
   }
 

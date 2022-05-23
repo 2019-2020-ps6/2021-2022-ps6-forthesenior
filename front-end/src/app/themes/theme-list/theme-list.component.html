@@ -1,6 +1,6 @@
 <h1 class="user titre">Choisissez un thème</h1>
-<div class="user grid">
 <app-theme-form *ngIf="isAdmin()" class="case"></app-theme-form>
+<div class="user grid">
   <div *ngFor="let theme of themeList" class="theme user case">
     <app-theme (deleteTheme)="deleteTheme($event)" (selectTheme)="selectTheme($event)" [theme]="theme"></app-theme>
   </div>

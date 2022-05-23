@@ -41,16 +41,31 @@ export class AccountService {
     this.http.delete<Account>(this.accountUrl + '/' + account.id, this.httpOptions).subscribe(() => this.retrieveAccounts());
   }
 
-  logIn(email: string, password: string, onErrorFunction: () => void) {
-    this.http.post<any>(this.accountUrl + '/login', {
+  logIn(email: string, password: string, onErrorFunction: (id: string) => void) {
+    console.log("Signing In")
+    this.http.post<any>(this.accountUrl + '/signIn', {
       email: email,
       password: password
     }).subscribe((account) => {
       this.setSelectedAccount(account.id);
       this.router.navigate(['account/' + account.id + '/user']);
     }, (error) => {
-      if (onErrorFunction !== undefined) onErrorFunction();
-      throw error.message + "Invalide Username or Password";
+      if (onErrorFunction !== undefined) onErrorFunction("signInButton");
+      throw error.message + " - Invalide Username or Password";
+    });
+  }
+
+  signUp(email: string, password: string, onErrorFunction: (id: string) => void) {
+    console.log("Signing Up")
+    this.http.post<any>(this.accountUrl + '/signUp', {
+      email: email,
+      password: password
+    }).subscribe(() => {
+      this.addAccount({id: undefined, email: email, password: password});
+      this.logIn(email, password, onErrorFunction);
+    }, (error) => {
+      if (onErrorFunction !== undefined) onErrorFunction("signUpButton");
+      throw error.message + " - " + (email.length == 0 ? "Email was empty" :"Email already used");
     });
   }
 }

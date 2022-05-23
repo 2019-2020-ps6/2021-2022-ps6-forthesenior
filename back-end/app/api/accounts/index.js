@@ -30,8 +30,8 @@ router.get('/:accountId', (req, res) => {
 router.post('/', (req, res) => {
   try {
     // TODO Separate Sub Json objects
-    const user = Account.create({...req.body})
-    res.status(201).json(user)
+    const account = Account.create({...req.body})
+    res.status(201).json(account)
   } catch (err) {
     manageAllErrors(res, err)
   }
@@ -53,10 +53,19 @@ router.delete('/:accountId', (req, res) => {
   }
 })
 
-router.post('/login', (req, res) => {
+router.post('/signIn', (req, res) => {
   try {
     const account = Account.get().find(account => account.email === req.body.email && account.password === req.body.password);
     account === undefined ? res.status(400).end() : res.status(200).json(account)
+  } catch (err) {
+    manageAllErrors(res, err)
+  }
+})
+
+router.post('/signUp', (req, res) => {
+  try {
+    const account = Account.get().find(account => account.email === req.body.email);
+    account === undefined && req.body.email !== '' && req.body.password !== '' ? res.status(200).end() : res.status(400).end();
   } catch (err) {
     manageAllErrors(res, err)
   }
