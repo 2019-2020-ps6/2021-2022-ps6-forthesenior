@@ -15,14 +15,9 @@
     "id": 1652780778197
   },
   {
-    "themeLabel": "Music",
+    "themeLabel": "Musique",
     "accountId": 1652779375289,
     "id": 1652780782325
-  },
-  {
-    "themeLabel": "Musicals & Theatres",
-    "accountId": 1652779375289,
-    "id": 1652780787459
   },
   {
     "themeLabel": "Television",
@@ -30,52 +25,42 @@
     "id": 1652780788472
   },
   {
-    "themeLabel": "Video Games",
+    "themeLabel": "Jeux Vidéo",
     "accountId": 1652779375289,
     "id": 1652780793174
   },
   {
-    "themeLabel": "Board Games",
-    "accountId": 1652779375289,
-    "id": 1652780801581
-  },
-  {
-    "themeLabel": "Science & Nature",
+    "themeLabel": "Science et Nature",
     "accountId": 1652779375289,
     "id": 1652780803936
   },
   {
-    "themeLabel": "Computers",
+    "themeLabel": "Ordinateurs",
     "accountId": 1652779375289,
     "id": 1652780811229
   },
   {
-    "themeLabel": "Mathematics",
+    "themeLabel": "Mathématiques",
     "accountId": 1652779375289,
     "id": 1652780817546
   },
   {
-    "themeLabel": "Mythology",
+    "themeLabel": "Mythologie",
     "accountId": 1652779375289,
     "id": 1652780819681
   },
   {
-    "themeLabel": "Sports",
+    "themeLabel": "Sport",
     "accountId": 1652779375289,
     "id": 1652780822468
   },
   {
-    "themeLabel": "Geography",
-    "accountId": 1652779375289,
-    "id": 1652780828783
-  },
-  {
-    "themeLabel": "History",
+    "themeLabel": "Histoire",
     "accountId": 1652779375289,
     "id": 1652780838898
   },
   {
-    "themeLabel": "Politics",
+    "themeLabel": "Politique",
     "accountId": 1652779375289,
     "id": 1652780849188
   },
@@ -83,40 +68,5 @@
     "themeLabel": "Art",
     "accountId": 1652779375289,
     "id": 1652780852479
-  },
-  {
-    "themeLabel": "Celebrities",
-    "accountId": 1652779375289,
-    "id": 1652780854095
-  },
-  {
-    "themeLabel": "Animals",
-    "accountId": 1652779375289,
-    "id": 1652780857214
-  },
-  {
-    "themeLabel": "Vehicles",
-    "accountId": 1652779375289,
-    "id": 1652780861627
-  },
-  {
-    "themeLabel": "Comics",
-    "accountId": 1652779375289,
-    "id": 1652780866009
-  },
-  {
-    "themeLabel": "Gadgets",
-    "accountId": 1652779375289,
-    "id": 1652780870601
-  },
-  {
-    "themeLabel": "Anime & Manga",
-    "accountId": 1652779375289,
-    "id": 1652780872218
-  },
-  {
-    "themeLabel": "Cartoon & Animations",
-    "accountId": 1652779375289,
-    "id": 1652780883739
   }
 ]

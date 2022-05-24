@@ -48,13 +48,13 @@
     "id": 1651680178984
   },
   {
-    "answerLabel": "False",
+    "answerLabel": "Faux",
     "isCorrect": true,
     "questionId": 1651680178987,
     "id": 1651680178991
   },
   {
-    "answerLabel": "True",
+    "answerLabel": "Vrai",
     "isCorrect": false,
     "questionId": 1651680178987,
     "id": 1651680178994
@@ -120,25 +120,25 @@
     "id": 1651680179050
   },
   {
-    "answerLabel": "True",
+    "answerLabel": "Vrai",
     "isCorrect": true,
     "questionId": 1651680179054,
     "id": 1651680179059
   },
   {
-    "answerLabel": "False",
+    "answerLabel": "Faux",
     "isCorrect": false,
     "questionId": 1651680179054,
     "id": 1651680179062
   },
   {
-    "answerLabel": "True",
+    "answerLabel": "Vrai",
     "isCorrect": true,
     "questionId": 1651680179066,
     "id": 1651680179069
   },
   {
-    "answerLabel": "False",
+    "answerLabel": "Faux",
     "isCorrect": false,
     "questionId": 1651680179066,
     "id": 1651680179073
@@ -252,13 +252,13 @@
     "id": 1651680179178
   },
   {
-    "answerLabel": "False",
+    "answerLabel": "Faux",
     "isCorrect": true,
     "questionId": 1651680179182,
     "id": 1651680179185
   },
   {
-    "answerLabel": "True",
+    "answerLabel": "Vrai",
     "isCorrect": false,
     "questionId": 1651680179182,
     "id": 1651680179189
@@ -276,13 +276,13 @@
     "id": 1651680179200
   },
   {
-    "answerLabel": "False",
+    "answerLabel": "Faux",
     "isCorrect": true,
     "questionId": 1651680179204,
     "id": 1651680179207
   },
   {
-    "answerLabel": "True",
+    "answerLabel": "Vrai",
     "isCorrect": false,
     "questionId": 1651680179204,
     "id": 1651680179211
@@ -384,7 +384,7 @@
     "id": 1651680179293
   },
   {
-    "answerLabel": "New Mexico",
+    "answerLabel": "Nouveau Mexique",
     "isCorrect": false,
     "questionId": 1651680179286,
     "id": 1651680179296
@@ -2844,25 +2844,25 @@
     "id": 1651680183230
   },
   {
-    "answerLabel": "True",
+    "answerLabel": "Vrai",
     "isCorrect": true,
     "questionId": 1651680183235,
     "id": 1651680183240
   },
   {
-    "answerLabel": "False",
+    "answerLabel": "Faux",
     "isCorrect": false,
     "questionId": 1651680183235,
     "id": 1651680183245
   },
   {
-    "answerLabel": "False",
+    "answerLabel": "Faux",
     "isCorrect": true,
     "questionId": 1651680183250,
     "id": 1651680183258
   },
   {
-    "answerLabel": "True",
+    "answerLabel": "Vrai",
     "isCorrect": false,
     "questionId": 1651680183250,
     "id": 1651680183263
@@ -2928,13 +2928,13 @@
     "id": 1651680183338
   },
   {
-    "answerLabel": "The Strange Case of Dr. Jekyll and Mr. Hyde ",
+    "answerLabel": "L'étrange histoire du Dr. Jekyll et de Mr. Hyde ",
     "isCorrect": false,
     "questionId": 1651680183327,
     "id": 1651680183346
   },
   {
-    "answerLabel": "The Legend of Sleepy Hollow",
+    "answerLabel": "La Légende de Sleepy Hollow",
     "isCorrect": false,
     "questionId": 1651680183327,
     "id": 1651680183351
@@ -3816,7 +3816,7 @@
     "id": 1651680184377
   },
   {
-    "answerLabel": "Frankenstein's monster",
+    "answerLabel": "Le monstre de Frankenstein's",
     "isCorrect": true,
     "questionId": 1651680184382,
     "id": 1651680184387
@@ -4392,13 +4392,13 @@
     "id": 1651680184998
   },
   {
-    "answerLabel": "True",
+    "answerLabel": "Vrai",
     "isCorrect": true,
     "questionId": 1651680185008,
     "id": 1651680185011
   },
   {
-    "answerLabel": "False",
+    "answerLabel": "Faux",
     "isCorrect": false,
     "questionId": 1651680185008,
     "id": 1651680185016
@@ -5004,37 +5004,37 @@
     "id": 1651680185639
   },
   {
-    "answerLabel": "False",
+    "answerLabel": "Faux",
     "isCorrect": true,
     "questionId": 1651680185652,
     "id": 1651680185656
   },
   {
-    "answerLabel": "True",
+    "answerLabel": "Vrai",
     "isCorrect": false,
     "questionId": 1651680185652,
     "id": 1651680185661
   },
   {
-    "answerLabel": "True",
+    "answerLabel": "Vrai",
     "isCorrect": true,
     "questionId": 1651680185667,
     "id": 1651680185671
   },
   {
-    "answerLabel": "False",
+    "answerLabel": "Faux",
     "isCorrect": false,
     "questionId": 1651680185667,
     "id": 1651680185676
   },
   {
-    "answerLabel": "False",
+    "answerLabel": "Faux",
     "isCorrect": true,
     "questionId": 1651680185681,
     "id": 1651680185685
   },
   {
-    "answerLabel": "True",
+    "answerLabel": "Vrai",
     "isCorrect": false,
     "questionId": 1651680185681,
     "id": 1651680185689
@@ -5052,13 +5052,13 @@
     "id": 1651680185703
   },
   {
-    "answerLabel": "True",
+    "answerLabel": "Vrai",
     "isCorrect": true,
     "questionId": 1651680185708,
     "id": 1651680185712
   },
   {
-    "answerLabel": "False",
+    "answerLabel": "Faux",
     "isCorrect": false,
     "questionId": 1651680185708,
     "id": 1651680185718
@@ -6312,7 +6312,7 @@
     "id": 1651680187115
   },
   {
-    "answerLabel": "The Rock",
+    "answerLabel": "Rock",
     "isCorrect": false,
     "questionId": 1651680187106,
     "id": 1651680187121
@@ -6936,13 +6936,13 @@
     "id": 1651680187855
   },
   {
-    "answerLabel": "The Shining",
+    "answerLabel": "Shining",
     "isCorrect": true,
     "questionId": 1651680187861,
     "id": 1651680187865
   },
   {
-    "answerLabel": "2001: A Space Odyssey",
+    "answerLabel": "2001: L'odysée de l'Espace",
     "isCorrect": false,
     "questionId": 1651680187861,
     "id": 1651680187871

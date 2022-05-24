@@ -20,8 +20,8 @@
     "id": 1651680178976
   },
   {
-    "questionLabel": "Nutella is produced by the German company Ferrero.",
-    "quizId": 1651680178921,
+    "questionLabel": "Nutella est produit par l'entreprise Allemande Ferrero.",
+    "quizId": 1651680342165,
     "id": 1651680178987
   },
   {
@@ -50,46 +50,18 @@
     "id": 1651680179043
   },
   {
-    "questionLabel": "You can legally drink alcohol while driving in Mississippi.",
+    "questionLabel": "Tu peux boire légalement de l'alcool tout en conduisant dans le Mississippi.",
     "quizId": 1651680181772,
-    "id": 1651680179054,
-    "answers": [
-      {
-        "answerLabel": "True",
-        "isCorrect": true,
-        "questionId": 1651680179054,
-        "id": 1651680179059
-      },
-      {
-        "answerLabel": "False",
-        "isCorrect": false,
-        "questionId": 1651680179054,
-        "id": 1651680179062
-      }
-    ]
+    "id": 1651680179054
   },
   {
-    "questionLabel": "On average, at least 1 person is killed by a drunk driver in the United States every hour.",
+    "questionLabel": "En moyenne, il a une personne tué par un conducteur sous alcool au Etats-Unis toutes les heures.",
     "quizId": 1651680181772,
-    "id": 1651680179066,
-    "answers": [
-      {
-        "answerLabel": "True",
-        "isCorrect": true,
-        "questionId": 1651680179066,
-        "id": 1651680179069
-      },
-      {
-        "answerLabel": "False",
-        "isCorrect": false,
-        "questionId": 1651680179066,
-        "id": 1651680179073
-      }
-    ]
+    "id": 1651680179066
   },
   {
     "questionLabel": "In 2010, Twitter and the United States Library of Congress partnered together to archive every tweet by American citizens.",
-    "quizId": 1651680181772,
+    "quizId": 1651680181773,
     "id": 1651680179076,
     "answers": [
       {
@@ -147,8 +119,9 @@
     "id": 1651680179171
   },
   {
-    "questionLabel": "Scotland voted to become an independent country during the referendum from September 2014.",
-    "quizId": 1651680178921,
+
+    "questionLabel": "L'Ecosse a voté pour l'indépendance du pays durant le référendum de Septembre 2014.",
+    "quizId": 1651680342165,
     "id": 1651680179182
   },
   {
@@ -157,8 +130,9 @@
     "id": 1651680179192
   },
   {
-    "questionLabel": "Vietnam's national flag is a red star in front of a yellow background.",
-    "quizId": 1651680178921,
+
+    "questionLabel": "Le drapeau du Vietnam est une étoile rouge devant un fond jaune.",
+    "quizId": 1651680181879,
     "id": 1651680179204
   },
   {
@@ -188,7 +162,7 @@
   },
   {
     "questionLabel": "Area 51 is located in which US state?",
-    "quizId": 1651680179248,
+    "quizId": 1651680181772,
     "id": 1651680179286
   },
   {
@@ -727,18 +701,20 @@
     "id": 1651680183217
   },
   {
-    "questionLabel": "The Harry Potter series of books, combined, are over 1,000,000 words in length.",
-    "quizId": 1651680178921,
+
+    "questionLabel": "La série des Harry Potter, combinée, fait plus de 1,000,000 mords de long.",
+    "quizId": 1651680178934,
     "id": 1651680183235
   },
   {
-    "questionLabel": "Shub-Niggurath is a creature that was created by \tJ. R. R. Tolkien in his novel \"The Lord of The Rings\".",
-    "quizId": 1651680178921,
+    "questionLabel": "Shub-Niggurath est une créature crée par J.R.R Tolkien dans son roman \"Le seigneur des anneaux\".",
+    "quizId": 1651680178934,
     "id": 1651680183250
   },
   {
-    "questionLabel": "Who wrote \"Harry Potter\"?",
-    "quizId": 1651680178921,
+
+    "questionLabel": "Qui a écrit \"Harry Potter\" ?",
+    "quizId": 1651680178934,
     "id": 1651680183275
   },
   {
@@ -747,8 +723,8 @@
     "id": 1651680183301
   },
   {
-    "questionLabel": "Which famous book is sub-titled 'The Modern Prometheus'?",
-    "quizId": 1651680183271,
+    "questionLabel": "Quel livre est surnommé 'le Prométhée moderne' ?",
+    "quizId": 1651680178934,
     "id": 1651680183327
   },
   {
@@ -857,11 +833,6 @@
     "id": 1651680183907
   },
   {
-    "questionLabel": "Originally, the character Charlie from Charlie and the Chocolate Factory was going to be black.",
-    "quizId": 1651680183935,
-    "id": 1651680183940
-  },
-  {
     "questionLabel": "Which of the following authors was not born in England? ",
     "quizId": 1651680183956,
     "id": 1651680183960
@@ -927,28 +898,14 @@
     "id": 1651680184294
   },
   {
-    "questionLabel": "The novel \"Of Mice And Men\" was written by what author? ",
-    "quizId": 1651680183956,
+    "questionLabel": "Le livre \"Des souris et des Hommes\" a été écrit par quels auteurs ?",
+    "quizId": 1651680176425,
     "id": 1651680184324
   },
   {
-    "questionLabel": "J.K. Rowling completed \"Harry Potter and the Deathly Hallows\" in which hotel in Edinburgh, Scotland?",
-    "quizId": 1651680183956,
-    "id": 1651680184352
-  },
-  {
-    "questionLabel": "In the year 1818, novelist Mary Shelly is credited with writing a fiction novel and creating this infamous character.",
-    "quizId": 1651680183956,
-    "id": 1651680184382
-  },
-  {
-    "questionLabel": "The title of Adolf Hitler's autobiography \"Mein Kampf\" is what when translated to English?",
-    "quizId": 1651680183956,
-    "id": 1651680184410
-  },
-  {
-    "questionLabel": "Which American author was also a budding travel writer and wrote of his adventures with his dog Charley?",
-    "quizId": 1651680183956,
+
+    "questionLabel": "Quel auteur américain était aussi un voyageur en herbe et a écrit ses aventures avec son chien Charley ?",
+    "quizId": 1651680176425,
     "id": 1651680184440
   },
   {
@@ -1022,8 +979,9 @@
     "id": 1651680184801
   },
   {
-    "questionLabel": "What is the name of Eragon's dragon in \"Eragon\"?",
-    "quizId": 1651680183956,
+
+    "questionLabel": "Quel est le nom du dragon d'Eragon dans \"Eragon\" ?",
+    "quizId": 1651680175284,
     "id": 1651680184827
   },
   {
@@ -1057,8 +1015,8 @@
     "id": 1651680184979
   },
   {
-    "questionLabel": "Harry Potter was born on July 31st, 1980.",
-    "quizId": 1651680185004,
+    "questionLabel": "Harry Potter est né le 31 Juin, 1980.",
+    "quizId": 1651680175284,
     "id": 1651680185008
   },
   {
@@ -1187,65 +1145,23 @@
     "id": 1651680185621
   },
   {
-    "questionLabel": "Le meilleur ami d'Han Solo Chewbacca est-il un Ewok ?",
-    "quizId": 1651680183956,
-    "id": 1651680185652,
-    "answers": [
-      {
-        "answerLabel": "Faux",
-        "isCorrect": true,
-        "questionId": 1651680185652,
-        "id": 1651680185656
-      },
-      {
-        "answerLabel": "Vrai",
-        "isCorrect": false,
-        "questionId": 1651680185652,
-        "id": 1651680185661
-      }
-    ]
+    "questionLabel": "Le meilleur ami d'Han Solo, Chewbacca, est-il un Ewok ?",
+    "quizId": 1651680183923,
+    "id": 1651680185652
   },
   {
-    "questionLabel": "The movie \"The Nightmare before Christmas\" was all done with physical objects.",
-    "quizId": 1651680183956,
-    "id": 1651680185667,
-    "answers": [
-      {
-        "answerLabel": "True",
-        "isCorrect": true,
-        "questionId": 1651680185667,
-        "id": 1651680185671
-      },
-      {
-        "answerLabel": "False",
-        "isCorrect": false,
-        "questionId": 1651680185667,
-        "id": 1651680185676
-      }
-    ]
+    "questionLabel": "Le film L'Étrange Noël de monsieur Jack a-t-il été fait qu'avec des objets réel ?",
+    "quizId": 1651680183923,
+    "id": 1651680185667
   },
   {
-    "questionLabel": "Leonardo DiCaprio won an Oscar for Best Actor in 2004's \"The Aviator\".",
-    "quizId": 1651680183271,
-    "id": 1651680185681,
-    "answers": [
-      {
-        "answerLabel": "False",
-        "isCorrect": true,
-        "questionId": 1651680185681,
-        "id": 1651680185685
-      },
-      {
-        "answerLabel": "True",
-        "isCorrect": false,
-        "questionId": 1651680185681,
-        "id": 1651680185689
-      }
-    ]
+    "questionLabel": "Leonard DiCaprio a gagné un oscar du Meilleur Acteur en 2004 pour le film \"L'aviateur\".",
+    "quizId": 1651680183212,
+    "id": 1651680185681
   },
   {
     "questionLabel": "The film \"2001: A Space Odyssey\" was released on December 31st, 2000.",
-    "quizId": 1651680183956,
+    "quizId": 1651680183923,
     "id": 1651680185694,
     "answers": [
       {
@@ -1263,27 +1179,13 @@
     ]
   },
   {
-    "questionLabel": "Matt Damon played an astronaut stranded on an extraterrestrial planet in both of the movies Interstellar and The Martian.",
-    "quizId": 1651680183271,
-    "id": 1651680185708,
-    "answers": [
-      {
-        "answerLabel": "True",
-        "isCorrect": true,
-        "questionId": 1651680185708,
-        "id": 1651680185712
-      },
-      {
-        "answerLabel": "False",
-        "isCorrect": false,
-        "questionId": 1651680185708,
-        "id": 1651680185718
-      }
-    ]
+    "questionLabel": "Matt Damon a joué un astronaut dans les films Interstellar et Seul sur Mars.",
+    "quizId": 1651680183212,
+    "id": 1651680185708
   },
   {
     "questionLabel": "The 2010 film \"The Social Network\" is a biographical drama film about MySpace founder Tom Anderson.",
-    "quizId": 1651680183956,
+    "quizId": 1651680183923,
     "id": 1651680185723,
     "answers": [
       {
@@ -2652,66 +2554,9 @@
     ]
   },
   {
-    "questionLabel": "In the 1992 film \"Army of Darkness\", what name does Ash give to his double-barreled shotgun?",
-    "quizId": 1651680185941,
-    "id": 1651680186859,
-    "answers": [
-      {
-        "answerLabel": "Boomstick",
-        "isCorrect": true,
-        "questionId": 1651680186859,
-        "id": 1651680186864
-      },
-      {
-        "answerLabel": "Bloomstick",
-        "isCorrect": false,
-        "questionId": 1651680186859,
-        "id": 1651680186870
-      },
-      {
-        "answerLabel": "Blastbranch",
-        "isCorrect": false,
-        "questionId": 1651680186859,
-        "id": 1651680186877
-      },
-      {
-        "answerLabel": "2-Pump Chump",
-        "isCorrect": false,
-        "questionId": 1651680186859,
-        "id": 1651680186884
-      }
-    ]
-  },
-  {
-    "questionLabel": "Who plays the character of Po in the Kung Fu Panda movies?",
-    "quizId": 1651680185941,
-    "id": 1651680186890,
-    "answers": [
-      {
-        "answerLabel": "Jack Black",
-        "isCorrect": true,
-        "questionId": 1651680186890,
-        "id": 1651680186895
-      },
-      {
-        "answerLabel": "Mirana Jonnes",
-        "isCorrect": false,
-        "questionId": 1651680186890,
-        "id": 1651680186901
-      },
-      {
-        "answerLabel": "McConahey Ramses",
-        "isCorrect": false,
-        "questionId": 1651680186890,
-        "id": 1651680186907
-      },
-      {
-        "answerLabel": "Jim Petersson",
-        "isCorrect": false,
-        "questionId": 1651680186890,
-        "id": 1651680186913
-      }
-    ]
+    "questionLabel": "Qui a joué le personnage de Po dans Kung Fu Panda ?",
+    "quizId": 1651680183212,
+    "id": 1651680186890
   },
   {
     "questionLabel": "The 2016 Disney animated film 'Moana' is based on which culture?",
@@ -2840,126 +2685,17 @@
   {
     "questionLabel": "What was the first feature-length computer-animated movie?",
     "quizId": 1651680185941,
-    "id": 1651680187031,
-    "answers": [
-      {
-        "answerLabel": "Toy Story",
-        "isCorrect": true,
-        "questionId": 1651680187031,
-        "id": 1651680187035
-      },
-      {
-        "answerLabel": "Tron",
-        "isCorrect": false,
-        "questionId": 1651680187031,
-        "id": 1651680187040
-      },
-      {
-        "answerLabel": "Lion king",
-        "isCorrect": false,
-        "questionId": 1651680187031,
-        "id": 1651680187045
-      },
-      {
-        "answerLabel": "101 Dalmatians",
-        "isCorrect": false,
-        "questionId": 1651680187031,
-        "id": 1651680187050
-      }
-    ]
+    "id": 1651680187031
   },
   {
-    "questionLabel": "Where does the original Friday The 13th movie take place?",
-    "quizId": 1651680185941,
-    "id": 1651680187055,
-    "answers": [
-      {
-        "answerLabel": "Camp Crystal Lake",
-        "isCorrect": true,
-        "questionId": 1651680187055,
-        "id": 1651680187060
-      },
-      {
-        "answerLabel": "Packanack",
-        "isCorrect": false,
-        "questionId": 1651680187055,
-        "id": 1651680187065
-      },
-      {
-        "answerLabel": "Higgins Haven",
-        "isCorrect": false,
-        "questionId": 1651680187055,
-        "id": 1651680187071
-      },
-      {
-        "answerLabel": "Camp Forest Green",
-        "isCorrect": false,
-        "questionId": 1651680187055,
-        "id": 1651680187076
-      }
-    ]
+    "questionLabel": "Où ce déroule le film Vendredi 13 ?",
+    "quizId": 1651680183923,
+    "id": 1651680187055
   },
   {
-    "questionLabel": "In which film does Humphrey Bogart say the famous line, \"Here's looking at you, kid\"?",
-    "quizId": 1651680185941,
-    "id": 1651680187081,
-    "answers": [
-      {
-        "answerLabel": "Casablanca",
-        "isCorrect": true,
-        "questionId": 1651680187081,
-        "id": 1651680187085
-      },
-      {
-        "answerLabel": "The Maltese Falcon",
-        "isCorrect": false,
-        "questionId": 1651680187081,
-        "id": 1651680187091
-      },
-      {
-        "answerLabel": "The Treasure of the Sierra Madre",
-        "isCorrect": false,
-        "questionId": 1651680187081,
-        "id": 1651680187096
-      },
-      {
-        "answerLabel": "Citizen Kane",
-        "isCorrect": false,
-        "questionId": 1651680187081,
-        "id": 1651680187101
-      }
-    ]
-  },
-  {
-    "questionLabel": "Which of these Movies was NOT released in 1996?",
-    "quizId": 1651680185941,
-    "id": 1651680187106,
-    "answers": [
-      {
-        "answerLabel": "Gladiator",
-        "isCorrect": true,
-        "questionId": 1651680187106,
-        "id": 1651680187110
-      },
-      {
-        "answerLabel": "Independence Day",
-        "isCorrect": false,
-        "questionId": 1651680187106,
-        "id": 1651680187115
-      },
-      {
-        "answerLabel": "The Rock",
-        "isCorrect": false,
-        "questionId": 1651680187106,
-        "id": 1651680187121
-      },
-      {
-        "answerLabel": "Mission: Impossible",
-        "isCorrect": false,
-        "questionId": 1651680187106,
-        "id": 1651680187126
-      }
-    ]
+    "questionLabel": "Lequel de ces films n'est pas sorti en 1996 ?",
+    "quizId": 1651680183923,
+    "id": 1651680187106
   },
   {
     "questionLabel": "What is the name of the fictional retro-mod band starring Austin Powers as the lead vocalist?",
@@ -3237,8 +2973,8 @@
     "id": 1651680187833
   },
   {
-    "questionLabel": "Which movie of film director Stanley Kubrick is known to be an adaptation of a Stephen King novel?",
-    "quizId": 1651680187382,
+    "questionLabel": "Dans quel film réalisé par Stanley Kubrick est connu pour pour être une adaptation d'un roman de Stephen King ?",
+    "quizId": 1651680183935,
     "id": 1651680187861
   },
   {

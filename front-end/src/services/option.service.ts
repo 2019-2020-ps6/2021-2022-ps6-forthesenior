@@ -125,7 +125,8 @@ export class OptionService {
     document.documentElement.style.setProperty("--font-size", (Number(option.fontSize) / 300) + "em");
     document.documentElement.style.setProperty("--gap-column", option.dmlaOffset + "%");
     document.documentElement.style.setProperty("--size-answer", height + "vh");
-    if (this.size !== "250" && this.dmla !== "45" && this.caseNumber > 2) {
+    console.log("case number " +this.caseNumber);
+    if (this.size !== "250" && this.dmla !== "45" && Number(this.caseNumber) > 2) {
       document.documentElement.style.setProperty("--number-column", "3")
       if(this.size == "150"){
         this.caseNumber$.next(12);

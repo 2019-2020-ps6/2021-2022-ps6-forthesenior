@@ -1,7 +1,11 @@
 @import '../../../styles/card.scss';
 
 h3 {
-  display: inline-block;
+  display: inline;
+}
+
+div div {
+  margin-bottom: 25px;
 }
 
 span {

@@ -37,13 +37,16 @@ export class QuizPlayComponent implements OnInit {
     this.quizService.setSelectedQuiz(this.route.snapshot.paramMap.get('quizId'));
     this.quizService.quizSelected$.subscribe((quiz: Quiz) => {
       this.quiz = quiz;
+      this.optionService.caseNumber = this.quiz.questions[this.index].answers.length;
+      this.optionService.options$.subscribe(() => this.optionService.update())
     });
     this.optionService.options$.subscribe(() => this.optionService.update())
     this.initiateGame();
   }
 
   ngOnInit(): void {
-
+    this.optionService.caseNumber = this.quiz.questions[this.index].answers.length;
+    this.optionService.options$.subscribe(() => this.optionService.update())
   }
 
   nextQuestion(): void {
