@@ -2007,18 +2007,18 @@
     "id": 1651680185621
   },
   {
-    "questionLabel": "Han Solo's co-pilot and best friend, \"Chewbacca\", is an Ewok.",
-    "quizId": 1651680185649,
+    "questionLabel": "Le meilleur ami d'Han Solo Chewbacca est-il un Ewok ?",
+    "quizId": 1651680183956,
     "id": 1651680185652,
     "answers": [
       {
-        "answerLabel": "False",
+        "answerLabel": "Faux",
         "isCorrect": true,
         "questionId": 1651680185652,
         "id": 1651680185656
       },
       {
-        "answerLabel": "True",
+        "answerLabel": "Vrai",
         "isCorrect": false,
         "questionId": 1651680185652,
         "id": 1651680185661
@@ -2027,7 +2027,7 @@
   },
   {
     "questionLabel": "The movie \"The Nightmare before Christmas\" was all done with physical objects.",
-    "quizId": 1651680185649,
+    "quizId": 1651680183956,
     "id": 1651680185667,
     "answers": [
       {
@@ -2046,7 +2046,7 @@
   },
   {
     "questionLabel": "Leonardo DiCaprio won an Oscar for Best Actor in 2004's \"The Aviator\".",
-    "quizId": 1651680185649,
+    "quizId": 1651680183271,
     "id": 1651680185681,
     "answers": [
       {
@@ -2065,7 +2065,7 @@
   },
   {
     "questionLabel": "The film \"2001: A Space Odyssey\" was released on December 31st, 2000.",
-    "quizId": 1651680185649,
+    "quizId": 1651680183956,
     "id": 1651680185694,
     "answers": [
       {
@@ -2084,7 +2084,7 @@
   },
   {
     "questionLabel": "Matt Damon played an astronaut stranded on an extraterrestrial planet in both of the movies Interstellar and The Martian.",
-    "quizId": 1651680185649,
+    "quizId": 1651680183271,
     "id": 1651680185708,
     "answers": [
       {
@@ -2103,7 +2103,7 @@
   },
   {
     "questionLabel": "The 2010 film \"The Social Network\" is a biographical drama film about MySpace founder Tom Anderson.",
-    "quizId": 1651680185649,
+    "quizId": 1651680183956,
     "id": 1651680185723,
     "answers": [
       {
@@ -2512,7 +2512,7 @@
   },
   {
     "questionLabel": "Daniel Radcliffe became a global star in the film industry due to his performance in which film franchise?",
-    "quizId": 1651680185941,
+    "quizId": 1652780778197,
     "id": 1651680186046,
     "answers": [
       {
@@ -2543,7 +2543,7 @@
   },
   {
     "questionLabel": "What name did Tom Hanks give to his volleyball companion in the film `Cast Away`?",
-    "quizId": 1651680185941,
+    "quizId": 1652780778197,
     "id": 1651680186072,
     "answers": [
       {
