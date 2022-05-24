@@ -43,8 +43,14 @@ export class UserService {
     }
   }
 
-  updateStats(user: User, score: number): void {
-    if (user.stat === undefined) user.stat = [];
+  updateStats(user: User, score: number, clicks: number): void {
+    if (user.stat === undefined) {
+      user.stat = [];
+    }
+    if(user.clics === undefined){
+      user.clics=[];
+    }
+    user.clics.push(clicks);
     user.stat.push(score);
     this.http.put(this.getUserUrl() + '/' + user.id, user).subscribe(() => this.retrieveUsers());
   }

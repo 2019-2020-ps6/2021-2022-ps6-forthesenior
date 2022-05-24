@@ -7,4 +7,5 @@ module.exports = new BaseModel('User', {
   accountId: Joi.number(),
   options: Joi.array(),
   stat : Joi.array(),
+  clics: Joi.array(),
 })

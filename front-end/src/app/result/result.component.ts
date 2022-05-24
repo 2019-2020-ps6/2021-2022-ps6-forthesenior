@@ -33,7 +33,7 @@ export class ResultComponent implements OnInit {
 
   private updateStat(): void {
     if (this.playService.total > 0 && this.playService.user !== undefined) {
-      this.userService.updateStats(this.playService.user, this.playService.right / this.playService.total);
+      this.userService.updateStats(this.playService.user, this.playService.right / this.playService.total, this.playService.outsideClick);
     }
   }
 }
