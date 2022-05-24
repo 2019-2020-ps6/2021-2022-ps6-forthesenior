@@ -15,6 +15,8 @@ export class StatComponent implements OnInit {
   public min: number = 0;
   public average: number = 0;
   public max: number = 0;
+  public cliks=0;
+
 
   constructor() {
   }
@@ -40,6 +42,15 @@ export class StatComponent implements OnInit {
       this.min = Math.round(this.min * 100);
       this.average = this.average / this.user.stat.length;
       this.average = Math.round(this.average * 100);
+    }
+    if(this.user.clics === undefined) this.user.clics=[]
+    if(this.user.clics.length == 0) this.cliks=0
+    else{
+      this.user.clics.forEach((click) => {
+        click = Number(click);
+        this.cliks+=click
+      })
+      this.cliks = this.cliks / this.user.clics.length;
     }
   }
 }

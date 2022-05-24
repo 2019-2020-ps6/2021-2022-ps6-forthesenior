@@ -3,6 +3,7 @@
     Resultats
   </h2>
   <p>{{this.playService.right}}/{{this.playService.total}}</p>
+  <p>Nombre de clics dehors : {{this.playService.outsideClick - this.playService.total}}</p>
   <div>
     <button (click)="restartSelected()" class="button-card">Recommencer Quiz</button>
     <button (click)="backSelected()" class="button-card">Retour Thèmes</button>

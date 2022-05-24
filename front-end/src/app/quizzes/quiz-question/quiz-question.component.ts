@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnChanges, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, HostListener, Input, OnChanges, OnInit, Output} from '@angular/core';
 import {Question} from '../../../models/question.model';
 import {QuestionService} from "../../../services/question.service";
 
@@ -14,6 +14,20 @@ export class QuizQuestionComponent implements OnInit, OnChanges {
 
   @Output()
   next: EventEmitter<boolean> = new EventEmitter<boolean>();
+
+  @Output()
+  outside : EventEmitter<boolean> = new EventEmitter<boolean>();
+
+  inside = false;
+  nbClick = 0;
+
+  @HostListener("document:click")
+  clickedOut() {
+
+    if(!this.inside)
+      this.outside.emit(true);
+    this.inside = false;
+  }
 
   answered: boolean;
 

@@ -3,4 +3,5 @@ export interface User {
   firstname: string;
   lastname: string;
   stat: number[];
+  clics: number[];
 }

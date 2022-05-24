@@ -18,6 +18,7 @@ export class QuizPlayComponent implements OnInit {
   @Output() showReponse: EventEmitter<Boolean> = new EventEmitter<Boolean>();
 
   public quiz: Quiz;
+  outsideClick=0;
   public index: number;
   public next: boolean;
   right: number;
@@ -33,28 +34,16 @@ export class QuizPlayComponent implements OnInit {
   constructor(private router: Router, private route: ActivatedRoute, private quizService: QuizService,
               private userService: UserService, private optionService: OptionService,
               private playService : PlayService) {
+    this.quizService.setSelectedQuiz(this.route.snapshot.paramMap.get('quizId'));
     this.quizService.quizSelected$.subscribe((quiz: Quiz) => {
       this.quiz = quiz;
     });
     this.optionService.options$.subscribe(() => this.optionService.update())
+    this.initiateGame();
   }
 
   ngOnInit(): void {
-    this.next = false;
-    this.timer = false;
-    this.secondChance = false;
-    this.right = 0;
-    this.userId = this.route.snapshot.paramMap.get('idUser');
-    const id = this.route.snapshot.paramMap.get('idQuiz');
-    this.quizService.setSelectedQuiz(id);
-    this.quizService.quizSelected$.subscribe((quiz) => {
-      if (quiz !== null) {
-        this.quiz = quiz;
-      }
-    });
-    this.index = 0;
-    this.timeLeft = this.optionService.timeLeft;
-    this.timeLeftOld = this.timeLeft;
+
   }
 
   nextQuestion(): void {
@@ -69,6 +58,7 @@ export class QuizPlayComponent implements OnInit {
     if (this.index === this.quiz.questions.length) {
       this.playService.right = this.right;
       this.playService.total = this.index;
+      this.playService.outsideClick = this.outsideClick;
       this.router.navigate([urlPopN(this.router.url, 2) + '/result/' + this.quiz.id]);
     } else {
       this.router.navigate([this.router.url]);
@@ -89,6 +79,13 @@ export class QuizPlayComponent implements OnInit {
     console.log("time " + this.timeLeft);
   }
 
+  onOutside(out: boolean): void{
+    if(out)
+      this.outsideClick+=1;
+    else
+      this.outsideClick-=1;
+  }
+
   onAnswered(answer: boolean): void {
     if (!this.timer) {
       this.timeLeft--;
@@ -99,5 +96,24 @@ export class QuizPlayComponent implements OnInit {
       this.timer = true;
     }
     this.answer = answer;
+  }
+
+  initiateGame(): void {
+    this.next = false;
+    this.timer = false;
+    this.secondChance = false;
+    this.right = 0;
+    this.userId = this.route.snapshot.paramMap.get('idUser');
+    const id = this.route.snapshot.paramMap.get('idQuiz');
+    this.quizService.setSelectedQuiz(id);
+    this.quizService.quizSelected$.subscribe((quiz) => {
+      if (quiz !== null) {
+        this.quiz = quiz;
+      }
+    });
+    this.index = 0;
+    this.timeLeft = this.optionService.timeLeft;
+    this.timeLeftOld = this.timeLeft;
+
   }
 }

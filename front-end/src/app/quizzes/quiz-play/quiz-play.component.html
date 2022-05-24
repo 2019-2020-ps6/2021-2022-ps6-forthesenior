@@ -1,7 +1,7 @@
 <ng-container *ngIf="quiz!==undefined">
   <h1 class="user titre">Vous êtes sur le quiz : {{quiz.quizLabel}}</h1>
   <h2 *ngIf="timeLeft >= 3 && timeLeft<7" class="timeLeft">{{timeLeft}}</h2>
-  <app-quiz-question [question]="quiz.questions[index]" (next)="onAnswered($event)"></app-quiz-question>
+  <app-quiz-question [question]="quiz.questions[index]" (outside)="onOutside($event)" (next)="onAnswered($event)"></app-quiz-question>
 
 </ng-container>
 
