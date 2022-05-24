@@ -18,6 +18,7 @@ export class QuizPlayComponent implements OnInit {
   @Output() showReponse: EventEmitter<Boolean> = new EventEmitter<Boolean>();
 
   public quiz: Quiz;
+  outsideClick=0;
   public index: number;
   public next: boolean;
   right: number;
@@ -69,6 +70,7 @@ export class QuizPlayComponent implements OnInit {
     if (this.index === this.quiz.questions.length) {
       this.playService.right = this.right;
       this.playService.total = this.index;
+      this.playService.outsideClick = this.outsideClick;
       this.router.navigate([urlPopN(this.router.url, 2) + '/result/' + this.quiz.id]);
     } else {
       this.router.navigate([this.router.url]);
@@ -87,6 +89,11 @@ export class QuizPlayComponent implements OnInit {
       this.answerList$.next(false);
     }
     console.log("time " + this.timeLeft);
+  }
+
+  onOutside(out: boolean): void{
+    if(out)
+      this.outsideClick+=1;
   }
 
   onAnswered(answer: boolean): void {

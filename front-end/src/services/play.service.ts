@@ -10,6 +10,7 @@ import {Quiz} from "../models/quiz.model";
 })
 export class PlayService {
 
+  public outsideClick = 0;
   public right = 0;
   public total = 0;
   public user: User;

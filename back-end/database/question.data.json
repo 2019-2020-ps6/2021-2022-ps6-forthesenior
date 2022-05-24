@@ -999,252 +999,1552 @@
   {
     "questionLabel": "What is the world's most expensive spice by weight?",
     "quizId": 1651680180573,
-    "id": 1651680180577
+    "id": 1651680180577,
+    "answers": [
+      {
+        "answerLabel": "Saffron",
+        "isCorrect": true,
+        "questionId": 1651680180577,
+        "id": 1651680180582
+      },
+      {
+        "answerLabel": "Cinnamon",
+        "isCorrect": false,
+        "questionId": 1651680180577,
+        "id": 1651680180589
+      },
+      {
+        "answerLabel": "Cardamom",
+        "isCorrect": false,
+        "questionId": 1651680180577,
+        "id": 1651680180594
+      },
+      {
+        "answerLabel": "Vanilla",
+        "isCorrect": false,
+        "questionId": 1651680180577,
+        "id": 1651680180601
+      }
+    ]
   },
   {
     "questionLabel": "What does a milliner make and sell?",
     "quizId": 1651680180573,
-    "id": 1651680180609
+    "id": 1651680180609,
+    "answers": [
+      {
+        "answerLabel": "Hats",
+        "isCorrect": true,
+        "questionId": 1651680180609,
+        "id": 1651680180616
+      },
+      {
+        "answerLabel": "Shoes",
+        "isCorrect": false,
+        "questionId": 1651680180609,
+        "id": 1651680180622
+      },
+      {
+        "answerLabel": "Belts",
+        "isCorrect": false,
+        "questionId": 1651680180609,
+        "id": 1651680180626
+      },
+      {
+        "answerLabel": "Shirts",
+        "isCorrect": false,
+        "questionId": 1651680180609,
+        "id": 1651680180631
+      }
+    ]
   },
   {
     "questionLabel": "In a standard set of playing cards, which is the only king without a moustache?",
     "quizId": 1651680180573,
-    "id": 1651680180636
+    "id": 1651680180636,
+    "answers": [
+      {
+        "answerLabel": "Hearts",
+        "isCorrect": true,
+        "questionId": 1651680180636,
+        "id": 1651680180640
+      },
+      {
+        "answerLabel": "Spades",
+        "isCorrect": false,
+        "questionId": 1651680180636,
+        "id": 1651680180645
+      },
+      {
+        "answerLabel": "Diamonds",
+        "isCorrect": false,
+        "questionId": 1651680180636,
+        "id": 1651680180649
+      },
+      {
+        "answerLabel": "Clubs",
+        "isCorrect": false,
+        "questionId": 1651680180636,
+        "id": 1651680180653
+      }
+    ]
   },
   {
     "questionLabel": "Which river flows through the Scottish city of Glasgow?",
     "quizId": 1651680180573,
-    "id": 1651680180657
+    "id": 1651680180657,
+    "answers": [
+      {
+        "answerLabel": "Clyde",
+        "isCorrect": true,
+        "questionId": 1651680180657,
+        "id": 1651680180661
+      },
+      {
+        "answerLabel": "Tay",
+        "isCorrect": false,
+        "questionId": 1651680180657,
+        "id": 1651680180667
+      },
+      {
+        "answerLabel": "Dee",
+        "isCorrect": false,
+        "questionId": 1651680180657,
+        "id": 1651680180672
+      },
+      {
+        "answerLabel": "Tweed",
+        "isCorrect": false,
+        "questionId": 1651680180657,
+        "id": 1651680180679
+      }
+    ]
   },
   {
     "questionLabel": "When was the Declaration of Independence approved by the Second Continental Congress?",
     "quizId": 1651680180573,
-    "id": 1651680180685
+    "id": 1651680180685,
+    "answers": [
+      {
+        "answerLabel": "July 4, 1776",
+        "isCorrect": true,
+        "questionId": 1651680180685,
+        "id": 1651680180691
+      },
+      {
+        "answerLabel": "May 4, 1776",
+        "isCorrect": false,
+        "questionId": 1651680180685,
+        "id": 1651680180696
+      },
+      {
+        "answerLabel": "June 4, 1776",
+        "isCorrect": false,
+        "questionId": 1651680180685,
+        "id": 1651680180701
+      },
+      {
+        "answerLabel": "July 2, 1776",
+        "isCorrect": false,
+        "questionId": 1651680180685,
+        "id": 1651680180706
+      }
+    ]
   },
   {
     "questionLabel": "What is the defining characteristic of someone who is described as hirsute?",
     "quizId": 1651680180573,
-    "id": 1651680180711
+    "id": 1651680180711,
+    "answers": [
+      {
+        "answerLabel": "Hairy",
+        "isCorrect": true,
+        "questionId": 1651680180711,
+        "id": 1651680180715
+      },
+      {
+        "answerLabel": "Rude",
+        "isCorrect": false,
+        "questionId": 1651680180711,
+        "id": 1651680180720
+      },
+      {
+        "answerLabel": "Funny",
+        "isCorrect": false,
+        "questionId": 1651680180711,
+        "id": 1651680180725
+      },
+      {
+        "answerLabel": "Tall",
+        "isCorrect": false,
+        "questionId": 1651680180711,
+        "id": 1651680180729
+      }
+    ]
   },
   {
     "questionLabel": "Rolex is a company that specializes in what type of product?",
     "quizId": 1651680180573,
-    "id": 1651680180733
+    "id": 1651680180733,
+    "answers": [
+      {
+        "answerLabel": "Watches",
+        "isCorrect": true,
+        "questionId": 1651680180733,
+        "id": 1651680180738
+      },
+      {
+        "answerLabel": "Cars",
+        "isCorrect": false,
+        "questionId": 1651680180733,
+        "id": 1651680180742
+      },
+      {
+        "answerLabel": "Computers",
+        "isCorrect": false,
+        "questionId": 1651680180733,
+        "id": 1651680180746
+      },
+      {
+        "answerLabel": "Sports equipment",
+        "isCorrect": false,
+        "questionId": 1651680180733,
+        "id": 1651680180751
+      }
+    ]
   },
   {
     "questionLabel": "A doctor with a PhD is a doctor of what?",
     "quizId": 1651680180573,
-    "id": 1651680180756
+    "id": 1651680180756,
+    "answers": [
+      {
+        "answerLabel": "Philosophy",
+        "isCorrect": true,
+        "questionId": 1651680180756,
+        "id": 1651680180761
+      },
+      {
+        "answerLabel": "Psychology",
+        "isCorrect": false,
+        "questionId": 1651680180756,
+        "id": 1651680180767
+      },
+      {
+        "answerLabel": "Phrenology",
+        "isCorrect": false,
+        "questionId": 1651680180756,
+        "id": 1651680180773
+      },
+      {
+        "answerLabel": "Physical Therapy",
+        "isCorrect": false,
+        "questionId": 1651680180756,
+        "id": 1651680180777
+      }
+    ]
   },
   {
     "questionLabel": "Which language is NOT Indo-European?",
     "quizId": 1651680180573,
-    "id": 1651680180782
+    "id": 1651680180782,
+    "answers": [
+      {
+        "answerLabel": "Hungarian",
+        "isCorrect": true,
+        "questionId": 1651680180782,
+        "id": 1651680180785
+      },
+      {
+        "answerLabel": "Russian",
+        "isCorrect": false,
+        "questionId": 1651680180782,
+        "id": 1651680180790
+      },
+      {
+        "answerLabel": "Greek",
+        "isCorrect": false,
+        "questionId": 1651680180782,
+        "id": 1651680180796
+      },
+      {
+        "answerLabel": "Latvian",
+        "isCorrect": false,
+        "questionId": 1651680180782,
+        "id": 1651680180803
+      }
+    ]
   },
   {
     "questionLabel": "Which essential condiment is also known as Japanese horseradish?",
     "quizId": 1651680180573,
-    "id": 1651680180808
+    "id": 1651680180808,
+    "answers": [
+      {
+        "answerLabel": "Wasabi ",
+        "isCorrect": true,
+        "questionId": 1651680180808,
+        "id": 1651680180812
+      },
+      {
+        "answerLabel": "Mentsuyu",
+        "isCorrect": false,
+        "questionId": 1651680180808,
+        "id": 1651680180817
+      },
+      {
+        "answerLabel": "Karashi",
+        "isCorrect": false,
+        "questionId": 1651680180808,
+        "id": 1651680180822
+      },
+      {
+        "answerLabel": "Ponzu",
+        "isCorrect": false,
+        "questionId": 1651680180808,
+        "id": 1651680180828
+      }
+    ]
   },
   {
     "questionLabel": "Which of the following Ivy League universities has its official motto in Hebrew as well as in Latin?",
     "quizId": 1651680180573,
-    "id": 1651680180834
+    "id": 1651680180834,
+    "answers": [
+      {
+        "answerLabel": "Yale University",
+        "isCorrect": true,
+        "questionId": 1651680180834,
+        "id": 1651680180840
+      },
+      {
+        "answerLabel": "Princeton University",
+        "isCorrect": false,
+        "questionId": 1651680180834,
+        "id": 1651680180844
+      },
+      {
+        "answerLabel": "Harvard University",
+        "isCorrect": false,
+        "questionId": 1651680180834,
+        "id": 1651680180848
+      },
+      {
+        "answerLabel": "Columbia University",
+        "isCorrect": false,
+        "questionId": 1651680180834,
+        "id": 1651680180853
+      }
+    ]
   },
   {
     "questionLabel": "In 2013 how much money was lost by Nigerian scams?",
     "quizId": 1651680180573,
-    "id": 1651680180857
+    "id": 1651680180857,
+    "answers": [
+      {
+        "answerLabel": "$12.7 Billion",
+        "isCorrect": true,
+        "questionId": 1651680180857,
+        "id": 1651680180862
+      },
+      {
+        "answerLabel": "$95 Million",
+        "isCorrect": false,
+        "questionId": 1651680180857,
+        "id": 1651680180866
+      },
+      {
+        "answerLabel": "$956 Million",
+        "isCorrect": false,
+        "questionId": 1651680180857,
+        "id": 1651680180871
+      },
+      {
+        "answerLabel": "$2.7 Billion",
+        "isCorrect": false,
+        "questionId": 1651680180857,
+        "id": 1651680180875
+      }
+    ]
   },
   {
     "questionLabel": "Which of these companies does NOT manufacture automobiles?",
     "quizId": 1651680180573,
-    "id": 1651680180879
+    "id": 1651680180879,
+    "answers": [
+      {
+        "answerLabel": "Ducati",
+        "isCorrect": true,
+        "questionId": 1651680180879,
+        "id": 1651680180882
+      },
+      {
+        "answerLabel": "Nissan",
+        "isCorrect": false,
+        "questionId": 1651680180879,
+        "id": 1651680180886
+      },
+      {
+        "answerLabel": "GMC",
+        "isCorrect": false,
+        "questionId": 1651680180879,
+        "id": 1651680180890
+      },
+      {
+        "answerLabel": "Fiat",
+        "isCorrect": false,
+        "questionId": 1651680180879,
+        "id": 1651680180894
+      }
+    ]
   },
   {
     "questionLabel": "Who is a co-founder of music streaming service Spotify?",
     "quizId": 1651680180573,
-    "id": 1651680180899
+    "id": 1651680180899,
+    "answers": [
+      {
+        "answerLabel": "Daniel Ek",
+        "isCorrect": true,
+        "questionId": 1651680180899,
+        "id": 1651680180902
+      },
+      {
+        "answerLabel": "Sean Parker",
+        "isCorrect": false,
+        "questionId": 1651680180899,
+        "id": 1651680180906
+      },
+      {
+        "answerLabel": "Felix Miller",
+        "isCorrect": false,
+        "questionId": 1651680180899,
+        "id": 1651680180911
+      },
+      {
+        "answerLabel": "Michael Breidenbruecker",
+        "isCorrect": false,
+        "questionId": 1651680180899,
+        "id": 1651680180915
+      }
+    ]
   },
   {
     "questionLabel": "Which of the following buildings is example of a structure primarily built in the Art Deco architectural style?",
     "quizId": 1651680180573,
-    "id": 1651680180919
+    "id": 1651680180919,
+    "answers": [
+      {
+        "answerLabel": "Niagara Mohawk Building",
+        "isCorrect": true,
+        "questionId": 1651680180919,
+        "id": 1651680180924
+      },
+      {
+        "answerLabel": "Taipei 101",
+        "isCorrect": false,
+        "questionId": 1651680180919,
+        "id": 1651680180928
+      },
+      {
+        "answerLabel": "One Detroit Center",
+        "isCorrect": false,
+        "questionId": 1651680180919,
+        "id": 1651680180932
+      },
+      {
+        "answerLabel": "Westendstrasse 1",
+        "isCorrect": false,
+        "questionId": 1651680180919,
+        "id": 1651680180936
+      }
+    ]
   },
   {
     "questionLabel": "Which of these is the name of a Japanese system of alternative medicine, literally meaning \"finger pressure\"?",
     "quizId": 1651680180573,
-    "id": 1651680180941
+    "id": 1651680180941,
+    "answers": [
+      {
+        "answerLabel": "Shiatsu",
+        "isCorrect": true,
+        "questionId": 1651680180941,
+        "id": 1651680180944
+      },
+      {
+        "answerLabel": "Ukiyo",
+        "isCorrect": false,
+        "questionId": 1651680180941,
+        "id": 1651680180948
+      },
+      {
+        "answerLabel": "Majime",
+        "isCorrect": false,
+        "questionId": 1651680180941,
+        "id": 1651680180952
+      },
+      {
+        "answerLabel": "Ikigai",
+        "isCorrect": false,
+        "questionId": 1651680180941,
+        "id": 1651680180957
+      }
+    ]
   },
   {
     "questionLabel": "What is the name given to Indian food cooked over charcoal in a clay oven?",
     "quizId": 1651680180573,
-    "id": 1651680180962
+    "id": 1651680180962,
+    "answers": [
+      {
+        "answerLabel": "Tandoori",
+        "isCorrect": true,
+        "questionId": 1651680180962,
+        "id": 1651680180965
+      },
+      {
+        "answerLabel": "Biryani",
+        "isCorrect": false,
+        "questionId": 1651680180962,
+        "id": 1651680180970
+      },
+      {
+        "answerLabel": "Pani puri",
+        "isCorrect": false,
+        "questionId": 1651680180962,
+        "id": 1651680180974
+      },
+      {
+        "answerLabel": "Tiki masala",
+        "isCorrect": false,
+        "questionId": 1651680180962,
+        "id": 1651680180978
+      }
+    ]
   },
   {
     "questionLabel": "What is the German word for \"spoon\"?",
     "quizId": 1651680180573,
-    "id": 1651680180985
+    "id": 1651680180985,
+    "answers": [
+      {
+        "answerLabel": "Löffel",
+        "isCorrect": true,
+        "questionId": 1651680180985,
+        "id": 1651680180991
+      },
+      {
+        "answerLabel": "Gabel",
+        "isCorrect": false,
+        "questionId": 1651680180985,
+        "id": 1651680180996
+      },
+      {
+        "answerLabel": "Messer",
+        "isCorrect": false,
+        "questionId": 1651680180985,
+        "id": 1651680181001
+      },
+      {
+        "answerLabel": "Essstäbchen",
+        "isCorrect": false,
+        "questionId": 1651680180985,
+        "id": 1651680181005
+      }
+    ]
   },
   {
     "questionLabel": "What is the romanized Japanese word for \"university\"?",
     "quizId": 1651680180573,
-    "id": 1651680181009
+    "id": 1651680181009,
+    "answers": [
+      {
+        "answerLabel": "Daigaku",
+        "isCorrect": true,
+        "questionId": 1651680181009,
+        "id": 1651680181013
+      },
+      {
+        "answerLabel": "Toshokan",
+        "isCorrect": false,
+        "questionId": 1651680181009,
+        "id": 1651680181018
+      },
+      {
+        "answerLabel": "Jimusho",
+        "isCorrect": false,
+        "questionId": 1651680181009,
+        "id": 1651680181023
+      },
+      {
+        "answerLabel": "Shokudou",
+        "isCorrect": false,
+        "questionId": 1651680181009,
+        "id": 1651680181028
+      }
+    ]
   },
   {
     "questionLabel": "What is the Italian word for \"tomato\"?",
     "quizId": 1651680180573,
-    "id": 1651680181034
+    "id": 1651680181034,
+    "answers": [
+      {
+        "answerLabel": "Pomodoro",
+        "isCorrect": true,
+        "questionId": 1651680181034,
+        "id": 1651680181039
+      },
+      {
+        "answerLabel": "Aglio",
+        "isCorrect": false,
+        "questionId": 1651680181034,
+        "id": 1651680181045
+      },
+      {
+        "answerLabel": "Cipolla",
+        "isCorrect": false,
+        "questionId": 1651680181034,
+        "id": 1651680181052
+      },
+      {
+        "answerLabel": "Peperoncino",
+        "isCorrect": false,
+        "questionId": 1651680181034,
+        "id": 1651680181057
+      }
+    ]
   },
   {
     "questionLabel": "What is the romanized Russian word for \"winter\"?",
     "quizId": 1651680180573,
-    "id": 1651680181062
+    "id": 1651680181062,
+    "answers": [
+      {
+        "answerLabel": "Zima",
+        "isCorrect": true,
+        "questionId": 1651680181062,
+        "id": 1651680181066
+      },
+      {
+        "answerLabel": "Leto",
+        "isCorrect": false,
+        "questionId": 1651680181062,
+        "id": 1651680181070
+      },
+      {
+        "answerLabel": "Vesna",
+        "isCorrect": false,
+        "questionId": 1651680181062,
+        "id": 1651680181074
+      },
+      {
+        "answerLabel": "Osen'",
+        "isCorrect": false,
+        "questionId": 1651680181062,
+        "id": 1651680181079
+      }
+    ]
   },
   {
     "questionLabel": "What is the name of the popular animatronic singing fish prop, singing such hits such as \"Don't Worry, Be Happy\"?",
     "quizId": 1651680180573,
-    "id": 1651680181085
+    "id": 1651680181085,
+    "answers": [
+      {
+        "answerLabel": "Big Mouth Billy Bass",
+        "isCorrect": true,
+        "questionId": 1651680181085,
+        "id": 1651680181089
+      },
+      {
+        "answerLabel": "Big Billy Bass",
+        "isCorrect": false,
+        "questionId": 1651680181085,
+        "id": 1651680181094
+      },
+      {
+        "answerLabel": "Singing Fish",
+        "isCorrect": false,
+        "questionId": 1651680181085,
+        "id": 1651680181098
+      },
+      {
+        "answerLabel": "Sardeen",
+        "isCorrect": false,
+        "questionId": 1651680181085,
+        "id": 1651680181102
+      }
+    ]
   },
   {
     "questionLabel": "What country saw a world record 315 million voters turn out for elections on May 20, 1991?",
     "quizId": 1651680180573,
-    "id": 1651680181107
+    "id": 1651680181107,
+    "answers": [
+      {
+        "answerLabel": "India",
+        "isCorrect": true,
+        "questionId": 1651680181107,
+        "id": 1651680181111
+      },
+      {
+        "answerLabel": "United States of America",
+        "isCorrect": false,
+        "questionId": 1651680181107,
+        "id": 1651680181115
+      },
+      {
+        "answerLabel": "Soviet Union",
+        "isCorrect": false,
+        "questionId": 1651680181107,
+        "id": 1651680181120
+      },
+      {
+        "answerLabel": "Poland",
+        "isCorrect": false,
+        "questionId": 1651680181107,
+        "id": 1651680181124
+      }
+    ]
   },
   {
     "questionLabel": "On average, Americans consume 100 pounds of what per second?",
     "quizId": 1651680180573,
-    "id": 1651680181128
+    "id": 1651680181128,
+    "answers": [
+      {
+        "answerLabel": "Chocolate",
+        "isCorrect": true,
+        "questionId": 1651680181128,
+        "id": 1651680181132
+      },
+      {
+        "answerLabel": "Potatoes",
+        "isCorrect": false,
+        "questionId": 1651680181128,
+        "id": 1651680181136
+      },
+      {
+        "answerLabel": "Donuts",
+        "isCorrect": false,
+        "questionId": 1651680181128,
+        "id": 1651680181141
+      },
+      {
+        "answerLabel": "Cocaine",
+        "isCorrect": false,
+        "questionId": 1651680181128,
+        "id": 1651680181145
+      }
+    ]
   },
   {
     "questionLabel": "According to the United States' CDC, one in how many Americans die annually due to smoking?",
     "quizId": 1651680180573,
-    "id": 1651680181149
+    "id": 1651680181149,
+    "answers": [
+      {
+        "answerLabel": "Five",
+        "isCorrect": true,
+        "questionId": 1651680181149,
+        "id": 1651680181154
+      },
+      {
+        "answerLabel": "Twenty",
+        "isCorrect": false,
+        "questionId": 1651680181149,
+        "id": 1651680181158
+      },
+      {
+        "answerLabel": "Ten",
+        "isCorrect": false,
+        "questionId": 1651680181149,
+        "id": 1651680181162
+      },
+      {
+        "answerLabel": "One hundred",
+        "isCorrect": false,
+        "questionId": 1651680181149,
+        "id": 1651680181166
+      }
+    ]
   },
   {
     "questionLabel": "What is a dead mall?",
     "quizId": 1651680180573,
-    "id": 1651680181171
+    "id": 1651680181171,
+    "answers": [
+      {
+        "answerLabel": "A mall with high vacancy rates or low consumer foot traffic",
+        "isCorrect": true,
+        "questionId": 1651680181171,
+        "id": 1651680181175
+      },
+      {
+        "answerLabel": "A mall with no stores",
+        "isCorrect": false,
+        "questionId": 1651680181171,
+        "id": 1651680181179
+      },
+      {
+        "answerLabel": "A mall that has been condemed",
+        "isCorrect": false,
+        "questionId": 1651680181171,
+        "id": 1651680181183
+      },
+      {
+        "answerLabel": "A mall after business hours",
+        "isCorrect": false,
+        "questionId": 1651680181171,
+        "id": 1651680181189
+      }
+    ]
   },
   {
     "questionLabel": "What is the last letter of the Greek alphabet?",
     "quizId": 1651680180573,
-    "id": 1651680181193
+    "id": 1651680181193,
+    "answers": [
+      {
+        "answerLabel": "Omega",
+        "isCorrect": true,
+        "questionId": 1651680181193,
+        "id": 1651680181197
+      },
+      {
+        "answerLabel": "Mu",
+        "isCorrect": false,
+        "questionId": 1651680181193,
+        "id": 1651680181201
+      },
+      {
+        "answerLabel": "Epsilon",
+        "isCorrect": false,
+        "questionId": 1651680181193,
+        "id": 1651680181206
+      },
+      {
+        "answerLabel": "Kappa",
+        "isCorrect": false,
+        "questionId": 1651680181193,
+        "id": 1651680181210
+      }
+    ]
   },
   {
     "questionLabel": "What character was once considered to be the 27th letter of the alphabet?",
     "quizId": 1651680180573,
-    "id": 1651680181214
+    "id": 1651680181214,
+    "answers": [
+      {
+        "answerLabel": "Ampersand",
+        "isCorrect": true,
+        "questionId": 1651680181214,
+        "id": 1651680181218
+      },
+      {
+        "answerLabel": "Interrobang",
+        "isCorrect": false,
+        "questionId": 1651680181214,
+        "id": 1651680181223
+      },
+      {
+        "answerLabel": "Tilde",
+        "isCorrect": false,
+        "questionId": 1651680181214,
+        "id": 1651680181227
+      },
+      {
+        "answerLabel": "Pilcrow",
+        "isCorrect": false,
+        "questionId": 1651680181214,
+        "id": 1651680181231
+      }
+    ]
   },
   {
     "questionLabel": "The new One World Trade Center in Manhattan, New York City was designed by which architect? ",
     "quizId": 1651680180573,
-    "id": 1651680181236
+    "id": 1651680181236,
+    "answers": [
+      {
+        "answerLabel": "David Childs",
+        "isCorrect": true,
+        "questionId": 1651680181236,
+        "id": 1651680181240
+      },
+      {
+        "answerLabel": "Bjarke Ingels",
+        "isCorrect": false,
+        "questionId": 1651680181236,
+        "id": 1651680181244
+      },
+      {
+        "answerLabel": "Michael Arad",
+        "isCorrect": false,
+        "questionId": 1651680181236,
+        "id": 1651680181249
+      },
+      {
+        "answerLabel": "Fumihiko Maki",
+        "isCorrect": false,
+        "questionId": 1651680181236,
+        "id": 1651680181253
+      }
+    ]
   },
   {
     "questionLabel": "Which of the following carbonated soft drinks were introduced first?",
     "quizId": 1651680180573,
-    "id": 1651680181258
+    "id": 1651680181258,
+    "answers": [
+      {
+        "answerLabel": "Dr. Pepper",
+        "isCorrect": true,
+        "questionId": 1651680181258,
+        "id": 1651680181262
+      },
+      {
+        "answerLabel": "Coca-Cola",
+        "isCorrect": false,
+        "questionId": 1651680181258,
+        "id": 1651680181267
+      },
+      {
+        "answerLabel": "Sprite",
+        "isCorrect": false,
+        "questionId": 1651680181258,
+        "id": 1651680181272
+      },
+      {
+        "answerLabel": "Mountain Dew",
+        "isCorrect": false,
+        "questionId": 1651680181258,
+        "id": 1651680181276
+      }
+    ]
   },
   {
     "questionLabel": "What year was Apple Inc. founded?",
     "quizId": 1651680180573,
-    "id": 1651680181280
+    "id": 1651680181280,
+    "answers": [
+      {
+        "answerLabel": "1976",
+        "isCorrect": true,
+        "questionId": 1651680181280,
+        "id": 1651680181284
+      },
+      {
+        "answerLabel": "1978",
+        "isCorrect": false,
+        "questionId": 1651680181280,
+        "id": 1651680181289
+      },
+      {
+        "answerLabel": "1980",
+        "isCorrect": false,
+        "questionId": 1651680181280,
+        "id": 1651680181293
+      },
+      {
+        "answerLabel": "1974",
+        "isCorrect": false,
+        "questionId": 1651680181280,
+        "id": 1651680181299
+      }
+    ]
   },
   {
     "questionLabel": "Which iconic Disneyland attraction was closed in 2017 to be remodeled as a \"Guardians of the Galaxy\" themed ride?",
     "quizId": 1651680180573,
-    "id": 1651680181306
+    "id": 1651680181306,
+    "answers": [
+      {
+        "answerLabel": "Twilight Zone Tower of Terror",
+        "isCorrect": true,
+        "questionId": 1651680181306,
+        "id": 1651680181311
+      },
+      {
+        "answerLabel": "The Haunted Mansion",
+        "isCorrect": false,
+        "questionId": 1651680181306,
+        "id": 1651680181316
+      },
+      {
+        "answerLabel": "Pirates of the Caribbean",
+        "isCorrect": false,
+        "questionId": 1651680181306,
+        "id": 1651680181323
+      },
+      {
+        "answerLabel": "Peter Pan's Flight",
+        "isCorrect": false,
+        "questionId": 1651680181306,
+        "id": 1651680181330
+      }
+    ]
   },
   {
     "questionLabel": "What was the soft drink Pepsi originally introduced as?",
     "quizId": 1651680180573,
-    "id": 1651680181337
+    "id": 1651680181337,
+    "answers": [
+      {
+        "answerLabel": "Brad's Drink",
+        "isCorrect": true,
+        "questionId": 1651680181337,
+        "id": 1651680181344
+      },
+      {
+        "answerLabel": "Pepsin Pop",
+        "isCorrect": false,
+        "questionId": 1651680181337,
+        "id": 1651680181349
+      },
+      {
+        "answerLabel": "Carolina Cola",
+        "isCorrect": false,
+        "questionId": 1651680181337,
+        "id": 1651680181354
+      },
+      {
+        "answerLabel": "Pepsin Syrup",
+        "isCorrect": false,
+        "questionId": 1651680181337,
+        "id": 1651680181359
+      }
+    ]
   },
   {
     "questionLabel": "What is the Portuguese word for \"Brazil\"?",
     "quizId": 1651680180573,
-    "id": 1651680181365
+    "id": 1651680181365,
+    "answers": [
+      {
+        "answerLabel": "Brasil",
+        "isCorrect": true,
+        "questionId": 1651680181365,
+        "id": 1651680181369
+      },
+      {
+        "answerLabel": "Brazil",
+        "isCorrect": false,
+        "questionId": 1651680181365,
+        "id": 1651680181375
+      },
+      {
+        "answerLabel": "Brasilia",
+        "isCorrect": false,
+        "questionId": 1651680181365,
+        "id": 1651680181380
+      },
+      {
+        "answerLabel": "Brasíl",
+        "isCorrect": false,
+        "questionId": 1651680181365,
+        "id": 1651680181384
+      }
+    ]
   },
   {
     "questionLabel": "What is a Burgee?",
     "quizId": 1651680180573,
-    "id": 1651680181390
+    "id": 1651680181390,
+    "answers": [
+      {
+        "answerLabel": "A flag",
+        "isCorrect": true,
+        "questionId": 1651680181390,
+        "id": 1651680181394
+      },
+      {
+        "answerLabel": "A rope",
+        "isCorrect": false,
+        "questionId": 1651680181390,
+        "id": 1651680181399
+      },
+      {
+        "answerLabel": "A window",
+        "isCorrect": false,
+        "questionId": 1651680181390,
+        "id": 1651680181405
+      },
+      {
+        "answerLabel": "A type of food",
+        "isCorrect": false,
+        "questionId": 1651680181390,
+        "id": 1651680181409
+      }
+    ]
   },
   {
     "questionLabel": "In a 1994 CBS interview, Microsoft co-founder Bill Gates performed what unusual trick on camera?",
     "quizId": 1651680180573,
-    "id": 1651680181414
+    "id": 1651680181414,
+    "answers": [
+      {
+        "answerLabel": "Jumping over an office chair",
+        "isCorrect": true,
+        "questionId": 1651680181414,
+        "id": 1651680181418
+      },
+      {
+        "answerLabel": "Jumping backwards over a desk",
+        "isCorrect": false,
+        "questionId": 1651680181414,
+        "id": 1651680181424
+      },
+      {
+        "answerLabel": "Standing on his head",
+        "isCorrect": false,
+        "questionId": 1651680181414,
+        "id": 1651680181428
+      },
+      {
+        "answerLabel": "Typing on a keyboard during a handstand",
+        "isCorrect": false,
+        "questionId": 1651680181414,
+        "id": 1651680181433
+      }
+    ]
   },
   {
     "questionLabel": "Apple co-founder Steve Jobs died from complications of which form of cancer?",
     "quizId": 1651680180573,
-    "id": 1651680181438
+    "id": 1651680181438,
+    "answers": [
+      {
+        "answerLabel": "Pancreatic",
+        "isCorrect": true,
+        "questionId": 1651680181438,
+        "id": 1651680181442
+      },
+      {
+        "answerLabel": "Bone",
+        "isCorrect": false,
+        "questionId": 1651680181438,
+        "id": 1651680181447
+      },
+      {
+        "answerLabel": "Liver",
+        "isCorrect": false,
+        "questionId": 1651680181438,
+        "id": 1651680181453
+      },
+      {
+        "answerLabel": "Stomach",
+        "isCorrect": false,
+        "questionId": 1651680181438,
+        "id": 1651680181458
+      }
+    ]
   },
   {
     "questionLabel": "Computer manufacturer Compaq was acquired for $25 billion dollars in 2002 by which company?",
     "quizId": 1651680180573,
-    "id": 1651680181463
+    "id": 1651680181463,
+    "answers": [
+      {
+        "answerLabel": "Hewlett-Packard",
+        "isCorrect": true,
+        "questionId": 1651680181463,
+        "id": 1651680181467
+      },
+      {
+        "answerLabel": "Toshiba",
+        "isCorrect": false,
+        "questionId": 1651680181463,
+        "id": 1651680181473
+      },
+      {
+        "answerLabel": "Asus",
+        "isCorrect": false,
+        "questionId": 1651680181463,
+        "id": 1651680181477
+      },
+      {
+        "answerLabel": "Dell",
+        "isCorrect": false,
+        "questionId": 1651680181463,
+        "id": 1651680181484
+      }
+    ]
   },
   {
     "questionLabel": "What is real haggis made of?",
     "quizId": 1651680180573,
-    "id": 1651680181490
+    "id": 1651680181490,
+    "answers": [
+      {
+        "answerLabel": "Sheep's Heart, Liver and Lungs",
+        "isCorrect": true,
+        "questionId": 1651680181490,
+        "id": 1651680181494
+      },
+      {
+        "answerLabel": "Sheep's Heart, Kidneys and Lungs",
+        "isCorrect": false,
+        "questionId": 1651680181490,
+        "id": 1651680181500
+      },
+      {
+        "answerLabel": "Sheep's Liver, Kidneys and Eyes",
+        "isCorrect": false,
+        "questionId": 1651680181490,
+        "id": 1651680181505
+      },
+      {
+        "answerLabel": "Whole Sheep",
+        "isCorrect": false,
+        "questionId": 1651680181490,
+        "id": 1651680181511
+      }
+    ]
   },
   {
     "questionLabel": "What was the original name of the search engine \"Google\"?",
     "quizId": 1651680180573,
-    "id": 1651680181517
+    "id": 1651680181517,
+    "answers": [
+      {
+        "answerLabel": "BackRub",
+        "isCorrect": true,
+        "questionId": 1651680181517,
+        "id": 1651680181523
+      },
+      {
+        "answerLabel": "CatMassage",
+        "isCorrect": false,
+        "questionId": 1651680181517,
+        "id": 1651680181530
+      },
+      {
+        "answerLabel": "SearchPro",
+        "isCorrect": false,
+        "questionId": 1651680181517,
+        "id": 1651680181536
+      },
+      {
+        "answerLabel": "Netscape Navigator",
+        "isCorrect": false,
+        "questionId": 1651680181517,
+        "id": 1651680181541
+      }
+    ]
   },
   {
     "questionLabel": "The website \"Shut Up & Sit Down\" reviews which form of media?",
     "quizId": 1651680180573,
-    "id": 1651680181548
+    "id": 1651680181548,
+    "answers": [
+      {
+        "answerLabel": "Board Games",
+        "isCorrect": true,
+        "questionId": 1651680181548,
+        "id": 1651680181553
+      },
+      {
+        "answerLabel": "Television Shows",
+        "isCorrect": false,
+        "questionId": 1651680181548,
+        "id": 1651680181559
+      },
+      {
+        "answerLabel": "Video Games",
+        "isCorrect": false,
+        "questionId": 1651680181548,
+        "id": 1651680181563
+      },
+      {
+        "answerLabel": "Films",
+        "isCorrect": false,
+        "questionId": 1651680181548,
+        "id": 1651680181568
+      }
+    ]
   },
   {
     "questionLabel": "Whose greyscale face is on the kappa emoticon on Twitch?",
     "quizId": 1651680180573,
-    "id": 1651680181575
+    "id": 1651680181575,
+    "answers": [
+      {
+        "answerLabel": "Josh DeSeno",
+        "isCorrect": true,
+        "questionId": 1651680181575,
+        "id": 1651680181580
+      },
+      {
+        "answerLabel": "Justin DeSeno",
+        "isCorrect": false,
+        "questionId": 1651680181575,
+        "id": 1651680181584
+      },
+      {
+        "answerLabel": "John DeSeno",
+        "isCorrect": false,
+        "questionId": 1651680181575,
+        "id": 1651680181589
+      },
+      {
+        "answerLabel": "Jimmy DeSeno",
+        "isCorrect": false,
+        "questionId": 1651680181575,
+        "id": 1651680181593
+      }
+    ]
   },
   {
     "questionLabel": "Which country drives on the left side of the road?",
     "quizId": 1651680180573,
-    "id": 1651680181597
+    "id": 1651680181597,
+    "answers": [
+      {
+        "answerLabel": "Japan",
+        "isCorrect": true,
+        "questionId": 1651680181597,
+        "id": 1651680181601
+      },
+      {
+        "answerLabel": "Germany",
+        "isCorrect": false,
+        "questionId": 1651680181597,
+        "id": 1651680181607
+      },
+      {
+        "answerLabel": "Russia",
+        "isCorrect": false,
+        "questionId": 1651680181597,
+        "id": 1651680181612
+      },
+      {
+        "answerLabel": "China",
+        "isCorrect": false,
+        "questionId": 1651680181597,
+        "id": 1651680181616
+      }
+    ]
   },
   {
     "questionLabel": "In ancient Greece, if your job were a \"hippeus\" which of these would you own?",
     "quizId": 1651680180573,
-    "id": 1651680181623
+    "id": 1651680181623,
+    "answers": [
+      {
+        "answerLabel": "Horse",
+        "isCorrect": true,
+        "questionId": 1651680181623,
+        "id": 1651680181627
+      },
+      {
+        "answerLabel": "Weave",
+        "isCorrect": false,
+        "questionId": 1651680181623,
+        "id": 1651680181632
+      },
+      {
+        "answerLabel": "Guitar",
+        "isCorrect": false,
+        "questionId": 1651680181623,
+        "id": 1651680181637
+      },
+      {
+        "answerLabel": "Boat",
+        "isCorrect": false,
+        "questionId": 1651680181623,
+        "id": 1651680181641
+      }
+    ]
   },
   {
     "questionLabel": "Which American manufactured submachine gun was informally known by the American soldiers that used it as \"Grease Gun\"?",
     "quizId": 1651680180573,
-    "id": 1651680181646
+    "id": 1651680181646,
+    "answers": [
+      {
+        "answerLabel": "M3",
+        "isCorrect": true,
+        "questionId": 1651680181646,
+        "id": 1651680181649
+      },
+      {
+        "answerLabel": "Colt 9mm",
+        "isCorrect": false,
+        "questionId": 1651680181646,
+        "id": 1651680181654
+      },
+      {
+        "answerLabel": "Thompson",
+        "isCorrect": false,
+        "questionId": 1651680181646,
+        "id": 1651680181658
+      },
+      {
+        "answerLabel": "MAC-10",
+        "isCorrect": false,
+        "questionId": 1651680181646,
+        "id": 1651680181662
+      }
+    ]
   },
   {
     "questionLabel": "Directly between the Washington Monument and the Reflecting Pool is a memorial to which war?",
     "quizId": 1651680180573,
-    "id": 1651680181666
+    "id": 1651680181666,
+    "answers": [
+      {
+        "answerLabel": "World War II",
+        "isCorrect": true,
+        "questionId": 1651680181666,
+        "id": 1651680181671
+      },
+      {
+        "answerLabel": "Vietnam War",
+        "isCorrect": false,
+        "questionId": 1651680181666,
+        "id": 1651680181675
+      },
+      {
+        "answerLabel": "American Civil War",
+        "isCorrect": false,
+        "questionId": 1651680181666,
+        "id": 1651680181680
+      },
+      {
+        "answerLabel": "American Revolutionary War",
+        "isCorrect": false,
+        "questionId": 1651680181666,
+        "id": 1651680181684
+      }
+    ]
   },
   {
     "questionLabel": "The Fields Medal, one of the most sought after awards in mathematics, is awarded every how many years?",
     "quizId": 1651680180573,
-    "id": 1651680181690
+    "id": 1651680181690,
+    "answers": [
+      {
+        "answerLabel": "4",
+        "isCorrect": true,
+        "questionId": 1651680181690,
+        "id": 1651680181694
+      },
+      {
+        "answerLabel": "3",
+        "isCorrect": false,
+        "questionId": 1651680181690,
+        "id": 1651680181699
+      },
+      {
+        "answerLabel": "5",
+        "isCorrect": false,
+        "questionId": 1651680181690,
+        "id": 1651680181706
+      },
+      {
+        "answerLabel": "6",
+        "isCorrect": false,
+        "questionId": 1651680181690,
+        "id": 1651680181711
+      }
+    ]
   },
   {
     "questionLabel": "Linus Pauling, one of the only winners of multiple Nobel Prizes, earned his Nobel Prizes in Chemistry and what?",
     "quizId": 1651680180573,
-    "id": 1651680181716
+    "id": 1651680181716,
+    "answers": [
+      {
+        "answerLabel": "Peace",
+        "isCorrect": true,
+        "questionId": 1651680181716,
+        "id": 1651680181721
+      },
+      {
+        "answerLabel": "Physics",
+        "isCorrect": false,
+        "questionId": 1651680181716,
+        "id": 1651680181725
+      },
+      {
+        "answerLabel": "Economics",
+        "isCorrect": false,
+        "questionId": 1651680181716,
+        "id": 1651680181730
+      },
+      {
+        "answerLabel": "Physiology/Medicine",
+        "isCorrect": false,
+        "questionId": 1651680181716,
+        "id": 1651680181736
+      }
+    ]
   },
   {
     "questionLabel": "Which logical fallacy means to attack the character of your opponent rather than their arguments?",
     "quizId": 1651680180573,
-    "id": 1651680181740
+    "id": 1651680181740,
+    "answers": [
+      {
+        "answerLabel": "Ad hominem",
+        "isCorrect": true,
+        "questionId": 1651680181740,
+        "id": 1651680181745
+      },
+      {
+        "answerLabel": "Post hoc ergo propter hoc",
+        "isCorrect": false,
+        "questionId": 1651680181740,
+        "id": 1651680181752
+      },
+      {
+        "answerLabel": "Tu quoque",
+        "isCorrect": false,
+        "questionId": 1651680181740,
+        "id": 1651680181757
+      },
+      {
+        "answerLabel": "Argumentum ad populum",
+        "isCorrect": false,
+        "questionId": 1651680181740,
+        "id": 1651680181762
+      }
+    ]
   },
   {
     "questionLabel": "What are the three starter Pokemon available in Pokemon Black and White?",
     "quizId": 1651680180573,
-    "id": 1651680181767
+    "id": 1651680181767,
+    "answers": [
+      {
+        "answerLabel": "Snivy, Tepig, Oshawott",
+        "isCorrect": true,
+        "questionId": 1651680181767,
+        "id": 1651680181772
+      },
+      {
+        "answerLabel": "Snivy, Fennekin, Froakie",
+        "isCorrect": false,
+        "questionId": 1651680181767,
+        "id": 1651680181777
+      },
+      {
+        "answerLabel": "Chespin, Tepig, Froakie",
+        "isCorrect": false,
+        "questionId": 1651680181767,
+        "id": 1651680181782
+      },
+      {
+        "answerLabel": "Chespin, Fennekin, Oshawott",
+        "isCorrect": false,
+        "questionId": 1651680181767,
+        "id": 1651680181787
+      }
+    ]
   },
   {
     "questionLabel": "This is the correct spelling of \"Supercalifragilisticexpialidocious\".",
@@ -15840,5 +17140,10 @@
     "questionLabel": "vrai",
     "quizId": 1653315700456,
     "id": 1653315722886
+  },
+  {
+    "questionLabel": "Il y a 5 océans ",
+    "quizId": 1653396421922,
+    "id": 1653401960966
   }
 ]
