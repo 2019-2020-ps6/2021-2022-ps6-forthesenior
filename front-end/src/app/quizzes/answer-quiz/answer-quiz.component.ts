@@ -65,7 +65,7 @@ export class AnswerQuizComponent implements OnInit, OnChanges {
       this.rouge = '#A9362F';
     }
     this.quizPlay.answerList$.subscribe(next => {
-      console.log("observer " + next);
+      //console.log("observer " + next);
       if (next) {
         if (this.option.theme) {
           this.path = this.pathWrong;

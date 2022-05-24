@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Router} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {QuizService} from '../../../services/quiz.service';
 import {Quiz} from '../../../models/quiz.model';
 import {Theme} from "../../../models/theme.model";
@@ -17,7 +17,8 @@ export class QuizListComponent implements OnInit {
   public theme: Theme;
 
   constructor(private router: Router, public quizService: QuizService, private optionService: OptionService,
-              private themeService: ThemeService, private userService: UserService) {
+              private themeService: ThemeService, private userService: UserService, private route : ActivatedRoute) {
+    themeService.setSelectedTheme(this.route.snapshot.paramMap.get('themeId'));
     this.quizService.quizzes$.subscribe((quizzes: Quiz[]) => {
       this.quizList = quizzes;
       this.optionService.caseNumber = this.quizList.length;
@@ -29,6 +30,9 @@ export class QuizListComponent implements OnInit {
     this.optionService.caseNumber$.subscribe((caseNumber: number) => {
       this.quizList = this.quizList.slice(0, caseNumber);
     });
+    let user = this.route.snapshot.paramMap.get('userId');
+    if(user === '0')
+      this.userService.setAdmin(true);
   }
 
   ngOnInit(): void {

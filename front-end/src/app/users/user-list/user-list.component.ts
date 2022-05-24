@@ -42,7 +42,7 @@ export class UserListComponent implements OnInit {
   editUser(): void {
     //this.userService.setSelectedUser(user.id);
     this.userService.setAdmin(true);
-    this.router.navigate([this.router.url + '/1651668587026/theme']);
+    this.router.navigate([this.router.url + '/0/theme']);
     // this.router.navigate([this.router.url + '/admin/theme']);
   }
 

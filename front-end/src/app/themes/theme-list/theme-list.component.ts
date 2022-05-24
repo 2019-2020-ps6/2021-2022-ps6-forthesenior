@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Router} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {Theme} from '../../../models/theme.model';
 import {ThemeService} from '../../../services/theme.service';
 import {addAdminClasses} from "../../utils/functions";
@@ -16,7 +16,8 @@ export class ThemeListComponent implements OnInit {
   @Input() public theme: Theme;
   public themeList: Theme[] = [];
 
-  constructor(private router: Router, private themeService: ThemeService, private userService: UserService, private optionService: OptionService) {
+  constructor(private router: Router, private themeService: ThemeService, private userService: UserService,
+              private optionService: OptionService, public route: ActivatedRoute) {
     this.themeService.themes$.subscribe((themes: Theme[]) => {
       this.themeList = themes;
       this.optionService.caseNumber = this.themeList.length;
@@ -25,6 +26,9 @@ export class ThemeListComponent implements OnInit {
     this.optionService.caseNumber$.subscribe((caseNumber: number) => {
       this.themeList = this.themeList.slice(0, caseNumber);
     });
+    let user = this.route.snapshot.paramMap.get('userId');
+    if(user === '0')
+      this.userService.setAdmin(true);
   }
 
   ngOnInit(): void {
