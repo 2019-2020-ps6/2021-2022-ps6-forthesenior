@@ -99,7 +99,6 @@ export class OptionService {
         } else {
           this.caseNumber$.next(6);
         }
-
       }
     }
   }
@@ -139,6 +138,11 @@ export class OptionService {
       } else {
         this.caseNumber$.next(6);
       }
+    }
+    if(this.dmla === "0"){
+      this.timeLeft = 7;
+    } else {
+      this.timeLeft = 2;
     }
     if (option.theme) {
       setDarkTheme();

@@ -9,7 +9,10 @@
     "firstname": "Michelle",
     "lastname": "Moïse",
     "accountId": 1652779375289,
-    "id": 1651668587026
+    "id": 1651668587026,
+    "stat": [
+      0
+    ]
   },
   {
     "firstname": "Python",

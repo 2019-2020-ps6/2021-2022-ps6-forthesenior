@@ -5,6 +5,8 @@ import {QuizService} from '../../../services/quiz.service';
 import {OptionService} from "../../../services/option.service";
 import {UserService} from "../../../services/user.service";
 import {BehaviorSubject} from "rxjs";
+import {urlPopN} from "../../utils/functions";
+import {PlayService} from "../../../services/play.service";
 
 @Component({
   selector: 'app-quiz-play',
@@ -29,13 +31,13 @@ export class QuizPlayComponent implements OnInit {
 
   //@Input() quiz: Quiz;
 
-  constructor(private router: Router, private route: ActivatedRoute, private quizService: QuizService, private userService: UserService, private optionService: OptionService) {
-    this.timeLeft = 7;
+  constructor(private router: Router, private route: ActivatedRoute, private quizService: QuizService,
+              private userService: UserService, private optionService: OptionService,
+              private playService : PlayService) {
     this.quizService.quizSelected$.subscribe((quiz: Quiz) => {
       this.quiz = quiz;
     });
     this.optionService.options$.subscribe(() => this.optionService.update())
-    //this.answerList$.subscribe(())
   }
 
   ngOnInit(): void {
@@ -67,18 +69,18 @@ export class QuizPlayComponent implements OnInit {
     if (this.answer) {
       this.right++;
     }
-    let idAccount = this.route.snapshot.paramMap.get("idAccount");
-    let idTheme = this.route.snapshot.paramMap.get("idTheme");
+    //let idAccount = this.route.snapshot.paramMap.get("idAccount");
+    //let idTheme = this.route.snapshot.paramMap.get("idTheme");
     if (this.index === this.quiz.questions.length) {
       //this.userService.updateStats(User, this.right / this.index);
-      let url = idAccount + "/user-list/" + this.userId + "/" + idTheme + "/result/" + this.quiz.id + "/" + this.right + "/" + this.index;
-      this.router.navigate([url]);
-      /*this.playService.right = this.right;
+      //let url = idAccount + "/user-list/" + this.userId + "/" + idTheme + "/result/" + this.quiz.id + "/" + this.right + "/" + this.index;
+      //this.router.navigate([url]);
+      this.playService.right = this.right;
       this.playService.total = this.index;
-      this.router.navigate([urlPopN(this.router.url, 2) + '/result/' + this.quiz.id]);*/
+      this.router.navigate([urlPopN(this.router.url, 2) + '/result/' + this.quiz.id]);
     } else {
-      let url = idAccount + "/user-list/" + this.userId + "/" + idTheme + "/quiz-play/" + this.quiz.id + "/question/" + this.index;
-      this.router.navigate([url]);
+      //let url = idAccount + "/user-list/" + this.userId + "/" + idTheme + "/quiz-play/" + this.quiz.id + "/question/" + this.index;
+      this.router.navigate([this.router.url]);
     }
     this.next = false;
   }
@@ -98,6 +100,7 @@ export class QuizPlayComponent implements OnInit {
 
   onAnswered(answer: boolean): void {
     if (!this.timer) {
+      this.timeLeft--;
       this.startTimer();
       this.interval = setInterval(() => {
         this.startTimer()
