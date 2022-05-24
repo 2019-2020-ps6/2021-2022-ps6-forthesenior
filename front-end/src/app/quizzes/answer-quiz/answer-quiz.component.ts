@@ -12,7 +12,7 @@ import {map} from "rxjs/operators";
   templateUrl: './answer-quiz.component.html',
   styleUrls: ['./answer-quiz.component.scss']
 })
-export class AnswerQuizComponent implements OnInit, OnChanges {
+export class AnswerQuizComponent implements OnInit {
   @Input() answer: Answer;
   @Input() answered: boolean;
 
@@ -77,17 +77,6 @@ export class AnswerQuizComponent implements OnInit, OnChanges {
         this.answered = true;
       }
     })
-  }
-
-  ngOnChanges(): void {
-    if (this.answer.isCorrect && this.answered){
-      if(this.option.theme){
-        this.path = this.pathRight;
-        this.alt = this.altRight;
-      } else {
-        this.buttonColor = this.vert;
-      }
-    }
   }
 
   showAnswer(): void {
