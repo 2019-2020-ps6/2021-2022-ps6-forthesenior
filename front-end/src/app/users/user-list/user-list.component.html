@@ -1,11 +1,14 @@
 <h1 class="user titre">Qui êtes-vous ?</h1>
 <div class="user grid admin">
   <div *ngFor="let user of userList" class="user">
-    <app-user (deleteUser)="deleteUser($event)" (editUser)="editUser($event)" (optionUser)="optionUser($event)"
+    <app-user (deleteUser)="deleteUser($event)" (optionUser)="optionUser($event)"
               (selectUser)="selectUser($event)"
               [user]="user"></app-user>
   </div>
   <app-user-form></app-user-form>
+  <div class="user card " (click)="editUser()">
+    Modifier quiz
+  </div>
   <div class="user card admin">
     <h2>Statistiques</h2>
     <button (click)="stats()" class="button-card">Choisir</button>

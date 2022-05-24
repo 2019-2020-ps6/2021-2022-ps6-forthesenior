@@ -3,6 +3,7 @@ import {OptionService} from "../../../services/option.service";
 import {FormBuilder, FormGroup} from "@angular/forms";
 import {Option} from "../../../models/option.model";
 import {ActivatedRoute, Router} from "@angular/router";
+import {urlPopN} from "../../utils/functions";
 
 @Component({
   selector: 'app-option',
@@ -30,7 +31,6 @@ export class OptionComponent implements OnInit {
     this.optionForm = this.formBuilder.group({
       fontSize: ['200'],
       dmlaOffset: ['0'],
-      parkinsonOffset: ['0'],
       theme: [false]
     })
   }
@@ -42,7 +42,6 @@ export class OptionComponent implements OnInit {
       const option: Option = this.optionService.options$.getValue()[0];
       this.optionForm.get('fontSize').setValue(option.fontSize);
       this.optionForm.get('dmlaOffset').setValue(option.dmlaOffset);
-      this.optionForm.get('parkinsonOffset').setValue(option.parkinsonOffset);
       this.optionForm.get('theme').setValue(option.theme);
     }
   }
@@ -50,6 +49,6 @@ export class OptionComponent implements OnInit {
   applyOptions() {
     const option: Option = this.optionForm.getRawValue() as Option
     this.optionService.applyOption(option)
-
+    this.router.navigate([urlPopN(this.router.url, 2)]);
   }
 }

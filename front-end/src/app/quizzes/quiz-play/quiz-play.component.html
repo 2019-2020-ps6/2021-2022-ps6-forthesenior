@@ -1,8 +1,7 @@
 <ng-container *ngIf="quiz!==undefined">
-  <h1 class="user titre">Vous êtes sur le quiz : {{quiz.quizLabel}}</h1>
-  <app-quiz-question (next)="onAnswered($event)" [question]="quiz.questions[this.index]"></app-quiz-question>
-  <div (click)="nextQuestion()" *ngIf="next" class="card user next">
-    <h2>Suivant</h2>
-  </div>
+<h1 class="user titre">Vous êtes sur le quiz : {{quiz.quizLabel}}</h1>
+<h2 *ngIf="timeLeft >= 3" class="timeLeft">{{timeLeft}}</h2>
+<app-quiz-question [question]="quiz.questions[index]" (next)="onAnswered($event)"></app-quiz-question>
+
 </ng-container>
 

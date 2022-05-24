@@ -5,6 +5,7 @@ import {HttpClient} from '@angular/common/http';
 import {httpOptionsBase, serverUrl} from '../configs/server.config';
 import {Router} from "@angular/router";
 import {urlPopUntil} from "../app/utils/functions";
+import {OptionService} from "./option.service";
 
 
 @Injectable({
@@ -17,17 +18,30 @@ export class ThemeService {
   private themes: Theme[] = [];
   private httpOptions = httpOptionsBase;
 
-  constructor(private http: HttpClient, private router: Router) {
+  constructor(private http: HttpClient, private router: Router,
+              private optionService: OptionService) {
     this.retrieveThemes();
   }
 
   retrieveThemes(): void {
-    if (!this.getThemeUrl().includes('undefined')) {
-      this.http.get<Theme[]>(this.getThemeUrl()).subscribe((themeList) => {
-        this.themes = themeList;
-        this.themes$.next(this.themes);
-      });
-    }
+    /*let max;
+    switch (this.optionService.size) {
+      case 200:
+        max = 8;
+        break;
+      case 300:
+        max = 6;
+        break;
+      case 400:
+        max = 4;
+        break;
+    }*/
+      if (!this.getThemeUrl().includes('undefined')) {
+        this.http.get<Theme[]>(this.getThemeUrl()).subscribe((themeList) => {
+          this.themes = themeList;
+          this.themes$.next(this.themes);
+        });
+      }
   }
 
   addTheme(theme: Theme): void {

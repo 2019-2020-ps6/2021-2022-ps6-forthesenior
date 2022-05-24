@@ -2,7 +2,7 @@
   <h2>
     {{question.questionLabel}}
   </h2>
-  <div class="play grid ">
+  <div class="user grid">
     <div *ngFor="let answer of question.answers">
       <app-answer-quiz (answeredQuestion)="onAnswered($event)" [answer]="answer"
                        [answered]="answered"></app-answer-quiz>

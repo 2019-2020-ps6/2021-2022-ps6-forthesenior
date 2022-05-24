@@ -19,13 +19,18 @@ export class ThemeListComponent implements OnInit {
   constructor(private router: Router, private themeService: ThemeService, private userService: UserService, private optionService: OptionService) {
     this.themeService.themes$.subscribe((themes: Theme[]) => {
       this.themeList = themes;
+      this.optionService.caseNumber = this.themeList.length;
+      this.optionService.options$.subscribe(() => this.optionService.update());
     });
-    this.optionService.options$.subscribe(() => this.optionService.update())
+    this.optionService.caseNumber$.subscribe((caseNumber: number) => {
+      this.themeList = this.themeList.slice(0, caseNumber);
+    });
   }
 
   ngOnInit(): void {
     this.themeService.retrieveThemes();
-    if (this.isAdmin()) addAdminClasses();
+    addAdminClasses();
+    this.optionService.numberColumns(this.themeList.length);
   }
 
   selectTheme(theme: Theme): void {

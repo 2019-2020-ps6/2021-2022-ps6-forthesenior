@@ -1,6 +1,5 @@
 <div (click)="!isAdmin()?play():null" class="card user">
   <h2>
-    <i class="fab fa-leanpub"></i>
     {{quiz.quizLabel}}
   </h2>
   <button (click)="play()" *ngIf="isAdmin()" class="button-card">Jouer</button>
