@@ -35,6 +35,7 @@ export class QuizPlayComponent implements OnInit {
       this.quiz = quiz;
     });
     this.optionService.options$.subscribe(() => this.optionService.update())
+    //this.answerList$.subscribe(())
   }
 
   ngOnInit(): void {

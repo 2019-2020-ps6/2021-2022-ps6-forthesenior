@@ -24,7 +24,7 @@ export class ThemeService {
   }
 
   retrieveThemes(): void {
-    let max;
+    /*let max;
     switch (this.optionService.size) {
       case 200:
         max = 8;
@@ -35,10 +35,10 @@ export class ThemeService {
       case 400:
         max = 4;
         break;
-    }
+    }*/
       if (!this.getThemeUrl().includes('undefined')) {
         this.http.get<Theme[]>(this.getThemeUrl()).subscribe((themeList) => {
-          this.themes = themeList.slice(0, max);
+          this.themes = themeList;
           this.themes$.next(this.themes);
         });
       }

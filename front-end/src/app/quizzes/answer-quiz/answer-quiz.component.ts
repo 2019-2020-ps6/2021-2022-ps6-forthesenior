@@ -5,6 +5,7 @@ import {ThemeService} from "../../../services/theme.service";
 import {Option} from "../../../models/option.model";
 import {QuizPlayComponent} from "../quiz-play/quiz-play.component";
 import {Answer} from "../../../models/answer.model";
+import {map} from "rxjs/operators";
 
 @Component({
   selector: 'app-answer-quiz',
@@ -54,7 +55,7 @@ export class AnswerQuizComponent implements OnInit, OnChanges {
     this.optionService.options$.subscribe((option : Option[]) =>
       this.option = option[0]
     );
-    if (this.themeService.themeSelected$) {
+    if (this.optionService.theme) {
       this.buttonColor = '#6b7070'; // Default Color
       /*this.vert = '#53794f';
       this.rouge = '#762520';*/

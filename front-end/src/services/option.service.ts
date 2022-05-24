@@ -17,8 +17,9 @@ export class OptionService {
 
   public optionSelected$: Subject<Option> = new Subject();
   public options$: BehaviorSubject<Option[]> = new BehaviorSubject([]);
-  dmla;
-  size;
+  public dmla;
+  public size;
+  public theme : boolean;
   //public caseNumber;
   public caseNumber$: Subject<number> = new Subject();
   private options: Option[] = [];
@@ -108,6 +109,7 @@ export class OptionService {
     console.log(option.id);
     this.dmla = option.dmlaOffset;
     this.size = option.fontSize;
+    this.theme = option.theme;
     let height;
     switch (this.size) {
       case "250":
