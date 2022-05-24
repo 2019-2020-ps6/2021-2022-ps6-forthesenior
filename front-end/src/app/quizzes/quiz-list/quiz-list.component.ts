@@ -3,7 +3,6 @@ import {Router} from '@angular/router';
 import {QuizService} from '../../../services/quiz.service';
 import {Quiz} from '../../../models/quiz.model';
 import {Theme} from "../../../models/theme.model";
-import {isAdmin} from 'src/app/utils/functions';
 import {OptionService} from "../../../services/option.service";
 import {ThemeService} from "../../../services/theme.service";
 import {UserService} from "../../../services/user.service";
