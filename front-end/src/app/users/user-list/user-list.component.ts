@@ -34,8 +34,8 @@ export class UserListComponent implements OnInit {
   }
 
   selectUser(user: User): void {
-    this.userService.setSelectedUser(user.id);
     this.userService.setAdmin(false);
+    this.userService.setSelectedUser(user.id);
     this.router.navigate([this.router.url + '/' + user.id + '/theme']);
   }
 

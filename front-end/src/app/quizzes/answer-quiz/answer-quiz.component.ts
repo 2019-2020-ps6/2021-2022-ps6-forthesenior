@@ -52,6 +52,7 @@ export class AnswerQuizComponent implements OnInit, OnChanges {
   }
 
   ngOnInit(): void {
+    this.path = null;
     this.optionService.options$.subscribe((option : Option[]) =>
       this.option = option[0]
     );
@@ -91,14 +92,5 @@ export class AnswerQuizComponent implements OnInit, OnChanges {
 
   showAnswer(): void {
     if (!this.answered) this.answeredQuestion.emit(this.answer.isCorrect);
-    /*if (!this.answered) {
-      /*if (this.optionService.theme) {
-        this.path = this.pathWrong;
-        this.alt = this.altWrong;
-      } else {
-        this.buttonColor = (this.answer.isCorrect) ? this.vert : this.rouge;
-      }
-      this.answeredQuestion.emit(this.answer.isCorrect);
-    }*/
   }
 }

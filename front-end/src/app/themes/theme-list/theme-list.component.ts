@@ -33,7 +33,7 @@ export class ThemeListComponent implements OnInit {
 
   ngOnInit(): void {
     this.themeService.retrieveThemes();
-    addAdminClasses();
+    if(this.isAdmin()) addAdminClasses();
     this.optionService.numberColumns(this.themeList.length);
   }
 

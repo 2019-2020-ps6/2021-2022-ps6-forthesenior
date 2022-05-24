@@ -158,17 +158,14 @@ export class OptionService {
   }
 
   getOptionUrl(): string {
-    console.log(this.userService.getUserUrl() + '/' + this.getUserIdFromUrl() + '/options');
     return this.userService.getUserUrl() + '/' + this.getUserIdFromUrl() + '/options';
   }
 
   getUserIdFromUrl(): string {
-    //console.log(this.userService.userSelected$.asObservable().pipe().);
     let id = this.router.url.split('/')[4];
     if (id === undefined) {
       id = urlPopUntil(document.URL, 'option').split('/').pop();
     }
-    console.log("id "+id);
     return id;
   }
 

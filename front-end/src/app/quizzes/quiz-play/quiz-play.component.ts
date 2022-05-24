@@ -24,12 +24,11 @@ export class QuizPlayComponent implements OnInit {
   answer: boolean;
   userId: string;
   timeLeft: number;
+  timeLeftOld : number;
   timer: boolean;
   secondChance: boolean;
   interval;
   public answerList$: BehaviorSubject<Boolean> = new BehaviorSubject<Boolean>(false);
-
-  //@Input() quiz: Quiz;
 
   constructor(private router: Router, private route: ActivatedRoute, private quizService: QuizService,
               private userService: UserService, private optionService: OptionService,
@@ -47,39 +46,31 @@ export class QuizPlayComponent implements OnInit {
     this.right = 0;
     this.userId = this.route.snapshot.paramMap.get('idUser');
     const id = this.route.snapshot.paramMap.get('idQuiz');
-    const themeId = this.route.snapshot.paramMap.get('idTheme');
-    //this.quizService.setIdTheme(themeId);
     this.quizService.setSelectedQuiz(id);
-    //this.optionService.setOption(this.userId);
     this.quizService.quizSelected$.subscribe((quiz) => {
       if (quiz !== null) {
         this.quiz = quiz;
-        //this.optionService.setColumns(this.quiz.questions.length);
       }
     });
-    this.index = Number(this.route.snapshot.paramMap.get('numero'));
+    this.index = 0;
     this.timeLeft = this.optionService.timeLeft;
+    this.timeLeftOld = this.timeLeft;
   }
 
   nextQuestion(): void {
+    console.log("nextQuestion");
     clearInterval(this.interval);
-    this.timeLeft = this.optionService.timeLeft;
+    this.timeLeft = this.timeLeftOld;
     this.index++;
     this.timer = false;
     if (this.answer) {
       this.right++;
     }
-    //let idAccount = this.route.snapshot.paramMap.get("idAccount");
-    //let idTheme = this.route.snapshot.paramMap.get("idTheme");
     if (this.index === this.quiz.questions.length) {
-      //this.userService.updateStats(User, this.right / this.index);
-      //let url = idAccount + "/user-list/" + this.userId + "/" + idTheme + "/result/" + this.quiz.id + "/" + this.right + "/" + this.index;
-      //this.router.navigate([url]);
       this.playService.right = this.right;
       this.playService.total = this.index;
       this.router.navigate([urlPopN(this.router.url, 2) + '/result/' + this.quiz.id]);
     } else {
-      //let url = idAccount + "/user-list/" + this.userId + "/" + idTheme + "/quiz-play/" + this.quiz.id + "/question/" + this.index;
       this.router.navigate([this.router.url]);
     }
     this.next = false;
@@ -88,7 +79,7 @@ export class QuizPlayComponent implements OnInit {
   startTimer(): void {
     if (this.timeLeft > 3) {
       this.timeLeft--;
-    } else if (this.timeLeft > 1) {
+    } else if (this.timeLeft > 0) {
       this.answerList$.next(true);
       this.timeLeft--;
     } else {
