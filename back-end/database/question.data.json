@@ -1,10 +1,5 @@
 [
   {
-    "questionLabel": "The Great Wall of China is visible from the moon.",
-    "quizId": 1651680180195,
-    "id": 1651680178925
-  },
-  {
     "questionLabel": "Video streaming website YouTube was purchased in it's entirety by Facebook for US$1.65 billion in stock.",
     "quizId": 1651680178921,
     "id": 1651680178938
@@ -12,22 +7,22 @@
   {
     "questionLabel": "Gumbo is a stew that originated in Louisiana.",
     "quizId": 1651680178921,
-    "id": 1651680181792
+    "id": 1651680178953
   },
   {
     "questionLabel": "French is an official language in Canada.",
     "quizId": 1651680178921,
-    "id": 1651680180573
+    "id": 1651680178966
   },
   {
     "questionLabel": "It is automatically considered entrapment in the United States if the police sell you illegal substances without revealing themselves.",
     "quizId": 1651680178921,
-    "id": 1651680181792
+    "id": 1651680178976
   },
   {
     "questionLabel": "Nutella is produced by the German company Ferrero.",
     "quizId": 1651680178921,
-    "id": 1651680180573
+    "id": 1651680178987
   },
   {
     "questionLabel": "A scientific study on peanuts in bars found traces of over 100 unique specimens of urine.",
@@ -56,18 +51,60 @@
   },
   {
     "questionLabel": "You can legally drink alcohol while driving in Mississippi.",
-    "quizId": 1651680178921,
-    "id": 1651680179054
+    "quizId": 1651680181772,
+    "id": 1651680179054,
+    "answers": [
+      {
+        "answerLabel": "True",
+        "isCorrect": true,
+        "questionId": 1651680179054,
+        "id": 1651680179059
+      },
+      {
+        "answerLabel": "False",
+        "isCorrect": false,
+        "questionId": 1651680179054,
+        "id": 1651680179062
+      }
+    ]
   },
   {
     "questionLabel": "On average, at least 1 person is killed by a drunk driver in the United States every hour.",
-    "quizId": 1651680178921,
-    "id": 1651680181792
+    "quizId": 1651680181772,
+    "id": 1651680179066,
+    "answers": [
+      {
+        "answerLabel": "True",
+        "isCorrect": true,
+        "questionId": 1651680179066,
+        "id": 1651680179069
+      },
+      {
+        "answerLabel": "False",
+        "isCorrect": false,
+        "questionId": 1651680179066,
+        "id": 1651680179073
+      }
+    ]
   },
   {
     "questionLabel": "In 2010, Twitter and the United States Library of Congress partnered together to archive every tweet by American citizens.",
-    "quizId": 1651680178921,
-    "id": 1651680181792
+    "quizId": 1651680181772,
+    "id": 1651680179076,
+    "answers": [
+      {
+        "answerLabel": "True",
+        "isCorrect": true,
+        "questionId": 1651680179076,
+        "id": 1651680179080
+      },
+      {
+        "answerLabel": "False",
+        "isCorrect": false,
+        "questionId": 1651680179076,
+        "id": 1651680179084
+      }
+    ]
   },
   {
     "questionLabel": "Pluto is a planet.",
@@ -92,12 +129,12 @@
   {
     "questionLabel": "One of Donald Trump's 2016 Presidential Campaign promises was to build a border wall between the United States and Mexico.",
     "quizId": 1651680178921,
-    "id": 1651680181792
+    "id": 1651680179136
   },
   {
     "questionLabel": "Romanian belongs to the Romance language family, shared with French, Spanish, Portuguese and Italian. ",
     "quizId": 1651680178921,
-    "id": 1651680180573
+    "id": 1651680179147
   },
   {
     "questionLabel": "\"27 Club\" is a term used to refer to a list of famous actors, musicians, and artists who died at the age of 27.",
@@ -112,27 +149,27 @@
   {
     "questionLabel": "Scotland voted to become an independent country during the referendum from September 2014.",
     "quizId": 1651680178921,
-    "id": 1651680180573
+    "id": 1651680179182
   },
   {
     "questionLabel": "The National Animal of Scotland is the Unicorn.",
     "quizId": 1651680178921,
-    "id": 1651680180573
+    "id": 1651680179192
   },
   {
     "questionLabel": "Vietnam's national flag is a red star in front of a yellow background.",
-    "quizId": 1651680180195,
+    "quizId": 1651680178921,
     "id": 1651680179204
   },
   {
     "questionLabel": "A pasodoble is a type of Italian pasta sauce.",
     "quizId": 1651680178921,
-    "id": 1651680180573
+    "id": 1651680179214
   },
   {
     "questionLabel": "Slovakia is a member of European Union-",
     "quizId": 1651680178921,
-    "id": 1651680180573
+    "id": 1651680179225
   },
   {
     "questionLabel": "The mitochondria is the powerhouse of the cell.",
@@ -152,7 +189,7 @@
   {
     "questionLabel": "Area 51 is located in which US state?",
     "quizId": 1651680179248,
-    "id": 1651680181792
+    "id": 1651680179286
   },
   {
     "questionLabel": "How would one say goodbye in Spanish?",
@@ -392,152 +429,572 @@
   {
     "questionLabel": "\"Typewriter\" is the longest word that can be typed using only the first row on a QWERTY keyboard.",
     "quizId": 1651680180195,
-    "id": 1651680180199
+    "id": 1651680180199,
+    "answers": [
+      {
+        "answerLabel": "True",
+        "isCorrect": true,
+        "questionId": 1651680180199,
+        "id": 1651680180202
+      },
+      {
+        "answerLabel": "False",
+        "isCorrect": false,
+        "questionId": 1651680180199,
+        "id": 1651680180207
+      }
+    ]
   },
   {
     "questionLabel": "Coca-Cola's original colour was green.",
     "quizId": 1651680180195,
-    "id": 1651680180214
+    "id": 1651680180214,
+    "answers": [
+      {
+        "answerLabel": "False",
+        "isCorrect": true,
+        "questionId": 1651680180214,
+        "id": 1651680180218
+      },
+      {
+        "answerLabel": "True",
+        "isCorrect": false,
+        "questionId": 1651680180214,
+        "id": 1651680180221
+      }
+    ]
   },
   {
     "questionLabel": "The US emergency hotline is 911 because of the September 11th terrorist attacks.",
     "quizId": 1651680180195,
-    "id": 1651680180225
+    "id": 1651680180225,
+    "answers": [
+      {
+        "answerLabel": "False",
+        "isCorrect": true,
+        "questionId": 1651680180225,
+        "id": 1651680180228
+      },
+      {
+        "answerLabel": "True",
+        "isCorrect": false,
+        "questionId": 1651680180225,
+        "id": 1651680180232
+      }
+    ]
   },
   {
     "questionLabel": "The vapor produced by e-cigarettes is actually water.",
     "quizId": 1651680180195,
-    "id": 1651680180236
+    "id": 1651680180236,
+    "answers": [
+      {
+        "answerLabel": "False",
+        "isCorrect": true,
+        "questionId": 1651680180236,
+        "id": 1651680180240
+      },
+      {
+        "answerLabel": "True",
+        "isCorrect": false,
+        "questionId": 1651680180236,
+        "id": 1651680180244
+      }
+    ]
   },
   {
     "questionLabel": "The sum of all the numbers on a roulette wheel is 666.",
     "quizId": 1651680180195,
-    "id": 1651680180248
+    "id": 1651680180248,
+    "answers": [
+      {
+        "answerLabel": "True",
+        "isCorrect": true,
+        "questionId": 1651680180248,
+        "id": 1651680180252
+      },
+      {
+        "answerLabel": "False",
+        "isCorrect": false,
+        "questionId": 1651680180248,
+        "id": 1651680180256
+      }
+    ]
   },
   {
     "questionLabel": "Furby was released in 1998.",
     "quizId": 1651680180195,
-    "id": 1651680180259
+    "id": 1651680180259,
+    "answers": [
+      {
+        "answerLabel": "True",
+        "isCorrect": true,
+        "questionId": 1651680180259,
+        "id": 1651680180263
+      },
+      {
+        "answerLabel": "False",
+        "isCorrect": false,
+        "questionId": 1651680180259,
+        "id": 1651680180267
+      }
+    ]
   },
   {
     "questionLabel": "There are 86400 seconds in a day.",
     "quizId": 1651680180195,
-    "id": 1651680180271
+    "id": 1651680180271,
+    "answers": [
+      {
+        "answerLabel": "True",
+        "isCorrect": true,
+        "questionId": 1651680180271,
+        "id": 1651680180274
+      },
+      {
+        "answerLabel": "False",
+        "isCorrect": false,
+        "questionId": 1651680180271,
+        "id": 1651680180278
+      }
+    ]
   },
   {
     "questionLabel": "The word \"news\" originates from the first letters of the 4 main directions on a compass (North, East, West, South).",
     "quizId": 1651680180195,
-    "id": 1651680180282
+    "id": 1651680180282,
+    "answers": [
+      {
+        "answerLabel": "False",
+        "isCorrect": true,
+        "questionId": 1651680180282,
+        "id": 1651680180286
+      },
+      {
+        "answerLabel": "True",
+        "isCorrect": false,
+        "questionId": 1651680180282,
+        "id": 1651680180290
+      }
+    ]
   },
   {
     "questionLabel": "An eggplant is a vegetable.",
     "quizId": 1651680180195,
-    "id": 1651680180294
+    "id": 1651680180294,
+    "answers": [
+      {
+        "answerLabel": "False",
+        "isCorrect": true,
+        "questionId": 1651680180294,
+        "id": 1651680180298
+      },
+      {
+        "answerLabel": "True",
+        "isCorrect": false,
+        "questionId": 1651680180294,
+        "id": 1651680180302
+      }
+    ]
   },
   {
     "questionLabel": "The bikini is named after the \"Bikini Atoll\", an island where the United States conducted tests on atomic bombs.",
     "quizId": 1651680180195,
-    "id": 1651680180307
+    "id": 1651680180307,
+    "answers": [
+      {
+        "answerLabel": "True",
+        "isCorrect": true,
+        "questionId": 1651680180307,
+        "id": 1651680180311
+      },
+      {
+        "answerLabel": "False",
+        "isCorrect": false,
+        "questionId": 1651680180307,
+        "id": 1651680180315
+      }
+    ]
   },
   {
     "questionLabel": "Cucumbers are usually more than 90% water.",
     "quizId": 1651680180195,
-    "id": 1651680180319
+    "id": 1651680180319,
+    "answers": [
+      {
+        "answerLabel": "True",
+        "isCorrect": true,
+        "questionId": 1651680180319,
+        "id": 1651680180323
+      },
+      {
+        "answerLabel": "False",
+        "isCorrect": false,
+        "questionId": 1651680180319,
+        "id": 1651680180327
+      }
+    ]
   },
   {
     "questionLabel": "You are allowed to sell your soul on eBay.",
     "quizId": 1651680180195,
-    "id": 1651680180331
+    "id": 1651680180331,
+    "answers": [
+      {
+        "answerLabel": "False",
+        "isCorrect": true,
+        "questionId": 1651680180331,
+        "id": 1651680180335
+      },
+      {
+        "answerLabel": "True",
+        "isCorrect": false,
+        "questionId": 1651680180331,
+        "id": 1651680180339
+      }
+    ]
   },
   {
     "questionLabel": "The average woman is 5 inches / 13 centimeters shorter than the average man.",
     "quizId": 1651680180195,
-    "id": 1651680180343
+    "id": 1651680180343,
+    "answers": [
+      {
+        "answerLabel": "True",
+        "isCorrect": true,
+        "questionId": 1651680180343,
+        "id": 1651680180347
+      },
+      {
+        "answerLabel": "False",
+        "isCorrect": false,
+        "questionId": 1651680180343,
+        "id": 1651680180351
+      }
+    ]
   },
   {
     "questionLabel": "The term \"Spam\" came before the food product \"Spam\".",
     "quizId": 1651680180195,
-    "id": 1651680180355
+    "id": 1651680180355,
+    "answers": [
+      {
+        "answerLabel": "False",
+        "isCorrect": true,
+        "questionId": 1651680180355,
+        "id": 1651680180359
+      },
+      {
+        "answerLabel": "True",
+        "isCorrect": false,
+        "questionId": 1651680180355,
+        "id": 1651680180363
+      }
+    ]
   },
   {
     "questionLabel": "Kissing someone for one minute burns about 2 calories.",
     "quizId": 1651680180195,
-    "id": 1651680180367
+    "id": 1651680180367,
+    "answers": [
+      {
+        "answerLabel": "True",
+        "isCorrect": true,
+        "questionId": 1651680180367,
+        "id": 1651680180371
+      },
+      {
+        "answerLabel": "False",
+        "isCorrect": false,
+        "questionId": 1651680180367,
+        "id": 1651680180375
+      }
+    ]
   },
   {
     "questionLabel": "Sitting for more than three hours a day can cut two years off a person's life expectancy.",
     "quizId": 1651680180195,
-    "id": 1651680180379
+    "id": 1651680180379,
+    "answers": [
+      {
+        "answerLabel": "True",
+        "isCorrect": true,
+        "questionId": 1651680180379,
+        "id": 1651680180383
+      },
+      {
+        "answerLabel": "False",
+        "isCorrect": false,
+        "questionId": 1651680180379,
+        "id": 1651680180386
+      }
+    ]
   },
   {
     "questionLabel": "The French word to travel is \"Travail\"",
     "quizId": 1651680180195,
-    "id": 1651680180390
+    "id": 1651680180390,
+    "answers": [
+      {
+        "answerLabel": "False",
+        "isCorrect": true,
+        "questionId": 1651680180390,
+        "id": 1651680180394
+      },
+      {
+        "answerLabel": "True",
+        "isCorrect": false,
+        "questionId": 1651680180390,
+        "id": 1651680180399
+      }
+    ]
   },
   {
     "questionLabel": "The French word for \"glass\" is \"glace\".",
     "quizId": 1651680180195,
-    "id": 1651680180403
+    "id": 1651680180403,
+    "answers": [
+      {
+        "answerLabel": "False",
+        "isCorrect": true,
+        "questionId": 1651680180403,
+        "id": 1651680180407
+      },
+      {
+        "answerLabel": "True",
+        "isCorrect": false,
+        "questionId": 1651680180403,
+        "id": 1651680180411
+      }
+    ]
   },
   {
     "questionLabel": "Albert Einstein had trouble with mathematics when he was in school.",
     "quizId": 1651680180195,
-    "id": 1651680180415
+    "id": 1651680180415,
+    "answers": [
+      {
+        "answerLabel": "False",
+        "isCorrect": true,
+        "questionId": 1651680180415,
+        "id": 1651680180418
+      },
+      {
+        "answerLabel": "True",
+        "isCorrect": false,
+        "questionId": 1651680180415,
+        "id": 1651680180422
+      }
+    ]
   },
   {
     "questionLabel": "Fast food restaurant chains Carl's Jr. and Hardee's are owned by the same company.",
     "quizId": 1651680180195,
-    "id": 1651680180427
+    "id": 1651680180427,
+    "answers": [
+      {
+        "answerLabel": "True",
+        "isCorrect": true,
+        "questionId": 1651680180427,
+        "id": 1651680180431
+      },
+      {
+        "answerLabel": "False",
+        "isCorrect": false,
+        "questionId": 1651680180427,
+        "id": 1651680180435
+      }
+    ]
   },
   {
     "questionLabel": "\"Santa Claus\" is a variety of melon.",
     "quizId": 1651680180195,
-    "id": 1651680180440
+    "id": 1651680180440,
+    "answers": [
+      {
+        "answerLabel": "True",
+        "isCorrect": true,
+        "questionId": 1651680180440,
+        "id": 1651680180444
+      },
+      {
+        "answerLabel": "False",
+        "isCorrect": false,
+        "questionId": 1651680180440,
+        "id": 1651680180448
+      }
+    ]
   },
   {
     "questionLabel": "The scientific name for the Southern Lights is Aurora Australis?",
     "quizId": 1651680180195,
-    "id": 1651680180451
+    "id": 1651680180451,
+    "answers": [
+      {
+        "answerLabel": "True",
+        "isCorrect": true,
+        "questionId": 1651680180451,
+        "id": 1651680180456
+      },
+      {
+        "answerLabel": "False",
+        "isCorrect": false,
+        "questionId": 1651680180451,
+        "id": 1651680180462
+      }
+    ]
   },
   {
     "questionLabel": "Haggis is traditionally ate on Burns Night.",
     "quizId": 1651680180195,
-    "id": 1651680180466
+    "id": 1651680180466,
+    "answers": [
+      {
+        "answerLabel": "True",
+        "isCorrect": true,
+        "questionId": 1651680180466,
+        "id": 1651680180470
+      },
+      {
+        "answerLabel": "False",
+        "isCorrect": false,
+        "questionId": 1651680180466,
+        "id": 1651680180474
+      }
+    ]
   },
   {
     "questionLabel": "Francis Bacon died from a fatal case of pneumonia while he was attempting to preserve meat by stuffing a chicken with snow.",
     "quizId": 1651680180195,
-    "id": 1651680180478
+    "id": 1651680180478,
+    "answers": [
+      {
+        "answerLabel": "True",
+        "isCorrect": true,
+        "questionId": 1651680180478,
+        "id": 1651680180482
+      },
+      {
+        "answerLabel": "False",
+        "isCorrect": false,
+        "questionId": 1651680180478,
+        "id": 1651680180486
+      }
+    ]
   },
   {
     "questionLabel": "Popcorn was invented in 1871 by Frederick W. Rueckheim in the USA where he sold the snack on the streets of Chicago.",
     "quizId": 1651680180195,
-    "id": 1651680180491
+    "id": 1651680180491,
+    "answers": [
+      {
+        "answerLabel": "False",
+        "isCorrect": true,
+        "questionId": 1651680180491,
+        "id": 1651680180496
+      },
+      {
+        "answerLabel": "True",
+        "isCorrect": false,
+        "questionId": 1651680180491,
+        "id": 1651680180500
+      }
+    ]
   },
   {
     "questionLabel": "The British organisation CAMRA stands for The Campaign for Real Ale.",
     "quizId": 1651680180195,
-    "id": 1651680180504
+    "id": 1651680180504,
+    "answers": [
+      {
+        "answerLabel": "True",
+        "isCorrect": true,
+        "questionId": 1651680180504,
+        "id": 1651680180508
+      },
+      {
+        "answerLabel": "False",
+        "isCorrect": false,
+        "questionId": 1651680180504,
+        "id": 1651680180513
+      }
+    ]
   },
   {
     "questionLabel": "The commercial UK channel ITV stands for \"International Television\".",
     "quizId": 1651680180195,
-    "id": 1651680180517
+    "id": 1651680180517,
+    "answers": [
+      {
+        "answerLabel": "False",
+        "isCorrect": true,
+        "questionId": 1651680180517,
+        "id": 1651680180522
+      },
+      {
+        "answerLabel": "True",
+        "isCorrect": false,
+        "questionId": 1651680180517,
+        "id": 1651680180526
+      }
+    ]
   },
   {
     "questionLabel": "The pickled gherkin was first added to hamburgers because a US health law required all fast-food to include a source of Vitamin C.",
     "quizId": 1651680180195,
-    "id": 1651680180531
+    "id": 1651680180531,
+    "answers": [
+      {
+        "answerLabel": "False",
+        "isCorrect": true,
+        "questionId": 1651680180531,
+        "id": 1651680180535
+      },
+      {
+        "answerLabel": "True",
+        "isCorrect": false,
+        "questionId": 1651680180531,
+        "id": 1651680180540
+      }
+    ]
   },
   {
     "questionLabel": "\"Buffalo buffalo Buffalo buffalo buffalo buffalo Buffalo buffalo.\" is a grammatically correct sentence.",
     "quizId": 1651680180195,
-    "id": 1651680180544
+    "id": 1651680180544,
+    "answers": [
+      {
+        "answerLabel": "True",
+        "isCorrect": true,
+        "questionId": 1651680180544,
+        "id": 1651680180548
+      },
+      {
+        "answerLabel": "False",
+        "isCorrect": false,
+        "questionId": 1651680180544,
+        "id": 1651680180553
+      }
+    ]
   },
   {
     "questionLabel": "Instant mashed potatoes were invented by Canadian Edward Asselbergs in 1962.",
     "quizId": 1651680180195,
-    "id": 1651680180559
+    "id": 1651680180559,
+    "answers": [
+      {
+        "answerLabel": "True",
+        "isCorrect": true,
+        "questionId": 1651680180559,
+        "id": 1651680180563
+      },
+      {
+        "answerLabel": "False",
+        "isCorrect": false,
+        "questionId": 1651680180559,
+        "id": 1651680180568
+      }
+    ]
   },
   {
     "questionLabel": "What is the world's most expensive spice by weight?",

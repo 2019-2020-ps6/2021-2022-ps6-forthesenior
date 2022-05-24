@@ -140,7 +140,12 @@ export class OptionService {
         this.caseNumber$.next(6);
       }
     }
-    document.documentElement.style.setProperty("--size-answer", option.fontSize + "px");
+    if(this.dmla === "0"){
+      this.timeLeft = 7;
+    } else {
+      this.timeLeft = 2;
+    }
+    //document.documentElement.style.setProperty("--size-answer", option.fontSize + "px");
     if (option.theme) {
       setDarkTheme();
     } else {
