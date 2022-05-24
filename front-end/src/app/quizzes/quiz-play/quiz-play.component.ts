@@ -34,28 +34,16 @@ export class QuizPlayComponent implements OnInit {
   constructor(private router: Router, private route: ActivatedRoute, private quizService: QuizService,
               private userService: UserService, private optionService: OptionService,
               private playService : PlayService) {
+    this.quizService.setSelectedQuiz(this.route.snapshot.paramMap.get('quizId'));
     this.quizService.quizSelected$.subscribe((quiz: Quiz) => {
       this.quiz = quiz;
     });
     this.optionService.options$.subscribe(() => this.optionService.update())
+    this.initiateGame();
   }
 
   ngOnInit(): void {
-    this.next = false;
-    this.timer = false;
-    this.secondChance = false;
-    this.right = 0;
-    this.userId = this.route.snapshot.paramMap.get('idUser');
-    const id = this.route.snapshot.paramMap.get('idQuiz');
-    this.quizService.setSelectedQuiz(id);
-    this.quizService.quizSelected$.subscribe((quiz) => {
-      if (quiz !== null) {
-        this.quiz = quiz;
-      }
-    });
-    this.index = 0;
-    this.timeLeft = this.optionService.timeLeft;
-    this.timeLeftOld = this.timeLeft;
+
   }
 
   nextQuestion(): void {
@@ -94,6 +82,8 @@ export class QuizPlayComponent implements OnInit {
   onOutside(out: boolean): void{
     if(out)
       this.outsideClick+=1;
+    else
+      this.outsideClick-=1;
   }
 
   onAnswered(answer: boolean): void {
@@ -106,5 +96,24 @@ export class QuizPlayComponent implements OnInit {
       this.timer = true;
     }
     this.answer = answer;
+  }
+
+  initiateGame(): void {
+    this.next = false;
+    this.timer = false;
+    this.secondChance = false;
+    this.right = 0;
+    this.userId = this.route.snapshot.paramMap.get('idUser');
+    const id = this.route.snapshot.paramMap.get('idQuiz');
+    this.quizService.setSelectedQuiz(id);
+    this.quizService.quizSelected$.subscribe((quiz) => {
+      if (quiz !== null) {
+        this.quiz = quiz;
+      }
+    });
+    this.index = 0;
+    this.timeLeft = this.optionService.timeLeft;
+    this.timeLeftOld = this.timeLeft;
+
   }
 }

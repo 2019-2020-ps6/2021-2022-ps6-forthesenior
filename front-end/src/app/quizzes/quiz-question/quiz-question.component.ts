@@ -20,6 +20,7 @@ export class QuizQuestionComponent implements OnInit, OnChanges {
 
   inside = false;
   nbClick = 0;
+
   @HostListener("document:click")
   clickedOut() {
 
