@@ -20,11 +20,15 @@ export class QuizListComponent implements OnInit {
               private themeService: ThemeService) {
     this.quizService.quizzes$.subscribe((quizzes: Quiz[]) => {
       this.quizList = quizzes;
+      this.optionService.caseNumber = this.quizList.length;
+      this.optionService.options$.subscribe(() => this.optionService.update())
     });
     this.themeService.themeSelected$.subscribe((theme: Theme) => {
       this.theme = theme;
     });
-    this.optionService.options$.subscribe(() => this.optionService.update())
+    this.optionService.caseNumber$.subscribe((caseNumber: number) => {
+      this.quizList = this.quizList.slice(0, caseNumber);
+    });
   }
 
   ngOnInit(): void {

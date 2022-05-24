@@ -31,7 +31,6 @@ export class OptionComponent implements OnInit {
     this.optionForm = this.formBuilder.group({
       fontSize: ['200'],
       dmlaOffset: ['0'],
-      parkinsonOffset: ['0'],
       theme: [false]
     })
   }
@@ -51,6 +50,5 @@ export class OptionComponent implements OnInit {
     const option: Option = this.optionForm.getRawValue() as Option
     this.optionService.applyOption(option)
     this.router.navigate([urlPopN(this.router.url, 2)]);
-
   }
 }

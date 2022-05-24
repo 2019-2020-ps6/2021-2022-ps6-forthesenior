@@ -51,7 +51,7 @@
   flex-direction: column;
 
   &.user {
-    grid-template-columns: repeat($number-column, 1fr);
+    grid-template-columns: repeat($number-column, auto);
   }
 
   &.admin {
