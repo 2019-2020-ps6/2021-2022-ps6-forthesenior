@@ -49,7 +49,6 @@ export class QuizQuestionComponent implements OnInit, OnChanges {
   }
 
   onAnswered(questionAnswered: boolean): void {
-    this.answered = true;
     this.next.emit(questionAnswered);
   }
 
