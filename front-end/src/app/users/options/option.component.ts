@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {OptionService} from "../../../services/option.service";
 import {FormBuilder, FormGroup} from "@angular/forms";
 import {Option} from "../../../models/option.model";
-import {ActivatedRoute, Router} from "@angular/router";
+import {Router} from "@angular/router";
 import {urlPopN} from "../../utils/functions";
 
 @Component({
@@ -15,11 +15,9 @@ export class OptionComponent implements OnInit {
   public optionForm: FormGroup;
   public user: String;
 
-  constructor(private formBuilder: FormBuilder, private optionService: OptionService,
-              private router: Router,private route: ActivatedRoute) {
+  constructor(private formBuilder: FormBuilder, private optionService: OptionService, private router: Router) {
     this.optionService.options$.subscribe(() => this.setPreviousValues());
     this.setPreviousValues();
-
   }
 
   ngOnInit(): void {
@@ -47,8 +45,11 @@ export class OptionComponent implements OnInit {
   }
 
   applyOptions() {
-    const option: Option = this.optionForm.getRawValue() as Option
-    this.optionService.applyOption(option)
+    const option: Option = this.optionForm.getRawValue() as Option;
+    this.optionService.applyOption(option);
+  }
+
+  validateOptions() {
     this.router.navigate([urlPopN(this.router.url, 2)]);
   }
 }

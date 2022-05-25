@@ -8,7 +8,6 @@ import {AccountService} from '../../../services/account.service';
   templateUrl: './connection.html',
   styleUrls: ['./connection.scss']
 })
-// tslint:disable-next-line:component-class-suffix
 export class Connection implements OnInit {
 
   public signInForm: FormGroup;
