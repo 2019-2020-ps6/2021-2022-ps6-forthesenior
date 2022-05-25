@@ -1,16 +1,16 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {Connection} from './connection/connection';
+import {Connection} from './utils/connection/connection';
 import {ErrorPath} from './utils/error/error.path';
 import {UserListComponent} from './users/user-list/user-list.component';
 import {ThemeListComponent} from './themes/theme-list/theme-list.component';
-import {QuizListComponent} from "./quizzes/quiz-list/quiz-list.component";
-import {QuizPlayComponent} from "./quizzes/quiz-play/quiz-play.component";
-import {ResultComponent} from './result/result.component';
-import {EditQuizComponent} from "./quizzes/edit-quiz/edit-quiz.component";
+import {QuizListComponent} from "./themes/quizzes/quiz-list/quiz-list.component";
+import {QuizPlayComponent} from "./themes/quizzes/quiz-play/quiz-play.component";
+import {ResultComponent} from './themes/quizzes/result/result.component';
+import {EditQuizComponent} from "./themes/quizzes/edit-quiz/edit-quiz.component";
 import {EditThemeComponent} from "./themes/edit-theme/edit-theme.component";
 import {OptionComponent} from "./users/options/option.component";
-import {StatListComponent} from "./stats/stat-list/stat-list.component";
+import {StatListComponent} from "./users/stats/stat-list/stat-list.component";
 
 const routes: Routes = [
   {
