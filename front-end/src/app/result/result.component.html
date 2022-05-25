@@ -1,11 +1,11 @@
 <div class="card">
-  <h2>
+  <h1>
     Resultats
-  </h2>
-  <p>{{this.playService.right}}/{{this.playService.total}}</p>
-  <p>Nombre de clics dehors : {{this.playService.outsideClick - this.playService.total}}</p>
+  </h1>
+  <h3>Score final : {{this.playService.right}}/{{this.playService.total}}</h3>
+  <h3>Nombre de clics dehors : {{this.playService.outsideClick - this.playService.total}}</h3>
 </div>
-<div class="user grid">
+<div class="user grid theme">
   <div (click)="restartSelected()" class="card user">
     <h2>Recommencer le Quiz</h2>
   </div>

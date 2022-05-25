@@ -69,7 +69,11 @@ export class AnswerQuizComponent implements OnInit {
       //console.log("observer " + next);
       if (next) {
         if (this.option.theme) {
-          this.path = this.pathWrong;
+          if(this.answer.isCorrect){
+            this.path = this.pathRight;
+          } else {
+            this.path = this.pathWrong;
+          }
           this.alt = this.altWrong;
         } else {
           this.buttonColor = (this.answer.isCorrect) ? this.vert : this.rouge;
