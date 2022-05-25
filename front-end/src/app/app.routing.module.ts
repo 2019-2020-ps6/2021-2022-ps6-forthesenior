@@ -15,9 +15,8 @@ import {StatListComponent} from "./stats/stat-list/stat-list.component";
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '',
-    pathMatch: 'full',
-    component: ErrorPath
+    redirectTo: 'connection',
+    pathMatch: 'full'
   },
   {
     path: 'connection',
@@ -58,6 +57,10 @@ const routes: Routes = [
   {
     path: 'account/:accountId/user/:userId/option',
     component: OptionComponent
+  },
+  {
+    path: '**',
+    component: ErrorPath
   },
 ];
 
