@@ -19,15 +19,11 @@ export class AnswerQuizComponent implements OnInit {
   @Output()
   answeredQuestion: EventEmitter<boolean> = new EventEmitter<boolean>();
 
-  /*buttonColor = '#faf8f3'; // Default Color
-  vert = '#77AD71';
-  rouge = '#A9362F';*/
+  buttonColor: string;
+  vert: string;
+  rouge: string;
 
-  buttonColor : string;
-  vert : string;
-  rouge : string;
-
-  pathRight ="assets/right.png";
+  pathRight = "assets/right.png";
   altRight = "Right";
 
   pathWrong = "assets/wrong.png";
@@ -36,54 +32,50 @@ export class AnswerQuizComponent implements OnInit {
   path: string;
   alt: string;
 
-  option : Option;
+  option: Option;
+  click = false;
 
-  constructor(private optionService: OptionService, private quizPlay: QuizPlayComponent,
-              private themeService : ThemeService) {
-    /*if (this.optionService.theme){
-      this.buttonColor = '#6b7070'; // Default Color
-      /*this.vert = '#53794f';
-      this.rouge = '#762520';
-    } else {
-      this.buttonColor = '#faf8f3'; // Default Color
-      this.vert = '#77AD71';
-      this.rouge = '#A9362F';
-    }*/
-  }
+  constructor(private optionService: OptionService, private quizPlay: QuizPlayComponent) {}
 
   ngOnInit(): void {
     this.path = null;
-    this.optionService.options$.subscribe((option : Option[]) =>
+    this.optionService.options$.subscribe((option: Option[]) =>
       this.option = option[0]
     );
     if (this.optionService.theme) {
       this.buttonColor = '#6b7070'; // Default Color
-      /*this.vert = '#53794f';
-      this.rouge = '#762520';*/
     } else {
       this.buttonColor = '#faf8f3'; // Default Color
       this.vert = '#77AD71';
       this.rouge = '#A9362F';
     }
     this.quizPlay.answerList$.subscribe(next => {
-      //console.log("observer " + next);
       if (next) {
         if (this.option.theme) {
-          if(this.answer.isCorrect){
+          if (this.answer.isCorrect) {
             this.path = this.pathRight;
-          } else {
+            this.alt = this.altRight;
+          } else if (this.click) {
             this.path = this.pathWrong;
+            this.alt = this.altWrong;
           }
-          this.alt = this.altWrong;
         } else {
-          this.buttonColor = (this.answer.isCorrect) ? this.vert : this.rouge;
+          if (this.answer.isCorrect) {
+            this.buttonColor = this.vert;
+          } else if (this.click) {
+            this.buttonColor = this.rouge;
+          }
         }
         this.answered = true;
+        this.click = false;
       }
     })
   }
 
   showAnswer(): void {
-    if (!this.answered) this.answeredQuestion.emit(this.answer.isCorrect);
+    if (!this.answered) {
+      this.click = true;
+      this.answeredQuestion.emit(this.answer.isCorrect);
+    }
   }
 }
