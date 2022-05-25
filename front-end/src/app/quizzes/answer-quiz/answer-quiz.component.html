@@ -1,5 +1,4 @@
-<button (click)="showAnswer()" [ngStyle]="{'background-color': buttonColor}" class="card user"
-        style="border: 0">
-  {{answer.answerLabel}}
+<div (click)="showAnswer()" [ngStyle]="{'background-color': buttonColor}" class="card user">
+  <h2>{{answer.answerLabel}}</h2>
   <img [src]="path" [alt]="alt" *ngIf="path !== null"/>
-</button>
+</div>
