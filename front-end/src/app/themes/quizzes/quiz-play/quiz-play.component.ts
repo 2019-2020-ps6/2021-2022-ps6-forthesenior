@@ -32,8 +32,7 @@ export class QuizPlayComponent implements OnInit {
   public answerList$: BehaviorSubject<Boolean> = new BehaviorSubject<Boolean>(false);
 
   constructor(private router: Router, private route: ActivatedRoute, private quizService: QuizService,
-              private userService: UserService, private optionService: OptionService,
-              private playService: PlayService) {
+              private userService: UserService, private optionService: OptionService, private playService: PlayService) {
     this.quizService.setSelectedQuiz(this.route.snapshot.paramMap.get('quizId'));
     this.quizService.quizSelected$.subscribe((quiz: Quiz) => {
       this.quiz = quiz;

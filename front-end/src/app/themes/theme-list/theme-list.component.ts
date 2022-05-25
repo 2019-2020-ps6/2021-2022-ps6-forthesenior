@@ -27,13 +27,13 @@ export class ThemeListComponent implements OnInit {
       this.themeList = this.themeList.slice(0, caseNumber);
     });
     let user = this.route.snapshot.paramMap.get('userId');
-    if(user === '0')
+    if (user === '0')
       this.userService.setAdmin(true);
   }
 
   ngOnInit(): void {
     this.themeService.retrieveThemes();
-    if(this.isAdmin()) addAdminClasses();
+    if (this.isAdmin()) addAdminClasses();
     this.optionService.numberColumns(this.themeList.length);
   }
 

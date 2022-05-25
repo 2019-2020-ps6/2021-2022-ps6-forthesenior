@@ -44,8 +44,8 @@ export class AnswerQuizComponent implements OnInit {
       this.buttonColor = '#6b7070'; // Default Color
     } else {
       this.buttonColor = '#faf8f3'; // Default Color
-      this.vert = '#77AD71';
-      this.rouge = '#A9362F';
+      this.vert = '#66a966';
+      this.rouge = '#f26465';
     }
     this.quizPlay.answerList$.subscribe(next => {
       if (next) {
